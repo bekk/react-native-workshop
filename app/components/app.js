@@ -7,6 +7,13 @@ import React, {
   ToolbarAndroid
 } from 'react-native';
 
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
+
+import rnWorkshop from './reducers';
+const store = createStore(rnWorkshop);
+
 import StartPage from './start-page';
 import MessageList from './message-list';
 
