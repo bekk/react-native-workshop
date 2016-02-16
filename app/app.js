@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start'
   },
   toolbar: {
-    backgroundColor: '#B2DFDB',
+    backgroundColor: '#FF5252',
     height: 56
   }
 });

@@ -2,11 +2,13 @@
 import React, {
   Component,
   StyleSheet,
+  View,
   Text,
   ListView,
   ToolbarAndroid
 } from 'react-native';
 
+import ColoredFab from './colored-fab';
 import Message from './message';
 
 const fixture = [
@@ -15,34 +17,34 @@ const fixture = [
   {id: 3, from: 'Toan', text: 'Jeg trenger nytt visittkort:'},
 ];
 
+const DSConfig = new ListView.DataSource({rowHasChanged: (r1, r2) => r1.id !== r2.id});
 
 class MessagePage extends Component {
   constructor(props) {
     super(props);
-    
-    var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
     this.state = {
-      dataSource: ds.cloneWithRows(fixture)
+      dataSource: DSConfig.cloneWithRows(fixture)
     };
   }
 
   render() {
     return (
-      <ListView 
-        style={styles.container}
-        dataSource={this.state.dataSource} 
-        renderRow={(data) => <Message {...data} />} />
+      <View style={styles.container}>
+        <ListView 
+          dataSource={this.state.dataSource} 
+          renderRow={(data) => <Message {...data} />} />
+        <ColoredFab>+</ColoredFab>
+      </View>
     );  
   }
 }
 
-const styles = StyleSheet.create({
+
+const styles = {
   container: {
     flex: 1
   }
-
-});
+};
 
 export default MessagePage;
-    
