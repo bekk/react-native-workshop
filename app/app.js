@@ -14,8 +14,8 @@ import thunk from 'redux-thunk';
 import rnWorkshop from './reducers';
 const store = createStore(rnWorkshop);
 
-import StartPage from './start-page';
-import MessageList from './message-list';
+import StartPage from './components/start-page';
+import MessageList from './components/message-list';
 
 var toolbarActions = [
   {title: 'New', show: 'always'},
