@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Native</title>
+    <meta charset="utf-8">
+    <link href="node_modules/remark-bekk/dist/bekk.css" type="text/css" rel="stylesheet">
+    <style>
+      .small-img img{
+        width: 300px;
+      }
+       .full-img img{
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: front-page
+
+# React Native
+## Workshop
+
+Bekk Open Fagdag
+
+15.04.2016
+
+Anders Kristiansen
+
+---
+
+class: agenda
+
+# Agenda
+
+* Intro
+* Kodedemo
+* Deploy
+
+---
+
+# Intro
+
+## Lansert for iOS i januar og for Android i september 2015
+## Open Source
+## 
+
+
+???
+
+## Av Facebook, aktivt brukt.
+## Funket ikke å pakke inn webapps lengre. Webben er ikke klar enda.
+## Synes det gikk for treigt å utvikle native. Treigere utviklingsmiljø. Utviklere må kunne flere språk og verktøy. Rett og slett ikke smidig nok ut ifra det de var vant til fra webben.
+## Allerede stort community. PR, React komponenter
+## Hyppige releases. Allerede 2 nye versjoner med en del endringer siden jeg holdt på med dette for 6 uker siden.
+
+---
+
+# Hva er React Native?
+
+## Bygger på React.js
+## Samme prinsipper, med virtuell DOM
+## Web-DOM er byttet ut med native komponenter
+## _Learn_ once, write anywhere
+
+???
+
+## Moduler, virtuell DOM og deklarativt API. Vi beskriver hva programmet skal gjøre, ikke hvordan.
+## Må ikke rendre til DOM. 
+## Tydelig i versjon av React.js, der React og ReactDOM splittes
+## IKKE write once, der altså. Men det ligger til rette for gjenbruk. F.eks apier, events, business-logikk. Men ikke nødvendigvis view-kode.
+## Skal være kjent for utviklere som kommer fra JS og React.
+## Kan gjenbruke komponenter fra webben, og i tillegg får tilgang til platformkomponenter
+
+---
+# Ikke ulikt React.js
+
+```html
+<div>
+  <span>Hei sveis</span>
+  <button>Trykk på meg</button>
+</div>
+```
+
+```html
+<View>
+  <Text>Hei sveis</Text>
+  <TouchableHighlight>Trykk på meg</TouchableHighlight>
+</View>
+```
+## Noen er platformspesifikke:
+```html
+<SwitchIOS />
+<SwitchAndroid />
+```
+
+---
+class: cols two
+
+# Styling
+
+## Bruker Inline Flexbox:
+.col[
+```html
+<View style={styles.row}>
+  <Image
+    source={
+    {uri: 'http://inter.net/nissefar.png'}}
+    style={styles.image}
+  />
+  <View style={styles.text}>
+    <Text style={styles.title}>
+      God jul
+    </Text>
+    <Text style={styles.subtitle}>
+      Velkommen til årets siste faggruppemøte
+    </Text>
+  </View>
+</View>
+```
+]
+
+.col[
+```javascript
+var styles = StyleSheet.create({
+  row: { flexDirection: 'row', margin: 40 },
+  image: { width: 40, height: 40, 
+  marginRight: 10 },
+  text: { flex: 1, justifyContent: 'center'},
+  title: { fontSize: 11, fontWeight: 'bold' },
+  subtitle: { fontSize: 10 },
+});
+```
+]
+
+---
+
+# Flexbox
+
+## Kan ha flere "klasser"
+```html
+<View style={[styles.base, styles.background]} />
+```
+
+## Og conditional klasser
+```html
+<View style={[styles.base, this.state.active && styles.active]} />
+```
+
+## Kan sende klasser rundt
+
+???
+
+## Exportere moduler, f.eks. base-styling
+
+
+---
+# Ikke HTML-webapp
+
+## Fullt ut native plattformkomponenter
+## JS kjører på JavaScriptCore
+## Asynkront, utenfor UI-tråden. 
+## JS til Native via "bridge".
+
+???
+## Ikke WebView, så det føles native. Deler av Facebook-appen er RN. Kan dere gjette hvilken? Events/arrangementer
+## Sender kommandoer i batcher til UI-tråden.
+## Flere tråder, i motsetning til web. Dekode bilder, lagre til disk, gjøre layoutberegninger utenfor UI-tråden. => Responsivt
+
+---
+# Bridge
+.col[
+.full-img[![](img/ReactBridge.png)]
+]
+
+
+---
+class: cols two
+
+# Komponenter
+
+.col[
+## De vanligste komponentene og API-ene er tilgjengelige
+## Men kan skrive egne komponenter i native kode og eksponere
+## Mange finnes allerede som npm-moduler
+]
+
+.col[
+.small-img[![](img/ReactComponents.png)]
+]
+???
+
+## Clipboard, Orientation, 3D-touch ikke implementert enda
+
+---
+
+#Hva trenger man?
+
+* XCode
+* Android-SDK (Android Studio?)
+* Node 4.x
+* Det du skriver JS i
+
+???
+
+## Sublime, Atom etc
+
+---
+
+class: cols two
+
+# Utviklingsmiljø!
+
+.col[
+## React Native kommer med Packager
+## Oppdateringer med ⌘-R
+## Debugging i Chrome
+## Tydelige feilmeldinger
+]
+
+.col[
+.small-img[![](img/ReactNative4.png)]
+]
+
+???
+
+## Packager bygger appen, og står i bakgrunnen og venter på endringer.
+## Noe av det mange sliter med er utviklingsmiljø. Mange som ikke Liker XCode
+## Kan kjøre opp i Chromes V8 og bruke vanlig debugger
+---
+
+class: middle center
+
+# KODE
+
+---
+
+
+# Remote deploy av JS?
+
+## AppHub, CodePush
+## I henhold til Apple guidelines
+
+> ... The only exceptions to the
+foregoing are scripts and code downloaded and run by Apple's built-in WebKit framework or
+JavascriptCore, provided that such scripts and code do not change the primary purpose of the
+Application ...
+???
+
+## Kjører på JSC, og guidelines understreker at det kan bli endret etter appen er releaset
+
+---
+
+# Linker
+
+## https://facebook.github.io/react-native/docs/getting-started.html
+## https://github.com/bekk/BekkMobileIntern/tree/master/ios/BekkAnsattRN
+
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script src="node_modules/remark-bekk/vendor/remark.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      var slideshow = remark.create({
+        ratio: '16:9',
+        highlightStyle: 'monokai'
+      });
+    </script>
+  </body>
+</html>
