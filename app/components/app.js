@@ -9,13 +9,12 @@ import React, {
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-
-
+import StartPage from './start-page';
 
 class App extends Component {
   render() {
     return (
-      <View style={styles.container}><Text>React Native Workshop</Text></View>
+      <StartPage />
     );  
   }
 }
@@ -30,3 +29,4 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+    
