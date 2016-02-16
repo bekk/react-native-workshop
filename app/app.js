@@ -49,16 +49,18 @@ class App extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <ToolbarAndroid
-            actions={toolbarActions}
-            onActionSelected={this._onActionSelected}
-            style={styles.toolbar}
-            subtitle={this.state.actionText}
-            title="React native workshop" />
-          {this._renderPage()}
-      </View>
-    );  
+      <Provider store={store}>
+        <View style={styles.container}>
+          <ToolbarAndroid
+              actions={toolbarActions}
+              onActionSelected={this._onActionSelected}
+              style={styles.toolbar}
+              subtitle={this.state.actionText}
+              title="React native workshop" />
+            {this._renderPage()}
+        </View>
+      </Provider>
+    );
   }
 }
 
