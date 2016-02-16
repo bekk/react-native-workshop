@@ -11,11 +11,12 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 
+
 class App extends Component {
   render() {
     return (
       <View style={styles.container}><Text>React Native Workshop</Text></View>
-    );
+    );  
   }
 }
 
