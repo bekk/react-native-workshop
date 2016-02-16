@@ -2,31 +2,31 @@
 import React, {
   AppRegistry,
   Component,
-  StyleSheet,
-  Text,
-  View
 } from 'react-native';
+
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
+import rnWorkshop from './reducers';
+const store = createStore(rnWorkshop);
 
+import MessageInput from './message-input'
 
 class App extends Component {
+
+  constructor() {
+    super();
+  }
+
   render() {
     return (
-      <View style={styles.container}><Text>React Native Workshop</Text></View>
-    );  
+      <Provider store={store}>
+        <MessageInput />
+      </Provider>
+    );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  }
-});
 
 export default App;
