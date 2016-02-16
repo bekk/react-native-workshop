@@ -10,6 +10,8 @@ export const setMessage = message => ({ type: SET_MESSAGE, message });
 export const setUsername = username => ({ type: SET_USER_NAME, username });
 export const setView = viewName => ({ type: SET_VIEW, viewName });
 export const setMessages = messages => ({ type: SET_MESSAGES, messages});
+export const setFetchMessages = () => ({type: FETCH_MESSAGE});
+export const setFetchMessagesFailed = () => ({type: FETCH_MESSAGE_FAILED});
 
 const parseJSON = (response) => response.json();
 
@@ -21,7 +23,8 @@ export const fetchMessages = (dispatch) => {
     })
     .catch((error) => {
       console.warn(error);
+      dispatch(setFetchMessagesFailed());
     });
 
-    return ({type: FETCH_MESSAGE});
+    return setFetchMessages();
 }
