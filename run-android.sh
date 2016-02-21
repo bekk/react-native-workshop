@@ -2,6 +2,7 @@
 
 BLUE="\033[94m"
 GREY="\033[90m"
+RED="\033[31m"
 RESET="\033[0m"
 
 function separator {
@@ -23,6 +24,10 @@ function info {
 	echo -e $GREY$1$RESET
 }
 
+function error {
+	echo -e $RED$1$RESET
+}
+
 function sjekkLaunchAgentsRettigheter {
 	harKorrekteRettigheter=$(ls -la "/Users/${USER}/Library" | grep LaunchAgents | grep "${USER}")
 
@@ -36,7 +41,7 @@ function sjekkLaunchAgentsRettigheter {
 
 function sjekkAndroidHome {
 	if [ -z "$ANDROID_HOME" ]; then
-		info "ANDROID_HOME miljøvariabel er ikke satt, legg følgende i .bashrc/.bash_profile".
+		error "ANDROID_HOME miljøvariabel er ikke satt, legg følgende i .bashrc/.bash_profile".
 		info "	export ANDROID_HOME=~/ANDROID_HOME"
 		info "	export PATH=\$ANDROID_HOME/platform-tools:\$PATH"
 		info "	export PATH=\$ANDROID_HOME/tools:\$PATH"
@@ -48,10 +53,20 @@ function sjekkAndroidHome {
 
 function sjekkHarReactNative {
 	if [ -z "$(which react-native)" ]; then
-		info "react-native ikke innstallert globale"
+		error "react-native ikke innstallert globale"
 		exit 1
 	else
 		info "react-native satt opp globalt"
+	fi
+}
+
+function sjekkEmulatorKjorer {
+	devices=$(adb devices | wc -l)
+	if [[ $devices == *"2"* ]]; then
+		error "Fant ingen kjørende device"
+		exit 1
+	else
+		info "Fant kjørende device"
 	fi
 }
 
@@ -59,6 +74,7 @@ header "Sjekker oppsett"
 sjekkHarReactNative
 sjekkAndroidHome
 sjekkLaunchAgentsRettigheter
+sjekkEmulatorKjorer
 line
 
 header "Starter react native"
