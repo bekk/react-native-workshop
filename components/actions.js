@@ -13,7 +13,6 @@ export const setMessages = messages => ({ type: SET_MESSAGES, messages});
 export const setFetchMessages = () => ({type: FETCH_MESSAGE});
 export const setFetchMessagesFailed = () => ({type: FETCH_MESSAGE_FAILED});
 
-
 const parseJSON = (response) => response.json();
 
 export const fetchMessages = (dispatch) => {
@@ -24,14 +23,8 @@ export const fetchMessages = (dispatch) => {
     })
     .catch((error) => {
       console.warn(error);
-<<<<<<< HEAD
       dispatch(setFetchMessagesFailed());
     });
 
     return setFetchMessages();
-=======
-    });
-
-    return ({type: FETCH_MESSAGE});
->>>>>>> ae7d23be10671dfe03dc8110e1917f946e546755
 }
