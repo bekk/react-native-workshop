@@ -5,8 +5,7 @@ import React, {
 	Image
 } from 'react-native';
 
-function message(rowData, sectionID, rowID) {
-
+export const Message = (rowData, sectionID, rowID) => {
 
   return (
     <View style={styles.container}>
@@ -57,5 +56,3 @@ const styles = {
      marginBottom: 5
    }
 };
-
-export default message;

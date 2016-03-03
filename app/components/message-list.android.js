@@ -9,7 +9,7 @@ import React, {
 } from 'react-native';
 
 import ColoredFab from './colored-fab';
-import Message from './message';
+import { Message } from './message';
 
 const fixture = [
   {id: 1, from: 'Ola folkestad', text: 'Wtf mate, ballene på bordet'},

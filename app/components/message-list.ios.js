@@ -9,7 +9,7 @@ import React, {
   Image
 } from 'react-native';
 
-import Message from './message'
+import { Message } from './message'
 
 const DSConfig = new ListView.DataSource({rowHasChanged: (r1, r2) => r1.id !== r2.id});
 
