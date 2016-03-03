@@ -1,4 +1,4 @@
-import { baseURL, imgurURL } from '../config/config'
+import messages from '../network/messages'
 
 export const SET_USER_NAME = 'SET_USER_NAME';
 export const SET_MESSAGE = 'SET_MESSAGE';
@@ -20,77 +20,23 @@ const setFetchMessagesFailed = () => ({type: FETCH_MESSAGE_FAILED});
 const setPostingMessage = () => ({type: POST_MESSAGE});
 const setPostMessageFailed = () => ({type: POST_MESSAGE_FAILED});
 
-const parseJSON = (response) => response.json();
-const getPostMessageConfig = json => {
-  return {
-    method: 'POST',
-    body: JSON.stringify(json),
-    mode: 'cors',
-    cache: 'default'
-  };
-}
 
 export const fetchMessages = (dispatch) => {
-  fetch(baseURL + 'message')
-    .then(parseJSON)
-    .then((json) => {
-      dispatch(setMessages(json));
-    })
-    .catch((error) => {
-      console.warn(error);
-      dispatch(setFetchMessagesFailed());
-    });
+  messages.get(
+    (json) => { dispatch(setMessages(json)) },
+    () => { dispatch(setFetchMessagesFailed()) }
+  );
 
-    return setFetchMessages();
-}
+  return setFetchMessages();
+};
 
 
 export const postMessage = (dispatch, message) => {
-  console.log('Message', message);
-  uploadImageToImgur().then((url) => {
-    const json = Object.assign({}, message, { url: url });
-    const config = getPostMessageConfig(json);
-
-    fetch(baseURL + 'message', config)
-      .then(parseJSON)
-      .then(json => {
-        console.log('success post message', Object.assign({}, json, message));
-        dispatch(setMessage(Object.assign({}, json, message)));
-      })
-      .catch(error => {
-        console.warn(error);
-        dispatch(setPostMessageFailed());
-      });
-  }).catch(error => {
-    console.warn(error);
-  })
+  messages.post(
+    message,
+    (json) => { dispatch(setMessage(Object.assign({}, json, message))); },
+    () => { dispatch(setPostMessageFailed()); }
+  );
 
   return setPostingMessage();
-}
-
-const uploadImageToImgur = (image) => {
-  return new Promise((resolve, reject) => {
-    _uploadImageToImgur(resolve, reject, image);
-  });
-}
-
-const _uploadImageToImgur = (resolve, reject, image) => {
-  const config = {
-    method: 'POST',
-    body: image,
-    headers: {
-      'Authorization' : 'Client-ID 7362bd404ecd0c1'
-    },
-    mode: 'cors',
-    cache: 'default'
-  };
-
-  fetch(imgurURL, config)
-    .then(parseJSON)
-    .then(json => {
-      resolve('http://imgur.com/' + json.data.id);
-    })
-    .catch(error => {
-      reject();
-    });
 }
