@@ -8,14 +8,14 @@ import React, {
 function Message(rowData, sectionID, rowID) {
   const maybeRenderImage = source => {
     if (source !== undefined) {
-      return <Image source={{uri: source}} />
+      return <Image style={styles.thumb} source={{uri: source}} />
     }
   }
 
   return (
     <View style={styles.container}>
       <View style={styles.row}>
-        <Text style={styles.username}>
+        <Text style={styles.from}>
           {rowData.from}
         </Text>
         <Text style={styles.message}>
@@ -49,7 +49,7 @@ const styles = {
      flex: 1,
      color: '#FFFFFF'
    },
-   username: {
+   from: {
      flex: 1,
      color: '#DDDDDD',
      marginBottom: 5

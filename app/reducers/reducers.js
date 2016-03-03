@@ -22,8 +22,9 @@ function messageReducer(state = initialState, action) {
       });
 
     case SET_MESSAGE:
+      state.messages.push(action.message);
       return Object.assign({}, state, {
-         messages: state.messages.push(action.message) || [action.message],
+         messages: state.messages,
          isFetchingMessages: false,
          failedToFetchMessages: false
        });

@@ -1,3 +1,5 @@
+import { baseURL, imgurURL } from '../config/config'
+
 export const SET_USER_NAME = 'SET_USER_NAME';
 export const SET_MESSAGE = 'SET_MESSAGE';
 export const SET_VIEW = 'SET_VIEW';
@@ -8,7 +10,7 @@ export const FETCH_MESSAGE_FAILED = 'FETCH_MESSAGE_FAILED';
 export const POST_MESSAGE = 'POST_MESSAGE';
 export const POST_MESSAGE_FAILED = 'POST_MESSAGE_FAILED';
 
-export const setMessage = message => ({ type: SET_MESSAGE, message: message });
+export const setMessage = message => ({ type: SET_MESSAGE, message });
 export const setUsername = username => ({ type: SET_USER_NAME, username });
 export const setView = viewName => ({ type: SET_VIEW, viewName });
 
@@ -29,10 +31,9 @@ const getPostMessageConfig = json => {
 }
 
 export const fetchMessages = (dispatch) => {
-  fetch('http://mobile-course.herokuapp.com/message')
+  fetch(baseURL + 'message')
     .then(parseJSON)
     .then((json) => {
-      console.log(json);
       dispatch(setMessages(json));
     })
     .catch((error) => {
@@ -47,16 +48,14 @@ export const fetchMessages = (dispatch) => {
 export const postMessage = (dispatch, message) => {
   console.log('Message', message);
   uploadImageToImgur().then((url) => {
-    console.log('postMessage');
-
     const json = Object.assign({}, message, { url: url });
     const config = getPostMessageConfig(json);
 
-    fetch('http://mobile-course.herokuapp.com/message', config)
+    fetch(baseURL + 'message', config)
       .then(parseJSON)
       .then(json => {
-        console.log('success post message', json, message);
-        dispatch(setMessage(message));
+        console.log('success post message', Object.assign({}, json, message));
+        dispatch(setMessage(Object.assign({}, json, message)));
       })
       .catch(error => {
         console.warn(error);
@@ -86,7 +85,7 @@ const _uploadImageToImgur = (resolve, reject, image) => {
     cache: 'default'
   };
 
-  fetch('https://api.imgur.com/3/image', config)
+  fetch(imgurURL, config)
     .then(parseJSON)
     .then(json => {
       resolve('http://imgur.com/' + json.data.id);

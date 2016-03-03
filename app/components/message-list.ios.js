@@ -27,7 +27,6 @@ export default class MessageList extends Component {
 
   render() {
     let messages = this.props.messages.filter(validateMessage).reverse();
-
     let dataSource = this.getDataSource(messages);
 
     return (

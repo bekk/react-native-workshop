@@ -24,11 +24,10 @@ class ListMessagesContainer extends Component {
   constructor(props) {
     super(props);
     this.props.fetchMessages();
-    // this.props.postMessage({message: 'Shalalalla aaaaa vi pisse på ARSENAL!', from: 'Lomis the KING!'});
+    this.props.postMessage({message: 'Shalalalla aaaaa vi pisse på ARSENAL!', from: 'Lomis the KING!'});
   }
 
   render() {
-    console.log(this.props)
     if (this.props.isFetchingMessages) {
       return <ActivityIndicatorView />
     }
