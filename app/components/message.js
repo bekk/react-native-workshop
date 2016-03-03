@@ -5,12 +5,8 @@ import React, {
 	Image
 } from 'react-native';
 
-function Message(rowData, sectionID, rowID) {
-  const maybeRenderImage = source => {
-    if (source !== undefined) {
-      return <Image style={styles.thumb} source={{uri: source}} />
-    }
-  }
+function message(rowData, sectionID, rowID) {
+
 
   return (
     <View style={styles.container}>
@@ -26,6 +22,12 @@ function Message(rowData, sectionID, rowID) {
       <View style={styles.separator} />
     </View>
   );
+}
+
+const maybeRenderImage = source => {
+	if (source !== undefined) {
+		return <Image style={styles.thumb} source={{uri: source}} />
+	}
 }
 
 const styles = {
@@ -56,4 +58,4 @@ const styles = {
    }
 };
 
-export default Message;
+export default message;

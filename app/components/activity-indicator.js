@@ -1,28 +1,21 @@
 'use strict';
 
 import React, {
-  AppRegistry,
-  Component,
-  StyleSheet,
-  Text,
   View,
-  Navigator,
-  ActivityIndicatorIOS
+  ActivityIndicatorIOS,
+  StyleSheet
 } from 'react-native';
 
-export default class ActivityIndicatorView extends Component {
-
-  render() {
-    return (
-        <View style={styles.container}>
-          <ActivityIndicatorIOS
-              animating={true}
-              style={{height: 80}}
-              size="large"
-          />
-        </View>
-    );
-  }
+export const ActivityIndicator = () => {
+  return (
+      <View style={styles.container}>
+        <ActivityIndicatorIOS
+            animating={true}
+            style={{height: 80}}
+            size="large"
+        />
+      </View>
+  );
 }
 
 const styles = StyleSheet.create({

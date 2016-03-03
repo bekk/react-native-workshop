@@ -16,7 +16,7 @@ import { connect } from 'react-redux';
 
 import MessageList from './message-list';
 import { fetchMessages, postMessage } from '../actions/actions';
-import ActivityIndicatorView from './activity-indicator';
+import { ActivityIndicator } from './activity-indicator';
 import ErrorMessage from './error-message'
 
 class ListMessagesContainer extends Component {
@@ -29,7 +29,7 @@ class ListMessagesContainer extends Component {
 
   render() {
     if (this.props.isFetchingMessages) {
-      return <ActivityIndicatorView />
+      return <ActivityIndicator />
     }
     else if (this.props.failedToFetchMessages) {
       return <ErrorMessage />
