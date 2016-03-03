@@ -21,14 +21,18 @@ export default class MessageList extends Component {
     };
   }
 
+  getDataSource(messages) {
+    return this.state.dateSource.cloneWithRows(messages);
+  }
+
   render() {
     let messages = this.props.messages.map(message => message).reverse();
-    messages = this.state.dateSource.cloneWithRows(messages);
+    let dataSource = this.getDataSource(messages);
 
     return (
       <ListView
         style={styles.container}
-        dataSource={messages}
+        dataSource={dataSource}
         renderRow={Message}
       />
     )
