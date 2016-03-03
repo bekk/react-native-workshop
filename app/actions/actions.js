@@ -32,6 +32,7 @@ export const fetchMessages = (dispatch) => {
   fetch('http://mobile-course.herokuapp.com/message')
     .then(parseJSON)
     .then((json) => {
+      console.log(json);
       dispatch(setMessages(json));
     })
     .catch((error) => {

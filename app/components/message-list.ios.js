@@ -11,13 +11,13 @@ import React, {
 
 import Message from './message'
 
+const DSConfig = new ListView.DataSource({rowHasChanged: (r1, r2) => r1.id !== r2.id});
+
 export default class MessageList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dateSource: new ListView.DataSource({
-        rowHasChanged: (r1, r2) => r1 !== r2
-      })
+      dateSource: DSConfig
     };
   }
 
@@ -27,13 +27,17 @@ export default class MessageList extends Component {
 
     return (
       <ListView
-        style={{flex: 1, marginBottom: 500}}
+        style={styles.container}
         dataSource={messages}
         renderRow={Message}
       />
     )
   }
 }
+
+MessageList.propTypes = {
+  messages: React.PropTypes.array
+};
 
 const styles = StyleSheet.create({
   container: {
