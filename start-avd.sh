@@ -30,7 +30,7 @@ header "Sjekker ANDROID_HOME"
 sjekkAndroidHome
 
 header "Starter android avd"
-bash $ANDROID_HOME/tools/android avd
+bash "$ANDROID_HOME/tools/android" avd
 line
 line
 
