@@ -2,7 +2,8 @@
 
 import React, {
   Component,
-  ListView
+  ListView,
+  RefreshControl
 } from 'react-native';
 
 import { Message } from './message'
@@ -28,10 +29,25 @@ export default class MessageList extends Component {
     return (
       <ListView
         style={{ flex: 1 }}
+        refreshControl={
+          <RefreshControl
+            refreshing={this.props.refreshing}
+            onRefresh={this._onRefresh.bind(this)}
+            tintColor="#ff0000"
+            title="Laster..."
+            colors={ ['#ff0000', '#00ff00', '#0000ff'] }
+            progressBackgroundColor="#ffff00"
+          />
+        }
         dataSource={dataSource}
         renderRow={Message}
       />
     )
+  }
+
+  _onRefresh() {
+    console.log('_onRefresh');
+    this.props.refreshView();
   }
 }
 
