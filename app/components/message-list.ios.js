@@ -26,7 +26,8 @@ export default class MessageList extends Component {
   }
 
   render() {
-    let messages = this.props.messages.map(message => message).reverse();
+    let messages = this.props.messages.filter(validateMessage).reverse();
+
     let dataSource = this.getDataSource(messages);
 
     return (
@@ -37,6 +38,10 @@ export default class MessageList extends Component {
       />
     )
   }
+}
+
+const validateMessage = message => {
+  return message.message && message.message.length > 0
 }
 
 MessageList.propTypes = {
