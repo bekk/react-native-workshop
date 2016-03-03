@@ -1,36 +1,63 @@
 'use strict';
+
 import React, {
 	View,
-  	Text
+  Text,
+	Image
 } from 'react-native';
 
-function Message({id, from, text}) {
-	return (
-			<View style={styles.container} >
-				<View style={styles.from}>
-					<Text style={styles.bold} >From: </Text>
-					<Text>{from}</Text>
-				</View>
-				<View style={styles.from}>
-					<Text style={styles.bold} >Msg: </Text>
-					<Text>{text}</Text>
-				</View>
-			</View>
-		);
+export const Message = (rowData, sectionID, rowID) => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.row}>
+        <Text style={styles.from}>
+          {rowData.from}
+        </Text>
+        <Text style={styles.message}>
+          {rowData.message}
+        </Text>
+        { maybeRenderImage(rowData.image) }
+      </View>
+      <View style={styles.separator} />
+    </View>
+  );
 }
+
+const maybeRenderImage = source => {
+	if (source !== undefined) {
+		return <Image style={styles.thumb} source={{uri: source}} />
+	}
+}
+
+Message.propTypes = {
+  from: React.PropTypes.string,
+  message: React.PropTypes.string
+};
 
 const styles = {
 	container: {
-		padding: 10
-	},
-	from: {
-		flex: 1,
-		flexDirection: 'row'
-	},
-	bold: {
-		fontWeight: '600'
-	}
+    flex: 1,
+  },
+  row: {
+     flexDirection: 'column',
+     justifyContent: 'center',
+     padding: 16,
+   },
+   separator: {
+     height: 1,
+     backgroundColor: '#CCCCCC',
+   },
+   thumb: {
+     width: 64,
+     height: 64,
+   },
+   message: {
+     flex: 1,
+     color: '#FFFFFF'
+   },
+   from: {
+     flex: 1,
+     color: '#DDDDDD',
+     marginBottom: 5
+   }
 };
-
-export default Message;
-    

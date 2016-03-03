@@ -9,7 +9,7 @@ import React, {
 } from 'react-native';
 
 import ColoredFab from './colored-fab';
-import Message from './message';
+import { Message } from './message';
 
 const fixture = [
   {id: 1, from: 'Ola folkestad', text: 'Wtf mate, ballene på bordet'},
@@ -31,15 +31,14 @@ class MessagePage extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <ListView 
-          dataSource={this.state.dataSource} 
+        <ListView
+          dataSource={this.state.dataSource}
           renderRow={(data) => <Message {...data} />} />
         <ColoredFab>+</ColoredFab>
       </View>
-    );  
+    );
   }
 }
-
 
 const styles = {
   container: {

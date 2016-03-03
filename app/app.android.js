@@ -11,7 +11,7 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
-import rnWorkshop from './reducers';
+import rnWorkshop from './reducers/reducers';
 const store = createStore(rnWorkshop);
 
 import StartPage from './components/start-page';
