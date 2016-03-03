@@ -46,7 +46,6 @@ export default class MessageList extends Component {
   }
 
   _onRefresh() {
-    console.log('_onRefresh');
     this.props.refreshView();
   }
 }
