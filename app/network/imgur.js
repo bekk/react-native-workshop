@@ -1,3 +1,5 @@
+'use strict';
+
 export const uploadImageToImgur = (image) => {
   return new Promise((resolve, reject) => {
     _uploadImageToImgur(resolve, reject, image);

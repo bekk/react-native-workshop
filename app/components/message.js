@@ -1,4 +1,5 @@
 'use strict';
+
 import React, {
 	View,
   Text,
@@ -6,7 +7,6 @@ import React, {
 } from 'react-native';
 
 export const Message = (rowData, sectionID, rowID) => {
-
   return (
     <View style={styles.container}>
       <View style={styles.row}>
@@ -28,6 +28,11 @@ const maybeRenderImage = source => {
 		return <Image style={styles.thumb} source={{uri: source}} />
 	}
 }
+
+Message.propTypes = {
+  from: React.PropTypes.string,
+  message: React.PropTypes.string
+};
 
 const styles = {
 	container: {

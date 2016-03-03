@@ -1,3 +1,5 @@
+'use strict';
+
 import messages from '../network/messages'
 
 export const SET_USER_NAME = 'SET_USER_NAME';
@@ -14,11 +16,11 @@ export const setMessage = message => ({ type: SET_MESSAGE, message });
 export const setUsername = username => ({ type: SET_USER_NAME, username });
 export const setView = viewName => ({ type: SET_VIEW, viewName });
 
-const setMessages = messages => ({ type: SET_MESSAGES, messages});
-const setFetchMessages = () => ({type: FETCH_MESSAGE});
-const setFetchMessagesFailed = () => ({type: FETCH_MESSAGE_FAILED});
-const setPostingMessage = () => ({type: POST_MESSAGE});
-const setPostMessageFailed = () => ({type: POST_MESSAGE_FAILED});
+const setMessages = messages => ({ type: SET_MESSAGES, messages });
+const setFetchMessages = () => ({ type: FETCH_MESSAGE });
+const setFetchMessagesFailed = () => ({type: FETCH_MESSAGE_FAILED });
+const setPostMessage = () => ({ type: POST_MESSAGE });
+const setPostMessageFailed = () => ({ type: POST_MESSAGE_FAILED });
 
 
 export const fetchMessages = (dispatch) => {
@@ -38,5 +40,5 @@ export const postMessage = (dispatch, message) => {
     () => { dispatch(setPostMessageFailed()); }
   );
 
-  return setPostingMessage();
+  return setPostMessage();
 }

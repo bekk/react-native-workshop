@@ -1,3 +1,5 @@
+'use strict';
+
 import {
   SET_USER_NAME,
   SET_MESSAGE,
@@ -7,7 +9,7 @@ import {
   FETCH_MESSAGE_FAILED
 } from '../actions/actions';
 
-import initialState from './initial-state'
+import { initialState } from './initial-state'
 
 function messageReducer(state = initialState, action) {
   switch (action.type) {

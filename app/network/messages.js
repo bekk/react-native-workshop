@@ -1,3 +1,5 @@
+'use strict';
+
 import { baseURL, imgurURL } from '../config/config'
 import {uploadImageToImgur } from './imgur'
 
@@ -32,8 +34,6 @@ network.post = (message, success, failed) => {
   })
 }
 
-export default network;
-
 const parseJSON = (response) => response.json();
 
 const getPostMessageConfig = json => {
@@ -44,3 +44,5 @@ const getPostMessageConfig = json => {
     cache: 'default'
   };
 }
+
+export default network;

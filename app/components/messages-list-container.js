@@ -1,13 +1,8 @@
 'use strict';
 
 import React, {
-  AppRegistry,
   Component,
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  TouchableHighlight
+  View
 } from 'react-native';
 
 import { bindActionCreators } from 'redux';
@@ -17,14 +12,13 @@ import { connect } from 'react-redux';
 import MessageList from './message-list';
 import { fetchMessages, postMessage } from '../actions/actions';
 import { ActivityIndicator } from './activity-indicator';
-import ErrorMessage from './error-message'
+import { ErrorMessage } from './error-message'
 
 class ListMessagesContainer extends Component {
-
   constructor(props) {
     super(props);
     this.props.fetchMessages();
-    this.props.postMessage({message: 'Shalalalla aaaaa vi pisse på ARSENAL!', from: 'Lomis the KING!'});
+    this.props.postMessage({ message: 'Shalalalla aaaaa vi pisse på ARSENAL!', from: 'Lomis the KING!' });
   }
 
   render() {
@@ -56,6 +50,7 @@ const mapStateToProps = state => {
     messages: state.messages
   }
 }
+
 const mapDispatchToProps = dispatch => ({
   fetchMessages: () => dispatch(fetchMessages(dispatch)),
   postMessage: (message) => dispatch(postMessage(dispatch, message)),

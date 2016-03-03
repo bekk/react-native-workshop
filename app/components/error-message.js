@@ -1,11 +1,11 @@
+'use strict';
+
 import React, {
-  Text,
-  StyleSheet,
-  View,
+  Text
 } from 'react-native';
 
-export default MessageInput = () => (
-  <View style={{flow: 1}}>
-    <Text>Wuupsidaisy! Something went wrong while fetching messages</Text>
-  </View>
+export const ErrorMessage = () => (
+  <Text style={{ marginLeft: 16, marginTop: 50, color: 'red' }}>
+    Wuupsidaisy! Something went wrong while fetching messages
+  </Text>
 );

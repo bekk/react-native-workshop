@@ -2,11 +2,7 @@
 
 import React, {
   Component,
-  StyleSheet,
-  View,
-  Text,
-  ListView,
-  Image
+  ListView
 } from 'react-native';
 
 import { Message } from './message'
@@ -31,7 +27,7 @@ export default class MessageList extends Component {
 
     return (
       <ListView
-        style={styles.container}
+        style={{ flex: 1 }}
         dataSource={dataSource}
         renderRow={Message}
       />
@@ -46,32 +42,3 @@ const validateMessage = message => {
 MessageList.propTypes = {
   messages: React.PropTypes.array
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-  row: {
-     flexDirection: 'column',
-     justifyContent: 'center',
-     padding: 16,
-     backgroundColor: '#05A5D1',
-   },
-   separator: {
-     height: 1,
-     backgroundColor: '#CCCCCC',
-   },
-   thumb: {
-     width: 64,
-     height: 64,
-   },
-   message: {
-     flex: 1,
-     color: '#FFFFFF'
-   },
-   username: {
-     flex: 1,
-     color: '#DDDDDD',
-     marginBottom: 5
-   }
-});
