@@ -13,11 +13,10 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
-import rnWorkshop from './reducers';
+import rnWorkshop from './reducers/reducers';
 const store = createStore(rnWorkshop);
 
-import MessageInput from './message-input';
-import ListMessageContainer from './messages-list-container';
+import ListMessageContainer from './components/messages-list-container';
 
 function _renderScene(route, navigator) {
   const Component = route.component;

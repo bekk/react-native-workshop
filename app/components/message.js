@@ -1,42 +1,11 @@
 'use strict';
-
 import React, {
-  Component,
-  StyleSheet,
-  View,
+	View,
   Text,
-  ListView,
-  Image
+	Image
 } from 'react-native';
 
-export default class MessageList extends Component {
-
-  constructor(props) {
-    super(props);
-    this.dateSource = new ListView.DataSource({
-      rowHasChanged: (r1, r2) => r1 !== r2
-    });
-  }
-
-  render() {
-    let messages = this.props.messages.map(message => message);
-    messages = this.dateSource.cloneWithRows(messages);
-
-    return (
-      <ListView
-        style={{flex: 1, marginBottom: 500}}
-        dataSource={messages}
-        renderRow={renderRow}
-      />
-    )
-  }
-}
-
-function getDataSource(messages) {
-  return
-}
-
-function renderRow(rowData, sectionID, rowID) {
+function Message(rowData, sectionID, rowID) {
   const maybeRenderImage = source => {
     if (source !== undefined) {
       return <Image source={{uri: source}} />
@@ -44,7 +13,7 @@ function renderRow(rowData, sectionID, rowID) {
   }
 
   return (
-    <View>
+    <View style={styles.container}>
       <View style={styles.row}>
         <Text style={styles.username}>
           {rowData.from}
@@ -59,12 +28,14 @@ function renderRow(rowData, sectionID, rowID) {
   );
 }
 
-const styles = StyleSheet.create({
+const styles = {
+	container: {
+    flex: 1,
+  },
   row: {
      flexDirection: 'column',
      justifyContent: 'center',
      padding: 16,
-     backgroundColor: '#05A5D1',
    },
    separator: {
      height: 1,
@@ -83,4 +54,6 @@ const styles = StyleSheet.create({
      color: '#DDDDDD',
      marginBottom: 5
    }
-});
+};
+
+export default Message;

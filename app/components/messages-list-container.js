@@ -11,11 +11,11 @@ import React, {
 } from 'react-native';
 
 import { bindActionCreators } from 'redux';
-import * as messageActions from './actions';
+import * as messageActions from '../actions/actions';
 import { connect } from 'react-redux';
 
 import MessageList from './message-list';
-import { fetchMessages } from './actions';
+import { fetchMessages, postMessage } from '../actions/actions';
 import ActivityIndicatorView from './activity-indicator';
 import ErrorMessage from './error-message'
 
@@ -24,6 +24,7 @@ class ListMessagesContainer extends Component {
   constructor(props) {
     super(props);
     this.props.fetchMessages();
+    this.props.postMessage({message: 'Shalalalla aaaaa vi pisse på ARSENAL!', from: 'Lomis the KING!'});
   }
 
   render() {
@@ -35,17 +36,17 @@ class ListMessagesContainer extends Component {
     }
 
     return (
-      <View style={{backgroundColor: '#F5FCFF'}}>
+      <View style={{backgroundColor: '#05A5D1'}}>
         <MessageList messages={this.props.messages}/>
       </View>
     );
   }
 }
 
-
 const mapStateToProps = state => state;
 const mapDispatchToProps = dispatch => ({
-  fetchMessages: message => dispatch(fetchMessages(dispatch))
+  fetchMessages: () => dispatch(fetchMessages(dispatch)),
+  postMessage: (message) => dispatch(postMessage(dispatch, message)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListMessagesContainer);
