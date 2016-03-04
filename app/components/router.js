@@ -2,7 +2,7 @@ import React, { StyleSheet, View, Platform } from 'react-native';
 import { connect } from 'react-redux'
 
 import StartPage from './start-page'
-import MessageList from './message-list'
+import MessagesListContainer from './messages-list-container'
 import Toolbar from './toolbar'
 import { setMessage, setUsername, setView } from '../actions/actions'
 import ColoredFab from './colored-fab';
@@ -21,18 +21,13 @@ const Router = ({ viewName, navigator, ...props }) => {
 
 const chooseView = (viewName, navigator) => {
   switch (viewName) {
-    case 'messageList': return (props => <MessageList {...props} navigator={navigator}/>)
+    case 'messageList': return (props => <MessagesListContainer {...props} navigator={navigator}/>)
   }
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'flex-start'
-  },
-  toolbar: {
-    backgroundColor: '#FF5252',
-    height: 56
+    flex: 1
   }
 });
 
