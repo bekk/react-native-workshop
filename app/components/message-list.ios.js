@@ -2,7 +2,8 @@
 
 import React, {
   Component,
-  ListView
+  ListView,
+  RefreshControl
 } from 'react-native';
 
 import { Message } from './message'
@@ -17,21 +18,35 @@ export default class MessageList extends Component {
     };
   }
 
-  getDataSource(messages) {
+  _getDataSource(messages) {
     return this.state.dateSource.cloneWithRows(messages);
   }
 
   render() {
     let messages = this.props.messages.filter(validateMessage).reverse();
-    let dataSource = this.getDataSource(messages);
+    let dataSource = this._getDataSource(messages);
 
     return (
       <ListView
         style={{ flex: 1 }}
-        dataSource={dataSource}
-        renderRow={Message}
+        refreshControl={
+          <RefreshControl
+            refreshing={ this.props.refreshing }
+            onRefresh={ this._onRefresh.bind(this) }
+            tintColor="#ff0000"
+            title="Laster..."
+            colors={ ['#ff0000', '#00ff00', '#0000ff'] }
+            progressBackgroundColor="#ffff00"
+          />
+        }
+        dataSource={ dataSource }
+        renderRow={ Message }
       />
     )
+  }
+
+  _onRefresh() {
+    this.props.refreshView();
   }
 }
 

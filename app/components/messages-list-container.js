@@ -17,23 +17,28 @@ import { ErrorMessage } from './error-message'
 class ListMessagesContainer extends Component {
   constructor(props) {
     super(props);
-    this.props.fetchMessages();
+    this._refreshView()
     this.props.postMessage({ message: 'Shalalalla aaaaa vi pisse på ARSENAL!', from: 'Lomis the KING!' });
   }
 
   render() {
-    if (this.props.isFetchingMessages) {
-      return <ActivityIndicator />
-    }
-    else if (this.props.failedToFetchMessages) {
+    if (this.props.failedToFetchMessages) {
       return <ErrorMessage />
     }
 
     return (
-      <View style={{flex: 1, backgroundColor: '#05A5D1'}}>
-        <MessageList messages={this.props.messages}/>
+      <View style={{ flex: 1, backgroundColor: '#05A5D1' }}>
+        <MessageList
+          refreshing={ this.props.isFetchingMessages }
+          messages={ this.props.messages }
+          refreshView={ this._refreshView.bind(this) }
+        />
       </View>
     );
+  }
+
+  _refreshView() {
+    this.props.fetchMessages();
   }
 }
 
