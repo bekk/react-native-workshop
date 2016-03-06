@@ -33,7 +33,8 @@ class StartPage extends Component {
         const { postMessage } = this.props;
         return (
             <View style={styles.container}>
-                <TextInput placeholder="Name" value={this.state.from} onChangeT ext={(from) => this.setState({from})}/>
+                <TextInput placeholder="Name" value={this.state.from} onChangeText={(from) => this.setState({from})}/>
+
                 <Textarea style={styles.message} multiline placeholder="Message" value={this.state.message} onChangeText={(message) => this.setState({message})} />
                 <ColoredRaisedButton width={150} height={50} onPress={() => postMessage(this.state)}/>
             </View>
