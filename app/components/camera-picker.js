@@ -29,10 +29,14 @@ class CameraPicker extends Component {
 
   takePicture() {
     this.camera.capture()
-      .then((data) => console.log(data))
+      .then((pictureUrl) => this.props.onPictureTaken(pictureUrl))
       .catch(err => console.error(err));
   }
 }
+
+CameraPicker.propTypes = {
+  onPictureTaken: React.PropTypes.func.isRequired
+};
 
 const styles = StyleSheet.create({
   container: {
