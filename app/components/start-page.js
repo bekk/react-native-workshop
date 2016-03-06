@@ -33,8 +33,7 @@ class StartPage extends Component {
         const { postMessage } = this.props;
         return (
             <View style={styles.container}>
-                <Text style={styles.header}>React Native Workshop</Text>
-                <TextInput placeholder="Name" value={this.state.from} onChangeText={(from) => this.setState({from})}/>
+                <TextInput placeholder="Name" value={this.state.from} onChangeT ext={(from) => this.setState({from})}/>
                 <Textarea style={styles.message} multiline placeholder="Message" value={this.state.message} onChangeText={(message) => this.setState({message})} />
                 <ColoredRaisedButton width={150} height={50} onPress={() => postMessage(this.state)}/>
             </View>
@@ -45,14 +44,10 @@ class StartPage extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 10,
+    paddingTop: 50,
     justifyContent: 'flex-start',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-    padding: 20,
-  },
-  header: {
-    fontSize: 30,
-    fontWeight: '600'
+    alignItems: 'center'
   }
 });
 

@@ -9,7 +9,7 @@ import React, {
 import { MKButton, MKColor } from 'react-native-material-kit';
 
 const AccentColoredFab = MKButton.coloredFab()
-  .withBackgroundColor(MKColor.Red)
+  .withBackgroundColor('#da4336')
   .build();
 
 const localStyles = {

@@ -32,30 +32,34 @@ class MessagePage extends Component {
         this.props.refreshView();
     }
 
+    _goto() {
+        this.props.navigator.push({name: 'NewView', component: StartPage, title: 'Skriv ny'});
+    }
+
     render() {
         let messages = this.props.messages.filter(validateMessage).reverse();
         let dataSource = this._getDataSource(messages);
+
+        const refreshControll = (
+            <RefreshControl
+                refreshing={ this.props.refreshing }
+                onRefresh={ this._onRefresh.bind(this) }
+                tintColor="#ff0000"
+                title="Laster..."
+                colors={ ['#ff0000', '#00ff00', '#0000ff'] }
+                progressBackgroundColor="#fff"
+            />
+        );
 
         return (
             <View style={{flex: 1}}>
                 <ListView
                     style={{ flex: 1 }}
-                    refreshControl={
-          <RefreshControl
-            refreshing={ this.props.refreshing }
-            onRefresh={ this._onRefresh.bind(this) }
-            tintColor="#ff0000"
-            title="Laster..."
-            colors={ ['#ff0000', '#00ff00', '#0000ff'] }
-            progressBackgroundColor="#ffff00"
-          />
-        }
+                    refreshControl={refreshControll}
                     dataSource={ dataSource }
                     renderRow={ Message }
                 />
-                <ColoredFab onPress={() => {
-                    this.props.navigator.push({name: 'NewView', component: StartPage});
-                }}>+</ColoredFab>
+                <ColoredFab onPress={this._goto.bind(this)}>+</ColoredFab>
             </View>
         )
     }
