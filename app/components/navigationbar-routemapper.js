@@ -6,7 +6,18 @@ import React, {
     Image
 } from 'react-native';
 
+import { MKButton, MKColor } from 'react-native-material-kit';
+
 import BackArrow from './../resources/back-arrow.png';
+
+const SendButton = MKButton.flatButton()
+    .withText('Send')
+    .withBackgroundColor(MKColor.Transparent)
+    .withMaskColor(MKColor.Transparent)
+    .withRippleColor('rgba(255, 255, 255, 0.2)')
+    .withTextStyle({ color: 'white' })
+    .build();
+
 
 var styles = StyleSheet.create({
     navBarText: {
@@ -26,15 +37,21 @@ var styles = StyleSheet.create({
         height: 50
     },
     navBarRightButton: {
-        paddingRight: 10
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        top: 0,
+        right: 0,
+        height: 50
     },
-    navBarButtonText: {
+    navBarRightText: {
+        top: -3,
         color: '#ffffff'
     }
 });
 
 const NavigationBarRouteMapper = {
-    LeftButton: function(route, navigator, index, navState) {
+    LeftButton: function (route, navigator, index, navState) {
         if (index === 0) {
             return null;
         }
@@ -44,16 +61,23 @@ const NavigationBarRouteMapper = {
             <TouchableOpacity
                 onPress={() => navigator.pop()}
                 style={styles.navBarLeftButton}>
-                <Image source={BackArrow} style={styles.navBarLeftImage} />
+                <Image source={BackArrow} style={styles.navBarLeftImage}/>
             </TouchableOpacity>
         );
     },
 
-    RightButton: function(route, navigator, index, navState) {
+    RightButton: function (route, navigator, index, navState) {
+        if (route && route.title === 'Skriv ny') {
+            return (
+                <TouchableOpacity style={styles.navBarRightButton}>
+                    <SendButton style={{padding: 15, top: -3}}/>
+                </TouchableOpacity>
+            );
+        }
         return null;
     },
 
-    Title: function(route, navigator, index, navState) {
+    Title: function (route, navigator, index, navState) {
         return (
             <Text style={[styles.navBarText, styles.navBarTitleText]}>
                 {route.title}
@@ -61,5 +85,6 @@ const NavigationBarRouteMapper = {
         );
     }
 };
+
 
 export default NavigationBarRouteMapper;
