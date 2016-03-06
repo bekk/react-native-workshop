@@ -32,6 +32,7 @@ class ListMessagesContainer extends Component {
           refreshing={ this.props.isFetchingMessages }
           messages={ this.props.messages }
           refreshView={ this._refreshView.bind(this) }
+          navigator={this.props.navigator}
         />
       </View>
     );

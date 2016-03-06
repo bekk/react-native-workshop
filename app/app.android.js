@@ -1,10 +1,8 @@
 'use strict';
 import React, {
-  Component,
-  StyleSheet,
-  Text,
-  View,
-  ToolbarAndroid
+    Component,
+    Navigator,
+    BackAndroid
 } from 'react-native';
 
 import { createStore, applyMiddleware, combineReducers } from 'redux';
@@ -14,65 +12,50 @@ import thunk from 'redux-thunk';
 import rnWorkshop from './reducers/reducers';
 const store = createStore(rnWorkshop);
 
-import StartPage from './components/start-page';
-import MessageList from './components/message-list';
+import ListMessageContainer from './components/messages-list-container';
 
-var toolbarActions = [
-  {title: 'New', show: 'always'},
-  {title: 'List', show: 'always'},
-  {title: 'Settings'}
-];
-
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      actionText: 'List'
-    };
-
-    this._onActionSelected = this._onActionSelected.bind(this);
-  }
-
-  _onActionSelected(position) {
-    this.setState({
-      actionText: toolbarActions[position].title,
-    });
-  }
-
-  _renderPage() {
-    if (this.state.actionText !== 'List') {
-      return <StartPage />;
-    } else {
-      return <MessageList />;
-    }
-  }
-
-  render() {
-    return (
-      <Provider store={store}>
-        <View style={styles.container}>
-          <ToolbarAndroid
-              actions={toolbarActions}
-              onActionSelected={this._onActionSelected}
-              style={styles.toolbar}
-              subtitle={this.state.actionText}
-              title="React native workshop" />
-            {this._renderPage()}
-        </View>
-      </Provider>
-    );
-  }
+function _renderScene(route, navigator) {
+    const Component = route.component;
+    return <Component {...this.props} navigator={navigator}/>
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'flex-start'
-  },
-  toolbar: {
-    backgroundColor: '#FF5252',
-    height: 56
-  }
-});
+class App extends Component {
+    constructor(props) {
+        super(props);
+
+        this._handleBackbutton = this._handleBackbutton.bind(this);
+
+    }
+    _handleBackbutton() {
+        const navigator = this.refs.navigator;
+
+        if (navigator.getCurrentRoutes().length === 1) {
+            return false;
+        }
+
+        navigator.pop();
+        return true;
+    }
+
+    componentDidMount() {
+        BackAndroid.addEventListener('hardwareBackPress', this._handleBackbutton);
+    }
+
+    componentWillUnmount() {
+        BackAndroid.removeEventListener('hardwareBackPress', this._handleBackbutton);
+    }
+
+    render() {
+        return (
+            <Provider store={store}>
+                <Navigator
+                    ref="navigator"
+                    initialRoute={{ component: ListMessageContainer}}
+                    renderScene={_renderScene}
+                />
+            </Provider>
+        );
+    }
+}
 
 export default App;

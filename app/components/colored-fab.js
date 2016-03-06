@@ -32,11 +32,11 @@ const localStyles = {
   }
 };
 
-function ColoredFab({styles = {}, children}) {
+function ColoredFab({styles = {}, children, ...props}) {
 	const mFab = Object.assign({}, localStyles.fab, styles.fab || {});
 	const mFabText = Object.assign({}, localStyles.fabText, styles.fabText || {});
 	return (
-			<AccentColoredFab style={mFab}>
+			<AccentColoredFab style={mFab} {...props}>
 	          <Text style={mFabText}>{children}</Text>
 	        </AccentColoredFab>
 		);
