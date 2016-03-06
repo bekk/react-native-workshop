@@ -2,8 +2,11 @@
 import React, {
     StyleSheet,
     Text,
-    TouchableOpacity
+    TouchableOpacity,
+    Image
 } from 'react-native';
+
+import BackArrow from './../resources/back-arrow.png';
 
 var styles = StyleSheet.create({
     navBarText: {
@@ -13,10 +16,14 @@ var styles = StyleSheet.create({
     navBarTitleText: {
         color: '#ffffff',
         fontWeight: '500',
-        marginVertical: 16
+        marginVertical: 20
     },
     navBarLeftButton: {
-        paddingLeft: 10
+        paddingLeft: 0
+    },
+    navBarLeftImage: {
+        width: 50,
+        height: 50
     },
     navBarRightButton: {
         paddingRight: 10
@@ -37,9 +44,7 @@ const NavigationBarRouteMapper = {
             <TouchableOpacity
                 onPress={() => navigator.pop()}
                 style={styles.navBarLeftButton}>
-                <Text style={[styles.navBarText, styles.navBarButtonText]}>
-                    Tilbake
-                </Text>
+                <Image source={BackArrow} style={styles.navBarLeftImage} />
             </TouchableOpacity>
         );
     },
