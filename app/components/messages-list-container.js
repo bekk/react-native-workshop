@@ -20,12 +20,9 @@ class ListMessagesContainer extends Component {
   }
 
   render() {
-    console.log('render ListMessagesContainer');
     if (this.props.failedToFetchMessages) {
-      console.log("failed");
       return <ErrorMessage />
     }
-    console.log("ok");
 
     return (
       <View style={{ flex: 1, backgroundColor: '#05A5D1' }}>
