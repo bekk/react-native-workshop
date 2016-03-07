@@ -9,11 +9,12 @@ import ColoredFab from './colored-fab';
 
 const Router = ({ viewName, navigator, ...props }) => {
   navigator = wrapNavigator(navigator);
-  const ChosenView = chooseView(viewName, navigator)
+  const ChosenView = chooseView(viewName, navigator);
+  console.log('wrapNavigator');
   return (
     <View style={styles.container}>
       <Toolbar actionText='hello' navigator={navigator}/>
-      <ChosenView {...props}/>
+      <MessagesListContainer {...props} navigator={navigator}/>
       { Platform.OS === 'android' ? <ColoredFab>+</ColoredFab> : null }
     </View>
   );
