@@ -15,16 +15,17 @@ import { ActivityIndicator } from './activity-indicator';
 import { ErrorMessage } from './error-message'
 
 class ListMessagesContainer extends Component {
-  constructor(props) {
-    super(props);
-    this._refreshView()
-    this.props.postMessage({ message: 'Shalalalla aaaaa vi pisse på ARSENAL!', from: 'Lomis the KING!' });
+  componentWillMount() {
+    this._refreshView();
   }
 
   render() {
+    console.log('render ListMessagesContainer');
     if (this.props.failedToFetchMessages) {
+      console.log("failed");
       return <ErrorMessage />
     }
+    console.log("ok");
 
     return (
       <View style={{ flex: 1, backgroundColor: '#05A5D1' }}>
