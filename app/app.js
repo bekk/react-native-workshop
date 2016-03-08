@@ -1,10 +1,5 @@
 'use strict';
-import React, { Component, Navigator, Platform, BackAndroid } from 'react-native';
-import StatusBar from 'react-native-android-statusbar';
-
-if (Platform.OS === 'android') {
-  StatusBar.setHexColor('#b93221');
-}
+import React, { Component, Navigator, Platform, BackAndroid, StatusBar, View } from 'react-native';
 
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
@@ -40,7 +35,10 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <CustomNavigator ref="navigator" />
+        <View style={{flex: 1}}>
+          <StatusBar backgroundColor="#b93221"/>
+          <CustomNavigator ref="navigator" />
+        </View>
       </Provider>
     );
   }
