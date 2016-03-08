@@ -2,7 +2,8 @@
 
 import React, {
   Component,
-  View
+  View,
+  Platform
 } from 'react-native';
 
 import { bindActionCreators } from 'redux';
@@ -25,6 +26,13 @@ class ListMessagesContainer extends Component {
     this.props.navigator.push({component: StartPage, title: 'Skriv ny'});
   }
 
+  _shouldRenderFabulousAndroidUI() {
+    if (Platform.OS === 'android') {
+      return <ColoredFab onPress={this._goto.bind(this)}>+</ColoredFab>
+    }
+    return null;
+  }
+
   render() {
     if (this.props.failedToFetchMessages) {
       return <ErrorMessage />
@@ -38,7 +46,7 @@ class ListMessagesContainer extends Component {
           refreshView={ this._refreshView.bind(this) }
           navigator={this.props.navigator}
         />
-        <ColoredFab onPress={this._goto.bind(this)}>+</ColoredFab>
+        {this._shouldRenderFabulousAndroidUI()}
       </View>
     );
   }
