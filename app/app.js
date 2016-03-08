@@ -30,11 +30,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    BackAndroid.addEventListener('hardwareBackPress', this._handleBackbutton);
+    BackAndroid.addEventListener('hardwareBackPress', this._handleBackbutton.bind(this));
   }
 
   componentWillUnmount() {
-    BackAndroid.removeEventListener('hardwareBackPress', this._handleBackbutton);
+    BackAndroid.removeEventListener('hardwareBackPress', this._handleBackbutton.bind(this));
   }
 
   render() {
