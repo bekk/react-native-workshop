@@ -15,7 +15,7 @@ import ColoredFab from './colored-fab';
 import { fetchMessages, postMessage } from '../actions/actions';
 import { ActivityIndicator } from './activity-indicator';
 import { ErrorMessage } from './error-message'
-import StartPage from './new-message';
+import NewMessage from './new-message';
 
 class ListMessagesContainer extends Component {
   componentWillMount() {
@@ -23,7 +23,7 @@ class ListMessagesContainer extends Component {
   }
 
   _goto() {
-    this.props.navigator.push({component: StartPage, title: 'Skriv ny'});
+    this.props.navigator.push({component: NewMessage, title: 'Skriv ny'});
   }
 
   _shouldRenderFabulousAndroidUI() {
