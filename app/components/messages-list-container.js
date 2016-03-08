@@ -22,7 +22,7 @@ class ListMessagesContainer extends Component {
   }
 
   _goto() {
-    this.props.navigator.push({component: StartPage, title: 'Test'});
+    this.props.navigator.push({component: StartPage, title: 'Skriv ny'});
   }
 
   render() {
