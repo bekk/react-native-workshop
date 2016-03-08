@@ -1,7 +1,7 @@
 import React, { StyleSheet, View, Platform } from 'react-native';
 import { connect } from 'react-redux'
 
-import StartPage from './start-page'
+import StartPage from './new-message'
 import MessagesListContainer from './messages-list-container'
 import Toolbar from './toolbar'
 import { setMessage, setUsername, setView } from '../actions/actions'

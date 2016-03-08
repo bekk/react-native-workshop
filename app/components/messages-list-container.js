@@ -15,7 +15,7 @@ import ColoredFab from './colored-fab';
 import { fetchMessages, postMessage } from '../actions/actions';
 import { ActivityIndicator } from './activity-indicator';
 import { ErrorMessage } from './error-message'
-import StartPage from './start-page';
+import StartPage from './new-message';
 
 class ListMessagesContainer extends Component {
   componentWillMount() {
