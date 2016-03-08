@@ -40,7 +40,7 @@ class CustomNavigator extends Component {
                 ref="navigator"
                 initialRoute={{ component: ListMessageContainer, title: 'Meldinger' }}
                 renderScene={_renderScene}
-                configureScene={(route, routeStack) => Navigator.SceneConfigs.FloatFromBottomAndroid}
+                configureScene={_sceneConfig()}
                 navigationBar={(
                 <Navigator.NavigationBar
                     routeMapper={NavigationBarRouteMapper}
