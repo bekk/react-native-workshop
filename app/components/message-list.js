@@ -1,6 +1,7 @@
 'use strict';
 
 import React, {
+  View,
   Component,
   ListView,
   RefreshControl
@@ -36,7 +37,6 @@ export default class MessageList extends Component {
             tintColor="#ff0000"
             title="Laster..."
             colors={ ['#ff0000', '#00ff00', '#0000ff'] }
-            progressBackgroundColor="#ffff00"
           />
         }
         dataSource={ dataSource }

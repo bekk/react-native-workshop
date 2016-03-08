@@ -1,7 +1,9 @@
 import React, {
+    View,
     Component,
     Navigator,
-    StyleSheet
+    StyleSheet,
+    Platform
 } from 'react-native';
 
 import ListMessageContainer from './messages-list-container';
@@ -23,6 +25,7 @@ class CustomNavigator extends Component {
     getNavigator() {
         return this.refs.navigator;
     }
+
 
     render() {
         return (

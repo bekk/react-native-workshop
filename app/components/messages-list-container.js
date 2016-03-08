@@ -10,13 +10,19 @@ import * as messageActions from '../actions/actions';
 import { connect } from 'react-redux';
 
 import MessageList from './message-list';
+import ColoredFab from './colored-fab';
 import { fetchMessages, postMessage } from '../actions/actions';
 import { ActivityIndicator } from './activity-indicator';
 import { ErrorMessage } from './error-message'
+import StartPage from './start-page';
 
 class ListMessagesContainer extends Component {
   componentWillMount() {
     this._refreshView();
+  }
+
+  _goto() {
+    this.props.navigator.push({component: StartPage, title: 'Test'});
   }
 
   render() {
@@ -32,6 +38,7 @@ class ListMessagesContainer extends Component {
           refreshView={ this._refreshView.bind(this) }
           navigator={this.props.navigator}
         />
+        <ColoredFab onPress={this._goto.bind(this)}>+</ColoredFab>
       </View>
     );
   }

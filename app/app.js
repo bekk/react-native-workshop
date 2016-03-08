@@ -14,16 +14,33 @@ import rnWorkshop from './reducers/reducers';
 const store = createStore(rnWorkshop);
 
 import Router from './components/router';
+import CustomNavigator from './components/custom-navigator';
 
 class App extends Component {
+
+  _handleBackbutton() {
+    const navigator = this.refs.navigator.getNavigator();
+
+    if (navigator.getCurrentRoutes().length === 1) {
+      return false;
+    }
+
+    navigator.pop();
+    return true;
+  }
+
+  componentDidMount() {
+    BackAndroid.addEventListener('hardwareBackPress', this._handleBackbutton);
+  }
+
+  componentWillUnmount() {
+    BackAndroid.removeEventListener('hardwareBackPress', this._handleBackbutton);
+  }
 
   render() {
     return (
       <Provider store={store}>
-        <Navigator
-          initialRoute={{ viewName: 'messageList' }}
-          renderScene={(route, navigator) => <Router viewName={route.viewName} navigator={navigator}/>}
-          />
+        <CustomNavigator ref="navigator" />
       </Provider>
     );
   }
