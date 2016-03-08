@@ -21,11 +21,18 @@ function _renderScene(route, navigator) {
     return <Component {...this.props} navigator={navigator} />;
 }
 
+function _sceneConfig() {
+    if (Platform.OS === 'android') {
+        return () => Navigator.SceneConfigs.FloatFromBottomAndroid;
+    } else {
+        return () => Navigator.SceneConfigs.FloatFromBottom;
+    }
+}
+
 class CustomNavigator extends Component {
     getNavigator() {
         return this.refs.navigator;
     }
-
 
     render() {
         return (
@@ -33,6 +40,7 @@ class CustomNavigator extends Component {
                 ref="navigator"
                 initialRoute={{ component: ListMessageContainer, title: 'Meldinger' }}
                 renderScene={_renderScene}
+                configureScene={(route, routeStack) => Navigator.SceneConfigs.FloatFromBottomAndroid}
                 navigationBar={(
                 <Navigator.NavigationBar
                     routeMapper={NavigationBarRouteMapper}
