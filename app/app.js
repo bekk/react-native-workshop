@@ -8,7 +8,6 @@ import thunk from 'redux-thunk';
 import rnWorkshop from './reducers/reducers';
 const store = createStore(rnWorkshop);
 
-import Router from './components/router';
 import CustomNavigator from './components/custom-navigator';
 
 class App extends Component {
