@@ -1,5 +1,10 @@
 'use strict';
-import React, { Component, Navigator } from 'react-native';
+import React, { Component, Navigator, Platform, BackAndroid } from 'react-native';
+import StatusBar from 'react-native-android-statusbar';
+
+if (Platform.OS === 'android') {
+  StatusBar.setHexColor('#b93221');
+}
 
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
