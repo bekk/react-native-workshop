@@ -15,10 +15,8 @@ import { ActivityIndicator } from './activity-indicator';
 import { ErrorMessage } from './error-message'
 
 class ListMessagesContainer extends Component {
-  constructor(props) {
-    super(props);
-    this._refreshView()
-    this.props.postMessage({ message: 'Shalalalla aaaaa vi pisse på ARSENAL!', from: 'Lomis the KING!' });
+  componentWillMount() {
+    this._refreshView();
   }
 
   render() {

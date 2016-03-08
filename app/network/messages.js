@@ -6,12 +6,16 @@ import {uploadImageToImgur } from './imgur'
 var network = {};
 
 network.get = (success, failed) => {
+  console.log("--- Get ---");
+
   fetch(baseURL + 'message')
     .then(parseJSON)
     .then((json) => {
+      console.log("--- Success ok ---");
       success(json)
     })
     .catch((error) => {
+      console.log("--- Error ---");
       failed()
     });
 }
