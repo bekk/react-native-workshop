@@ -24,10 +24,10 @@ export const Message = (rowData, sectionID, rowID) => {
 }
 
 const maybeRenderImage = source => {
-	if (source !== undefined) {
+	if (source !== undefined && source.uri && source.uri.length > 0) {
 		return <Image style={styles.thumb} source={{uri: source}} />
 	}
-}
+};
 
 Message.propTypes = {
   from: React.PropTypes.string,
@@ -45,7 +45,7 @@ const styles = {
    },
    separator: {
      height: 1,
-     backgroundColor: '#CCCCCC',
+     backgroundColor: '#d9d9d9',
    },
    thumb: {
      width: 64,
@@ -53,11 +53,12 @@ const styles = {
    },
    message: {
      flex: 1,
-     color: '#FFFFFF'
+     color: '#6e6e6e'
    },
    from: {
      flex: 1,
-     color: '#DDDDDD',
+     color: '#212121',
+     fontWeight: '500',
      marginBottom: 5
    }
 };

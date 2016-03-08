@@ -27,11 +27,12 @@ class ListMessagesContainer extends Component {
     }
 
     return (
-      <View style={{ flex: 1, backgroundColor: '#05A5D1' }}>
+      <View style={{ flex: 1, paddingTop: 50, backgroundColor: '#fff' }}>
         <MessageList
           refreshing={ this.props.isFetchingMessages }
           messages={ this.props.messages }
           refreshView={ this._refreshView.bind(this) }
+          navigator={this.props.navigator}
         />
       </View>
     );

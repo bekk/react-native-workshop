@@ -1,78 +1,54 @@
 'use strict';
 import React, {
-  Component,
-  StyleSheet,
-  Text,
-  View,
-  ToolbarAndroid
+    Component,
+    BackAndroid,
 } from 'react-native';
 
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import StatusBar from 'react-native-android-statusbar';
+StatusBar.setHexColor('#b93221');
+
+import CustomNavigator from './components/custom-navigator';
+
+import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
-
 import rnWorkshop from './reducers/reducers';
+
 const store = createStore(rnWorkshop);
 
-import StartPage from './components/start-page';
-import MessageList from './components/message-list';
-
-var toolbarActions = [
-  {title: 'New', show: 'always'},
-  {title: 'List', show: 'always'},
-  {title: 'Settings'}
-];
-
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      actionText: 'List'
-    };
+    constructor(props) {
+        super(props);
 
-    this._onActionSelected = this._onActionSelected.bind(this);
-  }
-
-  _onActionSelected(position) {
-    this.setState({
-      actionText: toolbarActions[position].title,
-    });
-  }
-
-  _renderPage() {
-    if (this.state.actionText !== 'List') {
-      return <StartPage />;
-    } else {
-      return <MessageList />;
+        this._handleBackbutton = this._handleBackbutton.bind(this);
     }
-  }
 
-  render() {
-    return (
-      <Provider store={store}>
-        <View style={styles.container}>
-          <ToolbarAndroid
-              actions={toolbarActions}
-              onActionSelected={this._onActionSelected}
-              style={styles.toolbar}
-              subtitle={this.state.actionText}
-              title="React native workshop" />
-            {this._renderPage()}
-        </View>
-      </Provider>
-    );
-  }
+    _handleBackbutton() {
+        const navigator = this.refs.navigator.getNavigator();
+
+        if (navigator.getCurrentRoutes().length === 1) {
+            return false;
+        }
+
+        navigator.pop();
+        return true;
+    }
+
+    componentDidMount() {
+        BackAndroid.addEventListener('hardwareBackPress', this._handleBackbutton);
+    }
+
+    componentWillUnmount() {
+        BackAndroid.removeEventListener('hardwareBackPress', this._handleBackbutton);
+    }
+
+    render() {
+        return (
+            <Provider store={store}>
+                <CustomNavigator ref="navigator" />
+            </Provider>
+        );
+    }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'flex-start'
-  },
-  toolbar: {
-    backgroundColor: '#FF5252',
-    height: 56
-  }
-});
 
 export default App;
