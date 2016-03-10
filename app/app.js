@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
 import rnWorkshop from './reducers/reducers';
-const store = createStore(rnWorkshop);
+const store = createStore(rnWorkshop, applyMiddleware(thunk));
 
 import CustomNavigator from './components/custom-navigator';
 
