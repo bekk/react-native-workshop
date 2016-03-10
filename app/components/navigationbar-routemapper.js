@@ -3,7 +3,8 @@ import React, {
     StyleSheet,
     Text,
     TouchableOpacity,
-    Image
+    Image,
+    Platform
 } from 'react-native';
 
 import { MKButton, MKColor } from 'react-native-material-kit';
@@ -27,7 +28,7 @@ var styles = StyleSheet.create({
     navBarTitleText: {
         color: '#ffffff',
         fontWeight: '500',
-        marginVertical: 20
+        marginVertical: Platform.OS === 'android' ? 20 : 5
     },
     navBarLeftButton: {
         paddingLeft: 0
