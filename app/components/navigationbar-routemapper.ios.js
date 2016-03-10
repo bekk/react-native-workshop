@@ -7,18 +7,8 @@ import React, {
     Platform
 } from 'react-native';
 
-import { MKButton, MKColor } from 'react-native-material-kit';
-
 import BackArrow from './../resources/back-arrow.png';
-
-const SendButton = MKButton.flatButton()
-    .withText('Send')
-    .withBackgroundColor(MKColor.Transparent)
-    .withMaskColor(MKColor.Transparent)
-    .withRippleColor('rgba(255, 255, 255, 0.2)')
-    .withTextStyle({ color: 'white' })
-    .build();
-
+import NewMessage from './new-message';
 
 var styles = StyleSheet.create({
     navBarText: {
@@ -28,7 +18,7 @@ var styles = StyleSheet.create({
     navBarTitleText: {
         color: '#ffffff',
         fontWeight: '500',
-        marginVertical: Platform.OS === 'android' ? 20 : 5
+        marginVertical: 5
     },
     navBarLeftButton: {
         paddingLeft: 0
@@ -46,8 +36,11 @@ var styles = StyleSheet.create({
         height: 50
     },
     navBarRightText: {
-        top: -3,
-        color: '#ffffff'
+        color: '#ffffff',
+        fontWeight: '500',
+        fontSize: 30,
+        padding: 15,
+        top: -10
     }
 });
 
@@ -68,12 +61,14 @@ const NavigationBarRouteMapper = {
     },
 
     RightButton: function (route, navigator, index, navState) {
-        if (route && route.title === 'Skriv ny') {
-            return (
-                <TouchableOpacity style={styles.navBarRightButton}>
-                    <SendButton style={{padding: 15, top: -3}}/>
-                </TouchableOpacity>
-            );
+        if(route && route.title === 'Meldinger') {
+          return (
+            <TouchableOpacity
+              style={styles.navBarRightButton}
+              onPress={() => navigator.push({component: NewMessage, title: 'Skriv ny'})}>
+                <Text style={styles.navBarRightText}>+</Text>
+            </TouchableOpacity>
+          );
         }
         return null;
     },
