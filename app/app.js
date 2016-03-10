@@ -1,5 +1,5 @@
 'use strict';
-import React, { Component, Navigator, Platform, BackAndroid, StatusBar, View } from 'react-native';
+import React, { Component, Platform, BackAndroid, StatusBar, View } from 'react-native';
 
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
@@ -8,7 +8,7 @@ import thunk from 'redux-thunk';
 import rnWorkshop from './reducers/reducers';
 const store = createStore(rnWorkshop);
 
-import CustomNavigator from './components/navigation/custom-navigator';
+import Navigator from './components/navigation/navigator';
 
 class App extends Component {
 
@@ -35,8 +35,11 @@ class App extends Component {
     return (
       <Provider store={store}>
         <View style={{flex: 1}}>
-          <StatusBar backgroundColor="#b93221"/>
-          <CustomNavigator ref="navigator" />
+          <StatusBar
+            barStyle="light-content"
+            backgroundColor="#b93221"
+          />
+          <Navigator ref="navigator" />
         </View>
       </Provider>
     );
