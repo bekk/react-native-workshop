@@ -1,24 +1,14 @@
 'use strict';
 
-import { baseURL, imgurURL } from '../config/config'
+import { baseURL, messageUrl, imgurURL } from '../config/config'
 import {uploadImageToImgur } from './imgur'
 
 var network = {};
 
-network.get = (success, failed) => {
+network.get = () => {
   console.log("--- Get ---");
-
-  fetch(baseURL + 'message')
-    .then(parseJSON)
-    .then((json) => {
-      console.log("--- Success ok ---");
-      success(json)
-    })
-    .catch((error) => {
-      console.log("--- Error ---");
-      failed()
-    });
-}
+  return fetch(baseURL + 'message').then(parseJSON)
+};
 
 network.post = (message, success, failed) => {
   uploadImageToImgur().then((url) => {
@@ -38,15 +28,22 @@ network.post = (message, success, failed) => {
   })
 }
 
+network.postWithoutImage = (from, message) => {
+  let config = postConfig({ from, message });
+  return fetch(messageUrl, config).then(parseJSON);
+};
+
 const parseJSON = (response) => response.json();
 
-const getPostMessageConfig = json => {
-  return {
-    method: 'POST',
-    body: JSON.stringify(json),
-    mode: 'cors',
-    cache: 'default'
-  };
-}
+const postConfig = json => ({
+  method: 'POST',
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(json),
+  cache: 'default'
+});
 
+  // mode: 'cors',
 export default network;
