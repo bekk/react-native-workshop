@@ -7,14 +7,18 @@ var network = {};
 
 network.get = () => fetch(messageUrl).then(parseJSON)
 
-network.post = (message, success, failed) => {
-  return uploadImageToImgur()
-    .then(url => postConfig({ message, url}))
-    .then(postConfig => fetch(messageUrl, postConfig))
-    .then(parseJSON);
+network.post = (from, message, image) => {
+  if (image) {
+    return uploadImageToImgur(image)
+      .then(url => postConfig({ from, message, url }))
+      .then(post);
+  }
+  return post(postConfig({ from, message }));
 };
 
-const parseJSON = (response) => response.json();
+const post = (postConfig) => fetch(messageUrl, postConfig).then(parseJSON);
+
+const parseJSON = response => response.json();
 
 const postConfig = json => ({
   method: 'POST',
@@ -26,5 +30,4 @@ const postConfig = json => ({
   cache: 'default'
 });
 
-  // mode: 'cors',
 export default network;
