@@ -3,7 +3,7 @@
 import {
   SET_USER_NAME,
   SET_MESSAGE,
-  SET_NEW_MESSAGE,
+  SET_NEW_MESSAGE_TEXT,
   SET_VIEW,
   SET_MESSAGES,
   FETCH_MESSAGE,
@@ -32,8 +32,8 @@ function messageReducer(state = initialState, action) {
          failedToFetchMessages: false
        });
 
-    case SET_NEW_MESSAGE:
-      return Object.assign({}, state, { newMessage: action.newMessage });
+    case SET_NEW_MESSAGE_TEXT:
+      return Object.assign({}, state, { newMessageText: action.newMessageText });
 
     case SET_VIEW:
       return Object.assign({}, state, { viewName: action.viewName })
