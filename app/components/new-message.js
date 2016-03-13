@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 
 import Textarea from './textarea';
 
-import { postMessage, setNewMessage, setUsername } from '../actions/actions';
+import { setNewMessage, setUsername } from '../actions/actions';
 
 class StartPage extends Component {
 

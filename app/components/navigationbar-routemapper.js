@@ -63,7 +63,7 @@ const NavigationBarRouteMapper = {
 
     RightButton: function (route, navigator, index, navState) {
         if (route && route.title === 'Skriv ny') {
-            return <ConnectedButton />;
+            return <ConnectedButton navigator={navigator}/>;
         }
         return null;
     },
@@ -85,15 +85,15 @@ const FlatButton = MKButton.flatButton()
     .withTextStyle({ color: 'white' })
     .build();
 
-const SendButton = ({ postMessage }) => (
+const SendButton = ({ postMessage, navigator }) => (
   <TouchableOpacity style={styles.navBarRightButton}>
-    <FlatButton style={{ padding: 15, top: -3 }} onPress={postMessage}/>
+    <FlatButton style={{ padding: 15, top: -3 }} onPress={() => postMessage(navigator)}/>
   </TouchableOpacity>
 );
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = dispatch => ({
-  postMessage: () => dispatch(postMessage()),
+  postMessage: navigator => dispatch(postMessage(navigator)),
 });
 const ConnectedButton = connect(mapStateToProps, mapDispatchToProps)(SendButton);
 

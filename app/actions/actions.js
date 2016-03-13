@@ -27,10 +27,15 @@ export const fetchMessages = () => (dispatch) => {
     .catch(() => dispatch(setFetchMessagesFailed()));
 };
 
-export const postMessage = () => (dispatch, getState) => {
+export const postMessage = (navigator) => (dispatch, getState) => {
   dispatch({ type: POST_MESSAGE });
   let { username, newMessage } = getState();
-  return messages.postWithoutImage(username, newMessage)
-    .then(message => dispatch({ type: SET_MESSAGE, message }))
+  return messages.post(username, newMessage)
+    .then(message => {
+      navigator.pop();
+      dispatch({ type: SET_MESSAGE, message })
+      dispatch(setUsername(null))
+      dispatch(setNewMessage(null))
+    })
     .catch(error => dispatch({ type: POST_MESSAGE_FAILED }));
 };
