@@ -37,6 +37,7 @@ Message.propTypes = {
 const styles = {
 	container: {
     flex: 1,
+    overflow: 'hidden'
   },
   row: {
      flexDirection: 'column',
