@@ -9,7 +9,7 @@ import React, {
 
 import { MKButton, MKColor } from 'react-native-material-kit';
 
-import BackArrow from '../../../resources/back-arrow.png';
+import BackArrow from '../../resources/back-arrow.png';
 
 const SendButton = MKButton.flatButton()
     .withText('Send')
