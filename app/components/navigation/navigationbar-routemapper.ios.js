@@ -61,7 +61,6 @@ const NavigationBarRouteMapper = {
     },
 
     RightButton: function (route, navigator, index, navState) {
-      console.log('her')
         if(route && route.title === 'Meldinger') {
           return (
             <TouchableOpacity
