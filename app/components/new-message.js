@@ -12,12 +12,10 @@ import { connect } from 'react-redux';
 
 import { postMessage, setNewMessageText, setUsername } from '../actions/actions';
 
-class StartPage extends Component {
+class NewMessage extends Component {
     render() {
-        const { username, message, setNewMessage, setUsername, postMessage, navigator } = this.props;
-
         const sendButton = Platform.OS === 'android' ? null : this._renderSendButton();
-
+        const { username, newMessageText, setNewMessageText, setUsername, postMessage, navigator } = this.props;
         return (
             <View style={styles.container}>
                 <TextInput
@@ -29,16 +27,11 @@ class StartPage extends Component {
                 <TextInput
                   style={styles.input}
                   placeholder="Message"
-                  value={message}
-                  onChangeText={setNewMessage} />
+                  value={newMessageText}
+                  onChangeText={setNewMessageText} />
                   { sendButton }
             </View>
         );
-    }
-
-    _onSend() {
-      this.props.postMessage();
-      this.props.navigator.pop();
     }
 
     _renderSendButton() {
@@ -72,11 +65,11 @@ const styles = StyleSheet.create({
     }
 });
 
-const mapStateToProps = ({ username, message}) => ({ username, message });
+const mapStateToProps = ({ username, newMessageText }) => ({ username, newMessageText });
 const mapDispatchToProps = (dispatch) => ({
-    postMessage: () => dispatch(postMessage()),
-    setNewMessage: (message) => dispatch(setNewMessageText(message)),
-    setUsername: (name) => dispatch(setUsername(name))
+    postMessage: navigator => dispatch(postMessage(navigator)),
+    setNewMessageText: message => dispatch(setNewMessageText(message)),
+    setUsername: name => dispatch(setUsername(name))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(StartPage);
+export default connect(mapStateToProps, mapDispatchToProps)(NewMessage);
