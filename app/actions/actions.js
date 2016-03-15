@@ -9,8 +9,8 @@ export const SET_MESSAGES = 'SET_MESSAGES';
 export const FETCH_MESSAGE = 'FETCH_MESSAGE';
 export const FETCH_MESSAGE_FAILED = 'FETCH_MESSAGE_FAILED';
 export const POST_MESSAGE = 'POST_MESSAGE';
-export const POST_MESSAGE_FAILED = 'POST_MESSAGE_FAILED';
 export const SET_POST_SUCCESS = 'SET_POST_SUCCESS';
+export const FEILMELDING = 'FEILMELDING';
 
 export const setNewMessageText = newMessageText => ({ type: SET_NEW_MESSAGE_TEXT, newMessageText });
 export const setUsername = username => ({ type: SET_USER_NAME, username });
@@ -26,10 +26,17 @@ export const fetchMessages = () => (dispatch) => {
 };
 
 export const postMessage = (navigator) => (dispatch, getState) => {
-  dispatch({ type: POST_MESSAGE });
   let { username, newMessageText, image } = getState();
-  return messages.post(username, newMessageText, image)
-    .then(message => dispatch(setPostSuccess(message)))
-    .then(() => navigator.pop())
-    .catch(error => dispatch({ type: POST_MESSAGE_FAILED }));
+
+  if (!username || username.length === 0) {
+    dispatch({type: FEILMELDING, error: 'Du må fylle ut brukernavn.'});
+  } else if (!newMessageText || newMessageText.length === 0) {
+    dispatch({type: FEILMELDING, error: 'Du må skrive en melding'});
+  } else {
+    dispatch({type: POST_MESSAGE});
+    return messages.post(username, newMessageText, image)
+        .then(message => dispatch(setPostSuccess(message)))
+        .then(() => navigator.pop())
+        .catch(error => dispatch({type: FEILMELDING, error: 'Noe gikk feil ved innsending.'}));
+  }
 };

@@ -7,7 +7,8 @@ import {
   SET_MESSAGES,
   FETCH_MESSAGE,
   FETCH_MESSAGE_FAILED,
-  SET_POST_SUCCESS
+  SET_POST_SUCCESS,
+  FEILMELDING
 } from '../actions/actions';
 
 import { initialState } from './initial-state'
@@ -51,6 +52,8 @@ function messageReducer(state = initialState, action) {
          isFetchingMessages: false,
          failedToFetchMessages: false
        });
+    case FEILMELDING:
+      return Object.assign({}, state, { error: action.error });
 
     default:
       return state;

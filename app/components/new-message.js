@@ -14,8 +14,9 @@ import { postMessage, setNewMessageText, setUsername } from '../actions/actions'
 
 class NewMessage extends Component {
     render() {
-        const { username, newMessageText, setNewMessageText, setUsername, postMessage, navigator } = this.props;
+        const { username, newMessageText, setNewMessageText, setUsername, postMessage, navigator, error } = this.props;
         const sendButton = Platform.OS === 'android' ? null : this._renderSendButton(() => postMessage(navigator));
+        const feedback = error ? <View style={styles.feedback}><Text>{error}</Text></View> : null;
         return (
             <View style={styles.container}>
                 <TextInput
@@ -29,6 +30,7 @@ class NewMessage extends Component {
                   placeholder="Message"
                   value={newMessageText}
                   onChangeText={setNewMessageText} />
+                  { feedback }
                   { sendButton }
             </View>
         );
@@ -59,13 +61,22 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       borderRadius: 5
     },
+    feedback: {
+      padding: 5,
+      margin: 10,
+      backgroundColor: '#F8BBD0',
+      borderColor: '#F48FB1',
+      borderStyle: 'solid',
+      borderWidth: 2,
+      borderRadius: 2
+    },
     sendButton: {
       alignSelf: 'flex-end',
       margin: 10
     }
 });
 
-const mapStateToProps = ({ username, newMessageText }) => ({ username, newMessageText });
+const mapStateToProps = ({ username, newMessageText, error }) => ({ username, newMessageText, error });
 const mapDispatchToProps = (dispatch) => ({
     postMessage: navigator => dispatch(postMessage(navigator)),
     setNewMessageText: message => dispatch(setNewMessageText(message)),
