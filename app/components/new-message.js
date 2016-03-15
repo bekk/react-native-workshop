@@ -11,12 +11,12 @@ import { connect } from 'react-redux';
 
 import Textarea from './textarea';
 
-import { postMessage, setNewMessage, setUsername } from '../actions/actions';
+import { setNewMessageText, setUsername } from '../actions/actions';
 
 class StartPage extends Component {
 
     render() {
-        const { username, newMessage, setNewMessage, setUsername } = this.props;
+        const { username, newMessage, setNewMessageText, setUsername } = this.props;
         return (
             <View style={styles.container}>
                 <TextInput
@@ -29,7 +29,7 @@ class StartPage extends Component {
                   multiline
                   placeholder="Message"
                   value={newMessage}
-                  onChangeText={setNewMessage} />
+                  onChangeText={setNewMessageText} />
             </View>
         );
     }
@@ -46,9 +46,9 @@ const styles = StyleSheet.create({
     }
 });
 
-const mapStateToProps = ({ username, newMessage }) => ({ username, newMessage });
+const mapStateToProps = ({ username, newMessageText }) => ({ username, newMessageText });
 const mapDispatchToProps = (dispatch) => ({
-    setNewMessage: newMessage => dispatch(setNewMessage(newMessage)),
+    setNewMessageText: newMessageText => dispatch(setNewMessageText(newMessageText)),
     setUsername: name => dispatch(setUsername(name))
 });
 

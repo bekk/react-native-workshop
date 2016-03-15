@@ -3,11 +3,12 @@
 import {
   SET_USER_NAME,
   SET_MESSAGE,
-  SET_NEW_MESSAGE,
+  SET_NEW_MESSAGE_TEXT,
   SET_VIEW,
   SET_MESSAGES,
   FETCH_MESSAGE,
-  FETCH_MESSAGE_FAILED
+  FETCH_MESSAGE_FAILED,
+  SET_POST_SUCCESS
 } from '../actions/actions';
 
 import { initialState } from './initial-state'
@@ -24,16 +25,8 @@ function messageReducer(state = initialState, action) {
         failedToFetchMessages: false
       });
 
-    case SET_MESSAGE:
-      var messages = [...state.messages, action.message];
-      return Object.assign({}, state, {
-         messages,
-         isFetchingMessages: false,
-         failedToFetchMessages: false
-       });
-
-    case SET_NEW_MESSAGE:
-      return Object.assign({}, state, { newMessage: action.newMessage });
+    case SET_NEW_MESSAGE_TEXT:
+      return Object.assign({}, state, { newMessageText: action.newMessageText });
 
     case SET_VIEW:
       return Object.assign({}, state, { viewName: action.viewName })
@@ -49,6 +42,16 @@ function messageReducer(state = initialState, action) {
         isFetchingMessages: false,
         failedToFetchMessages: true
       });
+
+    case SET_POST_SUCCESS:
+      var messages = [...state.messages, action.message];
+      return Object.assign({}, state, {
+         messages,
+         username: null,
+         newMessageText: null,
+         isFetchingMessages: false,
+         failedToFetchMessages: false
+       });
 
     default:
       return state;
