@@ -14,8 +14,8 @@ import { postMessage, setNewMessageText, setUsername } from '../actions/actions'
 
 class NewMessage extends Component {
     render() {
-        const sendButton = Platform.OS === 'android' ? null : this._renderSendButton();
         const { username, newMessageText, setNewMessageText, setUsername, postMessage, navigator } = this.props;
+        const sendButton = Platform.OS === 'android' ? null : this._renderSendButton(() => postMessage(navigator));
         return (
             <View style={styles.container}>
                 <TextInput
@@ -34,11 +34,11 @@ class NewMessage extends Component {
         );
     }
 
-    _renderSendButton() {
+    _renderSendButton(postMessage) {
       return (
         <TouchableOpacity
           style={styles.sendButton}
-          onPress={this._onSend.bind(this)}>
+          onPress={postMessage}>
             <Text>Send</Text>
         </TouchableOpacity>
       );
