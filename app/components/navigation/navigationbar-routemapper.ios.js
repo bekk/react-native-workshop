@@ -17,8 +17,7 @@ var styles = StyleSheet.create({
     },
     navBarTitleText: {
         color: '#ffffff',
-        fontWeight: '500',
-        marginVertical: 5
+        fontWeight: '500'
     },
     navBarLeftButton: {
         paddingLeft: 0
@@ -31,7 +30,7 @@ var styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
-        top: 0,
+        top: 5,
         right: 0,
         height: 50
     },
