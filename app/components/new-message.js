@@ -11,15 +11,12 @@ import { connect } from 'react-redux';
 
 import Textarea from './textarea';
 
-import { postMessage, setMessage, setUsername } from '../actions/actions';
+import { setNewMessageText, setUsername } from '../actions/actions';
 
 class StartPage extends Component {
-    // constructor(props) {
-    //     super(props);
-    // }
 
     render() {
-        const { username, message, setMessage, setUsername, postMessage } = this.props;
+        const { username, newMessage, setNewMessageText, setUsername } = this.props;
         return (
             <View style={styles.container}>
                 <TextInput
@@ -31,8 +28,8 @@ class StartPage extends Component {
                   style={styles.message}
                   multiline
                   placeholder="Message"
-                  value={message}
-                  onChangeText={setMessage} />
+                  value={newMessage}
+                  onChangeText={setNewMessageText} />
             </View>
         );
     }
@@ -49,11 +46,10 @@ const styles = StyleSheet.create({
     }
 });
 
-const mapStateToProps = ({ username, message}) => ({ username, message });
+const mapStateToProps = ({ username, newMessageText }) => ({ username, newMessageText });
 const mapDispatchToProps = (dispatch) => ({
-    postMessage: (message) => dispatch(postMessage(dispatch, message)),
-    setMessage: (message) => dispatch(setMessage(message)),
-    setUsername: (name) => dispatch(setUsername(name))
+    setNewMessageText: newMessageText => dispatch(setNewMessageText(newMessageText)),
+    setUsername: name => dispatch(setUsername(name))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(StartPage);

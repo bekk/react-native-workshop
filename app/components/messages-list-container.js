@@ -72,7 +72,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   fetchMessages: () => dispatch(fetchMessages(dispatch)),
-  postMessage: (message) => dispatch(postMessage(dispatch, message)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListMessagesContainer);

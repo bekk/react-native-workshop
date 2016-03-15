@@ -24,7 +24,7 @@ export const Message = (rowData, sectionID, rowID) => {
 }
 
 const maybeRenderImage = source => {
-	if (source !== undefined && source.uri && source.uri.length > 0) {
+	if (source !== undefined && source.length > 0) {
 		return <Image style={styles.thumb} source={{uri: source}} />
 	}
 };
@@ -37,6 +37,7 @@ Message.propTypes = {
 const styles = {
 	container: {
     flex: 1,
+    overflow: 'hidden'
   },
   row: {
      flexDirection: 'column',

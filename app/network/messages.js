@@ -1,52 +1,33 @@
 'use strict';
 
-import { baseURL, imgurURL } from '../config/config'
-import {uploadImageToImgur } from './imgur'
+import { baseURL, messageUrl, imgurURL } from '../config/config'
+import { uploadImageToImgur } from './imgur'
 
 var network = {};
 
-network.get = (success, failed) => {
-  console.log("--- Get ---");
+network.get = () => fetch(messageUrl).then(parseJSON)
 
-  fetch(baseURL + 'message')
-    .then(parseJSON)
-    .then((json) => {
-      console.log("--- Success ok ---");
-      success(json)
-    })
-    .catch((error) => {
-      console.log("--- Error ---");
-      failed()
-    });
-}
+network.post = (from, message, image) => {
+  if (image) {
+    return uploadImageToImgur(image)
+      .then(url => postConfig({ from, message, url }))
+      .then(post);
+  }
+  return post(postConfig({ from, message }));
+};
 
-network.post = (message, success, failed) => {
-  uploadImageToImgur().then((url) => {
-    const json = Object.assign({}, message, { url: url });
-    const config = getPostMessageConfig(json);
+const post = (postConfig) => fetch(messageUrl, postConfig).then(parseJSON);
 
-    fetch(baseURL + 'message', config)
-      .then(parseJSON)
-      .then(json => {
-        success(Object.assign({}, json, message));
-      })
-      .catch(error => {
-        failed();
-      });
-  }).catch(error => {
-    failed();
-  })
-}
+const parseJSON = response => response.json();
 
-const parseJSON = (response) => response.json();
-
-const getPostMessageConfig = json => {
-  return {
-    method: 'POST',
-    body: JSON.stringify(json),
-    mode: 'cors',
-    cache: 'default'
-  };
-}
+const postConfig = json => ({
+  method: 'POST',
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(json),
+  cache: 'default'
+});
 
 export default network;
