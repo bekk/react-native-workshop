@@ -10,8 +10,6 @@ import React, {
 } from 'react-native';
 import { connect } from 'react-redux';
 
-import Textarea from './textarea';
-
 import { postMessage, setNewMessageText, setUsername } from '../actions/actions';
 
 class StartPage extends Component {
