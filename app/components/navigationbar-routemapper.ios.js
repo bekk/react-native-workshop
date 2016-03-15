@@ -6,13 +6,9 @@ import React, {
     Image,
     Platform
 } from 'react-native';
-import { connect } from 'react-redux';
-import { MKButton, MKColor } from 'react-native-material-kit';
+
 import BackArrow from './../resources/back-arrow.png';
-
-import { postMessage } from '../actions/actions'
-
-
+import NewMessage from './new-message';
 
 var styles = StyleSheet.create({
     navBarText: {
@@ -22,7 +18,7 @@ var styles = StyleSheet.create({
     navBarTitleText: {
         color: '#ffffff',
         fontWeight: '500',
-        marginVertical: Platform.OS === 'android' ? 20 : 5
+        marginVertical: 5
     },
     navBarLeftButton: {
         paddingLeft: 0
@@ -40,8 +36,11 @@ var styles = StyleSheet.create({
         height: 50
     },
     navBarRightText: {
-        top: -3,
-        color: '#ffffff'
+        color: '#ffffff',
+        fontWeight: '500',
+        fontSize: 30,
+        padding: 15,
+        top: -10
     }
 });
 
@@ -62,8 +61,14 @@ const NavigationBarRouteMapper = {
     },
 
     RightButton: function (route, navigator, index, navState) {
-        if (route && route.title === 'Skriv ny') {
-            return <ConnectedButton navigator={navigator}/>;
+        if(route && route.title === 'Meldinger') {
+          return (
+            <TouchableOpacity
+              style={styles.navBarRightButton}
+              onPress={() => navigator.push({component: NewMessage, title: 'Skriv ny'})}>
+                <Text style={styles.navBarRightText}>+</Text>
+            </TouchableOpacity>
+          );
         }
         return null;
     },
@@ -77,24 +82,5 @@ const NavigationBarRouteMapper = {
     }
 };
 
-const FlatButton = MKButton.flatButton()
-    .withText('Send')
-    .withBackgroundColor(MKColor.Transparent)
-    .withMaskColor(MKColor.Transparent)
-    .withRippleColor('rgba(255, 255, 255, 0.2)')
-    .withTextStyle({ color: 'white' })
-    .build();
-
-const SendButton = ({ postMessage, navigator }) => (
-  <TouchableOpacity style={styles.navBarRightButton}>
-    <FlatButton style={{ padding: 15, top: -3 }} onPress={() => postMessage(navigator)}/>
-  </TouchableOpacity>
-);
-
-const mapStateToProps = () => ({});
-const mapDispatchToProps = dispatch => ({
-  postMessage: navigator => dispatch(postMessage(navigator)),
-});
-const ConnectedButton = connect(mapStateToProps, mapDispatchToProps)(SendButton);
 
 export default NavigationBarRouteMapper;
