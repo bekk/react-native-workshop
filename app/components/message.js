@@ -13,10 +13,10 @@ export const Message = (rowData, sectionID, rowID) => {
         <Text style={styles.from}>
           {rowData.from}
         </Text>
+				{ maybeRenderImage(rowData.image) }
         <Text style={styles.message}>
           {rowData.message}
         </Text>
-        { maybeRenderImage(rowData.image) }
       </View>
       <View style={styles.separator} />
     </View>
@@ -49,8 +49,9 @@ const styles = {
      backgroundColor: '#d9d9d9',
    },
    thumb: {
-     width: 64,
-     height: 64,
+		 marginBottom: 5,
+		 flexDirection:'row',
+     height: 240,
    },
    message: {
      flex: 1,
