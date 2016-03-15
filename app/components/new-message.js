@@ -5,6 +5,7 @@ import React, {
   Text,
   TextInput,
   View,
+  Platform,
   TouchableOpacity
 } from 'react-native';
 import { connect } from 'react-redux';
@@ -16,6 +17,9 @@ import { postMessage, setNewMessageText, setUsername } from '../actions/actions'
 class StartPage extends Component {
     render() {
         const { username, message, setNewMessage, setUsername, postMessage, navigator } = this.props;
+
+        const sendButton = Platform.OS === 'android' ? null : this._renderSendButton();
+
         return (
             <View style={styles.container}>
                 <TextInput
@@ -30,11 +34,7 @@ class StartPage extends Component {
                   placeholder="Message"
                   value={message}
                   onChangeText={setNewMessage} />
-                  <TouchableOpacity
-                    style={styles.sendButton}
-                    onPress={this._onSend.bind(this)}>
-                      <Text>Send</Text>
-                  </TouchableOpacity>
+                  { sendButton }
             </View>
         );
     }
@@ -42,6 +42,16 @@ class StartPage extends Component {
     _onSend() {
       this.props.postMessage();
       this.props.navigator.pop();
+    }
+
+    _renderSendButton() {
+      return (
+        <TouchableOpacity
+          style={styles.sendButton}
+          onPress={this._onSend.bind(this)}>
+            <Text>Send</Text>
+        </TouchableOpacity>
+      );
     }
 }
 
