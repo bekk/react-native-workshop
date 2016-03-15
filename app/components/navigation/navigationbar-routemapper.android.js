@@ -6,15 +6,21 @@ import React, {
     Image,
     Platform
 } from 'react-native';
-import { connect } from 'react-redux';
+
 import { MKButton, MKColor } from 'react-native-material-kit';
-import BackArrow from './../resources/back-arrow.png';
 
-import { postMessage } from '../actions/actions'
+import BackArrow from '../../../resources/back-arrow.png';
+
+const SendButton = MKButton.flatButton()
+    .withText('Send')
+    .withBackgroundColor(MKColor.Transparent)
+    .withMaskColor(MKColor.Transparent)
+    .withRippleColor('rgba(255, 255, 255, 0.2)')
+    .withTextStyle({ color: 'white' })
+    .build();
 
 
-
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
     navBarText: {
         fontSize: 16,
         marginVertical: 10
@@ -63,7 +69,11 @@ const NavigationBarRouteMapper = {
 
     RightButton: function (route, navigator, index, navState) {
         if (route && route.title === 'Skriv ny') {
-            return <ConnectedButton navigator={navigator}/>;
+            return (
+                <TouchableOpacity style={styles.navBarRightButton}>
+                    <SendButton style={{padding: 15, top: -3}}/>
+                </TouchableOpacity>
+            );
         }
         return null;
     },
@@ -77,24 +87,5 @@ const NavigationBarRouteMapper = {
     }
 };
 
-const FlatButton = MKButton.flatButton()
-    .withText('Send')
-    .withBackgroundColor(MKColor.Transparent)
-    .withMaskColor(MKColor.Transparent)
-    .withRippleColor('rgba(255, 255, 255, 0.2)')
-    .withTextStyle({ color: 'white' })
-    .build();
-
-const SendButton = ({ postMessage, navigator }) => (
-  <TouchableOpacity style={styles.navBarRightButton}>
-    <FlatButton style={{ padding: 15, top: -3 }} onPress={() => postMessage(navigator)}/>
-  </TouchableOpacity>
-);
-
-const mapStateToProps = () => ({});
-const mapDispatchToProps = dispatch => ({
-  postMessage: navigator => dispatch(postMessage(navigator)),
-});
-const ConnectedButton = connect(mapStateToProps, mapDispatchToProps)(SendButton);
 
 export default NavigationBarRouteMapper;

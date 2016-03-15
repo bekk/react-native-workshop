@@ -7,8 +7,8 @@ import React, {
     Platform
 } from 'react-native';
 
-import BackArrow from './../resources/back-arrow.png';
-import NewMessage from './new-message';
+import BackArrow from './../../resources/back-arrow.png';
+import NewMessage from '../new-message';
 
 var styles = StyleSheet.create({
     navBarText: {
@@ -61,6 +61,7 @@ const NavigationBarRouteMapper = {
     },
 
     RightButton: function (route, navigator, index, navState) {
+      console.log('her')
         if(route && route.title === 'Meldinger') {
           return (
             <TouchableOpacity

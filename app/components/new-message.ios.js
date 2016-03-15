@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 
 import Textarea from './textarea';
 
-import { postMessage, setNewMessage, setUsername } from '../actions/actions';
+import { postMessage, setNewMessageText, setUsername } from '../actions/actions';
 
 class StartPage extends Component {
     render() {
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
 const mapStateToProps = ({ username, message}) => ({ username, message });
 const mapDispatchToProps = (dispatch) => ({
     postMessage: () => dispatch(postMessage()),
-    setNewMessage: (message) => dispatch(setNewMessage(message)),
+    setNewMessage: (message) => dispatch(setNewMessageText(message)),
     setUsername: (name) => dispatch(setUsername(name))
 });
 
