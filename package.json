@@ -3,9 +3,15 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start": "react-native start"
   },
   "dependencies": {
-    "react-native": "^0.19.0"
+    "fbjs": "^0.6.0",
+    "react-native": "^0.21.0",
+    "react-native-camera": "git+https://github.com/lwansbrough/react-native-camera.git",
+    "react-native-material-kit": "^0.3.0",
+    "react-redux": "4.1.2",
+    "redux": "3.1.7",
+    "redux-thunk": "1.0.3"
   }
 }

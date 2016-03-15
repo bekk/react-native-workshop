@@ -1,5 +1,5 @@
 'use strict';
 import { AppRegistry } from 'react-native';
-import App from './components/app'
+import App from './app/app'
 
-AppRegistry.registerComponent('ReactNativeStarterKit', () => App);
+AppRegistry.registerComponent('ReactNativeWorkshop', () => App);
