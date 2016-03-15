@@ -6,13 +6,12 @@ import React, {
     Platform
 } from 'react-native';
 
-import ListMessageContainer from './messages-list-container';
+import ListMessageContainer from '../messages-list-container';
 import NavigationBarRouteMapper from './navigationbar-routemapper';
 
 const styles = StyleSheet.create({
     navBar: {
-        backgroundColor: '#da4336',
-        height: 50
+        backgroundColor: '#da4336'
     }
 });
 
