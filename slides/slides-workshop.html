@@ -6,7 +6,7 @@
     <link href="node_modules/remark-bekk/dist/bekk.css" type="text/css" rel="stylesheet">
     <style>
       .small-img img{
-        width: 300px;
+        width: 275px;
       }
        .full-img img{
         width: 100%;
@@ -34,17 +34,20 @@ class: agenda
 # Agenda
 
 * Intro
-* Kodedemo
+* Syntaks og styling
+* Redux
 * Deploy
+* Din tur!
 
 ---
 
 # Intro
 
-## Lansert for iOS i januar og for Android i september 2015
+## Lansert for iOS i januar og for Android i september 2015 av Facebook
 ## Open Source
-## 
-
+## Treg utviklingsyklus
+## Treg deploymentsyklus
+## Separate team for hver platform
 
 ???
 
@@ -52,7 +55,19 @@ class: agenda
 ## Funket ikke å pakke inn webapps lengre. Webben er ikke klar enda.
 ## Synes det gikk for treigt å utvikle native. Treigere utviklingsmiljø. Utviklere må kunne flere språk og verktøy. Rett og slett ikke smidig nok ut ifra det de var vant til fra webben.
 ## Allerede stort community. PR, React komponenter
-## Hyppige releases. Allerede 2 nye versjoner med en del endringer siden jeg holdt på med dette for 6 uker siden.
+## Hyppige releases. Flere nye versjoner i løpet av de ukene vi jobbet med denne workshopen
+
+---
+
+# Intro 2 - Noe mer om kryssplatform?
+
+## Ikke native look & feel
+## Dårlig verktøystøtte og debug
+## Begrenset sett med funksjonalitet
+
+???
+
+## 
 
 ---
 
@@ -67,12 +82,13 @@ class: agenda
 
 ## Moduler, virtuell DOM og deklarativt API. Vi beskriver hva programmet skal gjøre, ikke hvordan.
 ## Må ikke rendre til DOM. 
-## Tydelig i versjon av React.js, der React og ReactDOM splittes
+## Tydelig i nye versjoner av React.js, der React og ReactDOM splittes
 ## IKKE write once, der altså. Men det ligger til rette for gjenbruk. F.eks apier, events, business-logikk. Men ikke nødvendigvis view-kode.
 ## Skal være kjent for utviklere som kommer fra JS og React.
 ## Kan gjenbruke komponenter fra webben, og i tillegg får tilgang til platformkomponenter
 
 ---
+
 # Ikke ulikt React.js
 
 ```html
@@ -88,6 +104,7 @@ class: agenda
   <TouchableHighlight>Trykk på meg</TouchableHighlight>
 </View>
 ```
+
 ## Noen er platformspesifikke:
 ```html
 <SwitchIOS />
@@ -95,25 +112,314 @@ class: agenda
 ```
 
 ---
+
+# Ikke HTML-webapp
+
+## Fullt ut native plattformkomponenter
+## JS kjører på JavaScriptCore
+## Asynkront, utenfor UI-tråden. 
+## JS til Native via "bridge".
+
+???
+## At det er basert på React.js betyr ikke at det er en React-app pakket inn i et WebView
+## Ikke WebView, så det føles native. Deler av Facebook-appen er RN. Kan dere gjette hvilken? Events/arrangementer
+## Sender kommandoer i batcher til UI-tråden.
+## Flere tråder, i motsetning til web. Dekode bilder, lagre til disk, gjøre layoutberegninger utenfor UI-tråden. => Responsivt
+
+---
+
+# Bridge
+.col[
+.full-img[![](img/ReactBridge.png)]
+]
+
+---
+
+# Styling - FLEXBOX
+
+## Basert på Flexbox fra css
+## flexDirection, flex, align-items, justify content
+## "Inline styles"
+
+```html
+<Text style={{color: 'black'}}>
+  Velkommen til Bekk Open Fagdag
+</Text>
+```
+
+???
+
+## En javascript-implementasjon av Flexbox
+
+---
 class: cols two
 
-# Styling
+# FLEXBOX - direction
 
-## Bruker Inline Flexbox:
+## flexDirection: column (default)
+.col[
+```javascript
+class Flexbox extends Component {
+  render() {
+    return (
+      <View style={{flex: 1, 
+      flexDirection: 'column'}}>
+        <View style={{flex: 1, 
+        backgroundColor: '#252525'}}>
+        </View>
+        <View style={{flex: 1, 
+        backgroundColor: '#e9555f'}}>
+        </View>
+        <View style={{flex: 1, 
+        backgroundColor: '#36bdb2'}}>
+        </View>
+      </View>
+    );
+  }
+}
+```
+]
+
+.col[
+.small-img[![](img/flex_column.png)]
+]
+
+???
+
+## Hvilken akse skal barnenodene legges ut.
+
+---
+class: cols two
+
+# FLEXBOX - direction
+
+## flexDirection: row
+.col[
+```javascript
+class Flexbox extends Component {
+  render() {
+    return (
+      <View style={{flex: 1, 
+      flexDirection: 'row'}}>
+        <View style={{flex: 1, 
+        backgroundColor: '#252525'}}>
+        </View>
+        <View style={{flex: 1, 
+        backgroundColor: '#e9555f'}}>
+        </View>
+        <View style={{flex: 1, 
+        backgroundColor: '#36bdb2'}}>
+        </View>
+      </View>
+    );
+  }
+}
+```
+]
+
+.col[
+.small-img[![](img/flex_row.png)]
+]
+
+---
+
+class: cols two
+
+# FLEXBOX - justify content
+
+## justifyContent: flex-start (default)
+.col[
+```html
+      <View style={{flex: 1}}>
+        <View style={{flex: 1, 
+        justify-content='flex-start', 
+        backgroundColor: '#e9555f', 
+        paddingTop:50}}>
+         <Text>Hei på dere</Text>
+         <Text>Hei på dere</Text>
+         <Text>Hei på dere</Text>
+        </View>
+      </View>
+```
+]
+
+.col[
+.small-img[![](img/justifyContent_flexStart.png)]
+]
+
+---
+
+class: cols two
+
+# FLEXBOX - justify content
+
+## justifyContent: flex-end
+.col[
+```html
+      <View style={{flex: 1}}>
+        <View style={{flex: 1, 
+        justify-content='center', 
+        backgroundColor: '#e9555f', 
+        paddingTop:50}}>
+         <Text>Hei på dere</Text>
+         <Text>Hei på dere</Text>
+         <Text>Hei på dere</Text>
+        </View>
+      </View>
+```
+]
+
+.col[
+.small-img[![](img/justifyContent_center.png)]
+]
+
+---
+
+class: cols two
+
+# FLEXBOX - justify content
+
+## justifyContent: flex-end
+.col[
+```html
+      <View style={{flex: 1}}>
+        <View style={{flex: 1, 
+        justify-content='flex-end', 
+        backgroundColor: '#e9555f', 
+        paddingTop:50}}>
+         <Text>Hei på dere</Text>
+         <Text>Hei på dere</Text>
+         <Text>Hei på dere</Text>
+        </View>
+      </View>
+```
+]
+
+.col[
+.small-img[![](img/justifyContent_flexEnd.png)]
+]
+
+---
+
+class: cols two
+
+# FLEXBOX - justify content
+
+## justifyContent: space-around
+.col[
+```html
+      <View style={{flex: 1}}>
+        <View style={{flex: 1, 
+        justify-content='space-around', 
+        backgroundColor: '#e9555f', 
+        paddingTop:50}}>
+         <Text>Hei på dere</Text>
+         <Text>Hei på dere</Text>
+         <Text>Hei på dere</Text>
+        </View>
+      </View>
+```
+]
+
+.col[
+.small-img[![](img/justifyContent_spaceAround.png)]
+]
+
+---
+
+class: cols two
+
+# FLEXBOX - justify content
+
+## justifyContent: space-between
+.col[
+```html
+      <View style={{flex: 1}}>
+        <View style={{flex: 1, 
+        justify-content='space-between', 
+        backgroundColor: '#e9555f', 
+        paddingTop:50}}>
+         <Text>Hei på dere</Text>
+         <Text>Hei på dere</Text>
+         <Text>Hei på dere</Text>
+        </View>
+      </View>
+```
+]
+
+.col[
+.small-img[![](img/justifyContent_spaceBetween.png)]
+]
+
+---
+
+class: cols two
+
+# FLEXBOX - flex
+
+## flex: 1, flex: 1
+.col[
+```html
+      <View style={{flex: 1}}>
+        <View style={{flex: 1, 
+        backgroundColor: '#e9555f'}}>
+        </View>
+         <View style={{flex: 1, 
+         backgroundColor: '#36bdb2'}}>
+        </View>
+      </View>
+```
+]
+
+.col[
+.small-img[![](img/flex_1_1.png)]
+]
+
+---
+
+class: cols two
+
+# FLEXBOX - flex
+
+## flex: 2, flex: 1
+.col[
+```html
+      <View style={{flex: 1}}>
+        <View style={{flex: 2, 
+        backgroundColor: '#e9555f'}}>
+        </View>
+         <View style={{flex: 1, 
+         backgroundColor: '#36bdb2'}}>
+        </View>
+      </View>
+```
+]
+
+.col[
+.small-img[![](img/flex_2_1.png)]
+]
+
+---
+
+class: cols two
+
+# Style-objekter
+
+## Vanlig å trekke ut i style-objekter
 .col[
 ```html
 <View style={styles.row}>
   <Image
     source={
-    {uri: 'http://inter.net/nissefar.png'}}
+    {uri: 'http://inter.net/workshop.png'}}
     style={styles.image}
   />
   <View style={styles.text}>
     <Text style={styles.title}>
-      God jul
+      Hei på dere!
     </Text>
     <Text style={styles.subtitle}>
-      Velkommen til årets siste faggruppemøte
+      Velkommen til Bekk Open Fagdag
     </Text>
   </View>
 </View>
@@ -135,7 +441,7 @@ var styles = StyleSheet.create({
 
 ---
 
-# Flexbox
+# FLEXBOX
 
 ## Kan ha flere "klasser"
 ```html
@@ -155,26 +461,80 @@ var styles = StyleSheet.create({
 
 
 ---
-# Ikke HTML-webapp
 
-## Fullt ut native plattformkomponenter
-## JS kjører på JavaScriptCore
-## Asynkront, utenfor UI-tråden. 
-## JS til Native via "bridge".
+# State/Redux
+
+## En enklere implementasjon av Flux
+## Single store
+## Actions - for å gjøre endringer på state
+## Reducers - returnerer ny state basert på action 
+
 
 ???
-## Ikke WebView, så det føles native. Deler av Facebook-appen er RN. Kan dere gjette hvilken? Events/arrangementer
-## Sender kommandoer i batcher til UI-tråden.
-## Flere tråder, i motsetning til web. Dekode bilder, lagre til disk, gjøre layoutberegninger utenfor UI-tråden. => Responsivt
+
+## State container
 
 ---
-# Bridge
-.col[
-.full-img[![](img/ReactBridge.png)]
-]
 
+# State/Redux - Single store
+
+```javascript
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import rnWorkshop from './reducers/reducers';
+const store = createStore(rnWorkshop);
+
+<Provider store={store}>
+  <View>....</View>
+</Provider>
+```
+
+???
+
+# 
 
 ---
+
+# State/Redux - Actions
+
+## actions.js
+```javascript
+export const SET_USER_NAME = 'SET_USER_NAME';
+
+
+export const setUsername = username => ({ type: SET_USER_NAME, username });
+```
+## someComponent.js
+```javascript
+
+import { setUsername } from '../actions/actions';
+
+...
+store.dispatch(setUsername("Mark Z."));
+...
+
+```
+
+???
+
+# 
+
+---
+
+# State/Redux - Reducers
+
+## reducer.js
+```javascript
+function messageReducer(state = initialState, action) {
+  switch (action.type) {
+      case SET_USER_NAME:
+      return Object.assign({}, state, { username: action.username });
+  }
+}
+```
+
+---
+
 class: cols two
 
 # Komponenter
@@ -191,6 +551,18 @@ class: cols two
 ???
 
 ## Clipboard, Orientation, 3D-touch ikke implementert enda
+
+---
+
+# Ikke fått til alt ...
+
+## Navigator, NavigatorIOS, NavigatorExperimental, WTF?
+
+???
+
+## Navigator: Uklart API, og lite dokumenterte best practices
+## NavigatorIOS: Begrenset API, og ikke supportert eller videreutviklet av Facebook
+## NavigatorExperimental: Nytt. 
 
 ---
 
@@ -254,7 +626,7 @@ Application ...
 # Linker
 
 ## https://facebook.github.io/react-native/docs/getting-started.html
-## https://github.com/bekk/BekkMobileIntern/tree/master/ios/BekkAnsattRN
+## https://github.com/bekk/react-native-workshop
 
 
     </textarea>
