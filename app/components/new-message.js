@@ -28,7 +28,6 @@ class StartPage extends Component {
                   />
                 <TextInput
                   style={styles.input}
-                  multiline
                   placeholder="Message"
                   value={message}
                   onChangeText={setNewMessage} />
