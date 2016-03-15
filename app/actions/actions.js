@@ -14,8 +14,6 @@ export const SET_POST_SUCCESS = 'SET_POST_SUCCESS';
 
 export const setNewMessageText = newMessageText => ({ type: SET_NEW_MESSAGE_TEXT, newMessageText });
 export const setUsername = username => ({ type: SET_USER_NAME, username });
-export const setView = viewName => ({ type: SET_VIEW, viewName });
-const setMessage = message => ({ type: SET_MESSAGE, message });
 const setMessages = messages => ({ type: SET_MESSAGES, messages });
 const setFetchMessagesFailed = () => ({ type: FETCH_MESSAGE_FAILED });
 const setPostSuccess = message => ({ type: SET_POST_SUCCESS, message });
