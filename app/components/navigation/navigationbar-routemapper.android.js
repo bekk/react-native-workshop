@@ -21,14 +21,11 @@ const SendButton = MKButton.flatButton()
 
 
 const styles = StyleSheet.create({
-    navBarText: {
-        fontSize: 16,
-        marginVertical: 10
-    },
     navBarTitleText: {
+        fontSize: 16,
         color: '#ffffff',
         fontWeight: '500',
-        marginVertical: 20
+        marginVertical: 14
     },
     navBarLeftButton: {
         paddingLeft: 0
@@ -57,7 +54,6 @@ const NavigationBarRouteMapper = {
             return null;
         }
 
-        const previousRoute = navState.routeStack[index - 1];
         return (
             <TouchableOpacity
                 onPress={() => navigator.pop()}
@@ -80,7 +76,7 @@ const NavigationBarRouteMapper = {
 
     Title: function (route, navigator, index, navState) {
         return (
-            <Text style={[styles.navBarText, styles.navBarTitleText]}>
+            <Text style={styles.navBarTitleText}>
                 {route.title}
             </Text>
         );
