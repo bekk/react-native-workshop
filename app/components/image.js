@@ -15,6 +15,10 @@ export default class CustomImage extends Component {
     };
   }
 
+  _onImageFailed() {
+    this.setState({ failedToLoadImage: true });
+  }
+
   render() {
     if (this.state.failedToLoadImage) {
       return null
@@ -25,10 +29,6 @@ export default class CustomImage extends Component {
       source={{ uri: this.props.source }}
       defaultSource={{ uri: "add default image" }}
       onError={ this._onImageFailed.bind(this) } />
-  }
-
-  _onImageFailed() {
-    this.setState({ failedToLoadImage: true });
   }
 }
 
