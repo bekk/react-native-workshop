@@ -15,7 +15,7 @@ export default class CustomImage extends Component {
     };
   }
 
-  _onImageFailed() {
+  _onLoadImageFailure() {
     this.setState({ failedToLoadImage: true });
   }
 
@@ -28,7 +28,7 @@ export default class CustomImage extends Component {
       style={ styles.thumb }
       source={{ uri: this.props.source }}
       defaultSource={{ uri: "add default image" }}
-      onError={ this._onImageFailed.bind(this) } />
+      onError={ this._onLoadImageFailure.bind(this) } />
   }
 }
 
