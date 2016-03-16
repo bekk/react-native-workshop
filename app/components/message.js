@@ -25,7 +25,7 @@ export const Message = (rowData, sectionID, rowID) => {
   );
 }
 
-function _maybeRenderImage(source) {
+const _maybeRenderImage = source => {
 	if (source !== undefined && source.length > 0) {
 		return <Image source={source} />
 	}
