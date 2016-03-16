@@ -1,7 +1,7 @@
 'use strict';
 
-import { baseURL, messageUrl, imgurURL } from '../config/config'
-import { uploadImageToImgur } from './imgur'
+import { baseURL, messageUrl, imgurURL } from '../config/config';
+import { uploadImageToImgur } from './imgur';
 
 var network = {};
 
@@ -10,7 +10,7 @@ network.get = () => fetch(messageUrl).then(parseJSON)
 network.post = (from, message, image) => {
   if (image) {
     return uploadImageToImgur(image)
-      .then(url => postConfig({ from, message, url }))
+      .then(url => postConfig({ from, message, image: url }))
       .then(post);
   }
   return post(postConfig({ from, message }));
