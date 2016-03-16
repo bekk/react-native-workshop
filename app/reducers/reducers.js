@@ -8,10 +8,11 @@ import {
   FETCH_MESSAGE,
   FETCH_MESSAGE_FAILED,
   SET_POST_SUCCESS,
+  SET_IMAGE,
   FEILMELDING
 } from '../actions/actions';
 
-import { initialState } from './initial-state'
+import { initialState } from './initial-state';
 
 function messageReducer(state = initialState, action) {
   switch (action.type) {
@@ -54,6 +55,9 @@ function messageReducer(state = initialState, action) {
        });
     case FEILMELDING:
       return Object.assign({}, state, { error: action.error });
+
+    case SET_IMAGE:
+      return Object.assign({}, state, { image: action.image });
 
     default:
       return state;
