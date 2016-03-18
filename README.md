@@ -32,14 +32,14 @@ The second task will be to show all the messages in a scrollable list. We will f
 
 (Screenshot of what the view should look like after completing this task)
 
-Now ca be a good time to look at the app architecture:
+Now can be a good time to look at the app architecture for handling rendering messages:
 
-- MessageListContainer - controls fetching messages and passes the data to the children who renders the data.
+- MessageListContainer - controls the different network states (fetching, refreshing, error), and passes the data to the children, who renders the data.
 - MessageList - renders each message
 
-a) __Navigator___ You'll find a `MessageListContainer` (`messages-list-container.js`) component in your project. The component is not in use right now and you need to start using it by hooking it up in the navigator. Find the render method for the `CustomNavigator` (`navigation/navigator.js`), change initialRoute to `MessageList` (`message-list.js`).
+a) __Navigator__ You'll find a `MessageListContainer` (`messages-list-container.js`) component in your project. The component is not in use right now and you need to start using it by hooking it up in the navigator. Find the render method for the `CustomNavigator` (`navigation/navigator.js`), change initialRoute to `MessageList` (`message-list.js`).
 
 b) __Listing messages__ Edit `MessageList` (`message-list.js`) component to show messages. The `MessageList` receives an array of messages as prop. Click here to see the format of messages:
 http://mobile-course.herokuapp.com
 
-c) __Show messages with images__ Some messages contain a link to a image. Your task now is to show the image. 
+c) __Show messages with images__ Some messages contain a link to a image. Your task now is to show images for messages with image.
