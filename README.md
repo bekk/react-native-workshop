@@ -37,9 +37,13 @@ Now can be a good time to look at the app architecture for handling rendering me
 - MessageListContainer - controls the different network states (fetching, refreshing, error), and passes the data to the children, who renders the data.
 - MessageList - renders each message
 
-a) __Navigator__ You'll find a `MessageListContainer` (`messages-list-container.js`) component in your project. The component is not in use right now and you need to start using it by hooking it up in the navigator. Find the render method for the `CustomNavigator` (`navigation/navigator.js`), change initialRoute to `MessageList` (`message-list.js`).
+a) __Navigator.__ You'll find a `MessageListContainer` (`messages-list-container.js`) component in your project. The component is not in use right now and you need to start using it by hooking it up in the navigator. Find the render method for the `CustomNavigator` (`navigation/navigator.js`), change initialRoute to `MessageListContainer` (`messages-list-container.js`).
 
-b) __Listing messages__ Edit `MessageList` (`message-list.js`) component to show messages. The `MessageList` receives an array of messages as prop. Click here to see the format of messages:
-http://mobile-course.herokuapp.com
+b) __Listing messages.__ Edit `MessageList` (`message-list.js`) component to show messages. The `MessageList` receives an array of messages as prop. Click here to see the format of messages:
+http://mobile-course.herokuapp.com/message
 
 c) __Show messages with images__ Some messages contain a link to a image. Your task now is to show images for messages with image.
+
+d) __Pull to refresh__ Add pull to refresh. Hint: Look at what ListView can do for you
+
+ 
