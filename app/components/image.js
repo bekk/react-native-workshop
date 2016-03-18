@@ -27,7 +27,7 @@ export default class CustomImage extends Component {
     return <Image
       style={ styles.thumb }
       source={{ uri: this.props.source }}
-      defaultSource={{ uri: "add default image" }}
+      defaultSource={require('../static/default-placeholder.png')}
       onError={ this._onLoadImageFailure.bind(this) } />
   }
 }
