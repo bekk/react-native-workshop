@@ -32,8 +32,14 @@ The second task will be to show all the messages in a scrollable list. We will f
 
 (Screenshot of what the view should look like after completing this task)
 
-a) __Navigator___ You'll find a `MessageList` (`message-list.js`) component in your project. The component is not in use right now and you need to start using it by hooking it up in the navigator. Find the render method for the CustomNavigator, change the initial component to `MessageList` (`message-list.js`).
+Now ca be a good time to look at the app architecture:
 
-b) __Listing messages__ React native contains a ListView component that is perfectly suited for this task.
+- MessageListContainer - controls fetching messages and passes the data to the children who renders the data.
+- MessageList - renders each message
 
-c) __Show images__ Some messages contain a link to a image. Your task now is to show the image
+a) __Navigator___ You'll find a `MessageListContainer` (`messages-list-container.js`) component in your project. The component is not in use right now and you need to start using it by hooking it up in the navigator. Find the render method for the `CustomNavigator` (`navigation/navigator.js`), change initialRoute to `MessageList` (`message-list.js`).
+
+b) __Listing messages__ Edit `MessageList` (`message-list.js`) component to show messages. The `MessageList` receives an array of messages as prop. Click here to see the format of messages:
+http://mobile-course.herokuapp.com
+
+c) __Show messages with images__ Some messages contain a link to a image. Your task now is to show the image. 
