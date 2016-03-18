@@ -26,4 +26,14 @@ d) __Make it look sexy.__ At this point we won't kill you if your new message vi
 
 (Screenshots – platform specific design)
 
-##2. List messages
+##2. Show messages
+
+The second task will be to show all the messages in a scrollable list. We will for now ignore the newly created new message component and focus on show messages. It will all be connected in assignment 3.
+
+(Screenshot of what the view should look like after completing this task)
+
+a) __Navigator___ You'll find a `MessageList` (`message-list.js`) component in your project. The component is not in use right now and you need to start using it by hooking it up in the navigator. Find the render method for the CustomNavigator, change the initial component to `MessageList` (`message-list.js`).
+
+b) __Listing messages__ React native contains a ListView component that is perfectly suited for this task.
+
+c) __Show images__ Some messages contain a link to a image. Your task now is to show the image
