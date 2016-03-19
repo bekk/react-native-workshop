@@ -5,7 +5,8 @@ import React, {
     Image,
 } from 'react-native';
 import BackArrow from '../../resources/back-arrow.png';
-import NavigationBarButtons from './navigationbar-buttons';
+import navigationBarButtons from './navigationbar-buttons';
+import { navigatorPop } from '../../actions/actions';
 
 const styles = {
   navBarTitleText: {
@@ -20,26 +21,28 @@ const styles = {
   }
 };
 
-const NavigationBarRouteMapper = {
+const commonRouteMapper = (dispatch) => ({
 
     LeftButton(route, navigator, index) {
         if (index === 0) {
             return null;
         }
         return (
-            <TouchableOpacity onPress={navigator.pop}>
+            <TouchableOpacity onPress={() => dispatch(navigatorPop())}>
                 <Image source={BackArrow} style={styles.navBarLeftImage}/>
             </TouchableOpacity>
         );
     },
 
-    Title(route, navigator) {
+    Title(route) {
         return (
             <Text style={styles.navBarTitleText}>
               {route.title}
             </Text>
         );
     }
-};
+});
 
-export default Object.assign(NavigationBarRouteMapper, NavigationBarButtons);
+const getNavigationBarRouteMapper = (dispatch) => Object.assign(commonRouteMapper(dispatch), navigationBarButtons(dispatch));
+
+export default getNavigationBarRouteMapper;

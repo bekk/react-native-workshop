@@ -23,19 +23,19 @@ const styles = {
     }
 };
 
-const NavigationBarButtons = {
+const navigationBarButtons = (dispatch) => ({
 
-    RightButton (route, navigator) {
+    RightButton (route) {
         if (route && route.title === 'Skriv ny') {
             return (
                 <TouchableOpacity style={styles.navBarRightButton}>
-                  <ConnectedSendButton navigator={navigator} style={styles.sendButton} />
+                  <ConnectedSendButton style={styles.sendButton} />
                 </TouchableOpacity>
             );
         }
         return null;
     }
-};
+});
 
 
 const FlatButton = MKButton.flatButton()
@@ -46,16 +46,16 @@ const FlatButton = MKButton.flatButton()
   .withTextStyle({ color: 'white' })
   .build();
 
-const SendButton = ({ postMessage, navigator }) => (
+const SendButton = ({ postMessage }) => (
  <TouchableOpacity style={styles.navBarRightButton}>
-   <FlatButton style={{ padding: 15, top: -3 }} onPress={() => postMessage(navigator)}/>
+   <FlatButton style={{ padding: 15, top: -3 }} onPress={postMessage}/>
  </TouchableOpacity>
 );
 
 const mapStateToProps = () => ({});
 const mapDispatchToProps = dispatch => ({
- postMessage: navigator => dispatch(postMessage(navigator)),
+ postMessage: () => dispatch(postMessage()),
 });
 const ConnectedSendButton = connect(mapStateToProps, mapDispatchToProps)(SendButton);
 
-export default NavigationBarButtons;
+export default navigationBarButtons;

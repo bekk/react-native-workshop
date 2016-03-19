@@ -16,19 +16,17 @@ import { fetchMessages, postMessage } from '../actions/actions';
 import { ActivityIndicator } from './activity-indicator';
 import { ErrorMessage } from './error-message'
 import NewMessage from './new-message';
+import { newMessage } from './navigation/routes';
+import { navigateTo } from '../actions/actions';
 
 class ListMessagesContainer extends Component {
   componentWillMount() {
     this._refreshView();
   }
 
-  _goto() {
-    this.props.navigator.push({component: NewMessage, title: 'Skriv ny'});
-  }
-
   _shouldRenderFabulousAndroidUI() {
     if (Platform.OS === 'android') {
-      return <ColoredFab onPress={this._goto.bind(this)}>+</ColoredFab>
+      return <ColoredFab onPress={this.props.goToNewMessage}>+</ColoredFab>
     }
     return null;
   }
@@ -72,6 +70,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   fetchMessages: () => dispatch(fetchMessages(dispatch)),
+  goToNewMessage: () => dispatch(navigateTo(newMessage))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListMessagesContainer);

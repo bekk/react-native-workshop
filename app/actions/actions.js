@@ -13,6 +13,9 @@ export const POST_MESSAGE = 'POST_MESSAGE';
 export const SET_POST_SUCCESS = 'SET_POST_SUCCESS';
 export const FEILMELDING = 'FEILMELDING';
 export const SET_IMAGE = 'SET_IMAGE';
+export const SET_NAVIGATOR = 'SET_NAVIGATOR';
+export const NAVIGATOR_PUSH = 'NAVIGATOR_PUSH';
+export const NAVIGATOR_POP = 'NAVIGATOR_POP';
 
 export const setNewMessageText = newMessageText => ({ type: SET_NEW_MESSAGE_TEXT, newMessageText });
 export const setUsername = username => ({ type: SET_USER_NAME, username });
@@ -27,7 +30,7 @@ export const fetchMessages = () => (dispatch) => {
     .catch(() => dispatch(setFetchMessagesFailed()));
 };
 
-export const postMessage = (navigator) => (dispatch, getState) => {
+export const postMessage = () => (dispatch, getState) => {
   let { username, newMessageText, image } = getState();
 
   if (!username || username.length === 0) {
@@ -39,7 +42,7 @@ export const postMessage = (navigator) => (dispatch, getState) => {
     const imageData = image ? image.data : null;
     return messages.post(username, newMessageText, imageData)
         .then(message => dispatch(setPostSuccess(message)))
-        .then(() => navigator.pop())
+        .then(() => dispatch(navigatorPop()))
         .catch(error => dispatch({type: FEILMELDING, error: 'Noe gikk feil ved innsending.'}));
   }
 };
@@ -51,3 +54,7 @@ export const openImagePicker = () => (dispatch) => {
     .then(image => dispatch(setImage(image)))
     .catch(console.log);
 };
+
+export const setNavigator = (navigator) => ({ type: SET_NAVIGATOR, navigator });
+export const navigateTo = (route) => ({ type: NAVIGATOR_PUSH, route });
+export const navigatorPop = () => ({ type: NAVIGATOR_POP });
