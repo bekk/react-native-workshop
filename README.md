@@ -42,8 +42,6 @@ a) __Navigator.__ You'll find a `MessageListContainer` (`messages-list-container
 b) __Listing messages.__ Edit `MessageList` (`message-list.js`) component to show messages. The `MessageList` receives an array of messages as prop. Click here to see the format of messages:
 http://mobile-course.herokuapp.com/message
 
-c) __Show messages with images__ Some messages contain a link to a image. Your task now is to show images for messages with image.
+c) __Show messages with images.__ Some messages contain a link to a image. Your task now is to show images for messages with image.
 
-d) __Pull to refresh__ Add pull to refresh. Hint: Look at what ListView can do for you
-
- 
+d) __Pull to refresh.__ Add pull to refresh. Hint: Look at what ListView can do for you
