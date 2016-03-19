@@ -7,6 +7,8 @@ export const uploadImageToImgur = (image) => {
     method: 'POST',
     body: image,
     headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
       'Authorization' : 'Client-ID 7362bd404ecd0c1'
     },
     mode: 'cors',
