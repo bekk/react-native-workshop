@@ -10,7 +10,7 @@ import React, {
   TouchableOpacity
 } from 'react-native';
 import { connect } from 'react-redux';
-import { pickImage } from '././camera/camera';
+import { pickImage } from './camera/camera';
 import { setImage, openImagePicker } from '../actions/actions';
 
 import { postMessage, setNewMessageText, setUsername } from '../actions/actions';
