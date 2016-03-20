@@ -67,5 +67,20 @@ c) __Pop it.__ Ensure that the user is taken back to the message list when send 
 
 Well done! This starts to look like a complete application!
 
+##4. Add image to new messages
 
- 
+A message consisting of text only is quite boring these days. Also, a picture says more than a thousand words... So, let's add functionality to allow the user to add an image to new messages.
+
+React Native has no component or API for taking pictures on the fly or picking an image from the camera roll. That's where third party npm modules come in handy. We'll use the react-native-image-picker module (link), which allows for both taking new pictures and picking from the camera roll. It's implemented by bridging to the pure native image picker and picture taking apps. 
+
+We've already added the module to the project, and wrapped it in a promise. Have a look at `camera.js`. Your need to use the  `pickImage()` function of `camera.js` and handle the promise. You can also tweak and experiment with the image picker configuration, also found in `camera.js`.
+
+a) __Button.__ We need a button for launching the image picker. 
+
+b) __Pick it.__ Hook the button up to the image picker. To open the image picker, you're not rendering a component, but simply calling a JavaScript function that further calls some native, platform specific code. Hence, the handling of opening the picker is better implemented by an action than a component. So, create an action that opens the image picker, and hook it up to the button.
+
+c) __Save it.__ Make sure your action saves it to the Redux storne. Hint: Use `setImage()` in `actions.js`
+
+c) __Show it.__ After successfully picking an image, display the image in the `NewMessage`component. Allow it to use all available space, but make sure it stays good lookin' by maintaining its aspect ratio. 
+
+d) __Send it.__ If you've added the image to the Redux state, `postMessage()` should already support posting messages with image to the server. Works? Good! (Kanskje deltakerene bør utvide postMessage selv? Men da bør de kanskje også lage action setImage selv + håndtere den i reduceren. Kan bli litt mye?)
