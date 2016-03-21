@@ -34,8 +34,8 @@ The second task will be to show all the messages in a scrollable list. We will f
 
 Let's have a look at the app architecture for handling rendering the messages:
 
-- MessageListContainer - controls the different network states (fetching, refreshing, error), and passes the data to the children, who renders the data.
-- MessageList - renders each message
+- `MessageListContainer` - controls the different network states (fetching, refreshing, error), and passes the data to the children, who renders the data.
+- `MessageList` - renders each message
 
 a) __Navigator.__ You'll find a `MessageListContainer` (`messages-list-container.js`) component in your project. The component is not in use right now and you need to start using it by hooking it up in the navigator. Find the render method for the `CustomNavigator` (`navigation/navigator.js`), change initialRoute to `MessageListContainer` (`messages-list-container.js`).
 
