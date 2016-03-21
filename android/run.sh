@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source output_helpers.sh
+source ../output_helpers.sh
 
 function sjekkLaunchAgentsRettigheter {
 	harKorrekteRettigheter=$(ls -la "/Users/${USER}/Library" | grep LaunchAgents | grep "${USER}")
