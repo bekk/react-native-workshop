@@ -2,7 +2,7 @@
 import React, { TouchableOpacity } from 'react-native';
 import { connect } from 'react-redux';
 import { postMessage } from '../../actions/actions'
-import { MKButton, MKColor } from 'react-native-material-kit';
+import { MKButton, MKColor, MKSpinner } from 'react-native-material-kit';
 
 const styles = {
     navBarRightButton: {
@@ -46,15 +46,25 @@ const FlatButton = MKButton.flatButton()
   .withTextStyle({ color: 'white' })
   .build();
 
-const SendButton = ({ postMessage, navigator }) => (
- <TouchableOpacity style={styles.navBarRightButton}>
-   <FlatButton style={{ padding: 15, top: -3 }} onPress={() => postMessage(navigator)}/>
- </TouchableOpacity>
-);
+const Spinner = MKSpinner
+    .singleColorSpinner()
+    .withStrokeColor('#ffffff')
+    .build();
 
-const mapStateToProps = () => ({});
+const SendButton = ({ isSending, postMessage, navigator }) => {
+    if (isSending) {
+        return <Spinner />;
+    }
+    return (
+        <TouchableOpacity style={styles.navBarRightButton}>
+            <FlatButton style={{ padding: 15, top: -3 }} onPress={() => postMessage(navigator)}/>
+        </TouchableOpacity>
+    );
+
+};
+const mapStateToProps = ({ isSending }) => ({ isSending });
 const mapDispatchToProps = dispatch => ({
- postMessage: navigator => dispatch(postMessage(navigator)),
+ postMessage: navigator => dispatch(postMessage(navigator))
 });
 const ConnectedSendButton = connect(mapStateToProps, mapDispatchToProps)(SendButton);
 

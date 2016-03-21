@@ -9,7 +9,8 @@ import {
   FETCH_MESSAGE_FAILED,
   SET_POST_SUCCESS,
   SET_IMAGE,
-  FEILMELDING
+  FEILMELDING,
+  POST_MESSAGE
 } from '../actions/actions';
 
 import { initialState } from './initial-state';
@@ -51,13 +52,17 @@ function messageReducer(state = initialState, action) {
          username: null,
          newMessageText: null,
          isFetchingMessages: false,
-         failedToFetchMessages: false
+         failedToFetchMessages: false,
+         isSending: false
        });
     case FEILMELDING:
       return Object.assign({}, state, { error: action.error });
 
     case SET_IMAGE:
       return Object.assign({}, state, { image: action.image });
+
+    case POST_MESSAGE:
+      return Object.assign({}, state, {isSending: true});
 
     default:
       return state;
