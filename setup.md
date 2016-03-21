@@ -9,10 +9,11 @@ As an alternative you can also use the Genymotion emulator (skip step 1 and 2).
 In general the Genymotion emulator has better performance then the one provided by the Android SDK and it is easier to set up.
 It does however integrate differently with the Android Device Bridge (ADB), and therefore requires some extra set up to get live-reloading.
 
-The setup for windows was more tedious then on OSX, it is therefore recommended to use OSX.
+The setup for windows was more tedious than on OSX, it is therefore recommended to use OSX if possible.
 Notes from troubleshooting during the setup-process on windows and OSX can be found here;
-    * [Windows](trouble-windows-android.md)
-    * [OSX](trouble-osx-android.md)
+
+* [Windows](trouble-windows-android.md)
+* [OSX](trouble-osx-android.md)
 
 1. Ensure that you got the Android SDK installed and ANDROID_HOME pointing to the SDK.
 2. Configure the SDK, download these packages with API-level 23 or higher;
@@ -35,7 +36,7 @@ Notes from troubleshooting during the setup-process on windows and OSX can be fo
 If you have any trouble check [this](trouble-windows-android.md)
 
 ### OSX
-1. Run `react-native run-android`
+1. Run `bash android/run.sh`, this checks your configuration and starts react-native
 
 If you have any trouble check [this](trouble-osx-android.md)
 
