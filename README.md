@@ -73,7 +73,7 @@ A message consisting of text only is quite boring these days. Also, a picture sa
 
 React Native has no component or API for taking pictures on the fly or picking an image from the camera roll. That's where third party npm modules come in handy. We'll use the react-native-image-picker module (link), which allows for both taking new pictures and picking from the camera roll. It's implemented by bridging to the pure native image picker and picture taking apps. 
 
-We've already added the module to the project, and wrapped it in a promise. Have a look at `camera.js`. Your need to use the  `pickImage()` function of `camera.js` and handle the promise. You can also tweak and experiment with the image picker configuration, also found in `camera.js`.
+We've already added the module to the project, and wrapped it in a promise. Have a look at `camera.js`. You need to use the  `pickImage()` function of `camera.js` and handle the promise. You can also tweak and experiment with the image picker configuration, also found in `camera.js`.
 
 a) __Button.__ We need a button for launching the image picker. 
 
