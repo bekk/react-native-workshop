@@ -28,11 +28,11 @@ d) __Make it look sexy.__ At this point we won't kill you if your new message vi
 
 ##2. Show messages
 
-The second task will be to show all the messages in a scrollable list. We will for now ignore the newly created new message component and focus on show messages. It will all be connected in assignment 3.
+The second task will be to show all the messages in a scrollable list. We will for now ignore the newly created new message component and focus on displaying messages. It will all be connected in assignment 3.
 
 (Screenshot of what the view should look like after completing this task)
 
-Now can be a good time to look at the app architecture for handling rendering messages:
+Let's have a look at the app architecture for handling rendering the messages:
 
 - MessageListContainer - controls the different network states (fetching, refreshing, error), and passes the data to the children, who renders the data.
 - MessageList - renders each message
