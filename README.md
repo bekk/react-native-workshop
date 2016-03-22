@@ -2,6 +2,8 @@
 
 ##Setup
 
+To setup your environment, follow the steps [here](setup.md). 
+
 ##Introduction
 - TODO: Introduction to application (Redux, Navigation, etc.)
 - TODO: Useful links
