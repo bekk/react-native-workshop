@@ -6,12 +6,14 @@ import React, {
     Platform
 } from 'react-native';
 
+import { black } from './../../config/colors';
+
 import ListMessageContainer from '../messages-list-container';
 import NavigationBarRouteMapper from './navigationbar-routemapper';
 
 const styles = StyleSheet.create({
     navBar: {
-        backgroundColor: '#da4336'
+        backgroundColor: black
     }
 });
 

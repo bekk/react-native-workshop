@@ -44,7 +44,7 @@ export const postMessage = (navigator) => (dispatch, getState) => {
   }
 };
 
-const setImage = (image) => ({ type: SET_IMAGE, image });
+export const setImage = (image) => ({ type: SET_IMAGE, image });
 
 export const openImagePicker = () => (dispatch) => {
   return pickImage()

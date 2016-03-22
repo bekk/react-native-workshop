@@ -4,7 +4,7 @@ import React, {
 	View,
   Text
 } from 'react-native';
-
+import Colors from './../config/colors';
 import Image from './image';
 
 export const Message = (rowData, sectionID, rowID) => {
@@ -39,7 +39,10 @@ Message.propTypes = {
 const styles = {
 	container: {
     flex: 1,
-    overflow: 'hidden'
+    overflow: 'hidden',
+    backgroundColor: Colors.black,
+    margin: 16,
+    marginBottom: 0
   },
   row: {
      flexDirection: 'column',

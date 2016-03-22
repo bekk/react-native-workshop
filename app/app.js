@@ -4,6 +4,7 @@ import React, { Component, Platform, BackAndroid, StatusBar, View } from 'react-
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
+import { black } from './config/colors';
 
 import rnWorkshop from './reducers/reducers';
 const store = createStore(rnWorkshop, applyMiddleware(thunk));
@@ -37,7 +38,7 @@ class App extends Component {
         <View style={{flex: 1}}>
           <StatusBar
             barStyle="light-content"
-            backgroundColor="#b93221"
+            backgroundColor={black}
           />
           <Navigator ref="navigator" />
         </View>
