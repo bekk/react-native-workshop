@@ -8,6 +8,7 @@ import React, {
 } from 'react-native';
 
 import { Message } from './message'
+import { Red, Green, Yellow } from './../config/colors';
 
 const DSConfig = new ListView.DataSource({rowHasChanged: (r1, r2) => r1.id !== r2.id});
 
@@ -36,7 +37,7 @@ export default class MessageList extends Component {
             onRefresh={ this._onRefresh.bind(this) }
             tintColor="#ff0000"
             title="Laster..."
-            colors={ ['#ff0000', '#00ff00', '#0000ff'] }
+            colors={ [Red, Green, Yellow] }
           />
         }
         dataSource={ dataSource }

@@ -31,6 +31,7 @@ class NewMessage extends Component {
                       style={styles.input}
                       placeholder="Name"
                       placeholderTextColor={Colors.Dark2}
+                      underlineColorAndroid={Colors.White}
                       value={username}
                       onChangeText={setUsername}
                     />
@@ -41,6 +42,7 @@ class NewMessage extends Component {
                       style={styles.input}
                       placeholder="Message"
                       placeholderTextColor={Colors.Dark2}
+                      underlineColorAndroid={Colors.White}
                       value={newMessageText}
                       onChangeText={setNewMessageText}
                     />
@@ -72,6 +74,20 @@ class NewMessage extends Component {
     }
 }
 
+function inputContainerStyle() {
+    const base = {
+        margin: 10,
+        padding: 5
+    };
+    const ios = {
+        height: 35,
+        borderBottomWidth: 1,
+        borderBottomColor: Colors.White
+    };
+
+    return Platform.OS === 'android' ? base : {...base, ...ios};
+}
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -80,17 +96,11 @@ const styles = StyleSheet.create({
     },
     inputElements: {
       backgroundColor: Colors.BEKKDark,
-      paddingTop: 20,
-      paddingBottom: 20,
+      paddingTop: Platform.OS === 'android' ? 0 : 20,
+      paddingBottom: Platform.OS === 'android' ? 0 : 20,
       marginBottom: 8
     },
-    inputContainer: {
-      height: 30,
-      margin: 10,
-      padding: 5,
-      borderBottomWidth: 1,
-      borderBottomColor: Colors.White
-    },
+    inputContainer: inputContainerStyle(),
     input: {
       flex: 1,
       color: Colors.White
