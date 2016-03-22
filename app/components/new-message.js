@@ -10,7 +10,7 @@ import React, {
   TouchableOpacity
 } from 'react-native';
 import { connect } from 'react-redux';
-import { pickImage } from '././camera/camera';
+import { pickImage } from './camera/camera';
 import { setImage, openImagePicker } from '../actions/actions';
 
 import { postMessage, setNewMessageText, setUsername } from '../actions/actions';
@@ -24,29 +24,36 @@ class NewMessage extends Component {
 
         return (
             <View style={styles.container}>
-                <TextInput
-                  style={styles.input}
-                  placeholder="Name"
-                  value={username}
-                  onChangeText={setUsername}
+                <View style={styles.inputContainer}>
+                  <TextInput
+                    style={styles.input}
+                    placeholder="Name"
+                    value={username}
+                    onChangeText={setUsername}
                   />
-                <TextInput
-                  style={styles.input}
-                  placeholder="Message"
-                  value={newMessageText}
-                  onChangeText={setNewMessageText} />
-                  { feedback }
-                  <View style={styles.buttonContainer}>
-                    <TouchableOpacity
-                      style={styles.takePictureButton}
-                      onPress={onPickImagePressed}>
-                        <Text>Take Picture</Text>
-                    </TouchableOpacity>
-                    { sendButton }
-                  </View>
-                  <View style={styles.imageContainer}>
-                    { maybeImage }
-                  </View>
+                </View>
+
+                <View style={styles.inputContainer}>
+                  <TextInput
+                    style={styles.input}
+                    placeholder="Message"
+                    value={newMessageText}
+                    onChangeText={setNewMessageText}
+                  />
+                </View>
+
+                { feedback }
+                <View style={styles.buttonContainer}>
+                  <TouchableOpacity
+                    style={styles.takePictureButton}
+                    onPress={onPickImagePressed}>
+                      <Text>Take Picture</Text>
+                  </TouchableOpacity>
+                  { sendButton }
+                </View>
+                <View style={styles.imageContainer}>
+                  { maybeImage }
+                </View>
             </View>
         );
     }
@@ -68,12 +75,15 @@ const styles = StyleSheet.create({
         padding: 20,
         marginTop: 100
     },
-    input: {
+    inputContainer: {
       height: 30,
       margin: 10,
       padding: 5,
-      borderWidth: 1,
+      borderBottomWidth: 1,
       borderBottomColor: 'gray'
+    },
+    input: {
+      flex: 1
     },
     buttonContainer: {
       flexDirection: 'row',

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source output_helpers.sh
+source ../output_helpers.sh
 
 function sjekkLaunchAgentsRettigheter {
 	harKorrekteRettigheter=$(ls -la "/Users/${USER}/Library" | grep LaunchAgents | grep "${USER}")
@@ -20,19 +20,18 @@ function sjekkLaunchAgentsRettigheter {
 function sjekkAndroidHome {
 	if [ -z "$ANDROID_HOME" ]; then
 		sjekkAndroidHomeFail
+		exit 1
 	else
 		sjekkAndroidHomeOK
 	fi
 }
 
-header "Oppdaterer watchman"
-#brew uninstall watchman && brew install --HEAD watchman
-line
-
-header "Sjekker rettigheter for LaunchAgents"
-sjekkLaunchAgentsRettigheter
-
 header "Sjekker ANDROID_HOME"
 sjekkAndroidHome
 
-header ""
+header "Starter android avd"
+bash "$ANDROID_HOME/tools/android" avd
+line
+line
+
+header "Avslutter android avd"

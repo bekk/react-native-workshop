@@ -2,7 +2,7 @@ import { ImagePickerManager } from 'NativeModules';
 import { Platform } from 'react-native';
 
 var options = {
-  title: 'Select Avatar', // specify null or empty string to remove the title
+  title: 'Pick image', // specify null or empty string to remove the title
   cancelButtonTitle: 'Cancel',
   takePhotoButtonTitle: 'Take Photo...', // specify null or empty string to remove this button
   chooseFromLibraryButtonTitle: 'Choose from Library...', // specify null or empty string to remove this button
