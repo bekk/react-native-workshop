@@ -43,7 +43,7 @@ const FlatButton = MKButton.flatButton()
   .withBackgroundColor(MKColor.Transparent)
   .withMaskColor(MKColor.Transparent)
   .withRippleColor('rgba(255, 255, 255, 0.2)')
-  .withTextStyle({ color: 'white' })
+  .withTextStyle({ color: 'White' })
   .build();
 
 const Spinner = MKSpinner

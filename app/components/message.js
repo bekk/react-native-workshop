@@ -9,16 +9,18 @@ import Image from './image';
 
 export const Message = (rowData, sectionID, rowID) => {
   return (
-    <View style={ styles.container }>
-      <View style={ styles.row }>
-        <Text style={ styles.text }>
-          { rowData.from }
-        </Text>
-      </View>
-      <View style={styles.underline} />
-	  { _maybeRenderImage(rowData.image) }
-      <View style={ styles.row }>
-        <Text style={ styles.text }>{ rowData.message }</Text>
+    <View>
+      <View style={ styles.container }>
+        <View style={ styles.row }>
+          <Text style={ styles.text }>
+            { rowData.from }
+          </Text>
+        </View>
+        <View style={styles.underline} />
+	    { _maybeRenderImage(rowData.image) }
+        <View style={ styles.row }>
+          <Text style={ styles.text }>{ rowData.message }</Text>
+        </View>
       </View>
       <View style={ styles.separator } />
     </View>
@@ -42,7 +44,7 @@ Message.propTypes = {
 
 const styles = {
   container: {
-    backgroundColor: Colors.black,
+    backgroundColor: Colors.BEKKDark,
     margin: 16,
     marginBottom: 0
   },
@@ -50,7 +52,7 @@ const styles = {
       padding: 16
   },
   underline: {
-    borderBottomColor: Colors.red,
+    borderBottomColor: Colors.Red,
     borderBottomWidth: 2,
     marginLeft: 16,
     marginRight: 16,
@@ -61,9 +63,12 @@ const styles = {
   },
   separator: {
     height: 1,
-    backgroundColor: Colors.red,
+    backgroundColor: Colors.Dark1,
+    marginLeft: 8,
+    marginRight: 8,
+    marginTop: 16
   },
   text: {
-    color: Colors.white
+    color: Colors.White
   }
 };

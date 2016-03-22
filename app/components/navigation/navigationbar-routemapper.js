@@ -6,12 +6,12 @@ import React, {
 } from 'react-native';
 import BackArrow from '../../resources/back-arrow.png';
 import NavigationBarButtons from './navigationbar-buttons';
-import { white } from './../../config/colors';
+import { White } from './../../config/colors';
 
 const styles = {
   navBarTitleText: {
     fontSize: 16,
-    color: white,
+    color: White,
     fontWeight: '300',
     marginVertical: 14
   },
