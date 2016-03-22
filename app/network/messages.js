@@ -1,16 +1,18 @@
 'use strict';
 
-import { baseURL, messageUrl, imgurURL } from '../config/config'
-import { uploadImageToImgur } from './imgur'
+import { baseURL, messageUrl, imgurURL } from '../config/config';
+import { uploadImageToImgur } from './imgur';
 
-var network = {};
+const APPLICATION_JSON = 'application/json';
+
+let network = {};
 
 network.get = () => fetch(messageUrl).then(parseJSON)
 
 network.post = (from, message, image) => {
   if (image) {
     return uploadImageToImgur(image)
-      .then(url => postConfig({ from, message, url }))
+      .then(url => postConfig({ from, message, image: url }))
       .then(post);
   }
   return post(postConfig({ from, message }));
@@ -23,8 +25,8 @@ const parseJSON = response => response.json();
 const postConfig = json => ({
   method: 'POST',
   headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json'
+    'Accept': APPLICATION_JSON,
+    'Content-Type': APPLICATION_JSON
   },
   body: JSON.stringify(json),
   cache: 'default'
