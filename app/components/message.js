@@ -11,15 +11,14 @@ export const Message = (rowData, sectionID, rowID) => {
   return (
     <View style={ styles.container }>
       <View style={ styles.row }>
-        <View style={styles.underline}>
-          <Text style={ styles.from }>
-            { rowData.from }
-          </Text>
-        </View>
+        <Text style={ styles.text }>
+          { rowData.from }
+        </Text>
       </View>
+      <View style={styles.underline} />
 	  { _maybeRenderImage(rowData.image) }
-      <View style={ styles.messagerow }>
-        <Text style={ styles.message }>{ rowData.message }</Text>
+      <View style={ styles.row }>
+        <Text style={ styles.text }>{ rowData.message }</Text>
       </View>
       <View style={ styles.separator } />
     </View>
@@ -48,30 +47,23 @@ const styles = {
     marginBottom: 0
   },
   row: {
-    padding: 16,
-    flexDirection: 'row',
-    flexWrap: 'wrap'
-  },
-  messagerow: {
-      padding: 16,
-      paddingTop: 0
+      padding: 16
   },
   underline: {
     borderBottomColor: Colors.red,
-    borderBottomWidth: 2
+    borderBottomWidth: 2,
+    marginLeft: 16,
+    marginRight: 16,
+    width: 60
   },
   image: {
-    marginBottom: 8
+    marginTop: 16
   },
   separator: {
     height: 1,
     backgroundColor: Colors.red,
   },
-  from: {
-    color: Colors.white,
-    marginBottom: 12
-  },
-  message: {
+  text: {
     color: Colors.white
   }
 };
