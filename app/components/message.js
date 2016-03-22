@@ -8,17 +8,18 @@ import Colors from './../config/colors';
 import Image from './image';
 
 export const Message = (rowData, sectionID, rowID) => {
-	console.log(rowData);
   return (
     <View style={ styles.container }>
       <View style={ styles.row }>
-        <Text style={ styles.from }>
-          { rowData.from }
-        </Text>
-				{ _maybeRenderImage(rowData.image) }
-        <Text style={ styles.message }>
-          { rowData.message }
-        </Text>
+        <View style={styles.underline}>
+          <Text style={ styles.from }>
+            { rowData.from }
+          </Text>
+        </View>
+      </View>
+	  { _maybeRenderImage(rowData.image) }
+      <View style={ styles.messagerow }>
+        <Text style={ styles.message }>{ rowData.message }</Text>
       </View>
       <View style={ styles.separator } />
     </View>
@@ -27,7 +28,11 @@ export const Message = (rowData, sectionID, rowID) => {
 
 const _maybeRenderImage = source => {
 	if (source !== undefined && source.length > 0) {
-		return <Image source={source} />
+		return (
+          <View style={styles.image}>
+            <Image source={source} />
+          </View>
+        );
 	}
 }
 
@@ -37,30 +42,36 @@ Message.propTypes = {
 };
 
 const styles = {
-	container: {
-    flex: 1,
-    overflow: 'hidden',
+  container: {
     backgroundColor: Colors.black,
     margin: 16,
     marginBottom: 0
   },
   row: {
-     flexDirection: 'column',
-     justifyContent: 'center',
-     padding: 16,
-   },
-   separator: {
-     height: 1,
-     backgroundColor: '#d9d9d9',
-   },
-   message: {
-     flex: 1,
-     color: '#6e6e6e'
-   },
-   from: {
-     flex: 1,
-     color: '#212121',
-     fontWeight: '500',
-     marginBottom: 5
-   }
+    padding: 16,
+    flexDirection: 'row',
+    flexWrap: 'wrap'
+  },
+  messagerow: {
+      padding: 16,
+      paddingTop: 0
+  },
+  underline: {
+    borderBottomColor: Colors.red,
+    borderBottomWidth: 2
+  },
+  image: {
+    marginBottom: 8
+  },
+  separator: {
+    height: 1,
+    backgroundColor: Colors.red,
+  },
+  from: {
+    color: Colors.white,
+    marginBottom: 12
+  },
+  message: {
+    color: Colors.white
+  }
 };
