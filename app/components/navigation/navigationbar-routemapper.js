@@ -11,8 +11,8 @@ import { White } from './../../config/colors';
 const styles = {
   navBarTitleText: {
     fontSize: 16,
+    fontFamily: 'FedraSansAltPro-Light',
     color: White,
-    fontWeight: '300',
     marginVertical: 14
   },
   navBarLeftImage: {
