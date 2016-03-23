@@ -6,13 +6,13 @@ import React, {
 } from 'react-native';
 import BackArrow from '../../resources/back-arrow.png';
 import NavigationBarButtons from './navigationbar-buttons';
-import { White } from './../../config/colors';
+import { Colors, Fonts } from './../../config/design';
 
 const styles = {
   navBarTitleText: {
     fontSize: 16,
-    fontFamily: 'FedraSansAltPro-Light',
-    color: White,
+    fontFamily: Fonts.Light,
+    color: Colors.White,
     marginVertical: 14
   },
   navBarLeftImage: {

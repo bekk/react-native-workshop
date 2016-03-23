@@ -9,7 +9,7 @@ import React, {
   Image,
   TouchableOpacity
 } from 'react-native';
-import Colors from './../config/colors';
+import { Colors } from './../config/design';
 import { connect } from 'react-redux';
 import { pickImage } from './camera/camera';
 import { setImage, openImagePicker } from '../actions/actions';
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
         marginTop: 60
     },
     inputElements: {
-      backgroundColor: Colors.BEKKDark,
+      backgroundColor: Colors.Dark,
       paddingTop: Platform.OS === 'android' ? 0 : 20,
       paddingBottom: Platform.OS === 'android' ? 0 : 20,
       marginBottom: 8

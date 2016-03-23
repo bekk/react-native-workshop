@@ -6,7 +6,7 @@ import React, {
     Platform
 } from 'react-native';
 
-import { BEKKDark } from './../../config/colors';
+import { Colors } from './../../config/design';
 
 import ListMessageContainer from '../messages-list-container';
 import NewMessage from './../new-message';
@@ -14,7 +14,7 @@ import NavigationBarRouteMapper from './navigationbar-routemapper';
 
 const styles = StyleSheet.create({
     navBar: {
-        backgroundColor: BEKKDark
+        backgroundColor: Colors.Dark
     }
 });
 

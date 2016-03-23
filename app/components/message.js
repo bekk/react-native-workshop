@@ -4,7 +4,7 @@ import React, {
 	View,
   Text
 } from 'react-native';
-import Colors from './../config/colors';
+import { Colors } from './../config/design';
 import Image from './image';
 
 export const Message = (rowData, sectionID, rowID) => {
@@ -44,7 +44,7 @@ Message.propTypes = {
 
 const styles = {
   container: {
-    backgroundColor: Colors.BEKKDark,
+    backgroundColor: Colors.Dark,
     margin: 16,
     marginBottom: 0
   },

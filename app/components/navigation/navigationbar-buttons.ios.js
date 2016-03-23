@@ -7,7 +7,7 @@ import React, {
     Platform
 } from 'react-native';
 import NewMessage from '../new-message';
-import { Red } from './../../config/colors';
+import { Colors } from './../../config/design';
 
 var styles = StyleSheet.create({
     navBarRightButton: {
@@ -19,7 +19,7 @@ var styles = StyleSheet.create({
         height: 50
     },
     navBarRightText: {
-        color: Red,
+        color: Colors.Red,
         fontWeight: '300',
         fontSize: 36,
         padding: 15,
