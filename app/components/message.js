@@ -70,7 +70,6 @@ const styles = {
   },
   text: {
     color: Colors.White,
-    fontFamily: Fonts.Light,
-    height: 12
+    fontFamily: Fonts.Light
   }
 };

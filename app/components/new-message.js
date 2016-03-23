@@ -120,7 +120,6 @@ const styles = StyleSheet.create({
       alignItems: 'center'
     },
     buttonText: {
-      top: 3,
       color: Colors.White,
       fontFamily: Fonts.Light
     },
