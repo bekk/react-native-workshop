@@ -11,7 +11,7 @@ import { Colors, Fonts } from './../../config/design';
 const styles = {
   navBarTitleText: {
     fontSize: 16,
-    fontFamily: Fonts.Light,
+    fontFamily: Fonts.Book,
     color: Colors.White,
     marginVertical: 14
   },

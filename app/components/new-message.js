@@ -9,7 +9,7 @@ import React, {
   Image,
   TouchableOpacity
 } from 'react-native';
-import { Colors } from './../config/design';
+import { Colors, Fonts } from './../config/design';
 import { connect } from 'react-redux';
 import { pickImage } from './camera/camera';
 import { setImage, openImagePicker } from '../actions/actions';
@@ -29,8 +29,8 @@ class NewMessage extends Component {
                   <View style={styles.inputContainer}>
                     <TextInput
                       style={styles.input}
-                      placeholder="Name"
-                      placeholderTextColor={Colors.Dark2}
+                      placeholder="Navn"
+                      placeholderTextColor={Colors.Dark1}
                       underlineColorAndroid={Colors.White}
                       value={username}
                       onChangeText={setUsername}
@@ -40,8 +40,8 @@ class NewMessage extends Component {
                   <View style={styles.inputContainer}>
                     <TextInput
                       style={styles.input}
-                      placeholder="Message"
-                      placeholderTextColor={Colors.Dark2}
+                      placeholder="Melding"
+                      placeholderTextColor={Colors.Dark1}
                       underlineColorAndroid={Colors.White}
                       value={newMessageText}
                       onChangeText={setNewMessageText}
@@ -103,22 +103,26 @@ const styles = StyleSheet.create({
     inputContainer: inputContainerStyle(),
     input: {
       flex: 1,
-      color: Colors.White
+      color: Colors.White,
+      fontFamily: Fonts.Light
     },
     feedback: {
         paddingLeft: 10,
-        marginTop: -8,
+        marginTop: -2,
         marginBottom: 8
     },
     feedbackText: {
-        color: Colors.Red
+        color: Colors.Red,
+        fontFamily: Fonts.Demi
     },
     button: {
       padding: 10,
       alignItems: 'center'
     },
     buttonText: {
-      color: Colors.White
+      top: 3,
+      color: Colors.White,
+      fontFamily: Fonts.Light
     },
     image: {
       resizeMode: Platform.OS === 'android' ? 'cover' : 'contain',

@@ -4,7 +4,7 @@ import React, {
 	View,
   Text
 } from 'react-native';
-import { Colors } from './../config/design';
+import { Colors, Fonts } from './../config/design';
 import Image from './image';
 
 export const Message = (rowData, sectionID, rowID) => {
@@ -13,7 +13,7 @@ export const Message = (rowData, sectionID, rowID) => {
       <View style={ styles.container }>
         <View style={ styles.row }>
           <Text style={ styles.text }>
-            { rowData.from }
+            { rowData.from.toUpperCase() }
           </Text>
         </View>
         <View style={styles.underline} />
@@ -69,6 +69,8 @@ const styles = {
     marginTop: 16
   },
   text: {
-    color: Colors.White
+    color: Colors.White,
+    fontFamily: Fonts.Light,
+    height: 12
   }
 };
