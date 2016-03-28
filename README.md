@@ -14,7 +14,8 @@ To setup your environment, follow the steps [here](setup.md).
 
 Your first task is to create a view in which the user can input a username and a message.
 
-(Screenshot of what the view should look like after completing this task)
+  <img src="https://raw.githubusercontent.com/bekk/react-native-workshop/master/screenshots/ios-new-message.png" alt="Image of IOS new message screen" width="350" />
+  <img src="https://raw.githubusercontent.com/bekk/react-native-workshop/master/screenshots/android-new-message-error.png" alt="Image of Android new message screen" width="350" /> 
 
 a) __Input fields.__ You'll find a `NewMessage` (`new-message.js`) component in your project. The component is already mounted in the default view, but it renders nothing. Implement the render function of `NewMessage` such that the view contains two input fields – one for the username and one for the message.
 
