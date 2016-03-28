@@ -6,12 +6,13 @@ import React, {
 } from 'react-native';
 import BackArrow from '../../resources/back-arrow.png';
 import NavigationBarButtons from './navigationbar-buttons';
+import { Colors, Fonts } from './../../config/design';
 
 const styles = {
   navBarTitleText: {
     fontSize: 16,
-    color: '#ffffff',
-    fontWeight: '500',
+    fontFamily: Fonts.Book,
+    color: Colors.White,
     marginVertical: 14
   },
   navBarLeftImage: {
@@ -36,7 +37,7 @@ const NavigationBarRouteMapper = {
     Title(route, navigator) {
         return (
             <Text style={styles.navBarTitleText}>
-              {route.title}
+              {route.title.toUpperCase()}
             </Text>
         );
     }

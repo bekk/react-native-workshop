@@ -9,6 +9,7 @@ import React, {
   Image,
   TouchableOpacity
 } from 'react-native';
+import { Colors, Fonts } from './../config/design';
 import { connect } from 'react-redux';
 import { pickImage } from './camera/camera';
 import { setImage, openImagePicker } from '../actions/actions';
@@ -19,38 +20,42 @@ class NewMessage extends Component {
     render() {
         const { username, newMessageText, setNewMessageText, setUsername, postMessage, navigator, error, image, onPickImagePressed } = this.props;
         const sendButton = Platform.OS === 'android' ? null : this._renderSendButton(() => postMessage(navigator));
-        const feedback = error ? <View style={styles.feedback}><Text>{error}</Text></View> : null;
+        const feedback = error ? <View style={styles.feedback}><Text style={styles.feedbackText}>{error}</Text></View> : null;
         const maybeImage = image ? <Image source={image.source} style={styles.image}/> : null;
 
         return (
             <View style={styles.container}>
-                <View style={styles.inputContainer}>
-                  <TextInput
-                    style={styles.input}
-                    placeholder="Name"
-                    value={username}
-                    onChangeText={setUsername}
-                  />
+                <View style={styles.inputElements} >
+                  <View style={styles.inputContainer}>
+                    <TextInput
+                      style={styles.input}
+                      placeholder="Navn"
+                      placeholderTextColor={Colors.Dark1}
+                      underlineColorAndroid={Colors.White}
+                      value={username}
+                      onChangeText={setUsername}
+                    />
+                  </View>
+
+                  <View style={styles.inputContainer}>
+                    <TextInput
+                      style={styles.input}
+                      placeholder="Melding"
+                      placeholderTextColor={Colors.Dark1}
+                      underlineColorAndroid={Colors.White}
+                      value={newMessageText}
+                      onChangeText={setNewMessageText}
+                    />
+                  </View>
                 </View>
 
-                <View style={styles.inputContainer}>
-                  <TextInput
-                    style={styles.input}
-                    placeholder="Message"
-                    value={newMessageText}
-                    onChangeText={setNewMessageText}
-                  />
-                </View>
-                
                 { feedback }
-                <View style={styles.buttonContainer}>
-                  <TouchableOpacity
-                    style={styles.takePictureButton}
-                    onPress={onPickImagePressed}>
-                      <Text>Take Picture</Text>
-                  </TouchableOpacity>
-                  { sendButton }
-                </View>
+                <TouchableOpacity
+                  style={[styles.button, { marginBottom: 8, backgroundColor: Colors.Green }]}
+                  onPress={onPickImagePressed}>
+                    <Text style={styles.buttonText} >Take Picture</Text>
+                </TouchableOpacity>
+                { sendButton }
                 <View style={styles.imageContainer}>
                   { maybeImage }
                 </View>
@@ -61,49 +66,62 @@ class NewMessage extends Component {
     _renderSendButton(postMessage) {
       return (
         <TouchableOpacity
-          style={styles.sendButton}
+          style={[styles.button, {backgroundColor: Colors.Red}]}
           onPress={postMessage}>
-            <Text>Send</Text>
+            <Text style={styles.buttonText}>SEND</Text>
         </TouchableOpacity>
       );
     }
+}
+
+function inputContainerStyle() {
+    const base = {
+        margin: 10,
+        padding: 5
+    };
+    const ios = {
+        height: 35,
+        borderBottomWidth: 1,
+        borderBottomColor: Colors.White
+    };
+
+    return Platform.OS === 'android' ? base : {...base, ...ios};
 }
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
-        marginTop: 100
+        marginTop: 60
     },
-    inputContainer: {
-      height: 30,
-      margin: 10,
-      padding: 5,
-      borderBottomWidth: 1,
-      borderBottomColor: 'gray'
+    inputElements: {
+      backgroundColor: Colors.Dark,
+      paddingTop: Platform.OS === 'android' ? 0 : 20,
+      paddingBottom: Platform.OS === 'android' ? 0 : 20,
+      marginBottom: 8
     },
+    inputContainer: inputContainerStyle(),
     input: {
-      flex: 1
-    },
-    buttonContainer: {
-      flexDirection: 'row',
-      justifyContent: 'flex-end',
-      paddingHorizontal: 10,
-      marginTop: 10
+      flex: 1,
+      color: Colors.White,
+      fontFamily: Fonts.Light
     },
     feedback: {
-      padding: 5,
-      margin: 10,
-      backgroundColor: '#F8BBD0',
-      borderColor: '#F48FB1',
-      borderStyle: 'solid',
-      borderWidth: 2,
-      borderRadius: 2
+        paddingLeft: 10,
+        marginTop: -2,
+        marginBottom: 8
     },
-    sendButton: {
+    feedbackText: {
+        color: Colors.Red,
+        fontFamily: Fonts.Demi
     },
-    takePictureButton: {
-      marginHorizontal: 10
+    button: {
+      padding: 10,
+      alignItems: 'center'
+    },
+    buttonText: {
+      color: Colors.White,
+      fontFamily: Fonts.Light
     },
     image: {
       resizeMode: Platform.OS === 'android' ? 'cover' : 'contain',
@@ -111,7 +129,7 @@ const styles = StyleSheet.create({
     },
     imageContainer: {
       flex: 1,
-      paddingTop: 50
+      paddingTop: 20
     }
 });
 

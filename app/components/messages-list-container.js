@@ -11,6 +11,7 @@ import ColoredFab from './colored-fab';
 import { fetchMessages, postMessage } from '../actions/actions';
 import { ErrorMessage } from './error-message'
 import NewMessage from './new-message';
+import { Colors } from './../config/design';
 
 class MessageListContainer extends Component {
   componentWillMount() {
@@ -34,7 +35,7 @@ class MessageListContainer extends Component {
     }
 
     return (
-      <View style={{ flex: 1, paddingTop: 50, backgroundColor: '#fff' }}>
+      <View style={{ flex: 1, paddingTop: 66, backgroundColor: Colors.White }}>
         <MessageList
           refreshing={ this.props.isFetchingMessages }
           messages={ this.props.messages }
