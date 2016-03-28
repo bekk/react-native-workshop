@@ -41,7 +41,7 @@ If you have any trouble check [this](trouble-windows-android.md)
 If you have any trouble check [this](trouble-osx-android.md)
 
 ## IOS
-Devlopment for IOS devices requires XCode (>7.x.x) to be installed, find it in the App Store.
+Devlopment for IOS devices requires XCode (>7.x.x) to be installed, find it in the [App Store](https://itunes.apple.com/no/app/xcode/id497799835).
 
 1. Clone the repository; `git clone git@github.com:bekk/react-native-workshop.git`
 2. Run `npm install && npm install react-native -g` to install dependencies
