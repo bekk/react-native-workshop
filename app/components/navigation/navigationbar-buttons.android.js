@@ -60,10 +60,11 @@ const SendButton = ({ isSending, postMessage, navigator }) => {
             <FlatButton style={{ padding: 15, top: -3 }} onPress={postMessage}/>
         </TouchableOpacity>
     );
+};
 
-const mapStateToProps = () => ({});
+const mapStateToProps = ({ isSending }) => ({ isSending });
 const mapDispatchToProps = dispatch => ({
- postMessage: () => dispatch(postMessage()),
+ postMessage: () => dispatch(postMessage())
 });
 const ConnectedSendButton = connect(mapStateToProps, mapDispatchToProps)(SendButton);
 
