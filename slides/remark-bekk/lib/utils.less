@@ -1,0 +1,12 @@
+.h1-red-underline() {
+  margin: 0 auto 1.2em auto;
+  display: inline-block;
+
+  &:after {
+    display: block;
+    border-top: 4px solid @red;
+    margin: -0.5em auto 0 auto;
+    width: 90%;
+    max-width: 6em;
+  }
+}

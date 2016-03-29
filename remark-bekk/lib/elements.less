@@ -1,0 +1,226 @@
+/* ---------------------------------- */
+/* --- General styles --------------- */
+/* ---------------------------------- */
+
+ul {
+  list-style: disc outside;
+  padding-left: 1em;
+}
+ol {
+  padding-left: 1em;
+}
+li {
+  margin: 0.4em 0 0.4em 1em;
+}
+
+a {
+  text-decoration: none;
+  color: @red;
+
+  &:visited {
+    color: @red;
+  }
+
+  &:hover { text-decoration: underline; }
+}
+
+
+.remark-code,
+.remark-inline-code {
+  font-family: 'Monaco', 'Lucida Console';
+}
+
+.remark-code {
+  display: block;
+  padding: 10px 5px;
+  background-color: #1a1a1a;
+}
+
+.remark-slide-number {
+  right: 10px;
+}
+
+.source {
+  bottom: 12px;
+  font-size: 12px;
+  left: 20px;
+  opacity: 0.8;
+  position: absolute;
+
+  &:before {
+    content: "Kilde: ";
+  }
+}
+
+
+.overlay {
+  padding: 1rem 4em;
+
+  position:absolute;
+  left:0;
+  right:0;
+  top:35%;
+  z-index:999;
+
+  background: @background;
+
+  h1 {
+    margin: 0;
+  }
+
+  &.transparent {
+    background:rgba(0,0,0,.75);
+  }
+
+  &.bottom {
+    top: auto;
+    bottom: 0;
+  }
+
+  &.center {
+    text-align: center;
+
+    h1 {
+      display: block;
+
+      &:after {
+        content: none;
+      }
+    }
+  }
+
+  &.loud {
+    &, h1 {
+      font-size: 2em;
+    }
+  }
+
+  small {
+    font-size:.7em;
+    color:@red;
+  }
+}
+
+.circle {
+  @circle-size: 170px;
+
+  border-radius: @circle-size / 2;
+
+  height: @circle-size;
+  width: @circle-size;
+  line-height: @circle-size;
+  color: @black;
+  text-align: center;
+  overflow: hidden;
+  display: block;
+  font-size: 1.2em;
+
+  &.red {
+    background-color: @red;
+    color: @white;
+  }
+  &.black {
+    background-color: @background;
+    color: @white;
+  }
+  &.yellow { background-color: @yellow; }
+  &.green { background-color: @green; }
+
+  &.top-right { position: absolute; top: 3em; right: 3em; }
+  &.top-left  { position: absolute; top: 3em; left: 3em;  }
+
+  &.centered { margin: 0 auto; }
+}
+
+&.cols {
+  .col {
+    float: left;
+    margin-left: 2%;
+
+    &:first-of-type { margin-left: 0; }
+  }
+
+  &.two   { .col { width: 49%; } }
+  &.three { .col { width: 32%; } }
+}
+
+.card {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 280px;
+  margin: 0 10px;
+
+  padding: 10px 0;
+  background-color: #f1f1f1;
+
+  color: #1b1b1b;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+
+
+  .picture {
+    border-radius: 250px;
+    margin: 0 auto 20px auto;
+    width: 200px;
+    height: 200px;
+
+    background: #ebebeb;
+    border-radius: 9999px;
+    overflow: hidden;
+    position: relative;
+    -webkit-background-clip: padding-box;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .name,
+  .title,
+  .department {
+    display: block;
+    font-style: italic;
+  }
+
+  .name:after {
+    content: "";
+    display: block;
+    background: @red;
+    width: 70px;
+    height: 2px;
+    margin: 8px auto;
+  }
+
+  .phone,
+  .email {
+    display: block;
+    text-transform: none;
+  }
+
+  .phone {
+    margin-top: 20px;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.3em 1.5em;
+  font-size: 1.2em;
+
+  font-family: "Conduit";
+  line-height: 1;
+  font-weight: normal;
+
+  text-decoration: none !important;
+  text-transform: uppercase;
+
+  border: 0;
+  background-color: @red;
+  color: #ebebeb !important;
+  cursor: pointer;
+
+  &.loud {
+    font-size: 2em;
+  }
+}

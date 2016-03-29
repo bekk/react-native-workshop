@@ -1,0 +1,33 @@
+&.front-page {
+  @h1-line-width: 6em;
+
+  text-align: center;
+  vertical-align: bottom;
+
+  h1 {
+    .h1-red-underline();
+    margin-bottom: 2em;
+  }
+
+  h2 {
+    min-height: 3em;
+    margin: 2em auto 2em auto;
+    max-width: 25em;
+  }
+
+  // Maybe we should use a list instead of paragraphs for this
+  p {
+    font-size: 0.7em;
+    margin: 0.3em 0;
+  }
+
+  // Do not display current slide on the front page
+  .remark-slide-number { display: none; }
+}
+
+
+&.bekk-top,
+&.front-page {
+  background: @background data-uri("images/bekk.svg") no-repeat center 1em;
+  background-size: 80px;
+}
