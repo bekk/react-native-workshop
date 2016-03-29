@@ -47,12 +47,12 @@ export const postMessage = () => (dispatch, getState) => {
   }
 };
 
-const setImage = (image) => ({ type: SET_IMAGE, image });
+export const setImage = (image) => ({ type: SET_IMAGE, image });
 
 export const openImagePicker = () => (dispatch) => {
   return pickImage()
     .then(image => dispatch(setImage(image)))
-    .catch(console.log);
+    .catch((error) => console.log(error));
 };
 
 export const setNavigator = (navigator) => ({ type: SET_NAVIGATOR, navigator });

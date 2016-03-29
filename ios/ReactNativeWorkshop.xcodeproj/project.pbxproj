@@ -21,6 +21,11 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		4175326E1CA2A3A9007A1A64 /* FedraSansAltPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 417532631CA2A3A9007A1A64 /* FedraSansAltPro-Bold.otf */; };
+		417532701CA2A3A9007A1A64 /* FedraSansAltPro-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 417532651CA2A3A9007A1A64 /* FedraSansAltPro-Book.otf */; };
+		417532721CA2A3A9007A1A64 /* FedraSansAltPro-Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 417532671CA2A3A9007A1A64 /* FedraSansAltPro-Demi.otf */; };
+		417532741CA2A3A9007A1A64 /* FedraSansAltPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 417532691CA2A3A9007A1A64 /* FedraSansAltPro-Light.otf */; };
+		417532761CA2A3A9007A1A64 /* FedraSansAltPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4175326B1CA2A3A9007A1A64 /* FedraSansAltPro-Medium.otf */; };
 		68DDAF461C99B76A00614DAA /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68DDAF451C99B73700614DAA /* libRNImagePicker.a */; };
 		78EABCF4008C4BAF85B04B91 /* libRCTCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5242B8110144589660DEA3 /* libRCTCamera.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
@@ -140,6 +145,11 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReactNativeWorkshop/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ReactNativeWorkshop/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		417532631CA2A3A9007A1A64 /* FedraSansAltPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FedraSansAltPro-Bold.otf"; path = "../../../Downloads/FedraSansAltPro_complete_OTF 3/FedraSansAltPro-Bold.otf"; sourceTree = "<group>"; };
+		417532651CA2A3A9007A1A64 /* FedraSansAltPro-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FedraSansAltPro-Book.otf"; path = "../../../Downloads/FedraSansAltPro_complete_OTF 3/FedraSansAltPro-Book.otf"; sourceTree = "<group>"; };
+		417532671CA2A3A9007A1A64 /* FedraSansAltPro-Demi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FedraSansAltPro-Demi.otf"; path = "../../../Downloads/FedraSansAltPro_complete_OTF 3/FedraSansAltPro-Demi.otf"; sourceTree = "<group>"; };
+		417532691CA2A3A9007A1A64 /* FedraSansAltPro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FedraSansAltPro-Light.otf"; path = "../../../Downloads/FedraSansAltPro_complete_OTF 3/FedraSansAltPro-Light.otf"; sourceTree = "<group>"; };
+		4175326B1CA2A3A9007A1A64 /* FedraSansAltPro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FedraSansAltPro-Medium.otf"; path = "../../../Downloads/FedraSansAltPro_complete_OTF 3/FedraSansAltPro-Medium.otf"; sourceTree = "<group>"; };
 		68DDAF351C99B73700614DAA /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		80C4A5DD663D4ED092E608FA /* RCTCamera.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTCamera.xcodeproj; path = "../node_modules/react-native-camera/ios/RCTCamera.xcodeproj"; sourceTree = "<group>"; };
@@ -330,6 +340,11 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ReactNativeWorkshopTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
+				417532631CA2A3A9007A1A64 /* FedraSansAltPro-Bold.otf */,
+				417532651CA2A3A9007A1A64 /* FedraSansAltPro-Book.otf */,
+				417532671CA2A3A9007A1A64 /* FedraSansAltPro-Demi.otf */,
+				417532691CA2A3A9007A1A64 /* FedraSansAltPro-Light.otf */,
+				4175326B1CA2A3A9007A1A64 /* FedraSansAltPro-Medium.otf */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -567,6 +582,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				417532761CA2A3A9007A1A64 /* FedraSansAltPro-Medium.otf in Resources */,
+				417532701CA2A3A9007A1A64 /* FedraSansAltPro-Book.otf in Resources */,
+				417532721CA2A3A9007A1A64 /* FedraSansAltPro-Demi.otf in Resources */,
+				417532741CA2A3A9007A1A64 /* FedraSansAltPro-Light.otf in Resources */,
+				4175326E1CA2A3A9007A1A64 /* FedraSansAltPro-Bold.otf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

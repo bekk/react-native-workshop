@@ -7,12 +7,13 @@ import React, {
 import BackArrow from '../../resources/back-arrow.png';
 import navigationBarButtons from './navigationbar-buttons';
 import { navigatorPop } from '../../actions/actions';
+import { Colors, Fonts } from './../../config/design';
 
 const styles = {
   navBarTitleText: {
     fontSize: 16,
-    color: '#ffffff',
-    fontWeight: '500',
+    fontFamily: Fonts.Book,
+    color: Colors.White,
     marginVertical: 14
   },
   navBarLeftImage: {
@@ -37,7 +38,7 @@ const commonRouteMapper = (dispatch) => ({
     Title(route) {
         return (
             <Text style={styles.navBarTitleText}>
-              {route.title}
+              {route.title.toUpperCase()}
             </Text>
         );
     }

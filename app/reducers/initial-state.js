@@ -3,5 +3,6 @@
 export const initialState = {
   messages: [],
   isFetchingMessages: true,
-  failedToFetchMessages: false
+  failedToFetchMessages: false,
+  isSending: false
 };

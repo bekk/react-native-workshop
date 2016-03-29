@@ -10,10 +10,11 @@ import { listMessages } from './routes';
 import getNavigationBarRouteMapper from './navigationbar-routemapper';
 import { connect } from 'react-redux';
 import { setNavigator } from '../../actions/actions';
+import { Colors } from './../../config/design';
 
 const styles = StyleSheet.create({
     navBar: {
-        backgroundColor: '#da4336'
+        backgroundColor: Colors.Dark
     }
 });
 

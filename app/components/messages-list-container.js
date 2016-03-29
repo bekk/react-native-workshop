@@ -5,21 +5,17 @@ import React, {
   View,
   Platform
 } from 'react-native';
-
-import { bindActionCreators } from 'redux';
-import * as messageActions from '../actions/actions';
 import { connect } from 'react-redux';
-
 import MessageList from './message-list';
 import ColoredFab from './colored-fab';
 import { fetchMessages, postMessage } from '../actions/actions';
-import { ActivityIndicator } from './activity-indicator';
 import { ErrorMessage } from './error-message'
 import NewMessage from './new-message';
 import { newMessage } from './navigation/routes';
 import { navigateTo } from '../actions/actions';
+import { Colors } from './../config/design';
 
-class ListMessagesContainer extends Component {
+class MessageListContainer extends Component {
   componentWillMount() {
     this._refreshView();
   }
@@ -37,7 +33,7 @@ class ListMessagesContainer extends Component {
     }
 
     return (
-      <View style={{ flex: 1, paddingTop: 50, backgroundColor: '#fff' }}>
+      <View style={{ flex: 1, paddingTop: 66, backgroundColor: Colors.White }}>
         <MessageList
           refreshing={ this.props.isFetchingMessages }
           messages={ this.props.messages }
@@ -54,7 +50,7 @@ class ListMessagesContainer extends Component {
   }
 }
 
-ListMessagesContainer.propTypes = {
+MessageListContainer.propTypes = {
   failedToFetchMessages: React.PropTypes.bool,
   isFetchingMessages: React.PropTypes.bool,
   messages: React.PropTypes.array
@@ -73,4 +69,4 @@ const mapDispatchToProps = dispatch => ({
   goToNewMessage: () => dispatch(navigateTo(newMessage))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ListMessagesContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(MessageListContainer);

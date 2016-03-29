@@ -7,6 +7,7 @@ import React, {
     Platform
 } from 'react-native';
 import NewMessage from '../new-message';
+import { Colors } from './../../config/design';
 import { newMessage } from './routes';
 import { navigateTo } from '../../actions/actions';
 
@@ -20,9 +21,9 @@ var styles = StyleSheet.create({
         height: 50
     },
     navBarRightText: {
-        color: '#ffffff',
-        fontWeight: '500',
-        fontSize: 30,
+        color: Colors.Red,
+        fontWeight: '300',
+        fontSize: 36,
         padding: 15,
         top: -10
     }

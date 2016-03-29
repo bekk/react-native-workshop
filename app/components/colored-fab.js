@@ -6,10 +6,11 @@ import React, {
   Text
 } from 'react-native';
 
-import { MKButton, MKColor } from 'react-native-material-kit';
+import { MKButton } from 'react-native-material-kit';
+import { Colors } from './../config/design';
 
 const AccentColoredFab = MKButton.coloredFab()
-  .withBackgroundColor('#da4336')
+  .withBackgroundColor(Colors.Red)
   .build();
 
 const localStyles = {
@@ -27,7 +28,7 @@ const localStyles = {
   fabText: {
     marginTop: -3,
     fontSize: 45,
-    color: 'white',
+    color: Colors.White,
     lineHeight: 60
   }
 };

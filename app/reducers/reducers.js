@@ -12,7 +12,8 @@ import {
   SET_NAVIGATOR,
   NAVIGATOR_PUSH,
   NAVIGATOR_POP,
-  FEILMELDING
+  FEILMELDING,
+  POST_MESSAGE
 } from '../actions/actions';
 
 import { initialState } from './initial-state';
@@ -54,9 +55,9 @@ function messageReducer(state = initialState, action) {
          username: null,
          newMessageText: null,
          isFetchingMessages: false,
-         failedToFetchMessages: false
+         failedToFetchMessages: false,
+         isSending: false
        });
-
     case FEILMELDING:
       return Object.assign({}, state, { error: action.error });
 
@@ -73,6 +74,9 @@ function messageReducer(state = initialState, action) {
     case NAVIGATOR_POP:
       state.navigator.pop();
       return state;
+
+    case POST_MESSAGE:
+      return Object.assign({}, state, {isSending: true});
 
     default:
       return state;
