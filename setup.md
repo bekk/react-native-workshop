@@ -1,5 +1,6 @@
 # React-native setup
 
+**!!IMPORTANT**
 Developing React Native projects requires Git and NPM3
 
 ## Android
@@ -44,7 +45,8 @@ If you have any trouble check [this](trouble-osx-android.md)
 Devlopment for IOS devices requires XCode (>7.x.x) to be installed, find it in the [App Store](https://itunes.apple.com/no/app/xcode/id497799835).
 
 1. Clone the repository; `git clone git@github.com:bekk/react-native-workshop.git`
-2. Run `npm install && npm install react-native -g` to install dependencies
-3. Open XCode with the ios/ directory
-4. Start emulator 
-5. Run `react-native run-ios`
+2. Run `npm install && npm install react-native-cli -g` to install dependencies
+3. Run `react-native run-ios`
+
+(Alternatively start XCode and a custom emulator before step 3)
+
