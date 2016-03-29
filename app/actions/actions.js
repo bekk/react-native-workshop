@@ -1,6 +1,7 @@
 'use strict';
 
-import messages from '../network/messages'
+import messages from '../network/messages';
+import { pickImage } from '../components/camera/camera';
 
 export const SET_USER_NAME = 'SET_USER_NAME';
 export const SET_NEW_MESSAGE_TEXT = 'SET_NEW_MESSAGE_TEXT';
@@ -11,6 +12,7 @@ export const FETCH_MESSAGE_FAILED = 'FETCH_MESSAGE_FAILED';
 export const POST_MESSAGE = 'POST_MESSAGE';
 export const SET_POST_SUCCESS = 'SET_POST_SUCCESS';
 export const FEILMELDING = 'FEILMELDING';
+export const SET_IMAGE = 'SET_IMAGE';
 
 export const setNewMessageText = newMessageText => ({ type: SET_NEW_MESSAGE_TEXT, newMessageText });
 export const setUsername = username => ({ type: SET_USER_NAME, username });
@@ -34,9 +36,18 @@ export const postMessage = (navigator) => (dispatch, getState) => {
     dispatch({type: FEILMELDING, error: 'Du må skrive en melding'});
   } else {
     dispatch({type: POST_MESSAGE});
-    return messages.post(username, newMessageText, image)
+    const imageData = image ? image.data : null;
+    return messages.post(username, newMessageText, imageData)
         .then(message => dispatch(setPostSuccess(message)))
         .then(() => navigator.pop())
         .catch(error => dispatch({type: FEILMELDING, error: 'Noe gikk feil ved innsending.'}));
   }
+};
+
+export const setImage = (image) => ({ type: SET_IMAGE, image });
+
+export const openImagePicker = () => (dispatch) => {
+  return pickImage()
+    .then(image => dispatch(setImage(image)))
+    .catch((error) => console.log(error));
 };

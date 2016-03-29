@@ -2,32 +2,40 @@
 
 import React, {
 	View,
-  Text,
-	Image
+  Text
 } from 'react-native';
+import { Colors, Fonts } from './../config/design';
+import Image from './image';
 
 export const Message = (rowData, sectionID, rowID) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.row}>
-        <Text style={styles.from}>
-          {rowData.from}
-        </Text>
-				{ maybeRenderImage(rowData.image) }
-        <Text style={styles.message}>
-          {rowData.message}
-        </Text>
+    <View>
+      <View style={ styles.container }>
+        <View style={ styles.row }>
+          <Text style={ styles.text }>
+            { rowData.from.toUpperCase() }
+          </Text>
+        </View>
+        <View style={styles.underline} />
+	    { _maybeRenderImage(rowData.image) }
+        <View style={ styles.row }>
+          <Text style={ styles.text }>{ rowData.message }</Text>
+        </View>
       </View>
-      <View style={styles.separator} />
+      <View style={ styles.separator } />
     </View>
   );
 }
 
-const maybeRenderImage = source => {
+const _maybeRenderImage = source => {
 	if (source !== undefined && source.length > 0) {
-		return <Image style={styles.thumb} source={{uri: source}} />
+		return (
+          <View style={styles.image}>
+            <Image source={source} />
+          </View>
+        );
 	}
-};
+}
 
 Message.propTypes = {
   from: React.PropTypes.string,
@@ -35,32 +43,33 @@ Message.propTypes = {
 };
 
 const styles = {
-	container: {
-    flex: 1,
-    overflow: 'hidden'
+  container: {
+    backgroundColor: Colors.Dark,
+    margin: 16,
+    marginBottom: 0
   },
   row: {
-     flexDirection: 'column',
-     justifyContent: 'center',
-     padding: 16,
-   },
-   separator: {
-     height: 1,
-     backgroundColor: '#d9d9d9',
-   },
-   thumb: {
-		 marginBottom: 5,
-		 flexDirection:'row',
-     height: 240,
-   },
-   message: {
-     flex: 1,
-     color: '#6e6e6e'
-   },
-   from: {
-     flex: 1,
-     color: '#212121',
-     fontWeight: '500',
-     marginBottom: 5
-   }
+      padding: 16
+  },
+  underline: {
+    borderBottomColor: Colors.Red,
+    borderBottomWidth: 2,
+    marginLeft: 16,
+    marginRight: 16,
+    width: 60
+  },
+  image: {
+    marginTop: 16
+  },
+  separator: {
+    height: 1,
+    backgroundColor: Colors.Dark1,
+    marginLeft: 8,
+    marginRight: 8,
+    marginTop: 16
+  },
+  text: {
+    color: Colors.White,
+    fontFamily: Fonts.Light
+  }
 };
