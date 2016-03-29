@@ -48,5 +48,4 @@ Devlopment for IOS devices requires XCode (>7.x.x) to be installed, find it in t
 2. Run `npm install && npm install react-native-cli -g` to install dependencies
 3. Run `react-native run-ios`
 
-(Alternatively start XCode and a custom emulator before step 3)
-
+If steps 3 returns an error, try starting XCode and start an emulator before"
