@@ -21,11 +21,9 @@ class: front-page
 # React Native
 ## Workshop
 
-Bekk Open Fagdag
+Bekk Open Fagdag (Betatest)
 
-15.04.2016
-
-Anders Kristiansen
+31.03.2016
 
 ---
 
@@ -41,7 +39,7 @@ class: agenda
 
 ---
 
-# Intro
+# Intro - Native
 
 ## Lansert for iOS i januar og for Android i september 2015 av Facebook
 ## Open Source
@@ -53,13 +51,13 @@ class: agenda
 
 ## Av Facebook, aktivt brukt.
 ## Funket ikke å pakke inn webapps lengre. Webben er ikke klar enda.
-## Synes det gikk for treigt å utvikle native. Treigere utviklingsmiljø. Utviklere må kunne flere språk og verktøy. Rett og slett ikke smidig nok ut ifra det de var vant til fra webben.
+## Synes det gikk for treigt å utvikle native. Treigere utviklingsmiljø. Utviklere må kunne flere språk og verktøy. Rett og slett ikke smidig nok ut ifra det de var vant til fra webben. Måtte kjenne og implementere businesslogikk dobbelt.
 ## Allerede stort community. PR, React komponenter
 ## Hyppige releases. Flere nye versjoner i løpet av de ukene vi jobbet med denne workshopen
 
 ---
 
-# Intro 2 - Noe mer om kryssplatform?
+# Intro - Kryssplattform
 
 ## Ikke native look & feel
 ## Dårlig verktøystøtte og debug
@@ -138,7 +136,7 @@ class: agenda
 # Styling - FLEXBOX
 
 ## Basert på Flexbox fra css
-## flexDirection, flex, align-items, justify content
+## flexDirection, flex, align-items, justify content, ...
 ## "Inline styles"
 
 ```html
@@ -150,6 +148,8 @@ class: agenda
 ???
 
 ## En javascript-implementasjon av Flexbox
+## Inline styles med JS-objekter
+## Går fort igjennom nå, mer som et oppslagsverk for oppgavene
 
 ---
 class: cols two
@@ -472,11 +472,16 @@ var styles = StyleSheet.create({
 
 ???
 
-## State container
+## 3 prinsipper
+## Single source of truth - En store
+## State is read-only - Kan kun endre state ved å sende inn en action om hva som skjedd
+## Changes are made with pure functions - Reducer er en mapping mellom action og state. Returnerer neste state.
 
 ---
 
 # State/Redux - Single store
+
+## app.js
 
 ```javascript
 import { createStore } from 'redux';
@@ -491,7 +496,7 @@ const store = createStore(rnWorkshop);
 
 ???
 
-# 
+# Views lytter på state
 
 ---
 
@@ -499,9 +504,6 @@ const store = createStore(rnWorkshop);
 
 ## actions.js
 ```javascript
-export const SET_USER_NAME = 'SET_USER_NAME';
-
-
 export const setUsername = username => ({ type: SET_USER_NAME, username });
 ```
 ## someComponent.js
@@ -550,7 +552,7 @@ class: cols two
 ]
 ???
 
-## Clipboard, Orientation, 3D-touch ikke implementert enda
+## Orientation-change, 3D-touch (er på vei) ikke implementert enda
 
 ---
 
@@ -560,16 +562,52 @@ class: cols two
 
 ???
 
-## Navigator: Uklart API, og lite dokumenterte best practices
+## Navigator: Uklart API, og lite dokumenterte best practices. (NavigationBar bl.a)
 ## NavigatorIOS: Begrenset API, og ikke supportert eller videreutviklet av Facebook
 ## NavigatorExperimental: Nytt. 
+
+---
+
+
+# Bruk av Navigator
+
+## Viktigste funksjoner:
+`initialRoute` - startpunktet for Navigator
+
+`renderScene` - beskrive hvordan en scene skal rendres basert på hvilken route som er aktiv
+
+`push(route)` - naviger til ny scene (side/komponent)
+
+---
+
+# Bruk av Navigator
+
+## Vi har pakket inn Navigator, slik at en del av funksjonaliteten er abstrahert bort.
+
+## Init (app.js):
+```
+import Navigator from './components/navigation/navigator';
+
+<Navigator ref="navigator" />
+```
+
+## Bruk:
+```
+this.props.navigator.push({component: NewMessage, title: 'Skriv ny'});
+```
+
+???
+
+## Viktigste funksjoner + endel config for look and feel (animasjoner, navigation bar layout)
+## Bruker Navigator, men har abstrahert bort oppsett av navigator og navigationBar.
+## Bruk: Send inn en kompontent
 
 ---
 
 #Hva trenger man?
 
 * XCode
-* Android-SDK (Android Studio?)
+* Android-SDK
 * Node 4.x
 * Det du skriver JS i
 
@@ -597,16 +635,9 @@ class: cols two
 ???
 
 ## Packager bygger appen, og står i bakgrunnen og venter på endringer.
-## Noe av det mange sliter med er utviklingsmiljø. Mange som ikke Liker XCode
+## Noe av det mange sliter med er utviklingsmiljø. Mange som ikke er komfortable med XCode
 ## Kan kjøre opp i Chromes V8 og bruke vanlig debugger
 ---
-
-class: middle center
-
-# KODE
-
----
-
 
 # Remote deploy av JS?
 
@@ -620,6 +651,12 @@ Application ...
 ???
 
 ## Kjører på JSC, og guidelines understreker at det kan bli endret etter appen er releaset
+
+---
+
+class: middle center
+
+# KODE
 
 ---
 
