@@ -24,10 +24,6 @@ export default class MessageList extends Component {
     return this.state.dateSource.cloneWithRows(messages);
   }
 
-  _onRefresh() {
-    this.props.refreshView();
-  }
-
   render() {
     let messages = this.props.messages.filter(validateMessage).reverse();
     let dataSource = this._getDataSource(messages);
@@ -38,7 +34,7 @@ export default class MessageList extends Component {
         refreshControl={
           <RefreshControl
             refreshing={ this.props.refreshing }
-            onRefresh={ this._onRefresh.bind(this) }
+            onRefresh={ this.props.refreshView }
             tintColor="#ff0000"
             title="Laster..."
             colors={ [Colors.Red, Colors.Green, Colors.Yellow] }
