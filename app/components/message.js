@@ -7,20 +7,21 @@ import React, {
 import { Colors, Fonts } from './../config/design';
 import Image from './image';
 
-export const Message = (rowData, sectionID, rowID) => {
+export const Message = (rowData) => {
+	const { from, message, image } = rowData;
   return (
     <View>
       <View style={ styles.container }>
         <View style={ styles.row }>
           <Text style={ styles.text }>
-            { rowData.from.toUpperCase() }
+            { from.toUpperCase() }
           </Text>
         </View>
         <View style={styles.underline} />
-	    { _maybeRenderImage(rowData.image) }
-        <View style={ styles.row }>
-          <Text style={ styles.text }>{ rowData.message }</Text>
-        </View>
+		    { _maybeRenderImage(image) }
+	      <View style={ styles.row }>
+	        <Text style={ styles.text }>{ message }</Text>
+	      </View>
       </View>
       <View style={ styles.separator } />
     </View>
@@ -30,16 +31,17 @@ export const Message = (rowData, sectionID, rowID) => {
 const _maybeRenderImage = source => {
 	if (source !== undefined && source.length > 0) {
 		return (
-          <View style={styles.image}>
-            <Image source={source} />
-          </View>
-        );
+	    <View style={styles.image}>
+	      <Image source={source} />
+	    </View>
+	  );
 	}
 }
 
 Message.propTypes = {
   from: React.PropTypes.string,
-  message: React.PropTypes.string
+  message: React.PropTypes.string,
+	image: React.PropTypes.string
 };
 
 const styles = {

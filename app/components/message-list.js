@@ -24,6 +24,10 @@ export default class MessageList extends Component {
     return this.state.dateSource.cloneWithRows(messages);
   }
 
+  _onRefresh() {
+    this.props.refreshView();
+  }
+
   render() {
     let messages = this.props.messages.filter(validateMessage).reverse();
     let dataSource = this._getDataSource(messages);
@@ -41,14 +45,19 @@ export default class MessageList extends Component {
           />
         }
         dataSource={ dataSource }
-        renderRow={ Message }
+        renderRow={ _renderRow }
       />
     )
   }
+}
 
-  _onRefresh() {
-    this.props.refreshView();
-  }
+const _renderRow = (rowData) => {
+  const image = rowData.image || '';
+  return (
+    <Message from={ rowData.from }
+      message={ rowData.message }
+      image={ image } />
+  );
 }
 
 const validateMessage = message => {
