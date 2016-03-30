@@ -45,13 +45,13 @@ export default class MessageList extends Component {
           />
         }
         dataSource={ dataSource }
-        renderRow={ _renderRow }
+        renderRow={ renderRow }
       />
     )
   }
 }
 
-const _renderRow = (rowData) => {
+const renderRow = (rowData) => {
   const image = rowData.image || undefined;
   const from = 	rowData.from || '';
   const message = rowData.message || '';
