@@ -34,8 +34,9 @@ class: agenda
 * Intro
 * Syntaks og styling
 * Redux
+* Navigasjon
 * Remote deploy?
-* Din tur!
+* Deres tur!
 
 ---
 
@@ -45,7 +46,7 @@ class: agenda
 ## Open Source
 ## Problemer med native
 - Treg utviklingsyklus
-- Treg deploymentsyklus
+- Treg deploymentprosess
 - Separate team for hver platform
 
 ???
@@ -66,7 +67,7 @@ class: agenda
 
 ???
 
-## 
+## Facebook har jo prøvd litt av hvert. Pakket inn appen i WebView en stund.
 
 ---
 
@@ -88,7 +89,7 @@ class: agenda
 
 ---
 
-# Ikke ulikt React.js
+# Ikke ulikt React.js 1/2
 
 ```html
 <div>
@@ -100,8 +101,26 @@ class: agenda
 ```html
 <View>
   <Text>Hei sveis</Text>
-  <TouchableHighlight>Trykk på meg</TouchableHighlight>
+  <TouchableOpacity>Trykk på meg</TouchableOpacity>
 </View>
+```
+
+---
+# Ikke ulikt React.js 2/2
+
+```html
+<input
+  type="text"
+  value={this.state.text}
+  onChange={(text) => this.setState({text})}
+/>
+```
+
+```html
+ <TextInput
+   value={this.state.text}
+   onChangeText={(text) => this.setState({text})}
+/>
 ```
 
 ## Noen er platformspesifikke:
@@ -109,6 +128,10 @@ class: agenda
 <SwitchIOS />
 <SwitchAndroid />
 ```
+
+???
+
+## Input
 
 ---
 
@@ -154,7 +177,7 @@ class: cols two
 .col[
 ## React Native kommer med Packager
 ## Oppdateringer med ⌘-R
-## Debugging i Chrome
+## Debugging i Chrome. ⌘-D
 ## Tydelige feilmeldinger
 ]
 
@@ -259,7 +282,6 @@ class Flexbox extends Component {
 ]
 
 ---
-
 class: cols two
 
 # FLEXBOX - justify content
@@ -269,12 +291,18 @@ class: cols two
 ```html
       <View style={{flex: 1}}>
         <View style={{flex: 1, 
-        justify-content='flex-start', 
+        justifyContent='flex-start', 
         backgroundColor: '#e9555f', 
         paddingTop:50}}>
-         <Text>Hei på dere</Text>
-         <Text>Hei på dere</Text>
-         <Text>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
         </View>
       </View>
 ```
@@ -283,6 +311,10 @@ class: cols two
 .col[
 .small-img[![](img/justifyContent_flexStart.png)]
 ]
+
+???
+
+## This defines the alignment along the main axis
 
 ---
 
@@ -295,12 +327,18 @@ class: cols two
 ```html
       <View style={{flex: 1}}>
         <View style={{flex: 1, 
-        justify-content='center', 
+        justifyContent='center', 
         backgroundColor: '#e9555f', 
         paddingTop:50}}>
-         <Text>Hei på dere</Text>
-         <Text>Hei på dere</Text>
-         <Text>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
         </View>
       </View>
 ```
@@ -321,12 +359,18 @@ class: cols two
 ```html
       <View style={{flex: 1}}>
         <View style={{flex: 1, 
-        justify-content='flex-end', 
+        justifyContent='flex-end', 
         backgroundColor: '#e9555f', 
         paddingTop:50}}>
-         <Text>Hei på dere</Text>
-         <Text>Hei på dere</Text>
-         <Text>Hei på dere</Text>
+          <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
         </View>
       </View>
 ```
@@ -347,12 +391,18 @@ class: cols two
 ```html
       <View style={{flex: 1}}>
         <View style={{flex: 1, 
-        justify-content='space-around', 
+        justifyContent='space-around', 
         backgroundColor: '#e9555f', 
         paddingTop:50}}>
-         <Text>Hei på dere</Text>
-         <Text>Hei på dere</Text>
-         <Text>Hei på dere</Text>
+          <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
         </View>
       </View>
 ```
@@ -373,12 +423,18 @@ class: cols two
 ```html
       <View style={{flex: 1}}>
         <View style={{flex: 1, 
-        justify-content='space-between', 
+        justifyContent='space-between', 
         backgroundColor: '#e9555f', 
         paddingTop:50}}>
-         <Text>Hei på dere</Text>
-         <Text>Hei på dere</Text>
-         <Text>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
         </View>
       </View>
 ```
@@ -389,6 +445,141 @@ class: cols two
 ]
 
 ---
+
+
+class: cols two
+
+# FLEXBOX - align items
+
+## align-items: stretch (default)
+.col[
+```html
+     <View style={{flex: 1}}>
+        <View style={{flex: 1, 
+        alignItems:'stretch', 
+        backgroundColor: '#e9555f', 
+        paddingTop:50}}>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+        </View>
+      </View>
+```
+]
+
+.col[
+.small-img[![](img/alignItems_stretch.png)]
+]
+
+---
+
+class: cols two
+
+# FLEXBOX - align items
+
+## align-items: flex-start
+.col[
+```html
+```html
+     <View style={{flex: 1}}>
+        <View style={{flex: 1, 
+        alignItems:'flex-start', 
+        backgroundColor: '#e9555f', 
+        paddingTop:50}}>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+        </View>
+      </View>
+```
+]
+
+.col[
+.small-img[![](img/alignItems_flexStart.png)]
+]
+
+---
+
+
+class: cols two
+
+# FLEXBOX - align items
+
+## align-items: flex-end
+.col[
+```html
+ ```html
+     <View style={{flex: 1}}>
+        <View style={{flex: 1, 
+        alignItems:'flex-end', 
+        backgroundColor: '#e9555f', 
+        paddingTop:50}}>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+        </View>
+      </View>
+```
+]
+
+.col[
+.small-img[![](img/alignItems_flexEnd.png)]
+]
+
+---
+
+
+class: cols two
+
+# FLEXBOX - align items
+
+## align-items: center
+.col[
+```html
+```html
+     <View style={{flex: 1}}>
+        <View style={{flex: 1, 
+        alignItems:'center', 
+        backgroundColor: '#e9555f', 
+        paddingTop:50}}>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+         <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
+        </View>
+      </View>
+```
+]
+
+.col[
+.small-img[![](img/alignItems_center.png)]
+]
+
+---
+
 
 class: cols two
 
@@ -411,6 +602,13 @@ class: cols two
 .col[
 .small-img[![](img/flex_1_1.png)]
 ]
+
+
+???
+
+## Hvor mye plass skal elementet ta?
+## Dersom alle har lik verdi tar de like stor plass
+
 
 ---
 
@@ -509,6 +707,7 @@ var styles = StyleSheet.create({
 
 ???
 
+## State container. Noe av det fine med RN. At man kan bruke eksisterende komponenter og konsepter
 ## 3 prinsipper
 ## Single source of truth - En store
 ## State is read-only - Kan kun endre state ved å sende inn en action om hva som skjedd
@@ -600,6 +799,7 @@ class: cols two
 ???
 
 ## Navigator: Uklart API, og lite dokumenterte best practices. (NavigationBar bl.a)
+- Ikke like smoothe animasjoner
 ## NavigatorIOS: Begrenset API, og ikke supportert eller videreutviklet av Facebook
 ## NavigatorExperimental: Nytt. 
 
@@ -630,14 +830,17 @@ import Navigator from './components/navigation/navigator';
 
 ## Bruk:
 ```
-this.props.navigator.push({component: NewMessage, title: 'Skriv ny'});
+import { navigateTo } from '../actions/actions';
+import NewMessage from '../new-message';
+
+dispatch.navigateTo({component: NewMessage, title: 'Skriv ny'});
 ```
 
 ???
 
-## Viktigste funksjoner + endel config for look and feel (animasjoner, navigation bar layout)
 ## Bruker Navigator, men har abstrahert bort oppsett av navigator og navigationBar.
-## Bruk: Send inn en kompontent
+## Viktigste funksjoner, transisjoner + endel config for look and feel (animasjoner, navigation bar layout)
+## Bruk: Vi har lagt navigatoren i Redux State, så send inn en komponent til navigateTo-action.
 
 ---
 
@@ -650,15 +853,20 @@ this.props.navigator.push({component: NewMessage, title: 'Skriv ny'});
 foregoing are scripts and code downloaded and run by Apple's built-in WebKit framework or
 JavascriptCore, provided that such scripts and code do not change the primary purpose of the
 Application ...
+
+.small-img[![](img/Apphub3.png)]
+
 ???
 
+## Nevnte i innledingen treg deploymentprosess.
 ## Kjører på JSC, og guidelines understreker at det kan bli endret etter appen er releaset
+## Dersom det er kun JS-endringer kan disse pushes ut utenom App Store, også til et begrenset sett med brukere
 
 ---
 
 class: middle center
 
-# KODE
+# DERES TUR!
 
 ---
 
