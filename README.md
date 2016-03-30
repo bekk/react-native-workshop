@@ -19,7 +19,7 @@ To setup your environment, follow the steps [here](setup.md).
 
 ##1. Create a New Message View
 
-Your first task is to create a view in which the user can input a username and a message. The screenshots below shows roughly how your app should look like after completion of this task. Focus on functionality in a)-c). In d) you'll improve the design. 
+Your first task is to create a view in which the user can input a username and a message. The screenshots below show roughly how your app should look like after completing this task. Focus on functionality in a)-c). In d) you'll improve the design. 
 
   <img src="https://raw.githubusercontent.com/bekk/react-native-workshop/master/screenshots/ios-new-message.png" alt="Image of IOS new message screen" width="350" />
   <img src="https://raw.githubusercontent.com/bekk/react-native-workshop/master/screenshots/android-new-message-error.png" alt="Image of Android new message screen" width="350" /> 
