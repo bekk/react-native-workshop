@@ -38,8 +38,8 @@ const _maybeRenderImage = source => {
 }
 
 Message.propTypes = {
-  from: React.PropTypes.string,
-  message: React.PropTypes.string,
+  from: React.PropTypes.string.isRequired,
+  message: React.PropTypes.string.isRequired,
 	image: React.PropTypes.string
 };
 
