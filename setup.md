@@ -1,7 +1,10 @@
 # React-native setup
 
 **!!IMPORTANT**
-Developing React Native projects requires Git and NPM3
+Developing React Native projects requires Git and npm v3
+
+## NPM 3
+If you already have installed npm v2, and want to run npm v3 alongside npm v2 you can install [npm3](https://www.npmjs.com/package/npm3).
 
 ## Android
 Development for android devices requires the Android SDK, [download Android Studio or the Android SDK](http://developer.android.com/sdk/index.html)
