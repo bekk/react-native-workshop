@@ -34,21 +34,29 @@ export default class MessageList extends Component {
         refreshControl={
           <RefreshControl
             refreshing={ this.props.refreshing }
-            onRefresh={ this._onRefresh.bind(this) }
+            onRefresh={ this.props.refreshView }
             tintColor="#ff0000"
             title="Laster..."
             colors={ [Colors.Red, Colors.Green, Colors.Yellow] }
           />
         }
         dataSource={ dataSource }
-        renderRow={ Message }
+        renderRow={ renderRow }
       />
     )
   }
+}
 
-  _onRefresh() {
-    this.props.refreshView();
-  }
+const renderRow = (rowData) => {
+  const image = rowData.image || undefined;
+  const from = rowData.from || '';
+  const message = rowData.message || '';
+
+  return (
+    <Message from={ from }
+      message={ message }
+      image={ image } />
+  );
 }
 
 const validateMessage = message => {
