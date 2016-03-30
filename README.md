@@ -21,11 +21,13 @@ a) __Input fields.__ You'll find a `NewMessage` (`app/components/new-message.js`
 
 b) __Send button.__ Input fields without any action are of no use. Create a send button. (Hint: Buttons in React Native are implemented via the `Touchable*` components)
 
-c) __Hook everything up.__ Make the send button actually post the message to the server. The `NewMessage` component recieves three functions as props, `setNewMessageText(message)`, `setUsername(username)`, and `postMessage()`. The first two will update the global state, and the latter will use the `message` and the `username` property from the global state and post the message to the server.
+c) __Hook everything up.__ Make the send button actually post the message to the server. The `NewMessage` component recieves three functions as props, `setNewMessageText(message)`, `setUsername(username)`, and `postMessage()`. The first two will update the global state, and the latter will use the `message` and `username` property from the global state and post the message to the server.
 
-If you've hooked everything up correctly, your message should appear on the big screen (or at http://mobile-course.herokuapp.com) when you hit the send button. Well done! :punch: Now, let's make it beautiful too!
+If you've hooked everything up correctly your message should appear on the big screen (or at http://mobile-course.herokuapp.com) when you hit the send button. Well done! :punch: Now, let's make it beautiful too!
 
-d) __Make it look sexy.__ At this point we won't kill you if your new message view looks like shit! Anyway, now you get the chance to pimp it up a bit. Experiment with different Flexbox properties. Have a look at the screenshots above for some inspiration.
+d) __Make it look sexy.__ At this point we won't kill you if your new message view looks like shit. Anyway, now you get the chance to pimp it up a bit. Experiment with different Flexbox properties. Have a look at the screenshots below for some inspiration:
+
+(Screenshots – platform specific design)
 
 ##2. Show messages
 
@@ -85,3 +87,10 @@ c) __Save it.__ Make sure your action saves it to the Redux store. Hint: Use `se
 c) __Show it.__ After successfully picking an image, display the image in the `NewMessage`component. Allow it to use all available space, but make sure it stays good lookin' by maintaining its aspect ratio.
 
 d) __Send it.__ If you've added the image to the Redux state, `postMessage()` should already support posting messages with image to the server. Works? Good! (Kanskje deltakerene bør utvide postMessage selv? Men da bør de kanskje også lage action setImage selv + håndtere den i reduceren. Kan bli litt mye?)
+
+## Links
+* [React native documentation](https://facebook.github.io/react-native/docs/getting-started.html)
+* [Material UI for reactnative](https://github.com/xinthink/react-native-material-kit)
+* [Image picker](https://github.com/marcshilling/react-native-image-picker)
+* [Redux documentation](http://redux.js.org/)
+* [A complete guide to flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
