@@ -4,6 +4,13 @@
 
 To setup your environment, follow the steps [here](setup.md). 
 
+## Links
+* [React native documentation](https://facebook.github.io/react-native/docs/getting-started.html)
+* [Material UI for reactnative](https://github.com/xinthink/react-native-material-kit)
+* [Image picker](https://github.com/marcshilling/react-native-image-picker)
+* [Redux documentation](http://redux.js.org/)
+* [A complete guide to flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
 ##Introduction
 - TODO: Introduction to application (Redux, Navigation, etc.)
 - TODO: Useful links
@@ -86,10 +93,3 @@ c) __Save it.__ Make sure your action saves it to the Redux store. Hint: Use `se
 c) __Show it.__ After successfully picking an image, display the image in the `NewMessage`component. Allow it to use all available space, but make sure it stays good lookin' by maintaining its aspect ratio.
 
 d) __Send it.__ If you've added the image to the Redux state, `postMessage()` should already support posting messages with image to the server. Works? Good! (Kanskje deltakerene bør utvide postMessage selv? Men da bør de kanskje også lage action setImage selv + håndtere den i reduceren. Kan bli litt mye?)
-
-## Links
-* [React native documentation](https://facebook.github.io/react-native/docs/getting-started.html)
-* [Material UI for reactnative](https://github.com/xinthink/react-native-material-kit)
-* [Image picker](https://github.com/marcshilling/react-native-image-picker)
-* [Redux documentation](http://redux.js.org/)
-* [A complete guide to flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
