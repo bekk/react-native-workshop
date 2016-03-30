@@ -7,8 +7,7 @@ import React, {
 import { Colors, Fonts } from './../config/design';
 import Image from './image';
 
-export const Message = (rowData) => {
-	const { from, message, image } = rowData;
+export const Message = ({ from, message, image }) => {
   return (
     <View>
       <View style={ styles.container }>
