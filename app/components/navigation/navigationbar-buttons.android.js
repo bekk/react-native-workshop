@@ -1,5 +1,6 @@
 'use strict';
 import React, { TouchableOpacity } from 'react-native';
+import { newMessage } from './routes';
 import { connect } from 'react-redux';
 import { postMessage } from '../../actions/actions'
 import { MKButton, MKColor, MKSpinner } from 'react-native-material-kit';
@@ -26,7 +27,7 @@ const styles = {
 const navigationBarButtons = (dispatch) => ({
 
     RightButton (route) {
-        if (route && route.title === 'Skriv ny') {
+        if (route.title === newMessage.title) {
             return (
                 <TouchableOpacity style={styles.navBarRightButton}>
                   <ConnectedSendButton style={styles.sendButton} />

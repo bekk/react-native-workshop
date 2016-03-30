@@ -6,9 +6,9 @@ import React, {
     Image,
     Platform
 } from 'react-native';
-import NewMessage from '../new-message';
+
 import { Colors } from './../../config/design';
-import { newMessage } from './routes';
+import { newMessage, listMessages } from './routes';
 import { navigateTo } from '../../actions/actions';
 
 var styles = StyleSheet.create({
@@ -32,7 +32,7 @@ var styles = StyleSheet.create({
 const navigationBarButtons = (dispatch) => ({
 
     RightButton: function (route, navigator, index, navState) {
-        if(route && route.title === 'Meldinger') {
+        if(route.title === listMessages.title) {
           return (
             <TouchableOpacity
               style={styles.navBarRightButton}
