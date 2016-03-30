@@ -12,11 +12,16 @@ import React, {
 import { Colors, Fonts } from './../config/design';
 import { connect } from 'react-redux';
 import { pickImage } from './camera/camera';
-import { setImage, openImagePicker } from '../actions/actions';
+import { openImagePicker, clearImage } from '../actions/actions';
 
 import { postMessage, setNewMessageText, setUsername } from '../actions/actions';
 
 class NewMessage extends Component {
+
+    componentWillUnmount() {
+        this.props.clearImage();
+    }
+
     render() {
         const { username, newMessageText, setNewMessageText, setUsername, postMessage, error, image, onPickImagePressed } = this.props;
         const sendButton = Platform.OS === 'android' ? null : this._renderSendButton();
@@ -139,6 +144,7 @@ const mapDispatchToProps = (dispatch) => ({
     setNewMessageText: message => dispatch(setNewMessageText(message)),
     setUsername: name => dispatch(setUsername(name)),
     onPickImagePressed: () => dispatch(openImagePicker()),
+    clearImage: () => dispatch(clearImage()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewMessage);
