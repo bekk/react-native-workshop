@@ -10,7 +10,6 @@ import MessageList from './message-list';
 import ColoredFab from './colored-fab';
 import { fetchMessages, postMessage } from '../actions/actions';
 import { ErrorMessage } from './error-message'
-import NewMessage from './new-message';
 import { newMessage } from './navigation/routes';
 import { navigateTo } from '../actions/actions';
 import { Colors } from './../config/design';
