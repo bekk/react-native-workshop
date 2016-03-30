@@ -54,8 +54,6 @@ a) __Navigator.__ You'll find a `MessageListContainer` (`messages-list-container
 b) __Listing messages.__ Edit `MessageList` (`message-list.js`) component to show messages. The `MessageList` receives an array of messages as prop. Click here to see the format of messages:
 http://mobile-course.herokuapp.com/message
 
-It may be nice to create an own file for handling the rendering of each message
-
 c) __Show messages with images.__ Some messages contain a link to a image. Your task now is to show images for messages with image.
 
 d) __Pull to refresh.__ Add pull to refresh. Hint: Look at what ListView can do for you
@@ -103,3 +101,17 @@ e) __Clear it.__ Currently, the image is never cleared from the global state. Th
 
 Use `clearImage()` to clear the globally stored image such that the above mentioned scenarios no longer occur.
 
+##5. Additional assignments
+
+React Native has plenty of issues up for grabs: https://github.com/facebook/react-native/issues
+
+Just kidding.. 
+
+Here's a few interesting tasks for you choose from:
+* Show images in full screen when pressed
+* Edit messages by reusing the `NewMessage` component
+* Delete messages:
+  - iOS: Listen for swipe gesture on the messages. Use the native list view handling like the standard Mail app. Create a action and reducer for deletion.
+  - Android: Long press to delete
+* __Advanced:__ Bidge a component from Android/iOS to React Native. We suggest Toasts for Android or Alert for iOS. They're already implemented in RN, but might be good subjects for practice (and you can peak the RN source code for tips).
+* Or anything else you want to try out :-)
