@@ -18,8 +18,8 @@ import { postMessage, setNewMessageText, setUsername } from '../actions/actions'
 
 class NewMessage extends Component {
     render() {
-        const { username, newMessageText, setNewMessageText, setUsername, postMessage, navigator, error, image, onPickImagePressed } = this.props;
-        const sendButton = Platform.OS === 'android' ? null : this._renderSendButton(() => postMessage(navigator));
+        const { username, newMessageText, setNewMessageText, setUsername, postMessage, error, image, onPickImagePressed } = this.props;
+        const sendButton = Platform.OS === 'android' ? null : this._renderSendButton();
         const feedback = error ? <View style={styles.feedback}><Text style={styles.feedbackText}>{error}</Text></View> : null;
         const maybeImage = image ? <Image source={image.source} style={styles.image}/> : null;
 
@@ -63,11 +63,11 @@ class NewMessage extends Component {
         );
     }
 
-    _renderSendButton(postMessage) {
+    _renderSendButton() {
       return (
         <TouchableOpacity
           style={[styles.button, {backgroundColor: Colors.Red}]}
-          onPress={postMessage}>
+          onPress={this.props.postMessage}>
             <Text style={styles.buttonText}>SEND</Text>
         </TouchableOpacity>
       );
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = ({ username, newMessageText, error, image }) => ({ username, newMessageText, error, image });
 const mapDispatchToProps = (dispatch) => ({
-    postMessage: navigator => dispatch(postMessage(navigator)),
+    postMessage: () => dispatch(postMessage()),
     setNewMessageText: message => dispatch(setNewMessageText(message)),
     setUsername: name => dispatch(setUsername(name)),
     onPickImagePressed: () => dispatch(openImagePicker()),

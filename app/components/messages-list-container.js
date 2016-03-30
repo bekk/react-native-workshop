@@ -11,6 +11,8 @@ import ColoredFab from './colored-fab';
 import { fetchMessages, postMessage } from '../actions/actions';
 import { ErrorMessage } from './error-message'
 import NewMessage from './new-message';
+import { newMessage } from './navigation/routes';
+import { navigateTo } from '../actions/actions';
 import { Colors } from './../config/design';
 
 class MessageListContainer extends Component {
@@ -18,13 +20,9 @@ class MessageListContainer extends Component {
     this._refreshView();
   }
 
-  _goto() {
-    this.props.navigator.push({component: NewMessage, title: 'Skriv ny'});
-  }
-
   _shouldRenderFabulousAndroidUI() {
     if (Platform.OS === 'android') {
-      return <ColoredFab onPress={this._goto.bind(this)}>+</ColoredFab>
+      return <ColoredFab onPress={this.props.goToNewMessage}>+</ColoredFab>
     }
     return null;
   }
@@ -68,6 +66,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   fetchMessages: () => dispatch(fetchMessages(dispatch)),
+  goToNewMessage: () => dispatch(navigateTo(newMessage))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MessageListContainer);

@@ -9,6 +9,9 @@ import {
   FETCH_MESSAGE_FAILED,
   SET_POST_SUCCESS,
   SET_IMAGE,
+  SET_NAVIGATOR,
+  NAVIGATOR_PUSH,
+  NAVIGATOR_POP,
   FEILMELDING,
   POST_MESSAGE
 } from '../actions/actions';
@@ -60,6 +63,17 @@ function messageReducer(state = initialState, action) {
 
     case SET_IMAGE:
       return Object.assign({}, state, { image: action.image });
+
+    case SET_NAVIGATOR:
+      return Object.assign({}, state, { navigator: action.navigator });
+
+    case NAVIGATOR_PUSH:
+      state.navigator.push(action.route);
+      return state;
+
+    case NAVIGATOR_POP:
+      state.navigator.pop();
+      return state;
 
     case POST_MESSAGE:
       return Object.assign({}, state, {isSending: true});

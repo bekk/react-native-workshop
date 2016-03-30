@@ -6,11 +6,11 @@ import React, {
     Platform
 } from 'react-native';
 
+import { listMessages } from './routes';
+import getNavigationBarRouteMapper from './navigationbar-routemapper';
+import { connect } from 'react-redux';
+import { setNavigator } from '../../actions/actions';
 import { Colors } from './../../config/design';
-
-import ListMessageContainer from '../messages-list-container';
-import NewMessage from './../new-message';
-import NavigationBarRouteMapper from './navigationbar-routemapper';
 
 const styles = StyleSheet.create({
     navBar: {
@@ -40,18 +40,22 @@ class CustomNavigator extends Component {
         return (
             <Navigator
                 ref="navigator"
-                initialRoute={{ component: ListMessageContainer, title: 'Meldinger' }}
+                initialRoute={listMessages}
                 renderScene={_renderScene}
                 configureScene={_sceneConfig()}
                 navigationBar={(
                 <Navigator.NavigationBar
-                    routeMapper={NavigationBarRouteMapper}
+                    routeMapper={getNavigationBarRouteMapper(this.props.dispatch)}
                     style={styles.navBar}
                 />
             )}
             />
         );
     }
+
+    componentDidMount() {
+      this.props.dispatch(setNavigator(this.getNavigator()));
+    }
 }
 
-export default CustomNavigator;
+export default connect()(CustomNavigator);

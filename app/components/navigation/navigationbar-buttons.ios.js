@@ -8,6 +8,8 @@ import React, {
 } from 'react-native';
 import NewMessage from '../new-message';
 import { Colors } from './../../config/design';
+import { newMessage } from './routes';
+import { navigateTo } from '../../actions/actions';
 
 var styles = StyleSheet.create({
     navBarRightButton: {
@@ -27,21 +29,21 @@ var styles = StyleSheet.create({
     }
 });
 
-const NavigationBarButtons = {
+const navigationBarButtons = (dispatch) => ({
 
     RightButton: function (route, navigator, index, navState) {
         if(route && route.title === 'Meldinger') {
           return (
             <TouchableOpacity
               style={styles.navBarRightButton}
-              onPress={() => navigator.push({ component: NewMessage, title: 'Skriv ny' })}>
+              onPress={() => dispatch(navigateTo(newMessage))}>
                 <Text style={styles.navBarRightText}>+</Text>
             </TouchableOpacity>
           );
         }
         return null;
     }
-};
+});
 
 
-export default NavigationBarButtons;
+export default navigationBarButtons;
