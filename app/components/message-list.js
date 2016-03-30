@@ -49,7 +49,7 @@ export default class MessageList extends Component {
 
 const renderRow = (rowData) => {
   const image = rowData.image || undefined;
-  const from = 	rowData.from || '';
+  const from = rowData.from || '';
   const message = rowData.message || '';
 
   return (
