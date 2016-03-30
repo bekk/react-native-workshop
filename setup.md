@@ -3,7 +3,7 @@
 **!!IMPORTANT**
 Developing React Native projects requires Git and npm v3
 
-## NPM 3
+## npm
 If you already have installed npm v2, and want to run npm v3 alongside npm v2 you can install [npm3](https://www.npmjs.com/package/npm3).
 
 ## Android
@@ -33,13 +33,13 @@ Notes from troubleshooting during the setup-process on windows and OSX can be fo
 5. Clone the repository; `git clone git@github.com:bekk/react-native-workshop.git`
 6. Run `npm install && npm install react-native-cli -g` to install dependencies
 
-### Windows
+## Windows
 1. Run `react-native start`
 2. Run `react-native run-android` in another shell, if this fails try `cd android && ./gradlew installDebug`
 
 If you have any trouble check [this](trouble-windows-android.md)
 
-### OSX
+## OSX
 1. Run `bash android/run.sh`, this checks your configuration and starts react-native
 
 If you have any trouble check [this](trouble-osx-android.md)
