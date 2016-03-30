@@ -17,7 +17,7 @@ import { Colors } from './../config/design';
 
 class MessageListContainer extends Component {
   componentWillMount() {
-    this._refreshView();
+    this.props.fetchMessages();
   }
 
   _shouldRenderFabulousAndroidUI() {
@@ -37,16 +37,12 @@ class MessageListContainer extends Component {
         <MessageList
           refreshing={ this.props.isFetchingMessages }
           messages={ this.props.messages }
-          refreshView={ this._refreshView.bind(this) }
+          refreshView={ this.props.fetchMessages }
           navigator={this.props.navigator}
         />
         {this._shouldRenderFabulousAndroidUI()}
       </View>
     );
-  }
-
-  _refreshView() {
-    this.props.fetchMessages();
   }
 }
 

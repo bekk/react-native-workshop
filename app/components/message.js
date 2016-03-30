@@ -18,9 +18,9 @@ export const Message = ({ from, message, image }) => {
         </View>
         <View style={styles.underline} />
 		    { _maybeRenderImage(image) }
-	      <View style={ styles.row }>
-	        <Text style={ styles.text }>{ message }</Text>
-	      </View>
+      <View style={ styles.row }>
+        <Text style={ styles.text }>{ message }</Text>
+      </View>
       </View>
       <View style={ styles.separator } />
     </View>
@@ -40,7 +40,7 @@ const _maybeRenderImage = source => {
 Message.propTypes = {
   from: React.PropTypes.string.isRequired,
   message: React.PropTypes.string.isRequired,
-	image: React.PropTypes.string
+  image: React.PropTypes.string
 };
 
 const styles = {
