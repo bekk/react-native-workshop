@@ -78,7 +78,7 @@ Well done! This starts to look like a complete application!
 
 ##4. Add image to new messages
 
-A message consisting of text only is quite boring these days. Also, a picture says more than a thousand words... So, let's add functionality to allow the user to add an image to new messages.
+A message consisting of only text is quite boring these days. Also, a picture says more than a thousand words... So, let's allow the user to add an image to new messages.
 
 React Native has no component or API for taking pictures on the fly or picking an image from the camera roll. That's where third-party npm modules come in handy. We'll use the react-native-image-picker module (link), which allows for both taking new pictures and picking from the camera roll. It's implemented by bridging to the pure native image picker and picture taking apps.
 
