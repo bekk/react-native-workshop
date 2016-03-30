@@ -32,7 +32,7 @@ d) __Make it look sexy.__ At this point we won't kill you if your new message vi
 The second task will be to show all the messages in a scrollable list. We will for now ignore the newly created new message component and focus on displaying messages. It will all be connected in assignment 3.
 
 <img src="https://raw.githubusercontent.com/bekk/react-native-workshop/master/screenshots/ios-listview.png" alt="Image of IOS list messages screen" width="350" />
-<img src="https://raw.githubusercontent.com/bekk/react-native-workshop/master/screenshots/android-new-message-error.png" alt="Image of Android new message screen" width="350" /> 
+<img src="https://raw.githubusercontent.com/bekk/react-native-workshop/master/screenshots/android-listview.png" alt="Image of Android list message screen" width="350" /> 
 
 Let's have a look at the app architecture for handling rendering the messages:
 
