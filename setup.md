@@ -5,7 +5,7 @@ Developing React Native projects requires Git and NPM3
 
 ## Android
 Development for android devices requires the Android SDK, [download Android Studio or the Android SDK](http://developer.android.com/sdk/index.html)
-As an alternative you can also use the Genymotion emulator (skip step 1 and 2). 
+As an alternative you can also use the Genymotion emulator (skip step 1 and 2).
 
 In general the Genymotion emulator has better performance then the one provided by the Android SDK and it is easier to set up.
 It does however integrate differently with the Android Device Bridge (ADB), and therefore requires some extra set up to get live-reloading.
@@ -28,7 +28,7 @@ Notes from troubleshooting during the setup-process on windows and OSX can be fo
 3. Configure a emulator image
 4. Start the emulator
 5. Clone the repository; `git clone git@github.com:bekk/react-native-workshop.git`
-6. Run `npm install && npm install react-native -g` to install dependencies
+6. Run `npm install && npm install react-native-cli -g` to install dependencies
 
 ### Windows
 1. Run `react-native start`
