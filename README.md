@@ -19,7 +19,7 @@ To setup your environment, follow the steps [here](setup.md).
 
 ##1. Create a New Message View
 
-Your first task is to create a view in which the user can input a username and a message.
+Your first task is to create a view in which the user can input a username and a message. The screenshots below shows roughly how your app should look like after completion of this task. Focus on functionality in a)-c). In d) you'll improve the design. 
 
   <img src="https://raw.githubusercontent.com/bekk/react-native-workshop/master/screenshots/ios-new-message.png" alt="Image of IOS new message screen" width="350" />
   <img src="https://raw.githubusercontent.com/bekk/react-native-workshop/master/screenshots/android-new-message-error.png" alt="Image of Android new message screen" width="350" /> 
@@ -36,7 +36,7 @@ d) __Make it look sexy.__ At this point we won't kill you if your new message vi
 
 ##2. Show messages
 
-The second task will be to show all the messages in a scrollable list. We will for now ignore the newly created new message component and focus on displaying messages. It will all be connected in assignment 3.
+The second task is to show all the messages in a scrollable list. We will for now ignore the newly created new message component and focus on displaying messages. It will all be connected in assignment 3.
 
 <img src="https://raw.githubusercontent.com/bekk/react-native-workshop/master/screenshots/ios-listview.png" alt="Image of IOS list messages screen" width="350" />
 <img src="https://raw.githubusercontent.com/bekk/react-native-workshop/master/screenshots/android-listview.png" alt="Image of Android list message screen" width="350" /> 
