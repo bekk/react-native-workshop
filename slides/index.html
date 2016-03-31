@@ -35,14 +35,14 @@ class: agenda
 * Syntaks og styling
 * Redux
 * Navigasjon
-* Remote deploy?
+* Instant deploy?
 * Deres tur!
 
 ---
 
 # Intro - Native
 
-## Lansert for iOS i januar og for Android i september 2015 av Facebook
+## Lansert for iOS i januar 2015 og for Android i september av Facebook
 ## Open Source
 ## Problemer med native
 - Treg utviklingsyklus
@@ -52,18 +52,19 @@ class: agenda
 ???
 
 ## Av Facebook, aktivt brukt.
+## Allerede stort community. PR, React komponenter
 ## Funket ikke å pakke inn webapps lengre. Webben er ikke klar enda.
 ## Synes det gikk for treigt å utvikle native. Treigere utviklingsmiljø. Utviklere må kunne flere språk og verktøy. Rett og slett ikke smidig nok ut ifra det de var vant til fra webben. Måtte kjenne og implementere businesslogikk dobbelt.
-## Allerede stort community. PR, React komponenter
 ## Hyppige releases. Flere nye versjoner i løpet av de ukene vi jobbet med denne workshopen
 
 ---
 
 # Intro - Kryssplattform
 
-## Ikke native look & feel
-## Dårlig verktøystøtte og debug
-## Begrenset sett med funksjonalitet
+## Problemer med kryssplattform
+- Ikke (alltid) native look & feel
+- Dårlig verktøystøtte og debug
+- Begrenset funksjonalitet
 
 ???
 
@@ -86,6 +87,7 @@ class: agenda
 ## IKKE write once, der altså. Men det ligger til rette for gjenbruk. F.eks apier, events, business-logikk. Men ikke nødvendigvis view-kode.
 ## Skal være kjent for utviklere som kommer fra JS og React.
 ## Kan gjenbruke komponenter fra webben, og i tillegg får tilgang til platformkomponenter
+## Så i mange tilfeller er det npm install, tut & kjør
 
 ---
 
@@ -104,6 +106,10 @@ class: agenda
   <TouchableOpacity>Trykk på meg</TouchableOpacity>
 </View>
 ```
+
+???
+
+## Knapp
 
 ---
 # Ikke ulikt React.js 2/2
@@ -145,6 +151,7 @@ class: agenda
 
 ???
 ## At det er basert på React.js betyr ikke at det er en React-app pakket inn i et WebView
+## Som sagt, DOM er byttet ut.
 ## Ikke WebView, så det føles native. Deler av Facebook-appen er RN. Kan dere gjette hvilken? Events/arrangementer
 ## Sender kommandoer i batcher til UI-tråden.
 ## Flere tråder, i motsetning til web. Dekode bilder, lagre til disk, gjøre layoutberegninger utenfor UI-tråden. => Responsivt
@@ -156,12 +163,24 @@ class: agenda
 .full-img[![](img/ReactBridge.png)]
 ]
 
+???
+
+## Får input, click.
+## Samler informasjon, serialiserer det, og sender til JSCore
+## JS prosesserer event og lager en liste over native kommandoer.
+## Dette serialiseres og sendes tilbake til native
+## Prosesserer kommandoene og oppdaterer UI
+
+https://speakerdeck.com/frantic/react-native-under-the-hood
+
 ---
 #Hva trenger man?
 
 * XCode
 * Android-SDK
 * Node 4.x
+* npm 3
+* react-native-cli
 * Det du skriver JS i
 
 ???
@@ -209,7 +228,7 @@ class: cols two
 
 ## En javascript-implementasjon av Flexbox
 ## Inline styles med JS-objekter
-## Går fort igjennom nå, mer som et oppslagsverk for oppgavene
+## Går fort igjennom nå, mer som et oppslagsverk for oppgavene, linker til mer dokumentasjon finnes sammen med oppgavene
 
 ---
 class: cols two
@@ -844,7 +863,7 @@ dispatch.navigateTo({component: NewMessage, title: 'Skriv ny'});
 
 ---
 
-# Remote deploy av JS?
+# Instant deploy av JS?
 
 ## AppHub, CodePush
 ## I henhold til Apple guidelines
