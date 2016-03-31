@@ -145,9 +145,10 @@ class: agenda
 
 ## Ikke en React.js-app pakket inn i WebView
 ## Fullt ut native plattformkomponenter
-## JS kjører på JavaScriptCore
-## Asynkront, utenfor UI-tråden. 
-## JS til Native via "bridge".
+## Optimaliseringer
+- JS kjører på JavaScriptCore
+- JS kjøres asynkront, utenfor UI-tråden. 
+- JS til Native via "bridge".
 
 ???
 ## At det er basert på React.js betyr ikke at det er en React-app pakket inn i et WebView
@@ -155,6 +156,7 @@ class: agenda
 ## Ikke WebView, så det føles native. Deler av Facebook-appen er RN. Kan dere gjette hvilken? Events/arrangementer
 ## Sender kommandoer i batcher til UI-tråden.
 ## Flere tråder, i motsetning til web. Dekode bilder, lagre til disk, gjøre layoutberegninger utenfor UI-tråden. => Responsivt
+## Bruker Babel, så ES6/7 kan brukes
 
 ---
 
@@ -208,7 +210,7 @@ class: cols two
 
 ## Packager bygger appen, og står i bakgrunnen og venter på endringer.
 ## Noe av det mange sliter med er utviklingsmiljø. Mange som ikke er komfortable med XCode
-## Kan kjøre opp i Chromes V8 og bruke vanlig debugger
+## Kan kjøre opp i Chromes V8 (kommuniserer med native via WebSockets) og bruke vanlig debugger
 ---
 
 
@@ -266,6 +268,7 @@ class Flexbox extends Component {
 ???
 
 ## Hvilken akse skal barnenodene legges ut.
+## Column: topp til bunn
 
 ---
 class: cols two
@@ -299,6 +302,10 @@ class Flexbox extends Component {
 .col[
 .small-img[![](img/flex_row.png)]
 ]
+
+???
+
+## Venstre til høyre i en rad
 
 ---
 class: cols two
@@ -873,7 +880,7 @@ foregoing are scripts and code downloaded and run by Apple's built-in WebKit fra
 JavascriptCore, provided that such scripts and code do not change the primary purpose of the
 Application ...
 
-.small-img[![](img/Apphub3.png)]
+.small-img[![](img/AppHub3.png)]
 
 ???
 
