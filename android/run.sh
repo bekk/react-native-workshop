@@ -3,7 +3,7 @@
 source output_helpers.sh
 
 function sjekkLaunchAgentsRettigheter {
-	harKorrekteRettigheter=$(ls -la "/Users/${USER}/Library" | grep LaunchAgents | grep "${USER}")
+	harKorrekteRettigheter=$(ls -la "${HOME}/Library" | grep LaunchAgents | grep "${USER}")
 
 	if [ -z "$harKorrekteRettigheter" ]; then
 		sjekkLaunchAgentsRettigheterFail
