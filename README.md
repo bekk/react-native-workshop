@@ -4,6 +4,9 @@
 
 To setup your environment, follow the steps [here](setup.md). 
 
+## Feedback
+Please submit feedback [here](https://docs.google.com/forms/d/1DpRJAY2aIDoDIsXxHHzT0je8P_07qTo0KDz2-kRkZVQ/viewform?c=0&w=1&usp=mail_form_link)
+
 ## Links
 * [Slides](https://bekk.github.io/react-native-workshop/slides)
 * [React native documentation](https://facebook.github.io/react-native/docs/getting-started.html)
