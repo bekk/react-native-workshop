@@ -19,6 +19,8 @@ To setup your environment, follow the steps [here](setup.md).
 * "Enable Hot Reloading" will immidiately reload code while also maintaining application state. __NB:__ Added to the latest RN version so it might be buggy
 * Run on device: [iOS](https://facebook.github.io/react-native/docs/running-on-device-ios.html#content) / [Android](https://facebook.github.io/react-native/docs/running-on-device-android.html#content)
 
+Finally, checkout branch `exercise-1` for the first task.
+
 ##1. Create a New Message View
 
 Your first task is to create a view in which the user can input a username and a message. The screenshots below show roughly how your app should look like after completing this task. Focus on functionality in a)-c). In d) you'll improve the design. 
