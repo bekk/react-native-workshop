@@ -5,6 +5,7 @@
 To setup your environment, follow the steps [here](setup.md). 
 
 ## Links
+* [Slides](bekk.github.io/react-native-workshop/slides)
 * [React native documentation](https://facebook.github.io/react-native/docs/getting-started.html)
 * [Material UI for reactnative](https://github.com/xinthink/react-native-material-kit)
 * [Image picker](https://github.com/marcshilling/react-native-image-picker)
