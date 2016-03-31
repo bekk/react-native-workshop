@@ -68,10 +68,8 @@ As promised in the previous task, we now shift our attention back to the `NewMes
 Before you dive back into your code, let's take a closer look at how navigation is set up in the application. We use the `Navigator`component of React Native, wrapped in a custom component that handles some boilerplate code – like how transitions between routes are animated and how the navigation bar is configured. `Navigator` is basically a stack – you push a view to it to transition to that view, and you pop to go back to previous view.
 
 a) __Button.__ We need a button to initiate a transition to `NewMessage`. To ensure a great native look in our app, we'll implement the button platform specific:
- * __Android:__ Implement the button as a floating button contained in the list view (TODO: mer info om react-native-material-kit)
- * __iOS:__  Implement the button as a +-button contained in the navigation bar
-
-(Screenshots of the two buttons in action)
+ * __Android:__ Implement the button as a floating button contained in the list view. We have added react-native-material-kit to the project so can use to get material design feel. 
+ * __iOS:__  Implement the button as a '+' button contained in the navigation bar aligned to the right. 
 
 b) __Push it.__ Make sure that a press on the button you created, transitions to the `NewMessage` view.
  * __iOS:__ Hide the +-button when current route is `NewMessage`
