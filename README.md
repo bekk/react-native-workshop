@@ -30,7 +30,7 @@ Your first task is to create a view in which the user can input a username and a
 
 a) __Input fields.__ You'll find a `NewMessage` (`app/components/new-message.js`) component in your project. The component is already mounted in the default view, but it renders nothing. Implement the render function of `NewMessage` so the resulting view contains two input fields – one for the username and one for the message.
 
-b) __Send button.__ Input fields without any action are of no use. Create a send button. (Hint: Buttons in React Native are implemented via the `Touchable*` components)
+b) __Send button.__ Input fields without any action are of no use. Create a send button. Revisit the screenshots above for intstructions on where to place the button (platform specific). (Hint: Buttons in React Native are implemented via the `Touchable*` components)
 
 c) __Hook everything up.__ Make the send button actually post the message to the server. The `NewMessage` component recieves three functions as props, `setNewMessageText(message)`, `setUsername(username)`, and `postMessage()`. The first two will update the global state, and the latter will use the `message` and the `username` property from the global state and post the message to the server.
 
