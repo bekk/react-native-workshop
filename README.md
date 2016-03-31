@@ -31,12 +31,14 @@ Your first task is to create a view in which the user can input a username and a
 a) __Input fields.__ You'll find a `NewMessage` (`app/components/new-message.js`) component in your project. The component is already mounted in the default view, but it renders nothing. Implement the render function of `NewMessage` so the resulting view contains two input fields – one for the username and one for the message.
 
 b) __Send button.__ Input fields without any action are of no use. Create a send button. (Hint: Buttons in React Native are implemented via the `Touchable*` components)
+  * __Android:__ To place it in the navigation bar, you'll have to implement it in `navigationbar-buttons.android.js`
 
 c) __Hook everything up.__ Make the send button actually post the message to the server. The `NewMessage` component recieves three functions as props, `setNewMessageText(message)`, `setUsername(username)`, and `postMessage()`. The first two will update the global state, and the latter will use the `message` and the `username` property from the global state and post the message to the server.
+  * __Android:__ Since the send button is placed in the navigation bar, you'll have to import the `postMessage` action directly from `actions.js`, and dispatch it.
 
 If you've hooked everything up correctly, your message should appear on the big screen (or at http://mobile-course.herokuapp.com) when you hit the send button. Well done! :punch: Now, let's make it beautiful too!
 
-d) __Make it look sexy.__ At this point we won't kill you if your new message view looks like shit! Anyway, now you get the chance to pimp it up a bit. Experiment with different Flexbox properties. Have a look at the screenshots above for some inspiration.
+d) __Make it look sexy.__ At this point we won't kill you if your new message view looks like shit! Anyway, now you get the chance to pimp it up a bit. Experiment with different Flexbox properties. Have a look at the screenshots above for some inspiration. Also, the colors used in the screenshots are found in `config/design.js`. 
 
 Tip on working with styling: In the docs, the `style` prop of each component shows a complete list of styles supported by that   component: Example: http://facebook.github.io/react-native/docs/view.html#style
 
