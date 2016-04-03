@@ -24,6 +24,11 @@ Please submit feedback [here](https://docs.google.com/forms/d/1DpRJAY2aIDoDIsXxH
 
 Finally, checkout branch `exercise-1` for the first task.
 
+##Tips
+
+* Redux with Thunk have already been set up and connected with the correct props in the components you have to implement.
+* All components have prop types set. Proptypes ensures that components are used correctly. Use it to see what you have to work with when you are implementing a component
+
 ##1. Create a New Message View
 
 Your first task is to create a view in which the user can input a username and a message. The screenshots below show roughly how your app should look like after completing this task. Focus on functionality in a)-c). In d) you'll improve the design. 
