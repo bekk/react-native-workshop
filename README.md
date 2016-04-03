@@ -78,15 +78,15 @@ As promised in the previous task, we now shift our attention back to the `NewMes
 Before you dive back into your code, let's take a closer look at how navigation is set up in the application. We use the `Navigator`component of React Native, wrapped in a custom component that handles some boilerplate code – like how transitions between routes are animated and how the navigation bar is configured. `Navigator` is basically a stack – you push a view to it to transition to that view, and you pop to go back to previous view.
 
 a) __Button.__ We need a button to initiate a transition to `NewMessage`. To ensure a great native look in our app, we'll implement the button platform specific:
- * __Android:__ Implement the button as a floating button above the list view. We have added react-native-material-kit to the project so can use to get material design feel. 
- * __iOS:__  Implement the button as a '+' button contained in the navigation bar aligned to the right. 
+ * __Android:__ Implement the button as a floating button above the list view. We have added react-native-material-kit to the project so can use to get material design feel. Use `ColoredFab`(`colored-fab.js`). You should add the button in the render method of `MessageListContainer` (`messages-list-container.js`).
+ * __iOS:__  Implement the button as a '+' button contained in the navigation bar aligned to the right. See `navigationBarButtons` (`navigationbar-buttons.ios.js`)
 
 b) __Push it.__ Make sure that a press on the button you created, transitions to the `NewMessage` view.
  * __iOS:__ Hide the +-button when current route is `NewMessage`
 
 Now, try sending a message to ensure that `NewMessage` is still functional. After pressing send, you'll need to manually navigate back to check if your message appears. We'll change that now:
 
-c) __Pop it.__ Ensure that the user is taken back to the message list when send is pressed.
+c) __Pop it.__ Implement a back button in the left side of the navigation bar. See `commonRouteMapper` (`navigationbar-routemapper.ios.js`). We have imported a back arrow image you can use. You also need to ensure that the user is taken back to the message list when send is pressed.
 
 Well done! This starts to look like a complete application!
 
