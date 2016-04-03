@@ -14,7 +14,7 @@ import { Colors, Fonts } from './../config/design';
 class NewMessage extends Component {
 
     componentWillUnmount() {
-        this.props.clearImage();
+        this.props.clearNewMessageState();
     }
 
     render() {
@@ -150,14 +150,14 @@ const styles = StyleSheet.create({
 
 // Redux related code
 import { connect } from 'react-redux';
-import { postMessage, setNewMessageText, setUsername, openImagePicker, clearNewMessageState, clearImage } from '../actions/actions';
+import { postMessage, setNewMessageText, setUsername, openImagePicker, clearNewMessageState } from '../actions/actions';
 const mapStateToProps = ({ username, newMessageText, error, image }) => ({username, newMessageText, error, image});
 const mapDispatchToProps = (dispatch) => ({
     postMessage: () => dispatch(postMessage()),
     setNewMessageText: message => dispatch(setNewMessageText(message)),
     setUsername: name => dispatch(setUsername(name)),
     onPickImagePressed: () => dispatch(openImagePicker()),
-    clearImage: () => dispatch(clearImage()),
+    clearNewMessageState: () => dispatch(clearNewMessageState()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewMessage);
