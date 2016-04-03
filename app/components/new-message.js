@@ -14,8 +14,6 @@ import { connect } from 'react-redux';
 import { pickImage } from './camera/camera';
 import { openImagePicker, clearImage } from '../actions/actions';
 
-import { postMessage, setNewMessageText, setUsername } from '../actions/actions';
-
 class NewMessage extends Component {
 
     componentWillUnmount() {
@@ -138,7 +136,10 @@ const styles = StyleSheet.create({
     }
 });
 
-const mapStateToProps = ({ username, newMessageText, error, image }) => ({ username, newMessageText, error, image });
+// Redux related code
+import { connect } from 'react-redux';
+import { postMessage, setNewMessageText, setUsername, openImagePicker, clearNewMessageState } from '../actions/actions';
+const mapStateToProps = ({ username, newMessageText, error, image }) => ({username, newMessageText, error, image});
 const mapDispatchToProps = (dispatch) => ({
     postMessage: () => dispatch(postMessage()),
     setNewMessageText: message => dispatch(setNewMessageText(message)),
