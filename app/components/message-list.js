@@ -16,12 +16,12 @@ export default class MessageList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dateSource: DSConfig
+      dataSource: DSConfig
     };
   }
 
   _getDataSource(messages) {
-    return this.state.dateSource.cloneWithRows(messages);
+    return this.state.dataSource.cloneWithRows(messages);
   }
 
   render() {

@@ -10,9 +10,6 @@ import React, {
   TouchableOpacity
 } from 'react-native';
 import { Colors, Fonts } from './../config/design';
-import { connect } from 'react-redux';
-import { pickImage } from './camera/camera';
-import { openImagePicker, clearImage } from '../actions/actions';
 
 class NewMessage extends Component {
 
