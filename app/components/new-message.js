@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
 
 // Redux related code
 import { connect } from 'react-redux';
-import { postMessage, setNewMessageText, setUsername, openImagePicker, clearNewMessageState } from '../actions/actions';
+import { postMessage, setNewMessageText, setUsername, openImagePicker, clearNewMessageState, clearImage } from '../actions/actions';
 const mapStateToProps = ({ username, newMessageText, error, image }) => ({username, newMessageText, error, image});
 const mapDispatchToProps = (dispatch) => ({
     postMessage: () => dispatch(postMessage()),
