@@ -46,9 +46,10 @@ class MessageListContainer extends Component {
 }
 
 MessageListContainer.propTypes = {
-  failedToFetchMessages: React.PropTypes.bool,
-  isFetchingMessages: React.PropTypes.bool,
-  messages: React.PropTypes.array
+  failedToFetchMessages: React.PropTypes.bool.isRequired,
+  isFetchingMessages: React.PropTypes.bool.isRequired,
+  messages: React.PropTypes.array.isRequired,
+  fetchMessages: React.PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => {
