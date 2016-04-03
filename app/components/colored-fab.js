@@ -44,7 +44,7 @@ function ColoredFab({styles = {}, children, onPress}) {
 }
 
 ColoredFab.propTypes = {
-  failedToFetchMessages: React.PropTypes.func.isRequired
+  onPress: React.PropTypes.func.isRequired
 }
 
 export default ColoredFab;
