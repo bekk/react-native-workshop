@@ -84,8 +84,6 @@ a) __Button.__ We need a button to initiate a transition to `NewMessage`. To ens
 b) __Push it.__ Make sure that a press on the button you created, transitions to the `NewMessage` view.
  * __iOS:__ Hide the +-button when current route is `NewMessage`
 
-Now, try sending a message to ensure that `NewMessage` is still functional. After pressing send, you'll need to manually navigate back to check if your message appears. We'll change that now:
-
 c) __Pop it.__ Implement a back button in the left side of the navigation bar. See `commonRouteMapper` (`navigationbar-routemapper.ios.js`). We have imported a back arrow image you can use. We have already ensured that the user is taken back to the message list when send is pressed. See `actions/actions.js` and `postMessage` function to see how it work.
 
 Well done! This starts to look like a complete application!
