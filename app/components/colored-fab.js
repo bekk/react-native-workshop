@@ -33,14 +33,18 @@ const localStyles = {
   }
 };
 
-function ColoredFab({styles = {}, children, ...props}) {
+function ColoredFab({styles = {}, children, onPress}) {
 	const mFab = Object.assign({}, localStyles.fab, styles.fab || {});
 	const mFabText = Object.assign({}, localStyles.fabText, styles.fabText || {});
 	return (
-			<AccentColoredFab style={mFab} {...props}>
+			<AccentColoredFab style={mFab} onPress={onPress}>
 	          <Text style={mFabText}>{children}</Text>
 	        </AccentColoredFab>
 		);
+}
+
+ColoredFab.propTypes = {
+  onPress: React.PropTypes.func.isRequired
 }
 
 export default ColoredFab;

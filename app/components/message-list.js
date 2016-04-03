@@ -64,5 +64,7 @@ const validateMessage = message => {
 }
 
 MessageList.propTypes = {
-  messages: React.PropTypes.array
+  messages: React.PropTypes.array.isRequired,
+  refreshView: React.PropTypes.func.isRequired,
+  refreshing: React.PropTypes.bool.isRequired
 };

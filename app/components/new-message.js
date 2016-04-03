@@ -74,6 +74,21 @@ class NewMessage extends Component {
     }
 }
 
+NewMessage.propTypes = {
+  postMessage: React.PropTypes.func.isRequired,
+  onPickImagePressed: React.PropTypes.func.isRequired,
+  setNewMessageText: React.PropTypes.func.isRequired,
+  newMessageText: React.PropTypes.string,
+  setUsername: React.PropTypes.func.isRequired,
+  username: React.PropTypes.string,
+  error: React.PropTypes.string,
+  image: React.PropTypes.shape({
+    source: React.PropTypes.shape({
+      uri: React.PropTypes.string.isRequired
+    })
+  })
+};
+
 function inputContainerStyle() {
     const base = {
         margin: 10,
