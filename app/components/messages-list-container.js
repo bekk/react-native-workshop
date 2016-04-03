@@ -5,13 +5,9 @@ import React, {
   View,
   Platform
 } from 'react-native';
-import { connect } from 'react-redux';
 import MessageList from './message-list';
 import ColoredFab from './colored-fab';
-import { fetchMessages, postMessage } from '../actions/actions';
 import { ErrorMessage } from './error-message'
-import { newMessage } from './navigation/routes';
-import { navigateTo } from '../actions/actions';
 import { Colors } from './../config/design';
 
 class MessageListContainer extends Component {
@@ -51,17 +47,14 @@ MessageListContainer.propTypes = {
   messages: React.PropTypes.array
 };
 
-const mapStateToProps = state => {
-  return {
-    failedToFetchMessages: state.failedToFetchMessages,
-    isFetchingMessages: state.isFetchingMessages,
-    messages: state.messages
-  }
-}
-
+// Redux related code
+import { connect } from 'react-redux';
+import { fetchMessages, postMessage, navigateTo } from '../actions/actions';
+import { newMessage } from './navigation/routes';
+const mapStateToProps = ({ failedToFetchMessages, isFetchingMessages, messages }) =>
+  ({ failedToFetchMessages, isFetchingMessages, messages })
 const mapDispatchToProps = dispatch => ({
   fetchMessages: () => dispatch(fetchMessages(dispatch)),
   goToNewMessage: () => dispatch(navigateTo(newMessage))
 });
-
 export default connect(mapStateToProps, mapDispatchToProps)(MessageListContainer);
