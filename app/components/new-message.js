@@ -87,7 +87,11 @@ NewMessage.propTypes = {
   setUsername: React.PropTypes.func.isRequired,
   username: React.PropTypes.string,
   error: React.PropTypes.string,
-  image: React.PropTypes.shape({ source: React.PropTypes.object })
+  image: React.PropTypes.shape({
+    source: React.PropTypes.shape({
+      uri: React.PropTypes.string.isRequired
+    })
+  })
 };
 
 function inputContainerStyle() {
