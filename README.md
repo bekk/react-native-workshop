@@ -26,7 +26,6 @@ Finally, checkout branch `exercise-1` for the first task.
 
 ##Tips
 
-* TODO: branches
 * Redux with Thunk have already been set up and connected with the correct props in the components you have to implement.
 * All components have prop types set. Proptypes ensures that components are used correctly. Use it to see what you have to work with when you are implementing a component
 
@@ -78,14 +77,14 @@ As promised in the previous task, we now shift our attention back to the `NewMes
 
 Before you dive back into your code, let's take a closer look at how navigation is set up in the application. We use the `Navigator`component of React Native, wrapped in a custom component that handles some boilerplate code – like how transitions between routes are animated and how the navigation bar is configured. `Navigator` is basically a stack – you push a view to transition to that view, and you pop it to go back to the previous view. To abstract this away, we have added two actions, `navigateTo` and `navigatePop` that you can use to navigate. `navigateTo` expects a route object as an argument. See `routes.js`.
 
-a) __Button.__ We need a button to initiate a transition to `NewMessage`. To ensure a great native look in our app, we'll implement the button platform specific:
- * __Android:__ Implement the button as a floating button above the list view. We have added react-native-material-kit to the project so can use to get material design feel. Use `ColoredFab`(`colored-fab.js`). You should add the button in the render method of `MessageListContainer` (`messages-list-container.js`).
- * __iOS:__  Implement the button as a '+' button contained in the navigation bar aligned to the right. See `navigationBarButtons` (`navigationbar-buttons.ios.js`)
+a) __Button.__ We need a button to initiate a transition to `NewMessage`. To ensure a great native look in our app, we'll implement a platform specific button:
+ * __Android:__ Implement the button as a floating button above the list view. You should add the button in the render method of `MessageListContainer` (`messages-list-container.js`). We have added a package containing material design UI components to the project. Check out the `ColoredFab` (`colored-fab.js`) component to see how it is used. If you don't feel like doing any design yourself, `ColoredFab`can used directly.
+ * __iOS:__  Implement the button as a '+' right-aligned button contained in the navigation bar. See `navigationBarButtons` (`navigationbar-buttons.ios.js`)
 
 b) __Push it.__ Make sure that a press on the button you created, transitions to the `NewMessage` view.
  * __iOS:__ Hide the +-button when current route is `NewMessage`
 
-c) __Pop it.__ Implement a back button in the left side of the navigation bar. See `commonRouteMapper` (`navigationbar-routemapper.js`). We have imported a back arrow image you can use. We have already ensured that the user is taken back to the message list when send is pressed. See `actions/actions.js` and `postMessage` function to see how it work.
+c) __Pop it.__ Implement a back button in the left side of the navigation bar. See `commonRouteMapper` (`navigationbar-routemapper.js`). We have imported a back arrow image you can use. We have already ensured that the user is taken back to the message list when send is pressed. See `actions/actions.js` and `postMessage` function to see how it works.
 
 Well done! This starts to look like a complete application!
 
@@ -117,7 +116,7 @@ React Native has plenty of issues up for grabs: https://github.com/facebook/reac
 
 Just kidding.. 
 
-Here's a few interesting tasks for you to choose from:
+Here's a few interesting tasks for you choose from:
 * Show images in full screen when pressed
 * Edit messages by reusing the `NewMessage` component
 * Delete messages:
