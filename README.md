@@ -120,7 +120,7 @@ Reuse `NewMessage`component to support edit. You can decide which way you want t
 You'll need to implement an action, reducer and network functionality for edit message. Here are some tips:
 * Extend `actions/actions.js` with a edit message function that dispatches an edit action.
 * Extend `network/messages.js` with an edit network call. Edit API "http://mobile-course.herokuapp.com/message/:id". Remember to use HTTP PUT.
-* Extend `reducers/reducers.js` to handle the edit action. Remember to delete
+* Extend `reducers/reducers.js` to handle the edit action. Remember to delete/replace the message you edit.
 
 ##6. Additional assignments
 
