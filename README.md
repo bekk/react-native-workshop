@@ -117,7 +117,7 @@ React Native has plenty of issues up for grabs: https://github.com/facebook/reac
 
 Just kidding.. 
 
-Here's a few interesting tasks for you choose from:
+Here's a few interesting tasks for you to choose from:
 * Show images in full screen when pressed
 * Edit messages by reusing the `NewMessage` component
 * Delete messages:
