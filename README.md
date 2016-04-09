@@ -113,9 +113,7 @@ e) __Clear it.__ `clearNewMessageState()` (`actions/actions.js`) doesn't current
 
 ##5. Edit messages
 
-Reuse `NewMessage`component to support edit. You can decide which way you want to trigger editing. 
-* Long press.
-* Swipe gesture (hardcore).
+Reuse `NewMessage` component to support editing. Trigger editing on long press.
 
 You'll need to implement an action, reducer and network functionality for edit message. Here are some tips:
 * Extend `actions/actions.js` with a edit message function that dispatches an edit action.
@@ -124,14 +122,12 @@ You'll need to implement an action, reducer and network functionality for edit m
 
 ##6. Additional assignments
 
-React Native has plenty of issues up for grabs: https://github.com/facebook/react-native/issues
+React Native is open source and has plenty of issues up for grabs: https://github.com/facebook/react-native/issues
 
-Just kidding..
+Just kidding...
 
 Here's a few interesting tasks for you choose from:
 * Show images in full screen when pressed
-* Delete messages:
-  - iOS: Listen for swipe gesture on the messages. Use the native list view handling like the standard Mail app. Create a action and reducer for deletion.
-  - Android: Long press to delete
+* Support deletion of messages
 * __Advanced:__ Bidge a component from Android/iOS to React Native. We suggest Toasts for Android or Alert for iOS. They're already implemented in RN, but might be good subjects for practice (and you can peak the RN source code for tips).
 * Or anything else you want to try out :-)
