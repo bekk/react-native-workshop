@@ -40,7 +40,6 @@ var options = {
 
 export const pickImage = () => new Promise((resolve, reject) => {
   ImagePickerManager.showImagePicker(options, (response) => {
-    console.log('Response = ', response);
 
     if (response.didCancel) {
       const error = new Error();
@@ -60,7 +59,7 @@ export const pickImage = () => new Promise((resolve, reject) => {
       const image = {
         source,
         data: response.data
-      }
+      };
       resolve(image);
     }
   });

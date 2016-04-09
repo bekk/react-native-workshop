@@ -1,9 +1,5 @@
 'use strict';
-
-import React, {
-	View,
-  Text
-} from 'react-native';
+import React, { View, Text } from 'react-native';
 import { Colors, Fonts } from './../config/design';
 import Image from './image';
 
@@ -17,25 +13,25 @@ export const Message = ({ from, message, image }) => {
           </Text>
         </View>
         <View style={styles.underline} />
-		    { _maybeRenderImage(image) }
-      <View style={ styles.row }>
-        <Text style={ styles.text }>{ message }</Text>
-      </View>
+        { _maybeRenderImage(image) }
+        <View style={ styles.row }>
+          <Text style={ styles.text }>{ message }</Text>
+        </View>
       </View>
       <View style={ styles.separator } />
     </View>
   );
-}
+};
 
 const _maybeRenderImage = source => {
-	if (source !== undefined && source.length > 0) {
-		return (
-	    <View style={styles.image}>
-	      <Image source={source} />
-	    </View>
-	  );
-	}
-}
+  if (source !== undefined && source.length > 0) {
+    return (
+      <View style={styles.image}>
+        <Image source={source} />
+      </View>
+    );
+  }
+};
 
 Message.propTypes = {
   from: React.PropTypes.string.isRequired,
@@ -50,7 +46,7 @@ const styles = {
     marginBottom: 0
   },
   row: {
-      padding: 16
+    padding: 16
   },
   underline: {
     borderBottomColor: Colors.Red,

@@ -12,24 +12,24 @@ export const Light = 'FedraSansAltPro-Light';
 export const Medium = 'FedraSansAltPro-Medium';
 
 export const Colors = {
-    White,
-    Red,
-    Yellow,
-    Green,
-    Dark,
-    Dark1,
-    Dark2
+  White,
+  Red,
+  Yellow,
+  Green,
+  Dark,
+  Dark1,
+  Dark2
 };
 
 export const Fonts = {
-    Bold,
-    Book,
-    Demi,
-    Light,
-    Medium
+  Bold,
+  Book,
+  Demi,
+  Light,
+  Medium
 };
 
 export default {
-    Colors,
-    Fonts
+  Colors,
+  Fonts
 };

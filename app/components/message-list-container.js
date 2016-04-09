@@ -7,7 +7,7 @@ import React, {
 } from 'react-native';
 import MessageList from './message-list';
 import ColoredFab from './colored-fab';
-import { ErrorMessage } from './error-message'
+import { ErrorMessage } from './error-message';
 import { Colors } from './../config/design';
 
 class MessageListContainer extends Component {
@@ -17,14 +17,14 @@ class MessageListContainer extends Component {
 
   _shouldRenderFabulousAndroidUI() {
     if (Platform.OS === 'android') {
-      return <ColoredFab onPress={this.props.goToNewMessage}>+</ColoredFab>
+      return <ColoredFab onPress={this.props.goToNewMessage}>+</ColoredFab>;
     }
     return null;
   }
 
   render() {
     if (this.props.failedToFetchMessages) {
-      return <ErrorMessage />
+      return <ErrorMessage />;
     }
 
     return (
@@ -50,10 +50,10 @@ MessageListContainer.propTypes = {
 
 // Redux related code
 import { connect } from 'react-redux';
-import { fetchMessages, postMessage, navigateTo } from '../actions/actions';
+import { fetchMessages, navigateTo } from '../actions/actions';
 import { newMessage } from './navigation/routes';
 const mapStateToProps = ({ failedToFetchMessages, isFetchingMessages, messages }) =>
-  ({ failedToFetchMessages, isFetchingMessages, messages })
+  ({ failedToFetchMessages, isFetchingMessages, messages });
 const mapDispatchToProps = dispatch => ({
   fetchMessages: () => dispatch(fetchMessages(dispatch)),
   goToNewMessage: () => dispatch(navigateTo(newMessage))

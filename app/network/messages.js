@@ -1,13 +1,13 @@
 'use strict';
 
-import { baseURL, messageUrl, imgurURL } from '../config/config';
+import { messageUrl } from '../config/config';
 import { uploadImageToImgur } from './imgur';
 
 const APPLICATION_JSON = 'application/json';
 
 let network = {};
 
-network.get = () => fetch(messageUrl).then(parseJSON)
+network.get = () => fetch(messageUrl).then(parseJSON);
 
 network.post = (from, message, image) => {
   if (image) {

@@ -1,14 +1,11 @@
 'use strict';
-import React, { Component, Platform, BackAndroid, StatusBar, View } from 'react-native';
-
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import React, { Component, BackAndroid, StatusBar, View } from 'react-native';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { Colors } from './config/design';
-
 import rnWorkshop from './reducers/reducers';
 const store = createStore(rnWorkshop, applyMiddleware(thunk));
-
 import Navigator from './components/navigation/navigator';
 
 class App extends Component {

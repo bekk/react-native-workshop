@@ -1,6 +1,6 @@
 'use strict';
 
-import { imgurURL } from '../config/config'
+import { imgurURL } from '../config/config';
 
 export const uploadImageToImgur = (image) => {
   const config = {
@@ -18,6 +18,6 @@ export const uploadImageToImgur = (image) => {
   return fetch(imgurURL, config)
     .then(parseJSON)
     .then(json => json.data.link);
-}
+};
 
 const parseJSON = (response) => response.json();

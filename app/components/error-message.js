@@ -1,8 +1,5 @@
 'use strict';
-
-import React, {
-  Text
-} from 'react-native';
+import { Text } from 'react-native';
 import Red from './../config/design';
 
 export const ErrorMessage = () => (

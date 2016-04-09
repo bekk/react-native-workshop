@@ -34,7 +34,7 @@ function messageReducer(state = initialState, action) {
       return Object.assign({}, state, { newMessageText: action.newMessageText });
 
     case SET_VIEW:
-      return Object.assign({}, state, { viewName: action.viewName })
+      return Object.assign({}, state, { viewName: action.viewName });
 
     case FETCH_MESSAGE:
       return Object.assign({}, state, {
@@ -51,13 +51,14 @@ function messageReducer(state = initialState, action) {
     case SET_POST_SUCCESS:
       var messages = [...state.messages, action.message];
       return Object.assign({}, state, {
-         messages,
-         username: null,
-         newMessageText: null,
-         isFetchingMessages: false,
-         failedToFetchMessages: false,
-         isSending: false
-       });
+        messages,
+        username: null,
+        newMessageText: null,
+        isFetchingMessages: false,
+        failedToFetchMessages: false,
+        isSending: false
+      });
+
     case FEILMELDING:
       return Object.assign({}, state, { error: action.error });
 

@@ -41,16 +41,16 @@ export const postMessage = () => (dispatch, getState) => {
     dispatch({type: POST_MESSAGE});
     const imageData = image ? image.data : null;
     return messages.post(username, newMessageText, imageData)
-        .then(message => dispatch(setPostSuccess(message)))
-        .then(() => dispatch(navigatorPop()))
-        .catch(error => dispatch({type: FEILMELDING, error: 'Noe gikk feil ved innsending.'}));
+      .then(message => dispatch(setPostSuccess(message)))
+      .then(() => dispatch(navigatorPop()))
+      .catch(() => dispatch({type: FEILMELDING, error: 'Noe gikk feil ved innsending.'}));
   }
 };
 
 export const openImagePicker = () => (dispatch) => {
   return pickImage()
     .then(image => dispatch(setImage(image)))
-    .catch((error) => console.log(error));
+    .catch((error) => console.error(error));
 };
 
 export const clearNewMessageState = () => (dispatch) => {

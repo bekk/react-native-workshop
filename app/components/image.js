@@ -1,11 +1,6 @@
 'use strict';
-
-import React, {
-  View,
-  Component,
-  Image,
-  Text
-} from 'react-native';
+import React, { Component, Image } from 'react-native';
+import placeholder from '../resources/default-placeholder.png';
 
 export default class CustomImage extends Component {
   constructor(props) {
@@ -21,14 +16,14 @@ export default class CustomImage extends Component {
 
   render() {
     if (this.state.failedToLoadImage) {
-      return null
+      return null;
     }
 
     return <Image
       style={ styles.thumb }
       source={{ uri: this.props.source }}
-      defaultSource={require('../resources/default-placeholder.png')}
-      onError={ this._onLoadImageFailure.bind(this) } />
+      defaultSource={placeholder}
+      onError={ this._onLoadImageFailure.bind(this) } />;
   }
 }
 
@@ -40,6 +35,6 @@ const styles = {
   thumb: {
     marginBottom: 5,
     flexDirection:'row',
-    height: 240,
-  },
-}
+    height: 240
+  }
+};

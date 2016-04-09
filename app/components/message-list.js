@@ -1,15 +1,7 @@
 'use strict';
-
-import React, {
-  View,
-  Component,
-  ListView,
-  RefreshControl
-} from 'react-native';
-
-import { Message } from './message'
-import { Colors } from './../config/design';
-
+import React, { Component, ListView, RefreshControl } from 'react-native';
+import { Message } from './message';
+import { Colors } from './../config/design';
 const DSConfig = new ListView.DataSource({rowHasChanged: (r1, r2) => r1.id !== r2.id});
 
 export default class MessageList extends Component {
@@ -43,7 +35,7 @@ export default class MessageList extends Component {
         dataSource={ dataSource }
         renderRow={ renderRow }
       />
-    )
+    );
   }
 }
 
@@ -57,11 +49,11 @@ const renderRow = (rowData) => {
       message={ message }
       image={ image } />
   );
-}
+};
 
 const validateMessage = message => {
-  return message.message && message.message.length > 0
-}
+  return message.message && message.message.length > 0;
+};
 
 MessageList.propTypes = {
   messages: React.PropTypes.array.isRequired,
