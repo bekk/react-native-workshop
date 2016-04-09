@@ -86,6 +86,11 @@ b) __Push it.__ Make sure that a press on the button you created, transitions to
 
 c) __Pop it.__ Implement a back button in the left side of the navigation bar. See `commonRouteMapper` (`navigationbar-routemapper.js`). We have imported a back arrow image you can use. We have already ensured that the user is taken back to the message list when send is pressed. See `actions/actions.js` and `postMessage` function to see how it works.
 
+d) __Clear it.__ Currently, the username and message is never cleared from the global state. This will cause `NewMessage` to display the previous set data in a couple of cases:
+  * When you've sent a message
+  * When you type something -> navigate back to `MessageList` -> navigate to `NewMessage`
+Use `clearNewMessageState()` to clear the globally stored data such that the above mentioned scenarios no longer occur.
+
 Well done! This starts to look like a complete application!
 
 ##4. Add image to new messages
@@ -104,11 +109,7 @@ c) __Show it.__ Display the image in the `NewMessage`component. Allow it to use 
 
 d) __Send it.__ If you've hooked everything up correctly, `postMessage()` should already support posting messages with images to the server. Try it out. Works? Good!
 
-e) __Clear it.__ Currently, the image is never cleared from the global state. This will cause `NewMessage` to display the previous picked image in a couple of cases:
-  * When you've sent a message containing an image
-  * When you pick an image -> navigate back to `MessageList` -> navigate to `NewMessage`
-
-Use `clearImage()` to clear the globally stored image such that the above mentioned scenarios no longer occur.
+e) __Clear it.__ `clearNewMessageState()` (`actions/actions.js`) doesn't currently support clearing images. Extend `clearNewMessageState()` (`actions/actions.js`) function to clear the globally stored image as well.
 
 ##5. Edit messages
 
