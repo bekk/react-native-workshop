@@ -13,7 +13,8 @@ If you already have installed npm v2, and want to run npm v3 alongside npm v2 yo
 To manage node versions you can use [n](https://www.npmjs.com/package/n)
 
 ## Android
-Development for android devices requires the Android SDK, [download Android Studio or the Android SDK](http://developer.android.com/sdk/index.html)
+Development for android devices requires the Android SDK, [download Android Studio or the Android SDK](http://developer.android.com/sdk/index.html).
+
 As an alternative you can also use the Genymotion emulator (skip step 1 and 2).
 
 In general the Genymotion emulator has better performance then the one provided by the Android SDK and it is easier to set up.
@@ -42,11 +43,13 @@ Notes from troubleshooting during the setup-process on windows and OSX can be fo
 ### Windows
 1. Run `react-native start`
 2. Run `react-native run-android` in another shell, if this fails try `cd android && ./gradlew installDebug`
+3. Verify that the app is running in the emulator
 
 If you have any trouble check [this](trouble-windows-android.md)
 
 ### OSX
 1. Run `bash android/run.sh`, this checks your configuration and starts react-native
+2. Verify that the app is running in the emulator
 
 If you have any trouble check [this](trouble-osx-android.md)
 
@@ -56,5 +59,6 @@ Devlopment for IOS devices requires XCode (>7.x.x) to be installed, find it in t
 1. Clone the repository; `git clone git@github.com:bekk/react-native-workshop.git`
 2. Run `npm install && npm install react-native-cli -g` to install dependencies
 3. Run `react-native run-ios`
+4. Verify that the app is running in the simulator
 
 If steps 3 returns an error, try starting XCode and start an emulator before"
