@@ -2,7 +2,7 @@
 
 ##Setup
 
-To setup your environment, follow the steps [here](setup.md). 
+To setup your environment, follow the steps [here](setup.md).
 
 ## Feedback
 Please submit feedback [here](https://docs.google.com/forms/d/1DpRJAY2aIDoDIsXxHHzT0je8P_07qTo0KDz2-kRkZVQ/viewform?c=0&w=1&usp=mail_form_link)
@@ -31,10 +31,10 @@ Finally, checkout branch `exercise-1` for the first task.
 
 ##1. Create a New Message View
 
-Your first task is to create a view in which the user can input a username and a message. The screenshots below show roughly how your app should look like after completing this task. Focus on functionality in a)-c). In d) you'll improve the design. 
+Your first task is to create a view in which the user can input a username and a message. The screenshots below show roughly how your app should look like after completing this task. Focus on functionality in a)-c). In d) you'll improve the design.
 
   <img src="https://raw.githubusercontent.com/bekk/react-native-workshop/master/screenshots/ios-new-message.png" alt="Image of IOS new message screen" width="350" />
-  <img src="https://raw.githubusercontent.com/bekk/react-native-workshop/master/screenshots/android-new-message-error.png" alt="Image of Android new message screen" width="350" /> 
+  <img src="https://raw.githubusercontent.com/bekk/react-native-workshop/master/screenshots/android-new-message-error.png" alt="Image of Android new message screen" width="350" />
 
 a) __Input fields.__ You'll find a `NewMessage` (`app/components/new-message.js`) component in your project. The component is already mounted in the default view, but it renders nothing. Implement the render function of `NewMessage` so the resulting view contains two input fields – one for the username and one for the message.
 
@@ -46,7 +46,7 @@ c) __Hook everything up.__ Make the send button actually post the message to the
 
 If you've hooked everything up correctly, your message should appear on the big screen (or at http://mobile-course.herokuapp.com) when you hit the send button. Well done! :punch: Now, let's make it beautiful too!
 
-d) __Make it look sexy.__ At this point we won't kill you if your new message view looks like shit! Anyway, now you get the chance to pimp it up a bit. Experiment with different Flexbox properties. Have a look at the screenshots above for some inspiration. Also, the colors used in the screenshots are found in `config/design.js`. 
+d) __Make it look sexy.__ At this point we won't kill you if your new message view looks like shit! Anyway, now you get the chance to pimp it up a bit. Experiment with different Flexbox properties. Have a look at the screenshots above for some inspiration. Also, the colors used in the screenshots are found in `config/design.js`.
 
 Tip on working with styling: In the docs, the `style` prop of each component shows a complete list of styles supported by that   component: Example: http://facebook.github.io/react-native/docs/view.html#style
 
@@ -55,14 +55,14 @@ Tip on working with styling: In the docs, the `style` prop of each component sho
 The second task is to show all the messages in a scrollable list. We will for now ignore the newly created new message component and focus on displaying messages. It will all be connected in assignment 3.
 
 <img src="https://raw.githubusercontent.com/bekk/react-native-workshop/master/screenshots/ios-listview.png" alt="Image of IOS list messages screen" width="350" />
-<img src="https://raw.githubusercontent.com/bekk/react-native-workshop/master/screenshots/android-listview.png" alt="Image of Android list message screen" width="350" /> 
+<img src="https://raw.githubusercontent.com/bekk/react-native-workshop/master/screenshots/android-listview.png" alt="Image of Android list message screen" width="350" />
 
 Let's have a look at the app architecture for handling rendering the messages:
 
 - `MessageListContainer` - controls the different network states (fetching, refreshing, error), and passes the data to the children, who render the data.
 - `MessageList` - renders each message
 
-a) __Navigator.__ You'll find a `MessageListContainer` (`messages-list-container.js`) component in your project. The component is not in use right now and you need to start using it by hooking it up in the navigator. Find the render method for the `CustomNavigator` (`navigation/navigator.js`), change initialRoute to `MessageListContainer` (`messages-list-container.js`).
+a) __Navigator.__ You'll find a `MessageListContainer` (`message-list-container.js`) component in your project. The component is not in use right now and you need to start using it by hooking it up in the navigator. Find the render method for the `CustomNavigator` (`navigation/navigator.js`), change initialRoute to `MessageListContainer` (`message-list-container.js`).
 
 b) __Listing messages.__ Edit `MessageList` (`message-list.js`) component to show messages. The `MessageList` receives an array of messages as prop. Click here to see the format of messages:
 http://mobile-course.herokuapp.com/message
@@ -78,7 +78,7 @@ As promised in the previous task, we now shift our attention back to the `NewMes
 Before you dive back into your code, let's take a closer look at how navigation is set up in the application. We use the `Navigator`component of React Native, wrapped in a custom component that handles some boilerplate code – like how transitions between routes are animated and how the navigation bar is configured. `Navigator` is basically a stack – you push a view to transition to that view, and you pop it to go back to the previous view. To abstract this away, we have added two actions, `navigateTo` and `navigatePop` that you can use to navigate. `navigateTo` expects a route object as an argument. See `routes.js`.
 
 a) __Button.__ We need a button to initiate a transition to `NewMessage`. To ensure a great native look in our app, we'll implement a platform specific button:
- * __Android:__ Implement the button as a floating button above the list view. You should add the button in the render method of `MessageListContainer` (`messages-list-container.js`). We have added a package containing material design UI components to the project. Check out the `ColoredFab` (`colored-fab.js`) component to see how it is used. If you don't feel like doing any design yourself, `ColoredFab`can used directly.
+ * __Android:__ Implement the button as a floating button above the list view. You should add the button in the render method of `MessageListContainer` (`message-list-container.js`). We have added a package containing material design UI components to the project. Check out the `ColoredFab` (`colored-fab.js`) component to see how it is used. If you don't feel like doing any design yourself, `ColoredFab`can used directly.
  * __iOS:__  Implement the button as a '+' right-aligned button contained in the navigation bar. See `navigationBarButtons` (`navigationbar-buttons.ios.js`)
 
 b) __Push it.__ Make sure that a press on the button you created, transitions to the `NewMessage` view.
@@ -92,7 +92,7 @@ Well done! This starts to look like a complete application!
 
 A message consisting of text only is quite boring these days. Also, a picture says more than a thousand words... So, let's add functionality to allow the user to add an image to new messages.
 
-React Native has no component or API for taking pictures on the fly or picking an image from the camera roll. That's where third-party npm modules come in handy. We'll use the [react-native-image-picker](https://github.com/marcshilling/react-native-image-picker) module, which allows for both taking new pictures and picking from the camera roll. It's implemented by bridging to the pure native image picker and picture taking apps. 
+React Native has no component or API for taking pictures on the fly or picking an image from the camera roll. That's where third-party npm modules come in handy. We'll use the [react-native-image-picker](https://github.com/marcshilling/react-native-image-picker) module, which allows for both taking new pictures and picking from the camera roll. It's implemented by bridging to the pure native image picker and picture taking apps.
 
 The module is already installed in the project. We've also created an action, `openImagePicker()`, which opens the native image picker and saves the captured image to the global state.
 
@@ -114,7 +114,7 @@ Use `clearImage()` to clear the globally stored image such that the above mentio
 
 React Native has plenty of issues up for grabs: https://github.com/facebook/react-native/issues
 
-Just kidding.. 
+Just kidding..
 
 Here's a few interesting tasks for you choose from:
 * Show images in full screen when pressed

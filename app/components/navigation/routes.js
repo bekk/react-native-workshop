@@ -1,4 +1,4 @@
-import ListMessageContainer from '../messages-list-container';
+import ListMessageContainer from '../message-list-container';
 import NewMessage from '../new-message';
 
 export const listMessages = { component: ListMessageContainer, title: 'Meldinger' };
