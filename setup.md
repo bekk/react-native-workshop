@@ -35,7 +35,7 @@ Notes from troubleshooting during the setup-process on windows and OSX can be fo
     * Intel x86 Atom_64 System Image
     * Intel x86 Atom System Image
     * Local Maven repository for Support Libraries
-3. Configure a emulator image
+3. Configure an emulator image (Tip: Set Back Camera to Webcam to be able to take pictures during the workshop)
 4. Start the emulator
 5. Clone the repository; `git clone git@github.com:bekk/react-native-workshop.git`
 6. Run `npm install && npm install react-native-cli -g` to install dependencies
