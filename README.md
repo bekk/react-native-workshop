@@ -75,7 +75,7 @@ d) __Pull to refresh.__ Add pull to refresh. Hint: Look at what ListView can do 
 
 As promised in the previous task, we now shift our attention back to the `NewMessage`component. Right now it's unreachable for the user, so we need to implement a transition to it.
 
-Before you dive back into your code, let's take a closer look at how navigation is set up in the application. We use the `Navigator`component of React Native, wrapped in a custom component that handles some boilerplate code – like how transitions between routes are animated and how the navigation bar is configured. `Navigator` is basically a stack – you push a view to it to transition to that view, and you pop to go back to previous view. To abstract this away, we have added actions `navigateTo` and `navigatePop` so you can use to navigate. `navigateTo` takes in route object. See `routes.js`.
+Before you dive back into your code, let's take a closer look at how navigation is set up in the application. We use the `Navigator`component of React Native, wrapped in a custom component that handles some boilerplate code – like how transitions between routes are animated and how the navigation bar is configured. `Navigator` is basically a stack – you push a view to transition to that view, and you pop it to go back to the previous view. To abstract this away, we have added two actions, `navigateTo` and `navigatePop` that you can use to navigate. `navigateTo` expects a route object as an argument. See `routes.js`.
 
 a) __Button.__ We need a button to initiate a transition to `NewMessage`. To ensure a great native look in our app, we'll implement the button platform specific:
  * __Android:__ Implement the button as a floating button above the list view. We have added react-native-material-kit to the project so can use to get material design feel. Use `ColoredFab`(`colored-fab.js`). You should add the button in the render method of `MessageListContainer` (`messages-list-container.js`).
@@ -84,7 +84,7 @@ a) __Button.__ We need a button to initiate a transition to `NewMessage`. To ens
 b) __Push it.__ Make sure that a press on the button you created, transitions to the `NewMessage` view.
  * __iOS:__ Hide the +-button when current route is `NewMessage`
 
-c) __Pop it.__ Implement a back button in the left side of the navigation bar. See `commonRouteMapper` (`navigationbar-routemapper.ios.js`). We have imported a back arrow image you can use. We have already ensured that the user is taken back to the message list when send is pressed. See `actions/actions.js` and `postMessage` function to see how it work.
+c) __Pop it.__ Implement a back button in the left side of the navigation bar. See `commonRouteMapper` (`navigationbar-routemapper.js`). We have imported a back arrow image you can use. We have already ensured that the user is taken back to the message list when send is pressed. See `actions/actions.js` and `postMessage` function to see how it work.
 
 Well done! This starts to look like a complete application!
 
