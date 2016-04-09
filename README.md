@@ -110,7 +110,18 @@ e) __Clear it.__ Currently, the image is never cleared from the global state. Th
 
 Use `clearImage()` to clear the globally stored image such that the above mentioned scenarios no longer occur.
 
-##5. Additional assignments
+##5. Edit messages
+
+Reuse `NewMessage`component to support edit. You can decide which way you want to trigger editing. 
+* Long press.
+* Swipe gesture (hardcore).
+
+You'll need to implement an action, reducer and network functionality for edit message. Here are some tips:
+* Extend `actions/actions.js` with a edit message function that dispatches an edit action.
+* Extend `network/messages.js` with an edit network call. Edit API "http://mobile-course.herokuapp.com/message/:id". Remember to use HTTP PUT.
+* Extend `reducers/reducers.js` to handle the edit action. Remember to delete
+
+##6. Additional assignments
 
 React Native has plenty of issues up for grabs: https://github.com/facebook/react-native/issues
 
@@ -118,7 +129,6 @@ Just kidding..
 
 Here's a few interesting tasks for you choose from:
 * Show images in full screen when pressed
-* Edit messages by reusing the `NewMessage` component
 * Delete messages:
   - iOS: Listen for swipe gesture on the messages. Use the native list view handling like the standard Mail app. Create a action and reducer for deletion.
   - Android: Long press to delete
