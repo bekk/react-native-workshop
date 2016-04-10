@@ -15,13 +15,6 @@ class MessageListContainer extends Component {
     this.props.fetchMessages();
   }
 
-  _shouldRenderFabulousAndroidUI() {
-    if (Platform.OS === 'android') {
-      return <ColoredFab onPress={this.props.goToNewMessage}>+</ColoredFab>;
-    }
-    return null;
-  }
-
   render() {
     if (this.props.failedToFetchMessages) {
       return <ErrorMessage />;
@@ -35,7 +28,6 @@ class MessageListContainer extends Component {
           refreshView={ this.props.fetchMessages }
           navigator={this.props.navigator}
         />
-        {this._shouldRenderFabulousAndroidUI()}
       </View>
     );
   }
