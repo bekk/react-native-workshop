@@ -57,37 +57,34 @@ The second task is to show all the messages in a scrollable list. We will for no
 <img src="https://raw.githubusercontent.com/bekk/react-native-workshop/master/screenshots/ios-listview.png" alt="Image of IOS list messages screen" width="350" />
 <img src="https://raw.githubusercontent.com/bekk/react-native-workshop/master/screenshots/android-listview.png" alt="Image of Android list message screen" width="350" />
 
-Let's have a look at the app architecture for handling rendering the messages:
+Let's have a look at the components responsible for rendering the message list:
 
-- `MessageListContainer` - controls the different network states (fetching, refreshing, error), and passes the data to the children, who render the data.
-- `MessageList` - renders each message
+– `MessageListContainer` – controls the different network states (fetching, refreshing, error), and passes the data to `MessageList`
+– `MessageList` – renders each message
 
-a) __Navigator.__ You'll find a `MessageListContainer` (`message-list-container.js`) component in your project. The component is not in use right now and you need to start using it by hooking it up in the navigator. Find the render method for the `CustomNavigator` (`navigation/navigator.js`), change initialRoute to `MessageListContainer` (`message-list-container.js`).
+a) __Navigator.__ The `MessageListContainer` (`message-list-container.js`) component is not in use right now. Start using it by hooking it up to the navigator. Find the render method of `CustomNavigator` (`navigation/navigator.js`), and change initialRoute so that you're taken to the `MessageListContainer` (`message-list-container.js`) on startup.
 
-b) __Listing messages.__ Edit `MessageList` (`message-list.js`) component to show messages. The `MessageList` receives an array of messages as prop. Click here to see the format of messages:
+b) __Listing messages.__ Edit the `MessageList` (`message-list.js`) component to show messages. `MessageList` receives an array of messages as a prop. Click here to see the format of messages:
 http://mobile-course.herokuapp.com/message
 
-c) __Show messages with images.__ Some messages contain a link to a image. Your task now is to show images for messages with image.
+c) __Show images.__ Some messages contain a link to an image. Display them.
 
-d) __Pull to refresh.__ Add pull to refresh. Hint: Look at what ListView can do for you
+d) __Pull to refresh.__ Add pull to refresh. Hint: Look at what [ListView](https://facebook.github.io/react-native/docs/listview.html) can do for you
 
 ##3. Navigate to New Message
 
-As promised in the previous task, we now shift our attention back to the `NewMessage`component. Right now it's unreachable for the user, so we need to implement a transition to it.
+As promised in the previous task, we now shift our attention back to the `NewMessage` component. Right now it's unreachable for the user, so we need to implement a transition to it.
 
-Before you dive back into your code, let's take a closer look at how navigation is set up in the application. We use the `Navigator`component of React Native, wrapped in a custom component that handles some boilerplate code – like how transitions between routes are animated and how the navigation bar is configured. `Navigator` is basically a stack – you push a view to transition to that view, and you pop it to go back to the previous view. To abstract this away, we have added two actions, `navigateTo` and `navigatePop` that you can use to navigate. `navigateTo` expects a route object as an argument. See `routes.js`.
+Before you dive back into your code, let's take a closer look at how navigation is set up. We use the `Navigator` component of React Native, wrapped in a custom component that handles some boilerplate code – like how transitions between routes are animated and how the navigation bar is configured. `Navigator` is basically a stack – you push a view to transition to that view, and you pop it to go back to the previous view. To abstract this away, we have added two actions, `navigateTo` and `navigatorPop` that you can use to navigate. `navigateTo` expects a route object as an argument. See `routes.js`.
 
 a) __Button.__ We need a button to initiate a transition to `NewMessage`. To ensure a great native look in our app, we'll implement a platform specific button:
- * __Android:__ Implement the button as a floating button above the list view. You should add the button in the render method of `MessageListContainer` (`message-list-container.js`). We have added a package containing material design UI components to the project. Check out the `ColoredFab` (`colored-fab.js`) component to see how it is used. If you don't feel like doing any design yourself, `ColoredFab`can used directly.
+ * __Android:__ Implement the button as a floating button above the list view. You should add the button in the render method of `MessageListContainer` (`message-list-container.js`). We've added a package containing material design UI components to the project. Check out the `ColoredFab` (`colored-fab.js`) component to see how it is used. If you don't feel like doing any design yourself, `ColoredFab`can used directly.
  * __iOS:__  Implement the button as a '+' right-aligned button contained in the navigation bar. See `navigationBarButtons` (`navigationbar-buttons.ios.js`)
 
-b) __Push it.__ Make sure that a press on the button you created, transitions to the `NewMessage` view.
- * __iOS:__ Hide the +-button when current route is `NewMessage`
+b) __Push it.__ Ensure that a press on the button transitions to the `NewMessage` view.
+ * __iOS:__ Only display the +-button when the message list is displayed.
 
-c) __Pop it.__ Implement a back button in the left side of the navigation bar. See `commonRouteMapper` (`navigationbar-routemapper.js`). We have imported a back arrow image you can use. We have already ensured that the user is taken back to the message list when send is pressed. See `actions/actions.js` and `postMessage` function to see how it works.
-
-d) __Clear it.__ Currently, the username and message is never cleared from the global state. This will cause `NewMessage` to display the previous set data when you type something -> navigate back to `MessageList` -> navigate back again to `NewMessage`. 
-Use `clearNewMessageState()` to clear the globally stored data such that the above mentioned scenario no longer occur.
+c) __Pop it.__ Implement a back button in the left side of the navigation bar. See `commonRouteMapper` (`navigationbar-routemapper.js`). We've imported a back arrow image you can use (`BackArrow`). We've also ensured that the user is taken back to the message list when send is pressed. See `actions/actions.js` and `postMessage` function to see how it works.
 
 Well done! This starts to look like a complete application!
 
