@@ -1,6 +1,6 @@
 'use strict';
 import React, { TouchableOpacity, Text } from 'react-native';
-import { newMessage } from './routes';
+import { newMessageRoute } from './routes';
 import { connect } from 'react-redux';
 import { postMessage as postMessageAction } from '../../actions/actions';
 import { MKButton, MKColor, MKSpinner } from 'react-native-material-kit';

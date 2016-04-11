@@ -2,7 +2,7 @@
 import React, { TouchableOpacity, Text } from 'react-native';
 import { StyleSheet } from 'react-native';
 import { Colors } from './../../config/design';
-import { newMessage, listMessages } from './routes';
+import { newMessageRoute, messageListRoute } from './routes';
 import { navigateTo } from '../../actions/actions';
 
 var styles = StyleSheet.create({
