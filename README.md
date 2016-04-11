@@ -42,7 +42,7 @@ b) __Send button.__ Input fields without any action are of no use. Create a send
   * __Android:__ To place it in the navigation bar, you'll have to implement it in `navigationbar-buttons.android.js`
 
 c) __Hook everything up.__ Make the send button actually post the message to the server. The `NewMessage` component recieves three functions as props, `setNewMessageText(message)`, `setUsername(username)`, and `postMessage()`. The first two will update the global state, and the latter will use the `message` and the `username` property from the global state and post the message to the server.
-  * __Android:__ Since the send button is placed in the navigation bar, you'll have to import the `postMessage` action directly from `actions.js`, and dispatch it.
+  * __Android:__ If you've implemented the send button in the navigation bar, use the `postMessage` function in `navigationbar-buttons.android.js`.
 
 If you've hooked everything up correctly, your message should appear on the big screen (or at http://mobile-course.herokuapp.com) when you hit the send button. Well done! :punch: Now, let's make it beautiful too!
 
