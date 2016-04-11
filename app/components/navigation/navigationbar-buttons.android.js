@@ -1,10 +1,9 @@
 'use strict';
-import React, { TouchableOpacity } from 'react-native';
+import React, { TouchableOpacity, Text } from 'react-native';
 import { newMessage } from './routes';
 import { connect } from 'react-redux';
-import { postMessage } from '../../actions/actions';
+import { postMessage as postMessageAction } from '../../actions/actions';
 import { MKButton, MKColor, MKSpinner } from 'react-native-material-kit';
-import ConnectedSendButton from './spinning-send-button';
 
 const styles = {
   navBarRightButton: {
