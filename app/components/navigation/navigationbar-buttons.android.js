@@ -17,12 +17,15 @@ const styles = {
   }
 };
 
-const navigationBarButtons = () => ({
+const navigationBarButtons = (dispatch) => {
+  const postMessage = () => dispatch(postMessageAction());
 
-  RightButton (route) {
-    // Hint: implement the send-button for android here (and use the styles above for layout)
-    return null;
-  }
-});
+  return {
+    RightButton (route) {
+      // Hint: implement the send-button for android here (and use the styles above for layout)
+      return null;
+    }
+  };
+};
 
 export default navigationBarButtons;
