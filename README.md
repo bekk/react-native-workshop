@@ -86,10 +86,8 @@ b) __Push it.__ Make sure that a press on the button you created, transitions to
 
 c) __Pop it.__ Implement a back button in the left side of the navigation bar. See `commonRouteMapper` (`navigationbar-routemapper.js`). We have imported a back arrow image you can use. We have already ensured that the user is taken back to the message list when send is pressed. See `actions/actions.js` and `postMessage` function to see how it works.
 
-d) __Clear it.__ Currently, the username and message is never cleared from the global state. This will cause `NewMessage` to display the previous set data in a couple of cases:
-  * When you've sent a message
-  * When you type something -> navigate back to `MessageList` -> navigate to `NewMessage`
-Use `clearNewMessageState()` to clear the globally stored data such that the above mentioned scenarios no longer occur.
+d) __Clear it.__ Currently, the username and message is never cleared from the global state. This will cause `NewMessage` to display the previous set data when you type something -> navigate back to `MessageList` -> navigate back again to `NewMessage`. 
+Use `clearNewMessageState()` to clear the globally stored data such that the above mentioned scenario no longer occur.
 
 Well done! This starts to look like a complete application!
 
