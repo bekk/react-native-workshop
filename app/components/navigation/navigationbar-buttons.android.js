@@ -13,6 +13,11 @@ const styles = {
     top: 0,
     right: 0,
     height: 50
+  },
+  navBarRightText: {
+    top: -3,
+    color: '#ffffff',
+    marginRight: 20
   }
 };
 
@@ -22,6 +27,13 @@ const navigationBarButtons = (dispatch) => {
   return {
     RightButton (route) {
       // Hint: implement the send-button for android here (and use the styles above for layout)
+      if (route.title === newMessageRoute.title) {
+        return (
+          <TouchableOpacity style={styles.navBarRightButton} onPress={postMessage}>
+            <Text style={styles.navBarRightText}>Send</Text>
+          </TouchableOpacity>
+        );
+      }
       return null;
     }
   };
