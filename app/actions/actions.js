@@ -54,7 +54,6 @@ export const openImagePicker = () => (dispatch) => {
 };
 
 export const clearNewMessageState = () => (dispatch) => {
-  dispatch(setImage(null));
   dispatch(setUsername(null));
   dispatch(setNewMessageText(null));
 };
