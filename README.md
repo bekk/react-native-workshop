@@ -90,39 +90,40 @@ Well done! This starts to look like a complete application!
 
 ##4. Add image to new messages
 
-A message consisting of text only is quite boring these days. Also, a picture says more than a thousand words... So, let's add functionality to allow the user to add an image to new messages.
+A message consisting of only text is quite boring these days. Also, a picture says more than a thousand words... So, let's add functionality to allow the user to add an image to new messages.
 
 React Native has no component or API for taking pictures on the fly or picking an image from the camera roll. That's where third-party npm modules come in handy. We'll use the [react-native-image-picker](https://github.com/marcshilling/react-native-image-picker) module, which allows for both taking new pictures and picking from the camera roll. It's implemented by bridging to the pure native image picker and picture taking apps.
 
-The module is already installed in the project. We've also created an action, `openImagePicker()`, which opens the native image picker and saves the captured image to the global state.
+The module is already installed in the project. In `NewMessage` you can call the `onPickImagePressed()` prop to launch the image picker. When successfully picked, the image will be available on the `image` prop of `NewMessage`.
 
 a) __Button.__ We need a button for launching the image picker.
 
-b) __Pick it.__ Hook the button up to the image picker by firing the `openImagePicker()` action when the button is pressed.
+b) __Pick it.__ Hook the button up to the image picker by using `onPickImagePressed()`.
 
-c) __Show it.__ Display the image in the `NewMessage`component. Allow it to use all available space, but make sure it's good lookin' by maintaining _dat_ aspect ratio.
+c) __Show it.__ Display the image in the `NewMessage` component. Allow it to use all available space, but make sure it's good lookin' by maintaining _dat_ aspect ratio.
 
 d) __Send it.__ If you've hooked everything up correctly, `postMessage()` should already support posting messages with images to the server. Try it out. Works? Good!
 
-e) __Clear it.__ `clearNewMessageState()` (`actions/actions.js`) doesn't currently support clearing images. Extend `clearNewMessageState()` (`actions/actions.js`) function to clear the globally stored image as well.
+e) __Clear it.__ Currently, navigating back and forth will not clear the state for the `NewMessage` component (username, message, and image). Use the `clearNewMessageState()` function (received as a prop) to clear the state. Hint: React has a suitable lifecycle method for calling `clearNewMessageState()`.
 
 ##5. Edit messages
 
-Reuse `NewMessage` component to support editing. Trigger editing on long press.
+You now enter hardcore mode. Welcome. Don't worry – there will soon be beer :beer:. 
 
-You'll need to implement an action, reducer and network functionality for edit message. Here are some tips:
-* Extend `actions/actions.js` with a edit message function that dispatches an edit action.
+Reuse the `NewMessage` component to support editing. Trigger editing on long press. 
+
+You'll need to implement an action, reducer and network functionality. Here are some tips:
+* Extend `actions/actions.js` with an edit message function that dispatches an edit action.
 * Extend `network/messages.js` with an edit network call. Edit API "http://mobile-course.herokuapp.com/message/:id". Remember to use HTTP PUT.
 * Extend `reducers/reducers.js` to handle the edit action. Remember to delete/replace the message you edit.
 
-##6. Additional assignments
+##6. Even more hardcore mode :godmode:
 
 React Native is open source and has plenty of issues up for grabs: https://github.com/facebook/react-native/issues
 
-Just kidding...
+or...
 
-Here's a few interesting tasks for you choose from:
 * Show images in full screen when pressed
 * Support deletion of messages
-* __Advanced:__ Bidge a component from Android/iOS to React Native. We suggest Toasts for Android or Alert for iOS. They're already implemented in RN, but might be good subjects for practice (and you can peak the RN source code for tips).
+* __Advanced:__ Bidge a component from Android/iOS to React Native. We suggest Toast for Android or Alert for iOS. They're already implemented in RN, but they might be good for learning (and you can peek at the RN source code for tips).
 * Or anything else you want to try out :-)
