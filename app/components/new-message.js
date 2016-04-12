@@ -4,11 +4,15 @@ import React, { View, Component, TextInput, Text, Image,
 import { Colors, Fonts } from './../config/design';
 
 class NewMessage extends Component {
+  componentWillUnmount() {
+    this.props.clearNewMessageState();
+  }
+
   render() {
     const { username, newMessageText, setNewMessageText, setUsername, postMessage, error, image, onPickImagePressed } = this.props;
     const sendButton = Platform.OS === 'android' ? null : this._renderSendButton(postMessage);
     const feedback = error ? <View style={styles.feedback}><Text style={styles.feedbackText}>{error}</Text></View> : null;
-
+    const maybeImage = image ? <Image source={image.source} style={styles.image}/> : null;
     // Hint React-Native uses Controlled Components https://facebook.github.io/react/docs/forms.html#controlled-components
     return (
       <View style={styles.container}>
@@ -36,7 +40,15 @@ class NewMessage extends Component {
           </View>
         </View>
         { feedback }
+        <TouchableOpacity
+          style={[styles.button, { marginBottom: 8, backgroundColor: Colors.Green }]}
+          onPress={onPickImagePressed}>
+            <Text style={styles.buttonText} >Take Picture</Text>
+        </TouchableOpacity>
         { sendButton }
+        <View style={styles.imageContainer}>
+          { maybeImage }
+        </View>
       </View>
     );
   }
@@ -116,6 +128,14 @@ const styles = StyleSheet.create({
   buttonText: {
     color: Colors.White,
     fontFamily: Fonts.Light
+  },
+  image: {
+    resizeMode: Platform.OS === 'android' ? 'cover' : 'contain',
+    flex: 1
+  },
+  imageContainer: {
+    flex: 1,
+    paddingTop: 20
   }
 });
 
