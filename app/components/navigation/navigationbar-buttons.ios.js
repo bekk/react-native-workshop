@@ -13,13 +13,29 @@ var styles = StyleSheet.create({
     top: 5,
     right: 0,
     height: 50
-  }
+  },
+    navBarRightText: {
+        color: Colors.Red,
+        fontWeight: '300',
+        fontSize: 36,
+        padding: 15,
+        top: -10
+    }
 });
 
 const navigationBarButtons = (dispatch) => ({
 
   RightButton: function (route) {
     // Hint dispatch navigateTo(newMessage)) to change the route (and use the styles above for layout)
+    if(route.title === messageListRoute.title) {
+      return (
+        <TouchableOpacity
+          style={styles.navBarRightButton}
+          onPress={() => dispatch(navigateTo(newMessageRoute))}>
+            <Text style={styles.navBarRightText}>+</Text>
+        </TouchableOpacity>
+      );
+    }
     return null;
   }
 });
