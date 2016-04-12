@@ -11,24 +11,13 @@ const styles = {
     fontFamily: Fonts.Book,
     color: Colors.White,
     marginVertical: 14
-  },
-  navBarLeftImage: {
-    width: 50,
-    height: 50
   }
 };
 
 const commonRouteMapper = (dispatch) => ({
 
   LeftButton(route, navigator, index) {
-    if (index === 0) {
-      return null;
-    }
-    return (
-      <TouchableOpacity onPress={() => dispatch(navigatorPop())}>
-        <Image source={BackArrow} style={styles.navBarLeftImage}/>
-      </TouchableOpacity>
-    );
+    return null;
   },
 
   Title(route) {
