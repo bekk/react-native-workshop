@@ -22,10 +22,9 @@ Please submit feedback [here](https://docs.google.com/forms/d/1DpRJAY2aIDoDIsXxH
 * "Enable Hot Reloading" will immidiately reload code while also maintaining application state. __NB:__ Added to the latest RN version so it might be buggy
 * Run on device: [iOS](https://facebook.github.io/react-native/docs/running-on-device-ios.html#content) / [Android](https://facebook.github.io/react-native/docs/running-on-device-android.html#content) (__NB:__ Shake to open developer menu)
 
-Finally, checkout branch `exercise-1` for the first task.
-
 ##Tips
 
+* __NB:__ There's a branch for our solution for each assignment. You'll find the solution to assignment 1 in branch `exercise-1`, the solution to assignment 2 in branch `exercise-2` and so on. These can come in handy if you're stuck, or want to catch up quickly.
 * Redux with Thunk have already been set up and connected with the correct props in the components you have to implement.
 * All components have prop types set. Proptypes ensures that components are used correctly. Use it to see what you have to work with when you are implementing a component
 
