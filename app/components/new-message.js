@@ -35,6 +35,7 @@ class NewMessage extends Component {
               />
           </View>
         </View>
+        { feedback }
         { sendButton }
       </View>
     );
