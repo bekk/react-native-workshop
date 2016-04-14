@@ -152,6 +152,25 @@ class: agenda
 
 ---
 
+class: cols two
+
+# Komponenter
+
+.col[
+## De vanligste komponentene og API-ene er tilgjengelige
+## Men kan skrive egne komponenter i native kode og eksponere
+## Mange finnes allerede som npm-moduler
+]
+
+.col[
+.small-img[![](img/ReactComponents.png)]
+]
+
+???
+## Orientation-change, 3D-touch (er på vei) ikke implementert enda 
+
+---
+
 # Ikke webapp
 
 ## Ikke en React.js-app pakket inn i WebView
@@ -198,7 +217,7 @@ https://speakerdeck.com/frantic/react-native-under-the-hood
 
 ???
 
-## Sublime, Atom, IntelliJ etc
+## Sublime, Atom, Nuclide, IntelliJ etc
 
 ---
 
@@ -223,7 +242,6 @@ class: cols two
 ## Noe av det mange sliter med er utviklingsmiljø. Mange som ikke er komfortable med XCode
 ## Kan kjøre opp i Chromes V8 (kommuniserer med native via WebSockets) og bruke vanlig debugger
 ## Hvis man utvikler på enhet kan man riste på den for å få op utviklervalg
-## Bruker Babel, så ES6/7 kan brukes
 ---
 
 # Styling - Kjent og kjært fra CSS
@@ -760,24 +778,6 @@ var styles = StyleSheet.create({
 
 ---
 
-class: cols two
-
-# Komponenter
-
-.col[
-## De vanligste komponentene og API-ene er tilgjengelige
-## Men kan skrive egne komponenter i native kode og eksponere
-## Mange finnes allerede som npm-moduler
-]
-
-.col[
-.small-img[![](img/ReactComponents.png)]
-]
-
-???
-## Orientation-change, 3D-touch (er på vei) ikke implementert enda 
-
----
 
 # State/Redux
 
@@ -915,6 +915,7 @@ dispatch(navigateTo({component: NewMessage, title: 'Skriv ny'});
 ## Bruker Navigator, men har abstrahert bort oppsett av navigator og navigationBar.
 ## Viktigste funksjoner, transisjoner + endel config for look and feel (animasjoner, navigation bar layout)
 ## Bruk: Vi har lagt navigatoren i Redux State, så send inn en komponent til navigateTo-action.
+## Bruker Babel, så ES6/7 kan brukes
 
 ---
 
