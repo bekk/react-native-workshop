@@ -38,6 +38,10 @@ class: agenda
 * Instant deploy?
 * Deres tur!
 
+???
+
+## Før jeg setter igang. Hvem er kjent med React, RN, Redux?
+
 ---
 
 # Intro - Native
@@ -53,12 +57,15 @@ class: agenda
 ???
 
 ## Av Facebook, aktivt brukt.
-## Rykende ferskt fra F8-konferansen til Facebook. Kan bruke RN-komponenter i UWP-apps
+## Rykende ferskt fra F8-konferansen til Facebook. Kan bruke RN-komponenter i UWP-apps. Støtte i Visual Studio Code 
 ## Allerede stort community. PR, React komponenter. 
 ## Noen har også lagt til OSX desktop støtte
-## Funket ikke å pakke inn webapps lengre. Webben er ikke klar enda.
-## Synes det gikk for treigt å utvikle native. Treigere utviklingsmiljø. Utviklere må kunne flere språk og verktøy. Rett og slett ikke smidig nok ut ifra det de var vant til fra webben. Måtte kjenne og implementere businesslogikk dobbelt.
 ## Hyppige releases. Flere nye versjoner i løpet av de ukene vi jobbet med denne workshopen
+
+## Funket ikke å pakke inn webapps lengre. Webben er ikke klar enda.
+## Synes det gikk for treigt å utvikle native. Treigere utviklingsmiljø. 1 minutt å bygge.
+##Utviklere må kunne flere språk, apier og verktøy. Rett og slett ikke smidig nok ut ifra det de var vant til fra webben. Måtte kjenne og implementere businesslogikk dobbelt.
+
 
 ---
 
@@ -141,6 +148,7 @@ class: agenda
 ???
 
 ## Input
+## React-Native bruker "Controlled Components", så man har en 'value' prop
 
 ---
 
@@ -159,7 +167,7 @@ class: agenda
 ## Ikke WebView, så det føles native. Deler av Facebook-appen er RN. Kan dere gjette hvilken? Events/arrangementer
 ## Sender kommandoer i batcher til UI-tråden.
 ## Flere tråder, i motsetning til web. Dekode bilder, lagre til disk, gjøre layoutberegninger utenfor UI-tråden. => Responsivt
-## Bruker Babel, så ES6/7 kan brukes
+## Målet for Facebook har hele tiden vært 60 fps, for snappy UI
 
 ---
 
@@ -214,6 +222,8 @@ class: cols two
 ## Packager bygger appen, og står i bakgrunnen og venter på endringer.
 ## Noe av det mange sliter med er utviklingsmiljø. Mange som ikke er komfortable med XCode
 ## Kan kjøre opp i Chromes V8 (kommuniserer med native via WebSockets) og bruke vanlig debugger
+## Hvis man utvikler på enhet kan man riste på den for å få op utviklervalg
+## Bruker Babel, så ES6/7 kan brukes
 ---
 
 # Styling - Kjent og kjært fra CSS
@@ -250,7 +260,8 @@ class: cols two
 
 ???
 
-## En javascript-implementasjon av Flexbox
+## En javascript-implementasjon av Flexbox. Baserer seg på CSS-standarder
+## Så man har containere som spesifiserer barnenoder, og man deler opp i kolonner eller rader.
 ## Går fort igjennom nå, mer som et oppslagsverk for oppgavene, linker til mer dokumentasjon finnes sammen med oppgavene
 
 ---
@@ -363,7 +374,8 @@ class: cols two
 ???
 
 ## This defines the alignment along the main axis
-## Gjelder også barn
+## Hvordan skal elementer legges ut i containeren?
+## Gjelder barn
 
 ---
 
@@ -660,6 +672,8 @@ class: cols two
 
 ## Hvor mye plass skal elementet ta?
 ## Dersom alle har lik verdi tar de like stor plass
+## 0 => Så mye plass elementet trenger
+## >0 Så mye plass som mulig
 
 
 ---
@@ -744,6 +758,24 @@ var styles = StyleSheet.create({
 
 ## Exportere moduler, f.eks. base-styling
 
+---
+
+class: cols two
+
+# Komponenter
+
+.col[
+## De vanligste komponentene og API-ene er tilgjengelige
+## Men kan skrive egne komponenter i native kode og eksponere
+## Mange finnes allerede som npm-moduler
+]
+
+.col[
+.small-img[![](img/ReactComponents.png)]
+]
+
+???
+## Orientation-change, 3D-touch (er på vei) ikke implementert enda 
 
 ---
 
@@ -827,24 +859,6 @@ function messageReducer(state = initialState, action) {
 ## Reducer er en mapping mellom action og state. Returnerer neste state.
 ## Skal ikke klusse med state, men returnere ny state.
 
----
-
-class: cols two
-
-# Komponenter
-
-.col[
-## De vanligste komponentene og API-ene er tilgjengelige
-## Men kan skrive egne komponenter i native kode og eksponere
-## Mange finnes allerede som npm-moduler
-]
-
-.col[
-.small-img[![](img/ReactComponents.png)]
-]
-
-???
-## Orientation-change, 3D-touch (er på vei) ikke implementert enda 
 
 ---
 
@@ -893,7 +907,7 @@ import Navigator from './components/navigation/navigator';
 import { navigateTo } from '../actions/actions';
 import NewMessage from '../new-message';
 
-dispatch.navigateTo({component: NewMessage, title: 'Skriv ny'});
+dispatch(navigateTo({component: NewMessage, title: 'Skriv ny'});
 ```
 
 ???
