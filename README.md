@@ -68,7 +68,7 @@ http://mobile-course.herokuapp.com/message
 
 c) __Show images.__ Some messages contain a link to an image. Display them.
 
-d) __Pull to refresh.__ Add pull to refresh. Hint: Look at what [ListView](https://facebook.github.io/react-native/docs/listview.html) can do for you
+d) __Pull to refresh.__ Add pull to refresh. Hint: Look at what [ListView](https://facebook.github.io/react-native/docs/refreshcontrol.html#content) can do for you
 
 ##3. Navigate to New Message
 
