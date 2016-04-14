@@ -43,6 +43,7 @@ class: agenda
 # Intro - Native
 
 ## Lansert for iOS i januar 2015 og for Android i september av Facebook
+## Nå også for Windows (UWP)
 ## Open Source
 ## Problemer med (tradisjonell) native
 - Treg utviklingsyklus
@@ -52,7 +53,9 @@ class: agenda
 ???
 
 ## Av Facebook, aktivt brukt.
-## Allerede stort community. PR, React komponenter
+## Rykende ferskt fra F8-konferansen til Facebook. Kan bruke RN-komponenter i UWP-apps
+## Allerede stort community. PR, React komponenter. 
+## Noen har også lagt til OSX desktop støtte
 ## Funket ikke å pakke inn webapps lengre. Webben er ikke klar enda.
 ## Synes det gikk for treigt å utvikle native. Treigere utviklingsmiljø. Utviklere må kunne flere språk og verktøy. Rett og slett ikke smidig nok ut ifra det de var vant til fra webben. Måtte kjenne og implementere businesslogikk dobbelt.
 ## Hyppige releases. Flere nye versjoner i løpet av de ukene vi jobbet med denne workshopen
@@ -213,29 +216,9 @@ class: cols two
 ## Kan kjøre opp i Chromes V8 (kommuniserer med native via WebSockets) og bruke vanlig debugger
 ---
 
-
-# Styling - FLEXBOX
-
-## Basert på Flexbox fra css
-## flexDirection, flex, align-items, justify content, ...
-## "Inline styles"
-
-```html
-<Text style={{color: 'black'}}>
-  Velkommen til Bekk Open Fagdag
-</Text>
-```
-
-???
-
-## En javascript-implementasjon av Flexbox
-## Inline styles med JS-objekter
-## Går fort igjennom nå, mer som et oppslagsverk for oppgavene, linker til mer dokumentasjon finnes sammen med oppgavene
-
----
-
 # Styling - Kjent og kjært fra CSS
 
+## "Inline styles"
 ## camelCasing
 ## margin, marginBottom, paddingBottom, borderRadius, width, height
 ## backgroundColor, borderColor, fontSize, fontWeight
@@ -243,6 +226,7 @@ class: cols two
 ```html
 <Text style={{
   color: 'black', 
+  fontSize: 20,
   fontWeight: 'bold',
   marginBottom: 10}}>
   Velkommen til Bekk Open Fagdag
@@ -251,7 +235,23 @@ class: cols two
 
 ???
 
+## En javascript-implementasjon av CSS
 ## De fleste vanlige CSS-props er på plass
+## Inline styles med JS-objekter
+
+---
+
+# Styling - FLEXBOX
+
+## Plassering av elementer gjøres med Flexbox
+## Basert på Flexbox fra css
+## flex direction, flex, align items, align self, justify content, ...
+
+
+???
+
+## En javascript-implementasjon av Flexbox
+## Går fort igjennom nå, mer som et oppslagsverk for oppgavene, linker til mer dokumentasjon finnes sammen med oppgavene
 
 ---
 
@@ -363,6 +363,7 @@ class: cols two
 ???
 
 ## This defines the alignment along the main axis
+## Gjelder også barn
 
 ---
 
@@ -524,6 +525,9 @@ class: cols two
 .col[
 .small-img[![](img/alignItems_stretch.png)]
 ]
+
+???
+## Gjelder også barnenoder. Tilsvarende for elementer er alignSelf
 
 ---
 
@@ -902,7 +906,7 @@ dispatch.navigateTo({component: NewMessage, title: 'Skriv ny'});
 
 # Instant deploy av JS?
 
-## AppHub, CodePush
+## AppHub, CodePush (MS)
 ## I henhold til Apple guidelines
 
 > ... The only exceptions to the
