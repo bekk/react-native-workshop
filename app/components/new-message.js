@@ -12,6 +12,7 @@ class NewMessage extends Component {
     return (
       <View style={styles.container}>
         <Text>New Message View</Text>
+        <TextInput style={styles.textinput} placeholder="Your text here"/>
       </View>
     );
   }
@@ -37,6 +38,9 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 20,
     marginTop: 60
+  },
+  textinput: {
+    height: 35
   }
 });
 
