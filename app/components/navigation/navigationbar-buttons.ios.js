@@ -27,7 +27,7 @@ const navigationBarButtons = (dispatch) => ({
 
   RightButton: function (route) {
     // Hint dispatch navigateTo(newMessage)) to change the route (and use the styles above for layout)
-    if(route.title === messageListRoute.title) {
+    if(route === messageListRoute) {
       return (
         <TouchableOpacity
           style={styles.navBarRightButton}

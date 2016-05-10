@@ -27,7 +27,7 @@ const navigationBarButtons = (dispatch) => {
   return {
     RightButton (route) {
       // Hint: implement the send-button for android here (and use the styles above for layout)
-      if (route.title === newMessageRoute.title) {
+      if (route === newMessageRoute) {
         return (
           <TouchableOpacity style={styles.navBarRightButton} onPress={postMessage}>
             <Text style={styles.navBarRightText}>Send</Text>
