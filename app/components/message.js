@@ -1,9 +1,7 @@
 'use strict';
 
-import React, {
-  View,
-  Text
-} from 'react-native';
+import React from 'react';
+import { View, Text } from 'react-native';
 import { Colors, Fonts } from './../config/design';
 import Image from './image';
 

@@ -1,5 +1,6 @@
 'use strict';
-import React, { Component, Image } from 'react-native';
+import React from 'react';
+import { Component, Image } from 'react-native';
 import placeholder from '../resources/default-placeholder.png';
 
 export default class CustomImage extends Component {
