@@ -1,5 +1,6 @@
 'use strict';
-import React, { TouchableOpacity, Text } from 'react-native';
+import React from 'react';
+import { TouchableOpacity, Text } from 'react-native';
 import { newMessageRoute } from './routes';
 import { connect } from 'react-redux';
 import { postMessage as postMessageAction } from '../../actions/actions';

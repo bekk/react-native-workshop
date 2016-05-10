@@ -1,5 +1,6 @@
 'use strict';
-import React, { Text, TouchableOpacity, Image } from 'react-native';
+import React from 'react';
+import { Text, TouchableOpacity, Image } from 'react-native';
 import BackArrow from '../../resources/back-arrow.png';
 import navigationBarButtons from './navigationbar-buttons';
 import { navigatorPop } from '../../actions/actions';

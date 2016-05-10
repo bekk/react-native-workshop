@@ -1,5 +1,6 @@
 'use strict';
-import React, { Component, ListView, RefreshControl, View, Text } from 'react-native';
+import React, { Component } from 'react';
+import { ListView, RefreshControl, View, Text } from 'react-native';
 import Message from './message';
 import { Colors } from './../config/design';
 const DSConfig = new ListView.DataSource({rowHasChanged: (r1, r2) => r1.id !== r2.id});
