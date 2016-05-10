@@ -1,6 +1,6 @@
 'use strict';
-import React, { View, Component, TextInput, Text, Image,
-  TouchableOpacity, StyleSheet, Platform } from 'react-native';
+import React, { Component } from 'react';
+import { View, TextInput, Text, Image, TouchableOpacity, StyleSheet, Platform } from 'react-native';
 import { Colors, Fonts } from './../config/design';
 
 class NewMessage extends Component {

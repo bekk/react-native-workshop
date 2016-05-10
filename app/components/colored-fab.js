@@ -1,5 +1,6 @@
 'use strict';
-import React, { Text } from 'react-native';
+import React from 'react';
+import { Text } from 'react-native';
 import { MKButton } from 'react-native-material-kit';
 import { Colors } from './../config/design';
 
