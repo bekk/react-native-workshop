@@ -1,0 +1,46 @@
+-webkit-font-smoothing: antialiased;
+font-family: "Fedra Serif", Georgia, serif;
+font-weight: lighter;
+line-height: 1.5;
+
+color: #c6c8ca;
+background-color: @background;
+
+
+h1, h2 {
+  font-family: "Conduit", Arial, sans-serif;
+  line-height: 1.2;
+  color: #ebebeb;
+  font-weight: normal;
+}
+
+p, h1, h2 {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 34px;
+  text-transform: uppercase;
+
+}
+
+> h1 {
+  display: table;
+  white-space: nowrap;
+  margin: 20px 0 1em 0;
+
+  &:after {
+    border-top: 1px solid #515151;
+    content: '';
+    display: table-cell;
+    position: relative;
+    top: 0.5em;
+    width: 100%;
+    left: 1.5%;
+  }
+}
+
+h2 {
+  font-size: 28px;
+}
+

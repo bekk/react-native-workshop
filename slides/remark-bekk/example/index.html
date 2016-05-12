@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BEKK-theme for remark</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../dist/bekk.css" type="text/css" rel="stylesheet">
+  </head>
+  <body class="bekk-black">
+    <textarea id="source">
+
+class: front-page
+
+# BEKK-theme
+
+## En (kort) introduksjon
+
+Sjekk ut [remark](https://github.com/gnab/remark)
+
+Bjarne BEKK-konsulent
+
+01/02/1970
+
+---
+
+class: agenda
+
+# Agenda
+
+* Forside og agenda
+* Bilder
+* Lister
+* Kode (med highlighting)
+* Kolonner
+* Lenker
+
+---
+
+# Forside
+
+Legg til klassen `front-page`. Overskrift, underoverskrift, beskrivelse, navn og dato er obligatorisk.
+
+Eksempel-slide:
+
+```html
+  class: front-page
+
+  # Coffeescript og SASS
+
+  ## En introduksjon
+
+  Forelesning ved NITH
+
+  Kim Joar Bekkelund
+
+  18/11/2011
+```
+
+---
+
+# Agenda
+
+For agenda, legg til klassen `agenda` og lag liste:
+
+  ```html
+  class: agenda
+
+  * første punkt
+  * andre punkt
+  * tredje punkt
+  ```
+
+
+---
+
+class: middle center
+
+# Midtjusterte overskrifter
+
+---
+
+# Midtjusterte overskrifter
+
+Kode for å få til midtjustert overskrift:
+
+```html
+  class: middle center
+
+  # Midtjusterte overskrifter
+```
+
+---
+
+class: center middle
+
+![](images/round.png)
+
+---
+
+# Midtjusterte bilde
+
+Eksempel-slide:
+
+  ```html
+  .middle center
+
+  ![alternativ tekst](images/round.png)
+  ```
+---
+
+
+background-image: url(images/shoes.jpg)
+class: middle center
+
+
+  # Stort bilde med text
+
+
+</div>
+---
+
+background-image: url(images/shoes.jpg)
+class: middle center
+
+
+  # Stort bilde med rundt boks
+
+  .circle.red.top-right[
+    Fin tekst
+  ]
+
+---
+
+# Stort bilde
+
+Bruk property `background-image` og legg til et stort bilde.
+
+Eksempel-slide:
+
+  ```html
+  background-image: url(images/shoes.jpg)
+  class: middle center
+
+
+  # Stort bilde med rundt boks
+
+  .circle.red.top-right[
+    Fin tekst
+  ]
+  ```
+
+---
+
+# Lister
+
+* Bare bruk `*`
+* ... så får du en liste
+
+Og:
+
+1. Nummererte lister er også mulig!
+2. Bare skriv `1.`, `2.`, og så videre
+
+---
+
+# Hva med highlighting av kode?
+
+Et Ruby-eksempel:
+
+  ```ruby
+  names = people.map do |person|
+    person.name.capitalize
+  end
+  ```
+
+Og et JavaScript-eksempel:
+
+```javascript
+  var names = [];
+  for (var i = 0, l = people.length; i &lt; l; i++) {
+    var name = people[i].name.slice(0,1).toUpperCase();
+    names.push(name);
+  }
+```
+
+For kodeblokk, ha 2 mellomrom før kode:
+
+```javascript
+  function test() {
+    return "test";
+  }
+```
+
+---
+
+# Lenker og knapper
+
+  [vanlig lenke](#)
+
+  <a href="#" class="btn">Stor knapp</a>
+
+  <a href="#" class="btn loud">Større knapp</a>
+
+
+```html
+  [vanlig lenke](#)
+
+  <a href="#" class="btn">Stor knapp</a>
+
+  <a href="#" class="btn loud">Større knapp</a>
+```
+
+Markdown støtter ikke lenker med klasse, så vi må frem med litt html
+
+---
+
+class: cols three
+
+# 3 kolonner
+
+.col[
+  ## Første kolonne.
+
+  For å få til kolonner må vi bruke litt HTML, sammen med to klasser.
+
+  ```html
+  class: cols three
+
+  .col[
+    kolonne 1
+  ]
+
+  .col[
+    kolonne 2
+  ]
+
+  .col[
+    kolonne 3
+  ]
+  ```
+]
+
+.col[
+  ## Andre kolonne
+]
+
+.col[
+  ## Tredje kolonne
+
+  Vi støtter også to kolonner ved bruk av klassen `two` istedenfor `three`
+
+  ```html
+  class: cols two
+  ```
+]
+
+---
+
+class: cols three
+
+# Kolonner støtter Markdown
+
+.col[
+  .circle.red.centered[Kolonne 1]
+
+  *em* sweet
+
+  [kimjoar.net](http://kimjoar.net)
+]
+
+.col[
+  .circle.green.centered[Kolonne 2]
+
+  * liste!
+  * nytt element
+  * *winning*
+]
+
+.col[
+  .circle.yellow.centered[Kolonne 3]
+
+  ## Overskrift
+
+  Overskrifter fungerer også i kolonner!
+]
+
+---
+
+class: middle center
+
+.card[
+  .picture[
+    ![Ola Normann](https://intern.bekk.no/Employees/ViewEmployeeImage.ashx?thumbnail=true&thumbsize=500&employee=374)
+  ]
+  .name[Ola Normann]
+  .title[Systemutvikler]
+  .department[Technology]
+  .phone[987 65 432]
+  .email[ola.normann@bekk.no]
+]
+
+.card[
+  .picture[
+    ![Some Guy](https://intern.bekk.no/Employees/ViewEmployeeImage.ashx?thumbnail=true&thumbsize=500&employee=467)
+  ]
+  .name[Some Guy]
+  .title[Systemutvikler]
+  .department[Technology]
+  .phone[987 65 432]
+  .email[some.guy@bekk.no]
+]
+
+---
+
+# Ansattekort
+
+```html
+  class: middle center
+
+  .card[
+    .picture[
+      ![Some Guy](https://intern.bekk.no/Employees/ViewEmployeeImage.ashx?thumbnail=true&thumbsize=500&employee=467)
+    ]
+    .name[Some Guy]
+    .title[Systemutvikler]
+    .department[Technology]
+    .phone[987 65 432]
+    .email[some.guy@bekk.no]
+  ]
+```
+
+---
+
+# Noen lenker
+
+* [remark](https://github.com/gnab/remark)
+* [Markdown syntax](http://daringfireball.net/projects/markdown/syntax)
+
+---
+
+class: center middle bekk-top
+
+# TAKK!
+Bjarne BEKK-konsulent
+
+
+    </textarea>
+
+  <script src="../vendor/remark.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var slideshow = remark.create({
+      ratio: '16:9',
+      highlightStyle: 'monokai',
+      highlightLanguage: 'javascript'
+    });
+  </script>
+
+
+  </body>
+</html>
