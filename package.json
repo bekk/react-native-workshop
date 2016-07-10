@@ -8,7 +8,7 @@
   "dependencies": {
     "fbjs": "^0.6.0",
     "react": "15.2.0",
-    "react-native": "^0.28.0",
+    "react-native": "^0.29.0",
     "react-native-camera": "git+https://github.com/lwansbrough/react-native-camera.git",
     "react-native-image-picker": "^0.18.3",
     "react-native-material-kit": "^0.3.0",
