@@ -1,4 +1,5 @@
-import React, { Component, Navigator, StyleSheet, Platform } from 'react-native';
+import React, { Component } from 'react';
+import { Navigator, StyleSheet, Platform } from 'react-native';
 import { newMessageRoute, messageListRoute } from './routes';
 import getNavigationBarRouteMapper from './navigationbar-routemapper';
 import { connect } from 'react-redux';
@@ -33,7 +34,7 @@ class CustomNavigator extends Component {
     return (
       <Navigator
         ref="navigator"
-        initialRoute={newMessageRoute}
+        initialRoute={messageListRoute}
         renderScene={_renderScene}
         configureScene={_sceneConfig()}
         navigationBar={(

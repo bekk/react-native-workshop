@@ -1,5 +1,6 @@
 'use strict';
-import React, { TouchableOpacity, Text } from 'react-native';
+import React from 'react';
+import { TouchableOpacity, Text } from 'react-native';
 import { newMessageRoute } from './routes';
 import { connect } from 'react-redux';
 import { postMessage as postMessageAction } from '../../actions/actions';
@@ -13,6 +14,11 @@ const styles = {
     top: 0,
     right: 0,
     height: 50
+  },
+  navBarRightText: {
+    top: -3,
+    color: '#ffffff',
+    marginRight: 20
   }
 };
 
@@ -22,6 +28,13 @@ const navigationBarButtons = (dispatch) => {
   return {
     RightButton (route) {
       // Hint: implement the send-button for android here (and use the styles above for layout)
+      if (route === newMessageRoute) {
+        return (
+          <TouchableOpacity style={styles.navBarRightButton} onPress={postMessage}>
+            <Text style={styles.navBarRightText}>Send</Text>
+          </TouchableOpacity>
+        );
+      }
       return null;
     }
   };

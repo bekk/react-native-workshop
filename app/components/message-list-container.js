@@ -1,10 +1,7 @@
 'use strict';
 
-import React, {
-  Component,
-  View,
-  Platform
-} from 'react-native';
+import React, { Component } from 'react';
+import { View, Platform } from 'react-native';
 import MessageList from './message-list';
 import ColoredFab from './colored-fab';
 import { ErrorMessage } from './error-message';
@@ -13,6 +10,13 @@ import { Colors } from './../config/design';
 class MessageListContainer extends Component {
   componentWillMount() {
     this.props.fetchMessages();
+  }
+
+  _shouldRenderFabulousAndroidUI() {
+    if (Platform.OS === 'android') {
+      return <ColoredFab onPress={this.props.goToNewMessage}>+</ColoredFab>
+    }
+    return null;
   }
 
   render() {
@@ -28,6 +32,7 @@ class MessageListContainer extends Component {
           refreshView={ this.props.fetchMessages }
           navigator={this.props.navigator}
         />
+        {this._shouldRenderFabulousAndroidUI()}
       </View>
     );
   }

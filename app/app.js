@@ -1,5 +1,6 @@
 'use strict';
-import React, { Component, BackAndroid, StatusBar, View } from 'react-native';
+import React, { Component } from 'react';
+import { BackAndroid, StatusBar, View } from 'react-native';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
