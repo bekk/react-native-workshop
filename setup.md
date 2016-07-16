@@ -1,16 +1,20 @@
 # React-native setup
+Please follow Facebooks guide for [getting started](https://facebook.github.io/react-native/docs/getting-started.html)
 
 **!!IMPORTANT**
 Developing React Native projects requires:
- - Git -
+ - Java 1.7 or later (for android)
+ - Git
  - npm v3
  - Node 4 or greater. (I use node 5.9.1 and it works)
-
-## npm
-If you already have installed npm v2, and want to run npm v3 alongside npm v2 you can install [npm3](https://www.npmjs.com/package/npm3).
+ 
+ 
 
 ## node
 To manage node versions you can use [n](https://www.npmjs.com/package/n)
+
+## npm
+If you already have installed npm v2, and want to run npm v3 alongside npm v2 you can install [npm3](https://www.npmjs.com/package/npm3).
 
 ## Android
 Development for android devices requires the Android SDK, [download Android Studio or the Android SDK](http://developer.android.com/sdk/index.html).
@@ -20,8 +24,8 @@ As an alternative you can also use the Genymotion emulator (skip step 1 and 2).
 In general the Genymotion emulator has better performance then the one provided by the Android SDK and it is easier to set up.
 It does however integrate differently with the Android Device Bridge (ADB), and therefore requires some extra set up to get live-reloading.
 
-The setup for windows was more tedious than on OSX, it is therefore recommended to use OSX if possible.
-Notes from troubleshooting during the setup-process on windows and OSX can be found here;
+The setup for windows was more tedious than on OSX, we therefore recommend using OSX if possible.
+Notes we took from our troubleshooting during the setup-process on windows and OSX can be found here;
 
 * [Windows](trouble-windows-android.md)
 * [OSX](trouble-osx-android.md)
