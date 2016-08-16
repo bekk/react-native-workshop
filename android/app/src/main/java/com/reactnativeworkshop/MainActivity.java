@@ -1,9 +1,9 @@
 package com.reactnativeworkshop;
 
 import com.facebook.react.ReactActivity;
-
-import java.util.Arrays;
-import java.util.List;
+import com.github.xinthink.rnmk.ReactMaterialKitPackage;
+import com.imagepicker.ImagePickerPackage;
+import com.lwansbrough.RCTCamera.RCTCameraPackage;
 
 public class MainActivity extends ReactActivity {
 

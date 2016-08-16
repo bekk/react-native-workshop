@@ -20,6 +20,7 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		4175326E1CA2A3A9007A1A64 /* FedraSansAltPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 417532631CA2A3A9007A1A64 /* FedraSansAltPro-Bold.otf */; };
 		417532701CA2A3A9007A1A64 /* FedraSansAltPro-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 417532651CA2A3A9007A1A64 /* FedraSansAltPro-Book.otf */; };
@@ -29,6 +30,14 @@
 		68DDAF461C99B76A00614DAA /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 68DDAF451C99B73700614DAA /* libRNImagePicker.a */; };
 		78EABCF4008C4BAF85B04B91 /* libRCTCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B5242B8110144589660DEA3 /* libRCTCamera.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		7A2417B6641047B8A3B5C176 /* libRCTCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF1022BF011E44F6B486BD52 /* libRCTCamera.a */; };
+		F9457213599743E880AF9C3D /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C529C34A51464F3988C927BE /* libRNImagePicker.a */; };
+		9769FF7811674ECCAA6A0640 /* libRCTMaterialKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 372E135559724FEF9E84FB7E /* libRCTMaterialKit.a */; };
+		30148FD8E2164D97A307E4FD /* FedraSansAltPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBCE8FEB2BF643A58ECBAE63 /* FedraSansAltPro-Bold.otf */; };
+		C7D3AE2E6F7D483DA53FF3CB /* FedraSansAltPro-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7248F7F8CD85484B82A1ABE8 /* FedraSansAltPro-Book.otf */; };
+		B5A74675411D47F5B6B6C2CF /* FedraSansAltPro-Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E00C4BA3E415C84ED69AB /* FedraSansAltPro-Demi.otf */; };
+		1F17F0537BDD47C88DDC41ED /* FedraSansAltPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A1064A6A1D6A4CD08476CE22 /* FedraSansAltPro-Light.otf */; };
+		0476951B26CD4C729A547B62 /* FedraSansAltPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE477F527D8B47B1AFFF4245 /* FedraSansAltPro-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,17 +153,20 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ReactNativeWorkshop/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ReactNativeWorkshop/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ReactNativeWorkshop/main.m; sourceTree = "<group>"; };
-		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
-		417532631CA2A3A9007A1A64 /* FedraSansAltPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FedraSansAltPro-Bold.otf"; path = "FedraSansAltPro-Bold.otf"; sourceTree = "<group>"; };
-		417532651CA2A3A9007A1A64 /* FedraSansAltPro-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FedraSansAltPro-Book.otf"; path = "FedraSansAltPro-Book.otf"; sourceTree = "<group>"; };
-		417532671CA2A3A9007A1A64 /* FedraSansAltPro-Demi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FedraSansAltPro-Demi.otf"; path = "FedraSansAltPro-Demi.otf"; sourceTree = "<group>"; };
-		417532691CA2A3A9007A1A64 /* FedraSansAltPro-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FedraSansAltPro-Light.otf"; path = "FedraSansAltPro-Light.otf"; sourceTree = "<group>"; };
-		4175326B1CA2A3A9007A1A64 /* FedraSansAltPro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "FedraSansAltPro-Medium.otf"; path = "FedraSansAltPro-Medium.otf"; sourceTree = "<group>"; };
-		68DDAF351C99B73700614DAA /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
-		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
-		80C4A5DD663D4ED092E608FA /* RCTCamera.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTCamera.xcodeproj; path = "../node_modules/react-native-camera/ios/RCTCamera.xcodeproj"; sourceTree = "<group>"; };
-		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		9B5242B8110144589660DEA3 /* libRCTCamera.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTCamera.a; sourceTree = "<group>"; };
+		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = ../node_modules/react-native/React/React.xcodeproj; sourceTree = "<group>"; };
+		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = ../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj; sourceTree = "<group>"; };
+		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = ../node_modules/react-native/Libraries/Text/RCTText.xcodeproj; sourceTree = "<group>"; };
+		19456BACE5124B6C903D09F9 /* RCTCamera.xcodeproj */ = {isa = PBXFileReference; name = "RCTCamera.xcodeproj"; path = "../node_modules/react-native-camera/ios/RCTCamera.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		DF1022BF011E44F6B486BD52 /* libRCTCamera.a */ = {isa = PBXFileReference; name = "libRCTCamera.a"; path = "libRCTCamera.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		109015E15E8345FBBAE83BCD /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; name = "RNImagePicker.xcodeproj"; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		C529C34A51464F3988C927BE /* libRNImagePicker.a */ = {isa = PBXFileReference; name = "libRNImagePicker.a"; path = "libRNImagePicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		B6BDF4FA5B6B43B589EDEB05 /* RCTMaterialKit.xcodeproj */ = {isa = PBXFileReference; name = "RCTMaterialKit.xcodeproj"; path = "../node_modules/react-native-material-kit/iOS/RCTMaterialKit.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		372E135559724FEF9E84FB7E /* libRCTMaterialKit.a */ = {isa = PBXFileReference; name = "libRCTMaterialKit.a"; path = "libRCTMaterialKit.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		BBCE8FEB2BF643A58ECBAE63 /* FedraSansAltPro-Bold.otf */ = {isa = PBXFileReference; name = "FedraSansAltPro-Bold.otf"; path = "../fonts/FedraSansAltPro-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7248F7F8CD85484B82A1ABE8 /* FedraSansAltPro-Book.otf */ = {isa = PBXFileReference; name = "FedraSansAltPro-Book.otf"; path = "../fonts/FedraSansAltPro-Book.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2E4E00C4BA3E415C84ED69AB /* FedraSansAltPro-Demi.otf */ = {isa = PBXFileReference; name = "FedraSansAltPro-Demi.otf"; path = "../fonts/FedraSansAltPro-Demi.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A1064A6A1D6A4CD08476CE22 /* FedraSansAltPro-Light.otf */ = {isa = PBXFileReference; name = "FedraSansAltPro-Light.otf"; path = "../fonts/FedraSansAltPro-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EE477F527D8B47B1AFFF4245 /* FedraSansAltPro-Medium.otf */ = {isa = PBXFileReference; name = "FedraSansAltPro-Medium.otf"; path = "../fonts/FedraSansAltPro-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +193,9 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				78EABCF4008C4BAF85B04B91 /* libRCTCamera.a in Frameworks */,
+				7A2417B6641047B8A3B5C176 /* libRCTCamera.a in Frameworks */,
+				F9457213599743E880AF9C3D /* libRNImagePicker.a in Frameworks */,
+				9769FF7811674ECCAA6A0640 /* libRCTMaterialKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +335,9 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				80C4A5DD663D4ED092E608FA /* RCTCamera.xcodeproj */,
+				19456BACE5124B6C903D09F9 /* RCTCamera.xcodeproj */,
+				109015E15E8345FBBAE83BCD /* RNImagePicker.xcodeproj */,
+				B6BDF4FA5B6B43B589EDEB05 /* RCTMaterialKit.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -340,11 +357,7 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ReactNativeWorkshopTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
-				417532631CA2A3A9007A1A64 /* FedraSansAltPro-Bold.otf */,
-				417532651CA2A3A9007A1A64 /* FedraSansAltPro-Book.otf */,
-				417532671CA2A3A9007A1A64 /* FedraSansAltPro-Demi.otf */,
-				417532691CA2A3A9007A1A64 /* FedraSansAltPro-Light.otf */,
-				4175326B1CA2A3A9007A1A64 /* FedraSansAltPro-Medium.otf */,
+				CF7ECF0DA3EA40D3922808CD /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -357,6 +370,19 @@
 				00E356EE1AD99517003FC87E /* ReactNativeWorkshopTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CF7ECF0DA3EA40D3922808CD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BBCE8FEB2BF643A58ECBAE63 /* FedraSansAltPro-Bold.otf */,
+				7248F7F8CD85484B82A1ABE8 /* FedraSansAltPro-Book.otf */,
+				2E4E00C4BA3E415C84ED69AB /* FedraSansAltPro-Demi.otf */,
+				A1064A6A1D6A4CD08476CE22 /* FedraSansAltPro-Light.otf */,
+				EE477F527D8B47B1AFFF4245 /* FedraSansAltPro-Medium.otf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -588,6 +614,11 @@
 				417532741CA2A3A9007A1A64 /* FedraSansAltPro-Light.otf in Resources */,
 				4175326E1CA2A3A9007A1A64 /* FedraSansAltPro-Bold.otf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				30148FD8E2164D97A307E4FD /* FedraSansAltPro-Bold.otf in Resources */,
+				C7D3AE2E6F7D483DA53FF3CB /* FedraSansAltPro-Book.otf in Resources */,
+				B5A74675411D47F5B6B6C2CF /* FedraSansAltPro-Demi.otf in Resources */,
+				1F17F0537BDD47C88DDC41ED /* FedraSansAltPro-Light.otf in Resources */,
+				0476951B26CD4C729A547B62 /* FedraSansAltPro-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,6 +700,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactNativeWorkshop.app/ReactNativeWorkshop";
@@ -690,6 +723,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactNativeWorkshop.app/ReactNativeWorkshop";
@@ -705,11 +740,17 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
-					"$(SRCROOT)/../node_modules/react-native-camera/ios",
+					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-image-picker/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-material-kit/iOS/RCTMaterialKit",
 				);
 				INFOPLIST_FILE = ReactNativeWorkshop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
 				PRODUCT_NAME = ReactNativeWorkshop;
 			};
 			name = Debug;
@@ -722,11 +763,17 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
-					"$(SRCROOT)/../node_modules/react-native-camera/ios",
+					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-image-picker/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-material-kit/iOS/RCTMaterialKit",
 				);
 				INFOPLIST_FILE = ReactNativeWorkshop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
 				PRODUCT_NAME = ReactNativeWorkshop;
 			};
 			name = Release;
@@ -769,7 +816,9 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
-					"$(SRCROOT)/../node_modules/react-native-camera/ios",
+					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-image-picker/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-material-kit/iOS/RCTMaterialKit",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -810,7 +859,9 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
-					"$(SRCROOT)/../node_modules/react-native-camera/ios",
+					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-image-picker/ios/**",
+					"$(SRCROOT)/../node_modules/react-native-material-kit/iOS/RCTMaterialKit",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
