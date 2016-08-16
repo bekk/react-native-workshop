@@ -9,11 +9,6 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 
-import com.github.xinthink.rnmk.ReactMaterialKitPackage;
-import com.imagepicker.ImagePickerPackage;
-import com.facebook.react.ReactPackage;
-import com.facebook.react.shell.MainReactPackage;
-
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,9 +23,7 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-          new MainReactPackage(),
-          new ReactMaterialKitPackage(),
-          new ImagePickerPackage()
+          new MainReactPackage()
       );
     }
   };

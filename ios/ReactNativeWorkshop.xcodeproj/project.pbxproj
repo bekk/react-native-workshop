@@ -19,15 +19,17 @@
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
-		AC4F2ED8EFC3423983B1256E /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B22D7D6584EF4402830D98E1 /* libRNImagePicker.a */; };
-		E0E8DE271B03450A81BC072B /* libRCTMaterialKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D0170D372E42AFBC256900 /* libRCTMaterialKit.a */; };
-		C3A5EEEC1063432D958664C5 /* FedraSansAltPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F3392104BAA6499096009089 /* FedraSansAltPro-Bold.otf */; };
-		CC8FF1A968934016839D5982 /* FedraSansAltPro-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = B952E60522BA40E08A394B48 /* FedraSansAltPro-Book.otf */; };
-		3F52D238D8F74004812916D4 /* FedraSansAltPro-Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = EFF3FA59E17B4275A3BBAAC4 /* FedraSansAltPro-Demi.otf */; };
-		8771EE5EDCBA46AF9D00CEB1 /* FedraSansAltPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = EFE0E0159FA3409C8CE6DD3D /* FedraSansAltPro-Light.otf */; };
-		696A868E47B34467A0200519 /* FedraSansAltPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7E84AD8B6F2E4B43A44D2FB4 /* FedraSansAltPro-Medium.otf */; };
+		7A2417B6641047B8A3B5C176 /* libRCTCamera.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF1022BF011E44F6B486BD52 /* libRCTCamera.a */; };
+		F9457213599743E880AF9C3D /* libRNImagePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C529C34A51464F3988C927BE /* libRNImagePicker.a */; };
+		9769FF7811674ECCAA6A0640 /* libRCTMaterialKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 372E135559724FEF9E84FB7E /* libRCTMaterialKit.a */; };
+		30148FD8E2164D97A307E4FD /* FedraSansAltPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = BBCE8FEB2BF643A58ECBAE63 /* FedraSansAltPro-Bold.otf */; };
+		C7D3AE2E6F7D483DA53FF3CB /* FedraSansAltPro-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7248F7F8CD85484B82A1ABE8 /* FedraSansAltPro-Book.otf */; };
+		B5A74675411D47F5B6B6C2CF /* FedraSansAltPro-Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E00C4BA3E415C84ED69AB /* FedraSansAltPro-Demi.otf */; };
+		1F17F0537BDD47C88DDC41ED /* FedraSansAltPro-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A1064A6A1D6A4CD08476CE22 /* FedraSansAltPro-Light.otf */; };
+		0476951B26CD4C729A547B62 /* FedraSansAltPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EE477F527D8B47B1AFFF4245 /* FedraSansAltPro-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,15 +134,17 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = ../node_modules/react-native/React/React.xcodeproj; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = ../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = ../node_modules/react-native/Libraries/Text/RCTText.xcodeproj; sourceTree = "<group>"; };
-		EA16A4FBC51B484AA2A64C08 /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; name = "RNImagePicker.xcodeproj"; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		B22D7D6584EF4402830D98E1 /* libRNImagePicker.a */ = {isa = PBXFileReference; name = "libRNImagePicker.a"; path = "libRNImagePicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		2CF699409D604B93A99E2825 /* RCTMaterialKit.xcodeproj */ = {isa = PBXFileReference; name = "RCTMaterialKit.xcodeproj"; path = "../node_modules/react-native-material-kit/iOS/RCTMaterialKit.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		B9D0170D372E42AFBC256900 /* libRCTMaterialKit.a */ = {isa = PBXFileReference; name = "libRCTMaterialKit.a"; path = "libRCTMaterialKit.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
-		F3392104BAA6499096009089 /* FedraSansAltPro-Bold.otf */ = {isa = PBXFileReference; name = "FedraSansAltPro-Bold.otf"; path = "../fonts/FedraSansAltPro-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		B952E60522BA40E08A394B48 /* FedraSansAltPro-Book.otf */ = {isa = PBXFileReference; name = "FedraSansAltPro-Book.otf"; path = "../fonts/FedraSansAltPro-Book.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		EFF3FA59E17B4275A3BBAAC4 /* FedraSansAltPro-Demi.otf */ = {isa = PBXFileReference; name = "FedraSansAltPro-Demi.otf"; path = "../fonts/FedraSansAltPro-Demi.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		EFE0E0159FA3409C8CE6DD3D /* FedraSansAltPro-Light.otf */ = {isa = PBXFileReference; name = "FedraSansAltPro-Light.otf"; path = "../fonts/FedraSansAltPro-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		7E84AD8B6F2E4B43A44D2FB4 /* FedraSansAltPro-Medium.otf */ = {isa = PBXFileReference; name = "FedraSansAltPro-Medium.otf"; path = "../fonts/FedraSansAltPro-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		19456BACE5124B6C903D09F9 /* RCTCamera.xcodeproj */ = {isa = PBXFileReference; name = "RCTCamera.xcodeproj"; path = "../node_modules/react-native-camera/ios/RCTCamera.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		DF1022BF011E44F6B486BD52 /* libRCTCamera.a */ = {isa = PBXFileReference; name = "libRCTCamera.a"; path = "libRCTCamera.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		109015E15E8345FBBAE83BCD /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; name = "RNImagePicker.xcodeproj"; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		C529C34A51464F3988C927BE /* libRNImagePicker.a */ = {isa = PBXFileReference; name = "libRNImagePicker.a"; path = "libRNImagePicker.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		B6BDF4FA5B6B43B589EDEB05 /* RCTMaterialKit.xcodeproj */ = {isa = PBXFileReference; name = "RCTMaterialKit.xcodeproj"; path = "../node_modules/react-native-material-kit/iOS/RCTMaterialKit.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		372E135559724FEF9E84FB7E /* libRCTMaterialKit.a */ = {isa = PBXFileReference; name = "libRCTMaterialKit.a"; path = "libRCTMaterialKit.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		BBCE8FEB2BF643A58ECBAE63 /* FedraSansAltPro-Bold.otf */ = {isa = PBXFileReference; name = "FedraSansAltPro-Bold.otf"; path = "../fonts/FedraSansAltPro-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7248F7F8CD85484B82A1ABE8 /* FedraSansAltPro-Book.otf */ = {isa = PBXFileReference; name = "FedraSansAltPro-Book.otf"; path = "../fonts/FedraSansAltPro-Book.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2E4E00C4BA3E415C84ED69AB /* FedraSansAltPro-Demi.otf */ = {isa = PBXFileReference; name = "FedraSansAltPro-Demi.otf"; path = "../fonts/FedraSansAltPro-Demi.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A1064A6A1D6A4CD08476CE22 /* FedraSansAltPro-Light.otf */ = {isa = PBXFileReference; name = "FedraSansAltPro-Light.otf"; path = "../fonts/FedraSansAltPro-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EE477F527D8B47B1AFFF4245 /* FedraSansAltPro-Medium.otf */ = {isa = PBXFileReference; name = "FedraSansAltPro-Medium.otf"; path = "../fonts/FedraSansAltPro-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,8 +170,9 @@
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
-				AC4F2ED8EFC3423983B1256E /* libRNImagePicker.a in Frameworks */,
-				E0E8DE271B03450A81BC072B /* libRCTMaterialKit.a in Frameworks */,
+				7A2417B6641047B8A3B5C176 /* libRCTCamera.a in Frameworks */,
+				F9457213599743E880AF9C3D /* libRNImagePicker.a in Frameworks */,
+				9769FF7811674ECCAA6A0640 /* libRCTMaterialKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,8 +295,9 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
-				EA16A4FBC51B484AA2A64C08 /* RNImagePicker.xcodeproj */,
-				2CF699409D604B93A99E2825 /* RCTMaterialKit.xcodeproj */,
+				19456BACE5124B6C903D09F9 /* RCTCamera.xcodeproj */,
+				109015E15E8345FBBAE83BCD /* RNImagePicker.xcodeproj */,
+				B6BDF4FA5B6B43B589EDEB05 /* RCTMaterialKit.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -310,7 +317,7 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ReactNativeWorkshopTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
-				6E0773E485734AB7BD234B38 /* Resources */,
+				CF7ECF0DA3EA40D3922808CD /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -325,14 +332,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6E0773E485734AB7BD234B38 /* Resources */ = {
+		CF7ECF0DA3EA40D3922808CD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F3392104BAA6499096009089 /* FedraSansAltPro-Bold.otf */,
-				B952E60522BA40E08A394B48 /* FedraSansAltPro-Book.otf */,
-				EFF3FA59E17B4275A3BBAAC4 /* FedraSansAltPro-Demi.otf */,
-				EFE0E0159FA3409C8CE6DD3D /* FedraSansAltPro-Light.otf */,
-				7E84AD8B6F2E4B43A44D2FB4 /* FedraSansAltPro-Medium.otf */,
+				BBCE8FEB2BF643A58ECBAE63 /* FedraSansAltPro-Bold.otf */,
+				7248F7F8CD85484B82A1ABE8 /* FedraSansAltPro-Book.otf */,
+				2E4E00C4BA3E415C84ED69AB /* FedraSansAltPro-Demi.otf */,
+				A1064A6A1D6A4CD08476CE22 /* FedraSansAltPro-Light.otf */,
+				EE477F527D8B47B1AFFF4245 /* FedraSansAltPro-Medium.otf */,
 			);
 			name = Resources;
 			path = "";
@@ -540,11 +547,11 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				C3A5EEEC1063432D958664C5 /* FedraSansAltPro-Bold.otf in Resources */,
-				CC8FF1A968934016839D5982 /* FedraSansAltPro-Book.otf in Resources */,
-				3F52D238D8F74004812916D4 /* FedraSansAltPro-Demi.otf in Resources */,
-				8771EE5EDCBA46AF9D00CEB1 /* FedraSansAltPro-Light.otf in Resources */,
-				696A868E47B34467A0200519 /* FedraSansAltPro-Medium.otf in Resources */,
+				30148FD8E2164D97A307E4FD /* FedraSansAltPro-Bold.otf in Resources */,
+				C7D3AE2E6F7D483DA53FF3CB /* FedraSansAltPro-Book.otf in Resources */,
+				B5A74675411D47F5B6B6C2CF /* FedraSansAltPro-Demi.otf in Resources */,
+				1F17F0537BDD47C88DDC41ED /* FedraSansAltPro-Light.otf in Resources */,
+				0476951B26CD4C729A547B62 /* FedraSansAltPro-Medium.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +633,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -644,6 +652,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Release;
@@ -657,12 +666,14 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-material-kit/iOS/RCTMaterialKit",
 				);
 				INFOPLIST_FILE = "ReactNativeWorkshop/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
@@ -678,12 +689,14 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-material-kit/iOS/RCTMaterialKit",
 				);
 				INFOPLIST_FILE = "ReactNativeWorkshop/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
@@ -729,6 +742,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-material-kit/iOS/RCTMaterialKit",
 				);
@@ -771,6 +785,7 @@
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
+					"$(SRCROOT)/../node_modules/react-native-camera/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-image-picker/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-material-kit/iOS/RCTMaterialKit",
 				);

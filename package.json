@@ -6,19 +6,18 @@
     "start": "react-native start"
   },
   "dependencies": {
-    "fbjs": "^0.6.0",
-    "react": "15.2.0",
-    "react-native": "^0.29.0",
+    "fbjs": "^0.8.3",
+    "react": "15.2.1",
+    "react-native": "^0.31.0",
     "react-native-camera": "git+https://github.com/lwansbrough/react-native-camera.git",
-    "react-native-image-picker": "0.18.3",
+    "react-native-image-picker": "0.21.5",
     "react-native-material-kit": "0.3.2",
-    "react-redux": "4.4.4",
-    "redux": "3.1.7",
-    "redux-thunk": "1.0.3",
-    "undefined": "^0.1.0"
+    "react-redux": "4.4.5",
+    "redux": "3.5.2",
+    "redux-thunk": "2.1.0"
   },
   "devDependencies": {
-    "react-native-cli": "^0.1.10"
+    "react-native-cli": "^1.0.0"
   },
   "rnpm": {
     "assets": [
