@@ -3,7 +3,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { Colors, Fonts } from './../config/design';
-import Image from './image';
+import CustomImage from './custom-image';
 
 const Message = ({ from, message, image }) => {
   return (
@@ -26,10 +26,10 @@ const Message = ({ from, message, image }) => {
 }
 
 const _maybeRenderImage = source => {
-  if (source !== undefined && source.length > 0) {
+  if (source && source.length > 0) {
     return (
       <View style={styles.image}>
-        <Image source={source} />
+        <CustomImage source={source} />
       </View>
     );
   }
