@@ -51,11 +51,11 @@ const renderRow = (rowData) => {
       message={ message }
       image={ image } />
   );
-}
+};
 
 const validateMessage = message => {
   return message.message && message.message.length > 0
-}
+};
 
 MessageList.propTypes = {
   messages: React.PropTypes.array.isRequired,
