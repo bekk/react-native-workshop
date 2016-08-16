@@ -5,7 +5,6 @@ import android.util.Log;
 
 import com.github.xinthink.rnmk.ReactMaterialKitPackage;
 import com.imagepicker.ImagePickerPackage;
-import com.lwansbrough.RCTCamera.RCTCameraPackage;
 
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactInstanceManager;
