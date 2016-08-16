@@ -9,7 +9,6 @@
     "fbjs": "^0.8.3",
     "react": "15.2.1",
     "react-native": "^0.31.0",
-    "react-native-camera": "git+https://github.com/lwansbrough/react-native-camera.git",
     "react-native-image-picker": "0.21.5",
     "react-native-material-kit": "0.3.2",
     "react-redux": "4.4.5",
