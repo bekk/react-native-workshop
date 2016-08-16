@@ -22,7 +22,7 @@ export default class CustomImage extends Component {
 
     return <Image
       style={ styles.thumb }
-      source={{ uri: "" }}
+      source={{ uri: this.props.source }}
       defaultSource={placeholder}
       onError={ this._onLoadImageFailure.bind(this) } />;
   }
