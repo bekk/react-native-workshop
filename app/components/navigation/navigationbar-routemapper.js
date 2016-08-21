@@ -1,6 +1,6 @@
 'use strict';
 import React from 'react';
-import { Text, TouchableOpacity, Image } from 'react-native';
+import { Text, TouchableOpacity, Image, View } from 'react-native';
 import BackArrow from '../../resources/back-arrow.png';
 import navigationBarButtons from './navigationbar-buttons';
 import { navigatorPop } from '../../actions/actions';
@@ -18,7 +18,7 @@ const styles = {
 const commonRouteMapper = (dispatch) => ({
 
   LeftButton(route, navigator, index) {
-    return null;
+    return <View />;
   },
 
   Title(route) {

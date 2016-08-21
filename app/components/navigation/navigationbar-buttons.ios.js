@@ -1,6 +1,6 @@
 'use strict';
 import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text, View } from 'react-native';
 import { StyleSheet } from 'react-native';
 import { Colors } from './../../config/design';
 import { newMessageRoute, messageListRoute } from './routes';
@@ -21,7 +21,7 @@ const navigationBarButtons = (dispatch) => ({
 
   RightButton: function (route) {
     // Hint dispatch navigateTo(newMessage)) to change the route (and use the styles above for layout)
-    return null;
+    return <View />;
   }
 });
 

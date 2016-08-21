@@ -1,6 +1,6 @@
 'use strict';
 import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text, View } from 'react-native';
 import { newMessageRoute } from './routes';
 import { connect } from 'react-redux';
 import { postMessage as postMessageAction } from '../../actions/actions';
@@ -23,7 +23,7 @@ const navigationBarButtons = (dispatch) => {
   return {
     RightButton (route) {
       // Hint: implement the send-button for android here (and use the styles above for layout)
-      return null;
+      return <View />;
     }
   };
 };
