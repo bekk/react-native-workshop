@@ -22,22 +22,6 @@ export default class MessageList extends Component {
   }
 }
 
-const renderRow = (rowData) => {
-  const image = rowData.image;
-  const from = rowData.from || '';
-  const message = rowData.message || '';
-
-  return (
-    <Message from={ from }
-      message={ message }
-      image={ image } />
-  );
-};
-
-const validateMessage = message => {
-  return message.message && message.message.length > 0
-};
-
 MessageList.propTypes = {
   messages: React.PropTypes.array.isRequired,
   refreshView: React.PropTypes.func.isRequired,
