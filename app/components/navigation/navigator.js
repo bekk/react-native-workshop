@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navigator, StyleSheet, Platform } from 'react-native';
+import { BackAndroid, Navigator, StyleSheet, Platform } from 'react-native';
 import { newMessageRoute, messageListRoute } from './routes';
 import getNavigationBarRouteMapper from './navigationbar-routemapper';
 import { connect } from 'react-redux';
@@ -30,6 +30,24 @@ class CustomNavigator extends Component {
     return this.refs.navigator;
   }
 
+  _handleBackbutton() {
+    const navigator = this.getNavigator();
+    if (navigator.getCurrentRoutes().length === 1) {
+      return false;
+    }
+    navigator.pop();
+    return true;
+  }
+
+  componentDidMount() {
+    this.props.dispatch(setNavigator(this.getNavigator()));
+    BackAndroid.addEventListener('hardwareBackPress', this._handleBackbutton.bind(this));
+  }
+
+  componentWillUnmount() {
+    BackAndroid.removeEventListener('hardwareBackPress', this._handleBackbutton.bind(this));
+  }
+
   render() {
     return (
       <Navigator
@@ -47,9 +65,6 @@ class CustomNavigator extends Component {
     );
   }
 
-  componentDidMount() {
-    this.props.dispatch(setNavigator(this.getNavigator()));
-  }
 }
 
 export default connect()(CustomNavigator);

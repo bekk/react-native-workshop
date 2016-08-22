@@ -1,6 +1,7 @@
 'use strict';
+import React from 'react';
 import { Text } from 'react-native';
-import Red from './../config/design';
+import { Red } from './../config/design';
 
 export const ErrorMessage = () => (
   <Text style={{ marginLeft: 16, marginTop: 100, color: Red }}>
