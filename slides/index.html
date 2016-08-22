@@ -74,13 +74,16 @@ class: agenda
 ## Problems with cross platform
 - Bad performance
 - Not (always) native look & feel
-- The tooling and debuging are not as good as in native development
-- Limited functionlity
+- The tooling and debugging is not as good as in native development
+- Limited functionality 
 
 ???
 
+## Cross platform, wrapped web pages etc.
 ## Facebook has tried the most of it. And for a while the app was just a wrapped WebView. With poor performance.
+## Not the native experience
 ## But the web has solved a lot of problems that are present in native and cross platform development, so they wanted to build on that. But the web isn't ready to replace native yet.
+## So what we want is the native experience, with the developer experience from the web
 
 ---
 
@@ -94,7 +97,7 @@ class: agenda
 ???
 
 ## Modules, virtual DOM og declarative API. We describes what the program should render, not how.
-## Doesn't have to render to the DOM. 
+## Doesn't have to render to the DOM, since the view system is separated from the view implementation.
 ## Apparent in new version of React.js. where React and ReactDOM is separated.
 ## NOT write once. But it is encouraging reuse. F.eks APIS, events, business-logic. But not necessarily view-code.
 ## Should be familiar to developers coming from JS and React.
@@ -193,7 +196,7 @@ class: cols two
 ## As I said earlier, the DOM is interchanged.
 ## Not WebView, so it feels native. Parts of the Facebook app is actually RM. That is the Events part of the app.
 ## Sends batched commands to the UI thread.
-## Multiple theads, as opposed to the web. Decode images, save to disc, do layout measurements can be done outside of the UI thead => Responsive app.
+## Multiple threads, as opposed to the web. Decode images, save to disc, do layout measurements can be done outside of the UI thead => Responsive app.
 ## The stated goal for Facebook has been 60 fps, for a snappy UI
 
 ---
@@ -280,7 +283,6 @@ class: cols two
 # Styling - FLEXBOX
 
 ## Flexbox is used to lay out components
-## Frames for UI elements
 ## Based on Flexbox from css
 ## flex direction, flex, align items, align self, justify content, ...
 
@@ -289,7 +291,7 @@ class: cols two
 
 ## A javascript-implementations of Flexbox. Based on CSS standards
 ## So you have containers who specifies child nodes, and you lay out in either columns or rows.
-## I will demonstrate this quick noe, and the slides are more of a reference for you guys when implementing the tasks. And links to more documentation is provided along with the tasks.
+## I will demonstrate this quick react-native-workshop, and the slides are more of a reference for you guys when implementing the tasks. And links to more documentation is provided along with the tasks.
 
 ---
 
@@ -763,7 +765,7 @@ var styles = StyleSheet.create({
 
 ???
 
-## Export moduler, f.eks. base-styling
+## Export modules, f.eks. base-styling
 
 ---
 
