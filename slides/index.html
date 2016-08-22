@@ -40,8 +40,9 @@ class: agenda
 
 ???
 
+## Some topics that will prepare you for the assignments
 ## Before I start. Who are familiar with React, RN, Redux?
-## I will do this quick, so you get more time coding. But you are free to use these slides as reference during the coding as well
+## I will not go deep into the inner workings of RN, but I will do this quick, so you get more time coding. But you are free to use these slides as reference during the coding as well.
 
 ---
 
@@ -57,14 +58,14 @@ class: agenda
 
 ???
 
-## By Facebook, and used frequently.
+## Facebook uses React Native in multiple production apps and and they have stated that they will continue investing in React Native.
 ## During this years F8-conference by Facebook Windows support was annouced. Can use RN-components in UWP-apps. Supported i, Visual Studio Code 
 ## Already a big community. Provides PR and creates React components.
-## Frequent releases. Always several new versjon when between each time we work with this workshop.
+## Frequent releases. Always several new versions between each time we work on this workshop.
 
 ## Didn't work to wrap webapps anymore. The web isn't ready for it, yet.
-## Can do lots of cool things with native, but they thought that the development was to slow with native. The development environmen was slower. Could take a minute or more to recompile and deploy, and watch the changes in the app.
-## Developers need to learn several languages, apis and tools. It was not as lean as they were using to from the web. And business logic had to be developed twice. For iOS and Android.
+## Can do lots of cool things with native, but they thought that the development was to slow with native. The development environment was slower. Could take a minute or more to recompile and deploy, and watch the changes in the app.
+## Developers need to learn several languages, apis and tools. It was not as lean as they were used to from the web and with react.. And business logic had to be developed at least twice. For iOS and Android.
 
 ---
 
@@ -79,7 +80,7 @@ class: agenda
 ???
 
 ## Facebook has tried the most of it. And for a while the app was just a wrapped WebView. With poor performance.
-## But the web has solved a lot of problems that are present in native and cross platform development, so they wanted to build on that
+## But the web has solved a lot of problems that are present in native and cross platform development, so they wanted to build on that. But the web isn't ready to replace native yet.
 
 ---
 
@@ -93,12 +94,12 @@ class: agenda
 ???
 
 ## Modules, virtual DOM og declarative API. We describes what the program should render, not how.
-## Doesn't have to renger to the DOM. 
+## Doesn't have to render to the DOM. 
 ## Apparent in new version of React.js. where React and ReactDOM is separated.
 ## NOT write once. But it is encouraging reuse. F.eks APIS, events, business-logic. But not necessarily view-code.
-## Should be familiar to developes coming from JS and React.
+## Should be familiar to developers coming from JS and React.
 ## Can reuse components from the web, and in addition get access to platform components.
-## So in many cases it is npm install, Så i mange tilfeller er det npm install, and you're good to go
+## So in many cases it is npm install, and you're good to go
 
 ---
 
@@ -124,6 +125,8 @@ class: agenda
 
 ???
 
+## Much like React.js, but you can't copy paste your React.js app and call it the day.
+## But it is still JSX
 ## Button
 
 ---
@@ -164,7 +167,7 @@ class: cols two
 .col[
 ## The most common components and APIs are available
 ## You can write your own modules in native code, and expose
-## Many are already available as npm modules
+## Many components from the community are available as npm modules
 ]
 
 .col[
@@ -172,14 +175,14 @@ class: cols two
 ]
 
 ???
-## Orientation-change, 3D-touch are not officialy implemented, but are available as npm modules
+## As with other platforms there will be a delay between a new feature in the platforms and implementation in RN, but are available as npm modules
 
 ---
 
 # Not a web app!
 
 ## Is not a React-js app wrapped in a WebView
-## Proper ut native platform components
+## Proper native platform components
 ## Optimizations
 - JS runs on JavaScriptCore
 - JS runs asyncronous, separated from the UI thread. 
@@ -187,8 +190,8 @@ class: cols two
 
 ???
 ## That it is based on React.js does not mean that is is a React.JS app wrapped in a WebView
-## As I said earlier, the DOM is interchgned.
-## Not WebView, so it feels native. Parts of the Facebook app is actually RM. That os the Events/arrangementer part of the app.
+## As I said earlier, the DOM is interchanged.
+## Not WebView, so it feels native. Parts of the Facebook app is actually RM. That is the Events part of the app.
 ## Sends batched commands to the UI thread.
 ## Multiple theads, as opposed to the web. Decode images, save to disc, do layout measurements can be done outside of the UI thead => Responsive app.
 ## The stated goal for Facebook has been 60 fps, for a snappy UI
@@ -245,7 +248,7 @@ class: cols two
 
 ## Packager builds the app, and is running in the backgroud waiting for changes.
 ## A common obstacle in native development is the environment. Many people are not comfortable with XCode.
-## Can run in Chromes V8 (communicates with native via WebSockets) and use the normal Chrome debugger
+## Can run in Chromes V8 (communicates with native via WebSockets) and use the normal Chrome debugger like you're used to
 ## Of you are developing on a device, you can shake it to access developer options.
 ---
 
