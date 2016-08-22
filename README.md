@@ -5,7 +5,7 @@
 To setup your environment, follow the steps [here](setup.md).
 
 ## Feedback
-Please submit feedback [here](https://program.bekk.no/#153)
+Please submit feedback [here](https://docs.google.com/forms/d/e/1FAIpQLSc0F8UiaUmo-IjyvjIHgHL6258aqCB7zk0o5XVi20GV4nAxvQ/viewform?c=0&w=1)
 
 ## Links
 * [Slides](https://bekk.github.io/react-native-workshop/slides)
