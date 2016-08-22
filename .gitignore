@@ -21,6 +21,8 @@ DerivedData
 *.ipa
 *.xcuserstate
 project.xcworkspace
+.tags
+.tags1
 
 # Android/IJ
 #
