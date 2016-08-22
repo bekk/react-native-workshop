@@ -66,3 +66,11 @@ Devlopment for IOS devices requires XCode (>7.x.x) to be installed, find it in t
 4. Verify that the app is running in the simulator
 
 If steps 3 returns an error, try starting XCode and start an emulator before"
+
+If you get the following error:
+`ld: library not found for -lRCTCamera`
+![ReactNativeCamera Error](http://i.imgur.com/HAQGiFd.png)
+
+You need to install an additional dependency:
+`npm install react-native-camera@https://github.com/lwansbrough/react-native-camera.git --save`
+
