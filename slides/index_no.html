@@ -21,9 +21,9 @@ class: front-page
 # React Native
 ## Workshop
 
-Mobile Meetup
+Bekk Open Fagdag
 
-23.08.2016
+15.04.2016
 
 ---
 
@@ -32,91 +32,92 @@ class: agenda
 # Agenda
 
 * Intro
-* Syntax and styling
+* Syntaks og styling
 * Redux
-* Navigation
+* Navigasjon
 * Instant deploy?
-* You're next!
+* Deres tur!
 
 ???
 
-## Before I start. Who are familiar with React, RN, Redux?
-## I will do this quick, so you get more time coding. But you are free to use these slides as reference during the coding as well
+## Før jeg setter igang. Hvem er kjent med React, RN, Redux?
+## Skal prøve å være rask, så dere får så mer tid til å kode
 
 ---
 
 # Intro - Native
 
-## Released for iOS January 2015 og for Android in september, by Facebook
-## As of April 2016, also for Windows (UWP)
+## Lansert for iOS i januar 2015 og for Android i september av Facebook
+## Nå også for Windows (UWP)
 ## Open Source
-## Problems with (traditional) native
-- Slow development cycle
-- Slow deployment process
-- Separate teams for each platform
+## Problemer med (tradisjonell) native
+- Treg utviklingsyklus
+- Treg deploymentprosess
+- Separate team for hver platform
 
 ???
 
-## By Facebook, and used frequently.
-## During this years F8-conference by Facebook Windows support was annouced. Can use RN-components in UWP-apps. Supported i, Visual Studio Code 
-## Already a big community. Provides PR and creates React components.
-## Frequent releases. Always several new versjon when between each time we work with this workshop.
+## Av Facebook, aktivt brukt.
+## Rykende ferskt fra F8-konferansen til Facebook. Kan bruke RN-komponenter i UWP-apps. Støtte i Visual Studio Code 
+## Allerede stort community. PR, React komponenter. 
+## Noen har også lagt til OSX desktop støtte
+## Hyppige releases. Flere nye versjoner i løpet av de ukene vi jobbet med denne workshopen
 
-## Didn't work to wrap webapps anymore. The web isn't ready for it, yet.
-## Can do lots of cool things with native, but they thought that the development was to slow with native. The development environmen was slower. Could take a minute or more to recompile and deploy, and watch the changes in the app.
-## Developers need to learn several languages, apis and tools. It was not as lean as they were using to from the web. And business logic had to be developed twice. For iOS and Android.
+## Funket ikke å pakke inn webapps lengre. Webben er ikke klar enda.
+## Kan gjøre mye kult med native, men de synes det gikk for treigt å utvikle native. Treigere utviklingsmiljø. 1 minutt å bygge.
+##Utviklere må kunne flere språk, apier og verktøy. Rett og slett ikke smidig nok ut ifra det de var vant til fra webben. Måtte kjenne og implementere businesslogikk dobbelt.
+
 
 ---
 
-# Intro - Cross platform
+# Intro - Kryssplattform
 
-## Problems with kryssplattform
-- Bad performance
-- Not (always) native look & feel
-- The tooling and debuging are not as good as native development
-- Limited functionlity
+## Problemer med kryssplattform
+- Dårligere ytelse
+- Ikke (alltid) native look & feel
+- Dårlig verktøystøtte og debug
+- Begrenset funksjonalitet
 
 ???
 
-## Facebook has tried the most of it. And for a while the app was just a wrapped WebView. With poor performance.
-## But the web has solved a lot of problems that are present in native and cross platform development, so they wanted to build on that
+## Facebook har jo prøvd litt av hvert. Pakket inn appen i WebView en stund.
 
 ---
 
-# What is React Native?
+# Hva er React Native?
 
-## Build on React.js
-## Same principles, with virual DOM
-## Web-DOM is replaced with native components
+## Bygger på React.js
+## Samme prinsipper, med virtuell DOM
+## Web-DOM er byttet ut med native komponenter
 ## _Learn_ once, write anywhere
 
 ???
 
-## Modules, virtual DOM og declarative API. We describes what the program should render, not how.
-## Doesn't have to renger to the DOM. 
-## Apparent in new version of React.js. where React and ReactDOM is separated.
-## NOT write once. But it is encouraging reuse. F.eks APIS, events, business-logic. But not necessarily view-code.
-## Should be familiar to developes coming from JS and React.
-## Can reuse components from the web, and in addition get access to platform components.
-## So in many cases it is npm install, Så i mange tilfeller er det npm install, and you're good to go
+## Moduler, virtuell DOM og deklarativt API. Vi beskriver hva programmet skal gjøre, ikke hvordan.
+## Må ikke rendre til DOM. 
+## Tydelig i nye versjoner av React.js, der React og ReactDOM splittes
+## IKKE write once, der altså. Men det ligger til rette for gjenbruk. F.eks apier, events, business-logikk. Men ikke nødvendigvis view-kode.
+## Skal være kjent for utviklere som kommer fra JS og React.
+## Kan gjenbruke komponenter fra webben, og i tillegg får tilgang til platformkomponenter
+## Så i mange tilfeller er det npm install, tut & kjør
 
 ---
 
-# Much like React.js 1/2
+# Ikke ulikt React.js 1/2
 
 ```html
 <div>
-  <span>Hello world</span>
-  <button>Click me!</button>
+  <span>Hei sveis</span>
+  <button>Trykk på meg</button>
 </div>
 ```
 
 ```html
 <View>
-  <Text>Hello world</Text>
+  <Text>Hei sveis</Text>
   <TouchableOpacity>
     <Text>
-      Click me!
+      Trykk på meg
     </Text>
   </TouchableOpacity>
 </View>
@@ -124,10 +125,10 @@ class: agenda
 
 ???
 
-## Button
+## Knapp
 
 ---
-# Much like React.js 2/2
+# Ikke ulikt React.js 2/2
 
 ```html
 <input
@@ -153,18 +154,18 @@ class: agenda
 ???
 
 ## Input
-## React-Native uses "Controlled Components", so there is a 'value' prop
+## React-Native bruker "Controlled Components", så man har en 'value' prop
 
 ---
 
 class: cols two
 
-# Components
+# Komponenter
 
 .col[
-## The most common components and APIs are available
-## You can write your own modules in native code, and expose
-## Many are already available as npm modules
+## De vanligste komponentene og API-ene er tilgjengelige
+## Men kan skrive egne komponenter i native kode og eksponere
+## Mange finnes allerede som npm-moduler
 ]
 
 .col[
@@ -172,26 +173,26 @@ class: cols two
 ]
 
 ???
-## Orientation-change, 3D-touch are not officialy implemented, but are available as npm modules
+## Orientation-change, 3D-touch (er på vei) ikke implementert enda 
 
 ---
 
-# Not a web app!
+# Ikke webapp
 
-## In a React-js app wrapped in a WebView
-## Proper ut native platform components
-## Optimizations
-- JS runs on JavaScriptCore
-- JS runs asyncronous, separated from the UI thread. 
-- JS to Native via "bridge".
+## Ikke en React.js-app pakket inn i WebView
+## Fullt ut native plattformkomponenter
+## Optimaliseringer
+- JS kjører på JavaScriptCore
+- JS kjøres asynkront, utenfor UI-tråden. 
+- JS til Native via "bridge".
 
 ???
-## That it is based on React.js does not mean that is is a React.JS app wrapped in a WebView
-## As I said earlier, the DOM is interchgned.
-## Not WebView, so it feels native. Parts of the Facebook app is actually RM. That os the Events/arrangementer part of the app.
-## Sends batched commands to the UI thread.
-## Multiple theads, as opposed to the web. Decode images, save to disc, do layout measurements can be done outside of the UI thead => Responsive app.
-## The stated goal for Facebook has been 60 fps, for a snappy UI
+## At det er basert på React.js betyr ikke at det er en React-app pakket inn i et WebView
+## Som sagt, DOM er byttet ut.
+## Ikke WebView, så det føles native. Deler av Facebook-appen er RN. Kan dere gjette hvilken? Events/arrangementer
+## Sender kommandoer i batcher til UI-tråden.
+## Flere tråder, i motsetning til web. Dekode bilder, lagre til disk, gjøre layoutberegninger utenfor UI-tråden. => Responsivt
+## Målet for Facebook har hele tiden vært 60 fps, for snappy UI
 
 ---
 
@@ -202,23 +203,23 @@ class: cols two
 
 ???
 
-## Receives an input, click.
-## Gathers information, serialize it to JSON, and sends it to JSCore.
-## JS processes events and creates a list of native commands.
-## This is serialized and sent back to Native.
-## Processes commands and updates UI
+## Får input, click.
+## Samler informasjon, serialiserer det, og sender til JSCore
+## JS prosesserer event og lager en liste over native kommandoer.
+## Dette serialiseres og sendes tilbake til native
+## Prosesserer kommandoene og oppdaterer UI
 
 https://speakerdeck.com/frantic/react-native-under-the-hood
 
 ---
-#What do you need?
+#Hva trenger man?
 
 * XCode
 * Android-SDK
 * Node 4.x
 * npm 3
 * react-native-cli
-* Your favorite editor/IDE
+* Det du skriver JS i
 
 ???
 
@@ -228,13 +229,13 @@ https://speakerdeck.com/frantic/react-native-under-the-hood
 
 class: cols two
 
-# Development environment!
+# Utviklingsmiljø!
 
 .col[
-## React Native ships with a Packager
-## Updates with ⌘-R
-## Debugging in Chrome. ⌘-D (iOS) / F2(Android)
-## Descriptive and in-your-face error messages
+## React Native kommer med Packager
+## Oppdateringer med ⌘-R
+## Debugging i Chrome. ⌘-D (iOS) / F2(Android)
+## Tydelige feilmeldinger
 ]
 
 .col[
@@ -243,13 +244,13 @@ class: cols two
 
 ???
 
-## Packager builds the app, and is running in the backgroud waiting for changes.
-## A common obstacle in native development is the environment. Many people are not comfortable with XCode.
-## Can run in Chromes V8 (communicates with native via WebSockets) and use the normal Chrome debugger
-## Of you are developing on a device, you can shake it to access developer options.
+## Packager bygger appen, og står i bakgrunnen og venter på endringer.
+## Noe av det mange sliter med er utviklingsmiljø. Mange som ikke er komfortable med XCode
+## Kan kjøre opp i Chromes V8 (kommuniserer med native via WebSockets) og bruke vanlig debugger
+## Hvis man utvikler på enhet kan man riste på den for å få opp utviklervalg
 ---
 
-# Styling - Known from CSS
+# Styling - Kjent og kjært fra CSS
 
 ## "Inline styles"
 ## camelCasing
@@ -262,31 +263,30 @@ class: cols two
   fontSize: 20,
   fontWeight: 'bold',
   marginBottom: 10}}>
-  Welcome to Mobile Meetup workshop
+  Velkommen til Bekk Open Fagdag
 </Text>
 ```
 
 ???
 
-## A javascript-implementation of CSS
-## Most of the common CSS-props are implemented
-## Inline styles with JS-objekter
+## En javascript-implementasjon av CSS
+## De fleste vanlige CSS-props er på plass
+## Inline styles med JS-objekter
 
 ---
 
 # Styling - FLEXBOX
 
-## Flexbox is used to lay out components
-## Frames for UI elements
-## Based on Flexbox from css
+## Plassering av elementer gjøres med Flexbox
+## Basert på Flexbox fra css
 ## flex direction, flex, align items, align self, justify content, ...
 
 
 ???
 
-## A javascript-implementations of Flexbox. Based on CSS standards
-## So you have containers who specifies child nodes, and you lay out in either columns or rows.
-## I will demonstrate this quick noe, and the slides are more of a reference for you guys when implementing the tasks. And links to more documentation is provided along with the tasks.
+## En javascript-implementasjon av Flexbox. Baserer seg på CSS-standarder
+## Så man har containere som spesifiserer barnenoder, og man deler opp i kolonner eller rader.
+## Går fort igjennom nå, mer som et oppslagsverk for oppgavene, linker til mer dokumentasjon finnes sammen med oppgavene
 
 ---
 
@@ -303,7 +303,7 @@ class Flexbox extends Component {
       <View style={{flex: 1, 
       flexDirection: 'column'}}>
         <View style={{flex: 1, 
-        backgroundColor: 'white'}}>
+        backgroundColor: '#252525'}}>
         </View>
         <View style={{flex: 1, 
         backgroundColor: '#e9555f'}}>
@@ -324,8 +324,8 @@ class Flexbox extends Component {
 
 ???
 
-## Along which axis the child nodes are laid out
-## Column: top to bottom
+## Hvilken akse skal barnenodene legges ut.
+## Column: topp til bunn
 
 ---
 class: cols two
@@ -341,7 +341,7 @@ class Flexbox extends Component {
       <View style={{flex: 1, 
       flexDirection: 'row'}}>
         <View style={{flex: 1, 
-        backgroundColor: 'white'}}>
+        backgroundColor: '#252525'}}>
         </View>
         <View style={{flex: 1, 
         backgroundColor: '#e9555f'}}>
@@ -362,7 +362,7 @@ class Flexbox extends Component {
 
 ???
 
-## Left to right in a row
+## Venstre til høyre i en rad
 
 ---
 class: cols two
@@ -372,19 +372,21 @@ class: cols two
 ## justifyContent: flex-start (default)
 .col[
 ```html
-      <View style={{flex: 1, 
+      <View style={{flex: 1}}>
+        <View style={{flex: 1, 
         justifyContent='flex-start', 
         backgroundColor: '#e9555f', 
         paddingTop:50}}>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
+        </View>
       </View>
 ```
 ]
@@ -396,8 +398,8 @@ class: cols two
 ???
 
 ## This defines the alignment along the main axis
-## How elements are laid out inside of the container
-## This refers to the child elements
+## Hvordan skal elementer legges ut i containeren?
+## Gjelder barn
 
 ---
 
@@ -408,19 +410,21 @@ class: cols two
 ## justifyContent: center
 .col[
 ```html
-      <View style={{flex: 1, 
+      <View style={{flex: 1}}>
+        <View style={{flex: 1, 
         justifyContent='center', 
         backgroundColor: '#e9555f', 
         paddingTop:50}}>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
+        </View>
       </View>
 ```
 ]
@@ -438,19 +442,21 @@ class: cols two
 ## justifyContent: flex-end
 .col[
 ```html
-      <View style={{flex: 1, 
+      <View style={{flex: 1}}>
+        <View style={{flex: 1, 
         justifyContent='flex-end', 
         backgroundColor: '#e9555f', 
         paddingTop:50}}>
+          <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
-         <Text style={{
-          backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
+        </View>
       </View>
 ```
 ]
@@ -468,19 +474,21 @@ class: cols two
 ## justifyContent: space-around
 .col[
 ```html
-      <View style={{flex: 1, 
+      <View style={{flex: 1}}>
+        <View style={{flex: 1, 
         justifyContent='space-around', 
         backgroundColor: '#e9555f', 
         paddingTop:50}}>
+          <Text style={{
+          backgroundColor: '#36bdb2', 
+          padding:10}}>Hei på dere</Text>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
-         <Text style={{
-          backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
+        </View>
       </View>
 ```
 ]
@@ -498,19 +506,21 @@ class: cols two
 ## justifyContent: space-between
 .col[
 ```html
-      <View style={{flex: 1, 
+      <View style={{flex: 1}}>
+        <View style={{flex: 1, 
         justifyContent='space-between', 
         backgroundColor: '#e9555f', 
         paddingTop:50}}>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
+        </View>
       </View>
 ```
 ]
@@ -529,19 +539,21 @@ class: cols two
 ## align-items: stretch (default)
 .col[
 ```html
-      <View style={{flex: 1, 
+     <View style={{flex: 1}}>
+        <View style={{flex: 1, 
         alignItems:'stretch', 
         backgroundColor: '#e9555f', 
         paddingTop:50}}>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
+        </View>
       </View>
 ```
 ]
@@ -551,8 +563,7 @@ class: cols two
 ]
 
 ???
-## This defines the alignment across the main axis
-## Also for child nodes. Equivalent for elements is alignSelf
+## Gjelder også barnenoder. Tilsvarende for elementer er alignSelf
 
 ---
 
@@ -563,19 +574,22 @@ class: cols two
 ## align-items: flex-start
 .col[
 ```html
-      <View style={{flex: 1, 
+```html
+     <View style={{flex: 1}}>
+        <View style={{flex: 1, 
         alignItems:'flex-start', 
         backgroundColor: '#e9555f', 
         paddingTop:50}}>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
+        </View>
       </View>
 ```
 ]
@@ -594,19 +608,22 @@ class: cols two
 ## align-items: flex-end
 .col[
 ```html
-      <View style={{flex: 1, 
+ ```html
+     <View style={{flex: 1}}>
+        <View style={{flex: 1, 
         alignItems:'flex-end', 
         backgroundColor: '#e9555f', 
         paddingTop:50}}>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
+        </View>
       </View>
 ```
 ]
@@ -625,19 +642,22 @@ class: cols two
 ## align-items: center
 .col[
 ```html
-      <View style={{flex: 1, 
+```html
+     <View style={{flex: 1}}>
+        <View style={{flex: 1, 
         alignItems:'center', 
         backgroundColor: '#e9555f', 
         paddingTop:50}}>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
          <Text style={{
           backgroundColor: '#36bdb2', 
-          padding:10}}>Hello world!</Text>
+          padding:10}}>Hei på dere</Text>
+        </View>
       </View>
 ```
 ]
@@ -674,10 +694,10 @@ class: cols two
 
 ???
 
-## How much space should the element get?
-## If all have the same value, the get the same amount of space
-## 0 => As much space as the element needs
-## >0 As much space as possible
+## Hvor mye plass skal elementet ta?
+## Dersom alle har lik verdi tar de like stor plass
+## 0 => Så mye plass elementet trenger
+## >0 Så mye plass som mulig
 
 
 ---
@@ -710,7 +730,7 @@ class: cols two
 
 # Style-objekter
 
-## Common to extract into style objects
+## Vanlig å trekke ut i style-objekter
 .col[
 ```html
 <View style={styles.row}>
@@ -721,10 +741,10 @@ class: cols two
   />
   <View style={styles.text}>
     <Text style={styles.title}>
-      Hello world!!
+      Hei på dere!
     </Text>
     <Text style={styles.subtitle}>
-      Welcome to Mobile Meetup workshop
+      Velkommen til Bekk Open Fagdag
     </Text>
   </View>
 </View>
@@ -748,38 +768,38 @@ var styles = StyleSheet.create({
 
 # FLEXBOX
 
-## Can have multiple "classes"
+## Kan ha flere "klasser"
 ```html
 <View style={[styles.base, styles.background]} />
 ```
 
-## And conditional classes
+## Og conditional klasser
 ```html
 <View style={[styles.base, this.state.active && styles.active]} />
 ```
 
 ???
 
-## Export moduler, f.eks. base-styling
+## Exportere moduler, f.eks. base-styling
 
 ---
 
 
 # State/Redux
 
-## A simplified implementation of Flux
+## En enklere implementasjon av Flux
 ## Single store
-## Actions - describes the change of state
-## Reducers - returns new state based on action
+## Actions - for å gjøre endringer på state
+## Reducers - returnerer ny state basert på action 
 
 
 ???
 
 ## State container. Noe av det fine med RN. At man kan bruke eksisterende moduler og konsepter
 ## 3 prinsipper
-## Single source of truth - One single store
-## State is read-only - The only way to change the state is to emit an action, an object describing what happened.
-## Changes are made with pure functions - To specify how the state tree is transformed by actions, you write pure reducers.
+## Single source of truth - En store
+## State is read-only - Kan kun endre state ved å sende inn en action om hva som skjedd
+## Changes are made with pure functions - Reducer er en mapping mellom action og state. Returnerer neste state.
 
 ---
 
@@ -800,7 +820,7 @@ const store = createStore(rnWorkshop);
 
 ???
 
-# Views listens to the state
+# Views lytter på state
 
 ---
 
@@ -823,7 +843,7 @@ store.dispatch(setUsername("Mark Z."));
 
 ???
 
-## What did happen?
+## Hva har skjedd?
  
 
 ---
@@ -842,44 +862,44 @@ function messageReducer(state = initialState, action) {
 
 ???
 
-## Reducer is a mapping between action and state. Returns next state
-## Do not mutate state. Return new state.
+## Reducer er en mapping mellom action og state. Returnerer neste state.
+## Skal ikke klusse med state, men returnere ny state.
 
 
 ---
 
-# They haven't nailed everything ...
+# Ikke fått til alt ...
 
 ## Navigator, NavigatorIOS, NavigatorExperimental, WTF?
 
 ???
 
-## Navigator: Unclear API, and not documented best practices. (NavigationBar in one example)
-- Not as smooth animations
-## NavigatorIOS: Limited API, and not supported og developed by Facebook
-## NavigatorExperimental: New. 
+## Navigator: Uklart API, og lite dokumenterte best practices. (NavigationBar bl.a)
+- Ikke like smoothe animasjoner
+## NavigatorIOS: Begrenset API, og ikke supportert eller videreutviklet av Facebook
+## NavigatorExperimental: Nytt. 
 
 ---
 
 
-# How to use Navigator
+# Bruk av Navigator
 
-## Important functions:
-`initialRoute` - starting point for Navigator
+## Viktigste funksjoner:
+`initialRoute` - startpunktet for Navigator
 
-`renderScene` - describe how a scene is to be rendered based on active route
+`renderScene` - beskrive hvordan en side skal rendres basert på hvilken route som er aktiv
 
-`push(route)` - navigate to a new page/component
+`push(route)` - naviger til ny side/komponent
 
 ???
 
-## Route object that identifies a page
+## Routeobjekt som identifiserer enside
 
 ---
 
-# How to use Navigator
+# Bruk av Navigator
 
-## We have wrapped Navigaton to abstract parts of the functionality and difficulties using it
+## Vi har pakket inn Navigator, slik at en del av funksjonaliteten er abstrahert bort.
 
 ## Init (app.js):
 ```
@@ -888,27 +908,27 @@ import Navigator from './components/navigation/navigator';
 <Navigator ref="navigator" />
 ```
 
-## Use:
+## Bruk:
 ```
 import { navigateTo } from '../actions/actions';
 import NewMessage from '../new-message';
 
-dispatch(navigateTo({component: NewMessage, title: 'Compose message'});
+dispatch(navigateTo({component: NewMessage, title: 'Skriv ny'});
 ```
 
 ???
 
-## Uses Navigator, but have abstracted setup of Navigator and NavigationBar
-## Important functins, transitions + config for look and feel (animations, navigation bar layout)
-## Use: Navigator is in Redux State, so send a component into the navigateTo action.
-## Uses Babel, so ES6/7 can be used
+## Bruker Navigator, men har abstrahert bort oppsett av navigator og navigationBar.
+## Viktigste funksjoner, transisjoner + endel config for look and feel (animasjoner, navigation bar layout)
+## Bruk: Vi har lagt navigatoren i Redux State, så send inn en komponent til navigateTo-action.
+## Bruker Babel, så ES6/7 kan brukes
 
 ---
 
-# Instant deploy of JS?
+# Instant deploy av JS?
 
 ## AppHub, CodePush (MS)
-## According to the Apple guidelines
+## I henhold til Apple guidelines
 
 > ... The only exceptions to the
 foregoing are scripts and code downloaded and run by Apple's built-in WebKit framework or
@@ -919,19 +939,19 @@ Application ...
 
 ???
 
-## I said something about slow deployment process in the intro.
-## Runs on JSC, so according to guidelines the app can be changed after release.
-## If it is only JS changes, these can be pushed outside App Store. I can also be release to a subset of users for testing.
+## Nevnte i innledingen treg deploymentprosess.
+## Kjører på JSC, og guidelines understreker at det kan bli endret etter appen er releaset
+## Dersom det er kun JS-endringer kan disse pushes ut utenom App Store, også til et begrenset sett med brukere
 
 ---
 
 class: middle center
 
-# YOU ARE NEXT!
+# DERES TUR!
 
 ---
 
-# Links
+# Linker
 
 ## https://facebook.github.io/react-native/docs/getting-started.html
 ## https://github.com/bekk/react-native-workshop
