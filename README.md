@@ -107,7 +107,7 @@ e) __Clear it.__ Currently, navigating back and forth will not clear the state f
 
 ##5. Edit messages
 
-You now enter hardcore mode. Welcome. Don't worry – there will soon be beer :beer:. 
+You now enter hardcore mode. Welcome. 
 
 Reuse the `NewMessage` component to support editing. Trigger editing on long press. 
 
