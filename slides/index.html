@@ -781,8 +781,8 @@ var styles = StyleSheet.create({
 
 ???
 
-## State container. Noe av det fine med RN. At man kan bruke eksisterende moduler og konsepter
-## 3 prinsipper
+## State container. One of the great things with RN. You can reuse modules and concepts from the web.
+## 3 principles
 ## Single source of truth - One single store
 ## State is read-only - The only way to change the state is to emit an action, an object describing what happened.
 ## Changes are made with pure functions - To specify how the state tree is transformed by actions, you write pure reducers.
@@ -885,7 +885,7 @@ function messageReducer(state = initialState, action) {
 
 # How to use Navigator
 
-## We have wrapped Navigaton to abstract parts of the functionality and difficulties using it
+## We have wrapped Navigation to abstract parts of the functionality and difficulties using it
 
 ## Init (app.js):
 ```
@@ -905,7 +905,7 @@ dispatch(navigateTo({component: NewMessage, title: 'Compose message'});
 ???
 
 ## Uses Navigator, but have abstracted setup of Navigator and NavigationBar
-## Important functins, transitions + config for look and feel (animations, navigation bar layout)
+## Important functions, transitions + config for look and feel (animations, navigation bar layout)
 ## Use: Navigator is in Redux State, so send a component into the navigateTo action.
 ## Uses Babel, so ES6/7 can be used
 
