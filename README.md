@@ -16,7 +16,7 @@ Please submit feedback [here](https://docs.google.com/forms/d/e/1FAIpQLSc0F8UiaU
 * [A complete guide to flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 ##Debugging options
-* Open developer menu: cmd+d (iOS), F2(Android) or run ./android/devmenu.sh (Android)
+* Open developer menu: Cmd+d (iOS), F2(Android), Ctrl/Cmd+M(Android) or run ./android/devmenu.sh (Android)
 * Enable "Debug in Chrome" to set breakpoints, log to Chrome console, pause on caught exceptions, etc.
 * "Enable Live Reload" will live reload code on save
 * "Enable Hot Reloading" will immidiately reload code while also maintaining application state. __NB:__ Added to the latest RN version so it might be buggy
