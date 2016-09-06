@@ -13,13 +13,25 @@ import {
   NAVIGATOR_PUSH,
   NAVIGATOR_POP,
   FEILMELDING,
-  POST_MESSAGE
+  POST_MESSAGE,
+  PUT_MESSAGE,
+  SELECT_MESSAGE
 } from '../actions/actions';
 
 import { initialState } from './initial-state';
 
 function messageReducer(state = initialState, action) {
   switch (action.type) {
+
+    case SELECT_MESSAGE:
+      const tmp = Object.assign({}, state, {
+        username : action.message.from,
+        newMessageText : action.message.message,
+        messageId : action.message._id
+      });
+      tmp.navigator.push(action.route);
+      return tmp;
+
     case SET_USER_NAME:
       return Object.assign({}, state, { username: action.username });
 
@@ -54,6 +66,7 @@ function messageReducer(state = initialState, action) {
         messages,
         username: null,
         newMessageText: null,
+        messageId: null,
         isFetchingMessages: false,
         failedToFetchMessages: false,
         isSending: false
@@ -77,6 +90,9 @@ function messageReducer(state = initialState, action) {
       return state;
 
     case POST_MESSAGE:
+      return Object.assign({}, state, {isSending: true});
+
+    case PUT_MESSAGE:
       return Object.assign({}, state, {isSending: true});
 
     default:

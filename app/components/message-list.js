@@ -1,7 +1,10 @@
 'use strict';
 import React, { Component } from 'react';
-import { ListView, RefreshControl, Image, View, Text } from 'react-native';
+import { ListView, RefreshControl, Image, View, Text, TouchableOpacity } from 'react-native';
 import { Colors } from './../config/design';
+
+import { selectMessage } from '../actions/actions';
+
 const DSConfig = new ListView.DataSource({rowHasChanged: (r1, r2) => r1.id !== r2.id});
 
 export default class MessageList extends Component {
@@ -25,7 +28,14 @@ export default class MessageList extends Component {
       <ListView
         style={{flex : 1, backgroundColor: Colors.White }}
         dataSource={dataSource}
-        renderRow={renderMessage}
+        renderRow={(message) =>
+          <TouchableOpacity style={styles.message} onPress={() => this.props.selectOne(message)}>
+            <Text style={styles.messageFrom}>{message.from.toUpperCase()}</Text>
+            <View style={styles.messageBreak}/>
+            {displayImage(message)}
+            <Text style={styles.messageText}>{message.message}</Text>
+          </TouchableOpacity>
+        }
         refreshControl={
           <RefreshControl
             refreshing={this.props.refreshing}
@@ -36,17 +46,6 @@ export default class MessageList extends Component {
     );
   }
 }
-
-const renderMessage = (message) => {
-  return (
-    <View style={styles.message}>
-      <Text style={styles.messageFrom}>{message.from.toUpperCase()}</Text>
-      <View style={styles.messageBreak}/>
-      {displayImage(message)}
-      <Text style={styles.messageText}>{message.message}</Text>
-    </View>
-  )
-};
 
 const displayImage = (message) => {
   if (message.image !== undefined) {
@@ -68,7 +67,7 @@ const styles = {
   message : {
     flex : 0,
     backgroundColor : Colors.Dark,
-    margin : 10
+    margin : 20
   },
   messageFrom : {
     color : Colors.White,

@@ -24,6 +24,7 @@ class MessageListContainer extends Component {
           messages={ this.props.messages }
           refreshView={ this.props.fetchMessages }
           navigator={this.props.navigator}
+          selectOne = { this.props.selectMessage }
         />
       </View>
     );
@@ -39,12 +40,14 @@ MessageListContainer.propTypes = {
 
 // Redux related code
 import { connect } from 'react-redux';
-import { fetchMessages, navigateTo } from '../actions/actions';
+import { fetchMessages, navigateTo, selectMessage } from '../actions/actions';
 import { newMessageRoute } from './navigation/routes';
+
 const mapStateToProps = ({ failedToFetchMessages, isFetchingMessages, messages }) =>
   ({ failedToFetchMessages, isFetchingMessages, messages });
 const mapDispatchToProps = dispatch => ({
   fetchMessages: () => dispatch(fetchMessages(dispatch)),
-  goToNewMessage: () => dispatch(navigateTo(newMessageRoute))
+  goToNewMessage: () => dispatch(navigateTo(newMessageRoute)),
+  selectMessage : (message) => dispatch(selectMessage(message, newMessageRoute))
 });
 export default connect(mapStateToProps, mapDispatchToProps)(MessageListContainer);

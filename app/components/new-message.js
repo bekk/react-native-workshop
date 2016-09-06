@@ -5,20 +5,8 @@ import { Colors, Fonts } from './../config/design';
 
 class NewMessage extends Component {
 
-  setUsername(text) {
-    this.props.setUsername(text);
-  }
-
-  setNewMessageText(text) {
-    this.props.setNewMessageText(text);
-  }
-
   renderImage() {
     if (this.props.image !== undefined) {
-      const base = {
-        uri : 'data:image/jpeg;base64,' + this.props.image.data,
-        isStatic : true
-      };
       return(
         <View>
           <Image source={this.props.image.source} style={styles.media}/>
@@ -27,42 +15,51 @@ class NewMessage extends Component {
     }
   }
 
+  sendMessage() {
+    if (this.props.messageId) {
+      this.props.putMessage();
+    } else {
+      this.props.postMessage();
+    }
+  }
+
   render() {
-    const { username, newMessageText, setNewMessageText, setUsername, postMessage, error, image, onPickImagePressed } = this.props;
+    const { username, newMessageText, setNewMessageText, setUsername, postMessage, error, image, onPickImagePressed, messageId } = this.props;
     const feedback = error ? <View style={styles.feedback}><Text style={styles.feedbackText}>{error}</Text></View> : null;
 
     // Hint React-Native uses Controlled Components https://facebook.github.io/react/docs/forms.html#controlled-components
     return (
       <View style={styles.container}>
         <View style={styles.data}>
-          <InputField placeholder="Name" onChangeText={(text) => this.setUsername(text)}/>
-          <InputField placeholder="Message" onChangeText={(text) => this.setNewMessageText(text)}/>
+          <TextInput
+            style={styles.textinput}
+            placeholder="Name"
+            placeholderTextColor={Colors.Yellow}
+            multiline={true}
+            value={username}
+            onChangeText={setUsername}
+          />
+          <TextInput
+            style={styles.textinput}
+            placeholder="Message"
+            placeholderTextColor={Colors.Yellow}
+            multiline={true}
+            value={newMessageText}
+            onChangeText={setNewMessageText}
+          />
         </View>
+        { feedback }
         {this.renderImage()}
         <View style={styles.actions}>
           <TouchableOpacity onPress={onPickImagePressed}>
             <Text style={styles.pickerButton}>Take Picture</Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={postMessage}>
+          <TouchableOpacity onPress={this.sendMessage.bind(this)}>
             <Text style={styles.sendButton}>Send Message</Text>
           </TouchableOpacity>
+          <Text style={styles.pickerButton}>{messageId}</Text>
         </View>
       </View>
-    );
-  }
-}
-
-class InputField extends Component {
-  render() {
-    return(
-      <TextInput
-        style={styles.textinput}
-        placeholder={this.props.placeholder}
-        placeholderTextColor={Colors.Yellow}
-        multiline={true}
-        numberOfLines={1}
-        onChangeText={this.props.onChangeText}
-      />
     );
   }
 }
@@ -128,10 +125,11 @@ const styles = StyleSheet.create({
 
 // Redux related code
 import { connect } from 'react-redux';
-import { postMessage, setNewMessageText, setUsername, openImagePicker, clearNewMessageState } from '../actions/actions';
-const mapStateToProps = ({ username, newMessageText, error, image }) => ({username, newMessageText, error, image});
+import { postMessage, putMessage, setNewMessageText, setUsername, openImagePicker, clearNewMessageState } from '../actions/actions';
+const mapStateToProps = ({ username, newMessageText, error, image, messageId }) => ({username, newMessageText, error, image, messageId });
 const mapDispatchToProps = (dispatch) => ({
   postMessage: () => dispatch(postMessage()),
+  putMessage: () => dispatch(putMessage()),
   setNewMessageText: message => dispatch(setNewMessageText(message)),
   setUsername: name => dispatch(setUsername(name)),
   onPickImagePressed: () => dispatch(openImagePicker()),
