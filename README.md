@@ -17,7 +17,7 @@ Please submit feedback [here](https://docs.google.com/forms/d/e/1FAIpQLSc0F8UiaU
 
 ##Debugging options
 * Open developer menu: Cmd+d (iOS), F2(Android), Ctrl/Cmd+M(Android) or run ./android/devmenu.sh (Android)
-* Enable "Debug in Chrome" to set breakpoints, log to Chrome console, pause on caught exceptions, etc.
+* Enable "Debug JS Remotely" to set breakpoints, log to Chrome console, pause on caught exceptions, etc.
 * "Enable Live Reload" will live reload code on save
 * "Enable Hot Reloading" will immidiately reload code while also maintaining application state. __NB:__ Recently added to RN so it might be buggy
 * Run on device: [iOS](https://facebook.github.io/react-native/docs/running-on-device-ios.html#content) / [Android](https://facebook.github.io/react-native/docs/running-on-device-android.html#content) (__NB:__ Shake to open developer menu)
