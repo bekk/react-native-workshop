@@ -36,6 +36,7 @@ export default class MessageList extends Component {
         }
         dataSource={ dataSource }
         renderRow={ renderRow }
+        enableEmptySections
         />
     );
   }
