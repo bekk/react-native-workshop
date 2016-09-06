@@ -13,8 +13,18 @@ class NewMessage extends Component {
     this.props.setNewMessageText(text);
   }
 
-  postMessage() {
-    this.props.postMessage();
+  renderImage() {
+    if (this.props.image !== undefined) {
+      const base = {
+        uri : 'data:image/jpeg;base64,' + this.props.image.data,
+        isStatic : true
+      };
+      return(
+        <View>
+          <Image source={this.props.image.source} style={styles.media}/>
+        </View>
+      );
+    }
   }
 
   render() {
@@ -28,9 +38,13 @@ class NewMessage extends Component {
           <InputField placeholder="Name" onChangeText={(text) => this.setUsername(text)}/>
           <InputField placeholder="Message" onChangeText={(text) => this.setNewMessageText(text)}/>
         </View>
+        {this.renderImage()}
         <View style={styles.actions}>
-          <TouchableOpacity onPress={this.postMessage.bind(this)}>
-            <Text style={styles.button}>Send Message</Text>
+          <TouchableOpacity onPress={onPickImagePressed}>
+            <Text style={styles.pickerButton}>Take Picture</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={postMessage}>
+            <Text style={styles.sendButton}>Send Message</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -87,14 +101,28 @@ const styles = StyleSheet.create({
   },
   actions : {
     flex : 0,
-    padding: 10
+    marginTop : 10
   },
-  button : {
+  sendButton : {
     flex : 0,
     backgroundColor: Colors.Red,
     color: Colors.White,
     padding: 5,
+    marginTop: 5,
     textAlign: 'center'
+  },
+  pickerButton : {
+    flex : 0,
+    backgroundColor : Colors.Green,
+    color : Colors.White,
+    padding : 5,
+    marginTop: 5,
+    textAlign: 'center'
+  },
+  media : {
+    flex : 0,
+    height : 300,
+    margin : 15
   }
 });
 
