@@ -4,6 +4,19 @@ import { View, TextInput, Text, Image, TouchableOpacity, StyleSheet, Platform } 
 import { Colors, Fonts } from './../config/design';
 
 class NewMessage extends Component {
+
+  setUsername(text) {
+    this.props.setUsername(text);
+  }
+
+  setNewMessageText(text) {
+    this.props.setNewMessageText(text);
+  }
+
+  postMessage() {
+    this.props.postMessage();
+  }
+
   render() {
     const { username, newMessageText, setNewMessageText, setUsername, postMessage, error, image, onPickImagePressed } = this.props;
     const feedback = error ? <View style={styles.feedback}><Text style={styles.feedbackText}>{error}</Text></View> : null;
@@ -11,9 +24,31 @@ class NewMessage extends Component {
     // Hint React-Native uses Controlled Components https://facebook.github.io/react/docs/forms.html#controlled-components
     return (
       <View style={styles.container}>
-        <Text>New Message View</Text>
-        <TextInput style={styles.textinput} placeholder="Your text here"/>
+        <View style={styles.data}>
+          <InputField placeholder="Name" onChangeText={(text) => this.setUsername(text)}/>
+          <InputField placeholder="Message" onChangeText={(text) => this.setNewMessageText(text)}/>
+        </View>
+        <View style={styles.actions}>
+          <TouchableOpacity onPress={this.postMessage.bind(this)}>
+            <Text style={styles.button}>Send Message</Text>
+          </TouchableOpacity>
+        </View>
       </View>
+    );
+  }
+}
+
+class InputField extends Component {
+  render() {
+    return(
+      <TextInput
+        style={styles.textinput}
+        placeholder={this.props.placeholder}
+        placeholderTextColor={Colors.Yellow}
+        multiline={true}
+        numberOfLines={1}
+        onChangeText={this.props.onChangeText}
+      />
     );
   }
 }
@@ -35,12 +70,31 @@ NewMessage.propTypes = {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 0,
     padding: 20,
     marginTop: 60
   },
   textinput: {
-    height: 35
+    height: 35,
+    color: Colors.White,
+    borderBottomColor: Colors.White,
+    borderBottomWidth: 1
+  },
+  data : {
+    flex: 0,
+    backgroundColor: Colors.Dark,
+    padding: 10
+  },
+  actions : {
+    flex : 0,
+    padding: 10
+  },
+  button : {
+    flex : 0,
+    backgroundColor: Colors.Red,
+    color: Colors.White,
+    padding: 5,
+    textAlign: 'center'
   }
 });
 
