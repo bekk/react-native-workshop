@@ -52,7 +52,7 @@ class CustomNavigator extends Component {
     return (
       <Navigator
         ref="navigator"
-        initialRoute={newMessageRoute}
+        initialRoute={messageListRoute}
         renderScene={_renderScene}
         configureScene={_sceneConfig()}
         navigationBar={(
