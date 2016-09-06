@@ -57,7 +57,6 @@ class NewMessage extends Component {
           <TouchableOpacity onPress={this.sendMessage.bind(this)}>
             <Text style={styles.sendButton}>Send Message</Text>
           </TouchableOpacity>
-          <Text style={styles.pickerButton}>{messageId}</Text>
         </View>
       </View>
     );
