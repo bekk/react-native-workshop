@@ -10,12 +10,15 @@ export const SET_MESSAGES = 'SET_MESSAGES';
 export const FETCH_MESSAGE = 'FETCH_MESSAGE';
 export const FETCH_MESSAGE_FAILED = 'FETCH_MESSAGE_FAILED';
 export const POST_MESSAGE = 'POST_MESSAGE';
+export const PUT_MESSAGE = 'PUT_MESSAGE';
 export const SET_POST_SUCCESS = 'SET_POST_SUCCESS';
 export const FEILMELDING = 'FEILMELDING';
 export const SET_IMAGE = 'SET_IMAGE';
 export const SET_NAVIGATOR = 'SET_NAVIGATOR';
 export const NAVIGATOR_PUSH = 'NAVIGATOR_PUSH';
 export const NAVIGATOR_POP = 'NAVIGATOR_POP';
+
+export const SELECT_MESSAGE = 'SELECT_MESSAGE';
 
 export const setNewMessageText = newMessageText => ({ type: SET_NEW_MESSAGE_TEXT, newMessageText });
 export const setUsername = username => ({ type: SET_USER_NAME, username });
@@ -47,6 +50,16 @@ export const postMessage = () => (dispatch, getState) => {
   }
 };
 
+export const putMessage = () => (dispatch, getState) => {
+  const { username, newMessageText, image, messageId } = getState();
+  // defensive coding, but i don't care atm
+  dispatch({ type : PUT_MESSAGE });
+  const imageData = image ? image.data : null;
+  return messages.put(username, newMessageText, imageData, messageId)
+    .then(message => dispatch(setPostSuccess(message)))
+    .then(() => dispatch(navigatorPop()));
+};
+
 export const openImagePicker = () => (dispatch) => {
   return pickImage()
     .then(image => dispatch(setImage(image)))
@@ -60,6 +73,8 @@ export const clearNewMessageState = () => (dispatch) => {
 };
 
 const setImage = (image) => ({ type: SET_IMAGE, image });
+
+export const selectMessage = (message, route) => ({ type : SELECT_MESSAGE, message,  route });
 
 export const setNavigator = (navigator) => ({ type: SET_NAVIGATOR, navigator });
 export const navigateTo = (route) => ({ type: NAVIGATOR_PUSH, route });
